@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://soulhacker.github.io/sitemap.xml 
+Sitemap: http://cn.paradigmx.net/sitemap.xml 
