@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://soulhacker.github.io/sitemap.xml 
