@@ -4,7 +4,7 @@
   <title><![CDATA[Paradigm X]]></title>
   <link href="http://cn.paradigmx.net/atom.xml" rel="self"/>
   <link href="http://cn.paradigmx.net/"/>
-  <updated>2013-05-02T21:49:45+08:00</updated>
+  <updated>2013-05-02T21:50:27+08:00</updated>
   <id>http://cn.paradigmx.net/</id>
   <author>
     <name><![CDATA[soulhacker]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[译文：为何 SICP 意义重大]]></title>
     <link href="http://cn.paradigmx.net/blog/2013/05/02/why-sicp-matters/"/>
-    <updated>2013-05-02T23:20:00+08:00</updated>
+    <updated>2013-05-02T21:50:00+08:00</updated>
     <id>http://cn.paradigmx.net/blog/2013/05/02/why-sicp-matters</id>
     <content type="html"><![CDATA[<p><strong>原文</strong>：<a href="http://www.cs.berkeley.edu/~bh/sicp.html">Why <em>Structure and Interpretation of Computer Programs</em> Matters</a><br/>
 <strong>作者</strong>：<em>Brian Harvey, University of California, Berkeley</em><br/>
