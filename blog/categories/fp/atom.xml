@@ -4,7 +4,7 @@
   <title><![CDATA[Category: FP | Paradigm X]]></title>
   <link href="http://cn.paradigmx.net/blog/categories/fp/atom.xml" rel="self"/>
   <link href="http://cn.paradigmx.net/"/>
-  <updated>2013-05-02T22:13:22+08:00</updated>
+  <updated>2013-09-21T16:22:31+08:00</updated>
   <id>http://cn.paradigmx.net/</id>
   <author>
     <name><![CDATA[soulhacker]]></name>
@@ -797,7 +797,7 @@ Haskell 这样的语言不需要它。把他实现为一个函数即可：
 
 <p>如果你有任何问题，意见或建议，请发到邮箱 <a href="mailto:coffeemug@gmail.com">coffeemug@gmail.com</a>。很高兴收到你的反馈。</p>
 
-<p>--
+<p>&mdash;
 <div class="footnotes">
 	<ol>
 		<li id='fn:1'><p> 2005 年秋天我找工作时常常提出这个问题，当时我得到的是数量可观的一脸茫然，考虑到这些人基本上年薪都在 30 万美元以上，他们理应对他们可以得到的工具有更深入的理解。
