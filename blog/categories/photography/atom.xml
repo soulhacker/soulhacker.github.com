@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Photography | Paradigm X]]></title>
   <link href="http://cn.paradigmx.net/blog/categories/photography/atom.xml" rel="self"/>
   <link href="http://cn.paradigmx.net/"/>
-  <updated>2013-12-24T17:06:54+08:00</updated>
+  <updated>2014-01-02T00:30:23+08:00</updated>
   <id>http://cn.paradigmx.net/</id>
   <author>
     <name><![CDATA[soulhacker]]></name>
@@ -22,8 +22,7 @@
 
 <!-- more -->
 
-
-<h3>用 X100 拍 X100S</h3>
+<h3 id="x100--x100s">用 X100 拍 X100S</h3>
 
 <p>买的港版赠送原厂皮套和一张 16G Class 10 Kinston 存储卡，这卡可以换给我原先的 X100，新机器继续用我的 Eye-fi（X100S 已经内置对 Eye-Fi 的支持）：</p>
 
@@ -59,7 +58,7 @@
 
 <p><img class="center" src="/images/x100s/x100s-a.jpg" width="800" title="X100S X100S + 皮套" ></p>
 
-<h3>用 X100S 拍 X100</h3>
+<h3 id="x100s--x100">用 X100S 拍 X100</h3>
 
 <p>以后 X100 就退休了，可能给我丫头玩（或者卖掉？），向陪我两年、跑了三大洲的老大哥致敬〜</p>
 
@@ -69,7 +68,7 @@
 
 <p><img class="center" src="/images/x100s/x100-3.jpg" width="800" title="GJ X100" ></p>
 
-<h3>X100S vs. X100</h3>
+<h3 id="x100s-vs-x100">X100S vs. X100</h3>
 
 <p>那么，到底有什么差别呢？拿起 iPhone 拍一组对比看看。</p>
 
@@ -96,12 +95,11 @@
 <p>除了上列立刻可以看到的改进，稍微把玩了下发现如下改进也不错：</p>
 
 <ul>
-<li>对焦确实快了很多很多，仅此一项就值得升级。富士这些年在<a href="http://www.dpreview.com/news/2010/8/5/fujifilmpd">混合对焦黑科技</a>上的投资，将以前只有笨重的 DSLR 才有的相位检测自动对焦技术引入到无反光镜的数码相机里，效果显著。</li>
-<li>电子取景器（EVF）分辨率和显示效果都有比较明显的提升。</li>
-<li>电子取景器为手动对焦模式增加了电子裂像屏，本来已经很酷很好玩的混合取景器又增加了新玩法，效果不错，以后拍摄微距等需要非常精确聚焦的场合可以用。</li>
-<li>设定界面进行了不小的调整，以前一些不太合理的地方基本都修正了；增加了开关 Eye-fi 无线传输的选项，可以省不少电。</li>
+  <li>对焦确实快了很多很多，仅此一项就值得升级。富士这些年在<a href="http://www.dpreview.com/news/2010/8/5/fujifilmpd">混合对焦黑科技</a>上的投资，将以前只有笨重的 DSLR 才有的相位检测自动对焦技术引入到无反光镜的数码相机里，效果显著。</li>
+  <li>电子取景器（EVF）分辨率和显示效果都有比较明显的提升。</li>
+  <li>电子取景器为手动对焦模式增加了电子裂像屏，本来已经很酷很好玩的混合取景器又增加了新玩法，效果不错，以后拍摄微距等需要非常精确聚焦的场合可以用。</li>
+  <li>设定界面进行了不小的调整，以前一些不太合理的地方基本都修正了；增加了开关 Eye-fi 无线传输的选项，可以省不少电。</li>
 </ul>
-
 
 <p>大致就是这样吧，以后拍了片子再来给大家分享。</p>
 ]]></content>

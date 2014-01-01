@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Internet | Paradigm X]]></title>
   <link href="http://cn.paradigmx.net/blog/categories/internet/atom.xml" rel="self"/>
   <link href="http://cn.paradigmx.net/"/>
-  <updated>2013-12-24T17:06:54+08:00</updated>
+  <updated>2014-01-02T00:30:23+08:00</updated>
   <id>http://cn.paradigmx.net/</id>
   <author>
     <name><![CDATA[soulhacker]]></name>
@@ -18,10 +18,9 @@
     <link href="http://cn.paradigmx.net/blog/2011/12/21/the-law-of-universal-apps/"/>
     <updated>2011-12-21T10:29:00+08:00</updated>
     <id>http://cn.paradigmx.net/blog/2011/12/21/the-law-of-universal-apps</id>
-    <content type="html"><![CDATA[<p>早上看到消极 <a href="https://twitter.com/cxiaoji">@cxiaoji</a> 发的推很有意思，原文在<a href="https://twitter.com/cxiaoji/status/149167077385707521">这里</a>和<a href="https://twitter.com/cxiaoji/status/149221508567408640">这里</a>，引用如下：</p>
+    <content type="html"><![CDATA[<p>早上看到消极 <a href="https://twitter.com/cxiaoji">@cxiaoji</a> 发的推很有意思，原文在<a href="https://twitter.com/cxiaoji/status/149167077385707521">这里</a>和<a href="https://twitter.com/cxiaoji/status/149221508567408640">这里</a>，引用如下：  </p>
 
 <!--more-->
-
 
 <p><blockquote><p>几大科技企业正在美国推动立法，取消移动应用购买的平台依赖性──即 iOS 上买过的 app，在黑莓，安卓和 WP 使用无需另外付费。在目前黑 Apple 的几个案子里，这一手是最狠的。</p></blockquote></p>
 
@@ -44,13 +43,12 @@
 <p>最后，「如果」（只是如果）真的立法成功，真的对开发者有利吗？我认为对移动开发者有利的大环境因素包含（但不限于）：</p>
 
 <ul>
-<li>移动互联网的用户持续增长，活跃度不断提高。</li>
-<li>平台提供的功能差异减少（二进制兼容这种共产主义梦想真不敢指望啊）。</li>
-<li>各平台设备的规格尽量规范化，减少适配代价。</li>
-<li>有方便易用的用户支付渠道减少坏账率。</li>
-<li>有可靠的推广平台能相对公平的竞争。</li>
+  <li>移动互联网的用户持续增长，活跃度不断提高。</li>
+  <li>平台提供的功能差异减少（二进制兼容这种共产主义梦想真不敢指望啊）。</li>
+  <li>各平台设备的规格尽量规范化，减少适配代价。</li>
+  <li>有方便易用的用户支付渠道减少坏账率。</li>
+  <li>有可靠的推广平台能相对公平的竞争。</li>
 </ul>
-
 
 <p>多个平台版本只能卖一次（所以你不能针对平台特点做差异化营销），每个平台都有大量不同厂商运营的 App Store （所以你要增加市场投放的成本）等真不是什么有利的变化。Android 的应用商店可以随便开，最初一众 IT 大佬都乐得合不拢嘴，但现在大家都看清楚了：所有人都可以开就意味着所有人都没啥可赚的，要么退回到过去运营商和手机厂商控制软件来源的黑暗时代，要么就是让开发者和用户面对一大堆门市不知所措。</p>
 
