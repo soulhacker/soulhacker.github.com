@@ -4,7 +4,7 @@
   <title><![CDATA[Paradigm X]]></title>
   <link href="http://cn.paradigmx.net/atom.xml" rel="self"/>
   <link href="http://cn.paradigmx.net/"/>
-  <updated>2014-01-02T00:32:41+08:00</updated>
+  <updated>2014-02-03T22:41:55+08:00</updated>
   <id>http://cn.paradigmx.net/</id>
   <author>
     <name><![CDATA[soulhacker]]></name>
@@ -12,6 +12,222 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[炉石传说入门]]></title>
+    <link href="http://cn.paradigmx.net/blog/2014/02/03/hearthstone-fundamentals/"/>
+    <updated>2014-02-03T16:07:00+08:00</updated>
+    <id>http://cn.paradigmx.net/blog/2014/02/03/hearthstone-fundamentals</id>
+    <content type="html"><![CDATA[<h2 id="section">引子</h2>
+
+<p>不知不觉我已经玩了四个多月的炉石传说（HearthStone: Heroes of Warcraft）了，随着全球各服进入公测，势必会有越来越多的朋友加入，其中不少应该是没有什么卡牌游戏基础的，为了帮助大家尽快迈过刚开始的门槛，更好地体验这款优秀游戏，我决定借着春节宅在家的时间编写这篇入门指引，希望对朋友们有所帮助。</p>
+
+<p>炉石传说是一款虚拟卡牌游戏，玩家收集虚拟的卡片，然后构建强力的牌组来与其他玩家进行回合制对战。其基本概念来自传统桌面游戏的一个分支：集换式卡牌游戏（TCGs，trading card games），其典型代表是万智牌（Magic: the Gathering）和游戏王（Yu-Gi-Ho!），暴雪尝试通过规则简化和抛弃实体卡来扩大潜在玩家群体，并借助魔兽（WarCraft）世界庞大的传说（lore）资源和爱好者群体，建立一个休闲为主、兼顾竞技的数字化卡牌游戏平台，也是暴雪进入免费网络游戏和游戏微支付盈利模式的又一次尝试。到目前为止游戏取得了不错的成绩，但也出现了一些问题，其中之一就是相比暴雪其他游戏，炉石传说具有一定的入门门槛：虽然即使什么都不知道也可以在开始阶段获得很多乐趣，但是稍微深入一点就会遇到不少问题，这主要是因为卡牌游戏本身比较小众，这时候了解一些卡牌游戏的基本概念会很有帮助，这也是本文的主要目标。</p>
+
+<p>本文分为两个大的部分，第一部分我摘译了来自著名电竞社区 TeamLiquid 的一篇非常棒的入门指南 “<a href="http://www.liquidhearth.com/forum/viewmessage.php?topic_id=410">A Beginner’s Guide to HS Terms</a>”，这篇文章由资深的万智牌玩家编写，是我看到过的对卡牌游戏基础概念解说最为精到的文字，不仅可以帮助新手快速理解卡牌游戏的核心概念，也有助于更好地融入游戏社区。第二部分则是结合我自己的游戏经验，谈谈如何在炉石传说的构筑卡组对战（Play mode）中走的更远。</p>
+
+<p>因为我自己主要在美服玩，同时为了照顾国服玩的朋友，下文中提到的卡牌都提供了中英对照的名称，并附有来自 HearthHead 网站的浮动图片显示。另外在第一部分的摘译中我也对原文进行了少量的更新以适应目前的环境，并增加了许多针对中文玩家的说明，有条件的朋友如有兴趣可以阅读下原文。</p>
+
+<h2 id="part-i---">Part I - 术语指南</h2>
+
+<p><img class="center" src="http://cn.paradigmx.net/images/guide-to-hs-terms.png" width="800" /></p>
+
+<p>以下是炉石传说涉及到的一些卡牌游戏术语列表，它们大多不是炉石传说创造出来的——事实上大部分是由万智牌（可以认为是这类游戏的开创者）的开发者和玩家定义的，虽然炉石传说具有不少独创的特点，但是在基本概念上是完全通用的。这些术语被划分为三部分：卡组类型、一般术语和高级概念，这里一般和高级的区别在于，一般术语涵盖的是游戏机制本身的一些概念，而高级概念更多和游戏玩家的策略有关，是玩游戏的过程中会碰到的一些更复杂的概念。</p>
+
+<h3 id="section-1">卡组类型</h3>
+
+<ul>
+  <li>
+    <p><strong>Aggro 快攻</strong>：力争占据主动权并尽快攻击对手英雄来结束战斗的卡组。这种卡组一般比较容易组成而且也易于理解，但有一点必须注意，aggro 卡组并不永远意味着快速展开和铺怪<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>，有相对慢一些的卡组也属于这个分类，比如在万智牌中很出名的 “<a href="http://www.starcitygames.com/magic/misc/810_A_Brief_History_Of_Stompy.html">Stompy</a>” 或者 “Big Aggro” 都是这样的例子，他们的共同点是早期占场然后不断放下一些较平均值更重量级的仆从来压制对手，<a href="http://www.hearthhead.com/card=90">Chillwind Yeti</a>（冰封雪人）是最典型的例子，因为它通常都是四费阶段三围最好的仆从。</p>
+  </li>
+  <li>
+    <p><strong>Control 控制</strong>：这是炉石传说中另一个常见的卡组类型，它们的特征是力争存活到游戏后期然后依靠少量强大的威胁赢得游戏。如果你基本上只靠 <a href="http://www.hearthhead.com/card=374">Ragnaros</a>（拉格纳罗斯）、<a href="http://www.hearthhead.com/card=1186">Ysera</a>（伊瑟拉）、<a href="http://www.hearthhead.com/card=777">Lord Jaraxxus</a>（加拉克苏斯大王） 作为胜利条件<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>，在游戏的大部分时间里力争生存直到这些巨巨出场帮助你赢得胜利，那么这就是典型的控制卡组。在刚刚开始内测的时候，很多人经常把控制类卡组和下面这个类型搞混。</p>
+  </li>
+  <li>
+    <p><strong>Midrange 中速</strong>：在炉石社区里很多标为“控制类型”的卡组其实属于这个类型，公平地说这里的界限并没有那么清晰，但对有经验的卡牌游戏玩家来说还是有一些明显差异的。典型的中速卡组力争在每一回合取得一点点优势，流行的卡牌 <a href="http://www.hearthhead.com/card=281">Argent Commander</a>（银色指挥官）以及能够强化其他仆从的仆从都是很好的例子。如果你的卡组设计为在游戏中从一开始就不断累积场上优势，那么这是中速类型<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>。中速卡组的取胜之道是：面对快攻卡组要打得像控制卡组，而面对控制卡组要打得像快攻卡组<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>。</p>
+  </li>
+</ul>
+
+<blockquote><p>控制和中速类型卡组经常让人混淆的主要原因之一是中速牌组往往力图通过较大的仆从和比较超值的法术来“控”场，这一点后面还会阐述，不过这里要强调的是，某些时候打的比较偏“控制”并不意味着卡组是控制类型。</p></blockquote>
+
+<ul>
+  <li><strong>Combo 组合</strong>：即依靠一组特定组合卡牌的效果赢得对局的卡组，这是最难创建的卡组类型，因为真正的一击必杀组合技往往在游戏推出前就被设计者干掉了<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup>，曾经的猎人 <a href="http://www.hearthhead.com/card=1243">Unleash The Hounds</a>（关门放狗）OTK（one turn kill，即一回合击杀）卡组是迄今为止最好的例子，当时的关门放狗卡牌能够帮助猎人在空场的情况下凭空一回合创造超过30点伤害，后来该卡牌被暴雪重做为目前的形态，从而消除了该组合的可能性。事实上在经典的卡牌游戏里有两类组合卡组：互动型和非互动型，其中互动型是稍微不那么令人沮丧的，前述猎人 OTK 卡组就属于这一类；而非互动型组合卡组基本不会出现在炉石传说中，如果感兴趣，可以了解下游戏王里著名的“黑暗大法师”卡牌，这是一套五张卡牌，只要集齐黑暗大法师身体的五个部分于手牌就立刻赢得对局，这种组合卡组和对手完全没关系，只要能快速的检索卡组，对手对你获胜是完全无法施加影响的，事实上游戏王里设计这组卡也更多是为了剧情需要，所以很快就成为禁卡（禁止在正式比赛中使用）。相对来说，猎人 OTK 卡组是完全可以阻止的，只要在第七回合之前在场上铺上足够的嘲讽仆从就行了。</li>
+</ul>
+
+<blockquote><p>在万智牌中也有少量的非互动型组合卡组：做X+Y+Z即获胜，但取胜条件往往包含某些需要显式打出的牌（而不是黑暗大法师那种仅仅在手就行），而万智牌和炉石传说的一个基本差异在于万智牌中你永远可以在对手的打牌阶段进行反制，所以万智牌里这并不成为一个太大的问题，但炉石传说里就不应该出现这种类型的卡组了（除非开发者脑抽）。</p></blockquote>
+
+<ul>
+  <li>
+    <p><strong>Aggro-control 控场快攻</strong>：由于基本互动机制的设计，相比万智牌在炉石传说中更容易出现这种卡组，这种卡组往往通过一开始建立小的场上威胁然后转入快速打脸，也就是早期控场然后猛攻对方英雄。这种类型的卡组比纯快攻稍慢，前期比较重视控场，一些着重于武器卡牌的卡组经常属于这种类型，因为可以通过武器来消除对方场上仆从，然后使用己方场上仆从快攻对方英雄来取胜。</p>
+  </li>
+  <li>
+    <p><strong>Tempo 节奏</strong>：这是另一个非常难构建的类型，在所有卡组类型里属于比较非主流的，因为它通常会放弃<em>卡牌优势</em><sup id="fnref:6"><a href="#fn:6" rel="footnote">6</a></sup>，通常这种类型的卡组会扔出几个快速威胁——比如 <a href="http://www.hearthhead.com/card=405">Mana Wyrm</a>（法力游龙）——然后想办法拖延对方的节奏，阻止对方消除自己的这个威胁，然后这个威胁会越变越大对对手产生巨大伤害。一些节奏卡组的典型好卡包括：<a href="http://www.hearthhead.com/card=519">Freezing Trap</a>（冰冻陷阱）、<a href="http://www.hearthhead.com/card=587">Frost Nova</a>（冰霜新星），他们都不会带来卡牌优势（多数时候是净亏卡），但是如果你的战术目标就是拖延对手那就无所谓了。其他常见的节奏卡组核心威胁卡还有：<a href="http://www.hearthhead.com/card=1693">King Mukla</a>（穆克拉）、<a href="http://www.hearthhead.com/card=932">Gadgetzan Auctioneer</a>（加基森拍卖师）等，而其他用来占据节奏优势的卡包括 <a href="http://www.hearthhead.com/card=461">Sap</a>（闷棍）、<a href="http://www.hearthhead.com/card=113">Counterspell</a>（法术反制）、<a href="http://www.hearthhead.com/card=990">Conceal</a>（隐藏）等。</p>
+  </li>
+</ul>
+
+<h3 id="section-2">一般术语</h3>
+
+<ul>
+  <li>
+    <p><strong>Board Wipes 清场</strong>：指如 <a href="http://www.hearthhead.com/card=1004">Flamestrike</a>（烈焰风暴）、<a href="http://www.hearthhead.com/card=841">Holy Nova</a>（神圣新星）这类群体伤害效果，由于来自魔兽世界游戏的习惯，在炉石传说社区中经常被称为 AoE（Area of Effect，范围效果），但这个“范围”的提法显得有点不够严谨，炉石传说中确实有一些“范围”相关的效果卡，比如 <a href="http://www.hearthhead.com/card=430">Cone of Cold</a>（冰锥术）和 <a href="http://www.hearthhead.com/card=394">Explosive Shot</a>（爆炸射击），但在卡牌游戏里习惯称之为“多目标移除”效果（multitarget removal）。</p>
+  </li>
+  <li>
+    <p><strong>Bounce 回手</strong>：这个词儿等价于“将一个场上的仆从返回其所有者手牌”，这类卡常见于节奏卡组中，一般来说是亏卡的效果。回手一个仆从比击杀要差因为对手总还是可以再次使用被回手的卡，所以运用这种效果需要仔细的设计。</p>
+  </li>
+  <li>
+    <p><strong>Burn 直伤</strong>：等价于“对X造成Y点伤害” ，经常是针对对方英雄，所以中文社区也经常称之为打脸。快攻卡组在中期以后通常都会不断的打脸直到对方倒下。</p>
+  </li>
+  <li>
+    <p><strong>Cantrip 过牌</strong>：等价于任何带有“抽X张卡”的效果，这类卡通常都是很有价值的，因为它们至少抽一张卡来替代自己，这会带来所谓的<em>卡牌优势</em>。</p>
+  </li>
+  <li>
+    <p><strong>Clock 计时器</strong>：这个是稍微没那么常见的术语，但却很重要，你的威胁可以看做一个计时器，也就是在多少回合之后你可以杀死你的对手（如果你的威胁不被解除），比如在空场情况下，你的对手有12点生命，那么出场一个 <a href="http://www.hearthhead.com/card=281">Argent Commander</a>（银色指挥官）等于一个3回合的计时器，这个概念对于快攻和节奏卡组来说格外重要，相应的，控制卡组更多会这么去思考：对方会给我多大的压力（我还能撑多少回合）？</p>
+  </li>
+  <li>
+    <p><strong>Curve （法力）曲线</strong>：组成卡组的卡牌按照各费用统计分别有多少张，组成一个分布图，这往往能看出卡组偏向游戏前中还是后期，各种卡组类型会有不太一样的典型曲线，虽然不是绝对的，但经常具有参考价值。在炉石传说的组卡界面里，鼠标停在英雄头像处就会显示当前的卡组曲线。</p>
+  </li>
+  <li>
+    <p><strong>Filtering 滤牌</strong>：从卡组的某个子集中选出一部分卡，有时候还允许玩家挑选其中的某张。和过牌不一样，这通常不直接带来<em>卡牌优势</em>，但是因为可以有目标地选择有用的牌，对于组合卡组和某些控制卡组来说是很强大的效果，典型的例子是 <a href="http://www.hearthhead.com/card=1047">Tracking</a>（追踪术）。</p>
+  </li>
+  <li>
+    <p><strong>Going Off 发动/起爆</strong>：一个组合卡组在某特定回合“发动”然后你就挂了 -_-</p>
+  </li>
+  <li>
+    <p><strong>Ping 点（掉）</strong>：对目标施以刚好一点伤害并击杀它，或者之后用其他较弱的仆从换掉它，法师的英雄技能和 <a href="http://www.hearthhead.com/card=573">Shiv</a>（毒刃） 这样的法术都经常用来干这个。</p>
+  </li>
+  <li>
+    <p><strong>Ramp 跳卡</strong>：指获得额外资源的效果，从而你可以提前打出某些卡，或者在一回合打出更多的卡，炉石传说中的德鲁伊英雄的招牌特征就是拥有游戏中最强的跳卡能力，无论是 <a href="http://www.hearthhead.com/card=254">Innervate</a>（激活） 还是 <a href="http://www.hearthhead.com/card=1124">Wild Growth</a>（野性成长）都是典型的跳卡效果。对其他职业来说最典型的跳卡选项是抽中后手而获得的幸运币。</p>
+  </li>
+  <li>
+    <p><strong>Synergy 协同增效</strong>：首先这个词儿和 “Combo 必杀组合” 不是同义词，一般来说 combo 会直接带来胜利（比如前述猎人的 OTK），而 synergy 的含义要广泛的多，只要多张卡的效果超过分别效果简单相加就可以认为它们之间有某种“协同增效”，比如任何带有激怒（Enrage）效果的仆从和 <a href="http://www.hearthhead.com/card=285">Cruel Taskmaster</a>（严酷的监工）。</p>
+  </li>
+  <li>
+    <p><strong>Top Deck</strong>：这个术语不知道中文怎么翻译，但它来自实体卡牌游戏，就是待抽的卡堆最上面的一张牌。在卡牌游戏中有两种说法与之有关，一种就是指当回合抽上来这张牌，比如说我“神抽了一张X”（top decking X）然后靠这个翻盘了，另一种是指某方已经用光了手牌，每回合只能指望抽上来的那张牌，这叫 “playing off the top”，这经常体现巨大劣势，因为几乎没有什么选择可做，即使血量优势很大，也可能在无手牌的状态下被对手逆转。</p>
+  </li>
+</ul>
+
+<h3 id="section-3">高级概念</h3>
+
+<ul>
+  <li><strong>Beatdown vs. Control 抢血与控制</strong>：这大概是卡牌游戏里最重要的概念之一，如果可能的话请一定读一下这篇万智牌元老级玩家 Mike Flores 的经典文章：<a href="http://www.starcitygames.com/magic/fundamentals/3692_Whos_The_Beatdown.html">Who’s the Beatdown</a>，虽然他举的例子都是万智牌而且是一些古旧的卡，但是概念是十几年都没变的（在可预见的将来也不会变）。简单的说，就是无论你使用什么类型的卡组，对手使用什么类型的卡组，在每一个特定的对局中，都有一方倾向于抢血（尽快杀死对面的英雄），而另一方就倾向于控制（存活并在后期解决战斗），如果在对局中对于“谁需要抢血”判断错误，往往就不可避免的会走向失败（当然判断正确也不一定会胜利）。这个问题的困难（以及重要性）在于，可能你的卡组在99%的对局中都是控制方，但并不意味着它必须在每一局都是控制方，某次你会碰到一个比你更“控制”的卡组，在这个对局中你必须打抢血。记得前面说的中速卡组吗？最早的中速卡组就是在这个概念的启发下设计出来的，其目标就是针对典型的控制卡组打抢血，而针对典型的快攻卡组打控制，从而在大量对局中取得较高的胜率。事实上在我写这个文章的时候，统治天梯的卡组就是中速卡组。Mike Flores 的文章里也给出了一些判断“谁该抢血”的一般性建议，摘录如下供参考：</li>
+</ul>
+
+<blockquote><p>1. 谁的卡组持有更多伤害输出？通常他应该打抢血。<br />2. 谁的卡组持有更多去除卡？通常他应该打控制。<br />3. 谁持有更多控制法术和抽卡牌？一般情况下他应该打控制。</p><footer><strong>Mike Flores</strong> <cite><a href="http://www.starcitygames.com/magic/fundamentals/3692_Whos_The_Beatdown.html">Who&#8217;s the Beatdown?</a></cite></footer></blockquote>
+
+<p>有时候根据上述规则可以判断某方必然（只能）打抢血，但由于某些特定的卡牌组合，该方实际上很难成功抢血（比如对手有太多治疗能力，或者太快的直接伤害能力），那么这就形成了“卡组克制”，该方在这类对局中胜率就很堪忧了。</p>
+
+<ul>
+  <li>
+    <p><strong>The Vanilla Test 还原测试</strong>：这是一种万智牌玩家经常使用的非常酷的对卡牌价值进行判断的方法。简单说就是：如果把卡牌的规则文本（即卡牌下半方框里的文字）完全去掉，这卡如何？以削弱前的 <a href="http://www.hearthhead.com/card=608">Shattered Sun Cleric</a>（破碎残阳祭司）为例，削弱前她是3费的一张3/3体格的仆从，即使完全不考虑卡牌文字，这也是完全可以上场的卡牌，再加上给另一仆从+1/+1的效果，这是一张大大优于常规的卡（所以结果大家都知道，她被砍成现在的3/2了 -_-）。相反的例子是 <a href="http://www.hearthhead.com/card=605">Ancient Watcher</a>（上古看守者），这是一张2费的4/5，所以文字必然是极大的负效果（无法攻击），所以运用这张卡的关键就是如何弱化甚至去除这种负效果（现在流行的给他施加嘲讽甚至干脆沉默掉他的效果都被证明非常有价值）。</p>
+  </li>
+  <li>
+    <p><strong>Card Advantage 卡牌优势</strong>：这是另一个非常常见的术语，但是在很多情况下都没有被准确的表述。最具争议的例子是 <a href="http://www.hearthhead.com/card=284">Novice Engineer</a>（工程师学徒），当你出这张卡，你抽一张卡，同时场上站了一个1/1的仆从，表面上看这是1换2，但问题是在炉石传说目前的阶段，一张牌的价值并没有精确的定义，很多人认为1/1的学徒并不值“一张卡”，所以她的价值低于1换2，相对的，<a href="http://www.hearthhead.com/card=825">Azure Drake</a>（碧蓝幼龙）毫无争议的被看作至少是1换2的价值，因为对手很少能用少于一张卡来移除它，而它很容易带来额外的价值从而超过1换2的价值。另一个比较没有争议的1换2（多）的典型是 <a href="http://www.hearthhead.com/card=1004">Flamestrike</a>（烈焰风暴），只要对手场上不少于2张牌，这张牌的价值就至少是1换2。</p>
+  </li>
+</ul>
+
+<p>一个常见的误区是把<em>卡牌优势</em>用作说明手牌多或者场上有更多仆从，这都是不对的，正确的方式是把它理解为一个记分牌，两个对手通过尽可能高效地使用他的卡牌资源来竞赛，比如某方打出1换2，那么就得到+1分，某方被迫用3张卡牌（手牌或者场上仆从）去换掉对手一张牌，那么就得到-2分，卡牌效率得分高是拥有“卡牌优势”的充分必要条件。</p>
+
+<ul>
+  <li><strong>Expected Value 期望值</strong>：期望值是很多游戏中都用到的工具，不过最经常用在扑克牌戏（如德州扑克）中，用来计算在某个特定局面下各种可能带来的平均回报，最常见就是用来计算获胜的可能性。例如：你是一个法师，依靠 <a href="http://www.hearthhead.com/card=192">Ice Block</a>（寒冰屏障）活下来，只有一抽决定你的生死，你的卡组只剩三张牌：<a href="http://www.hearthhead.com/card=1087">Pyroblast</a>（炎爆术）、<a href="http://www.hearthhead.com/card=315">Fireball</a>（火球术）和 <a href="http://www.hearthhead.com/card=658">Leper Gnome</a>（麻风侏儒）。在这个局面下，如果你的对手剩6点生命的话，你的获胜期望值就是 66%，如果他有10点生命，你的获胜期望值就只有 33% 了。</li>
+</ul>
+
+<h2 id="part-ii---">Part II - 卡组构筑初步</h2>
+
+<p><img class="center" src="http://cn.paradigmx.net/images/hs-deck-constructing.jpg" width="800" /></p>
+
+<p>这一部分我会结合上面谈到的基本概念以及我自己的经验，给刚迈进炉石传说的新人朋友们一些建议，仅供参考。</p>
+
+<h3 id="section-4">基础知识</h3>
+
+<ul>
+  <li>
+    <p>炉石传说有两个核心游戏模式：构筑模式（使用自己拥有的卡构建卡组的 Play mode）和竞技场模式（随机选卡的 Arena mode），竞技场模式主要目的是提供一个免费获取卡牌的途径，它和构筑模式非常不同，下面说的一切都只针对构筑模式。</p>
+  </li>
+  <li>
+    <p>炉石传说从一开始就被设计为休闲为主、兼顾竞技的游戏，所以选择自己舒服的玩法就好，并不需要太过追求战绩。但如果确实希望自己在天梯上取得一定的成绩才会觉得满足的话……请继续看下去（<strong>否则可以为止啦</strong>）。</p>
+  </li>
+  <li>
+    <p>卡牌游戏的核心循环是：搜集卡牌 - 构建卡组 - 对战 - 调整卡组 - 对战 - 收集更多卡牌 - …，这里面每一个环节都很重要也可以很有乐趣。</p>
+  </li>
+  <li>
+    <p>搜集卡牌需要付出金钱和/或时间，一般来说就是量力而为，全卡有全卡的玩法，不全也有不全的玩法，但总的来说必须要去搜集，有不断增长的卡集才会有继续玩的乐趣。</p>
+  </li>
+  <li>
+    <p>从无到有的构建一个有竞争力的卡组不是每个人都能做到的，所以一开始肯定要参考网上流传的各种优质卡组，但一边对战一边调整，使之更适合自己拥有的卡集以及自己的打牌风格是必备的能力，需要不断磨练。</p>
+  </li>
+  <li>
+    <p>没有万能的卡组，任何卡组都有天敌，所以还有一个潜在的游戏内容：游戏元环境（meta），也就是“目前大家主要在玩什么样的卡组”，能够根据对这个问题的判断调整自己的卡组来提高胜率才算是较成熟（serious）的构筑模式玩家。掌握游戏元环境的方法主要是借助网络等渠道了解最新信息，玩家间交流以及实战中搜集信息。</p>
+  </li>
+  <li>
+    <p>卡牌游戏通常都是易会难精，很多人打了一阵就觉得打牌没什么，通常似乎就那么几个选择而已，其实在水平达到更高水准之前压根就不知道还有别的选择，往往是前期一个看似不起眼的选择差异最终导致不一样的结果。相信熟悉桥牌的朋友会很容易理解这个概念。</p>
+  </li>
+</ul>
+
+<h3 id="section-5">卡组构筑</h3>
+
+<p>上面已经提到，通常我们都是先参考流行卡组，边打边微调提升自己运用的实际效果，然后慢慢的学会更多的自主设计卡组，这个过程一般不会太快，但是了解一些套路会有帮助。</p>
+
+<ul>
+  <li>
+    <p><strong>选择英雄</strong>：这个问题的答案，当然是“有爱最大”，但也应该了解一些常识：有些职业比其他的职业更容易构建出有一定竞争力的卡组（比如牧师和盗贼），而另一些职业需要更多投入取得一些价值不菲的关键卡（比如德鲁伊和圣骑士）；有些职业的英雄技能是相对比较容易上手的（比如法师和盗贼），等等，这些信息会有助于做出最初的选择。当然如果一开始就打算投入一笔不多不少的钱，完全可以全职业制霸，选自己最喜欢或者最热门的英雄开玩就好。</p>
+  </li>
+  <li>
+    <p><strong>选择卡组类型</strong>：上面列举了很多卡组的类型，对于新人来说至少要在偏快速还是偏后期中做出选择，因为这两个方向需要的卡牌和打牌风格差异都很大，一开始选错可能会走不少冤枉路，按照自己的性格和准备投入的资源选择吧。一般来说快攻卡组会比较廉价，也会有一定的胜率，但比较看脸，大多数人都会先从这种开始。</p>
+  </li>
+  <li>
+    <p><strong>确定卡组主题</strong>：这里的关键就是“<strong>胜利条件（winning condition）</strong>”，也就是说，在什么情况下你会取胜？例如经典的猎人 Turn 7 卡组，其原理是：从1到7回合一共会得到 28 点法力水晶，如果能保证每点水晶给予对手英雄一点伤害那么就可以在第八回合用英雄能力“稳固射击”取得胜利，这就是胜利条件。那么整个卡组就围绕这个主题来进行：每费选出能冲锋或者战吼给予对手对应点数伤害的仆从和法术，这就是卡组的基础了。</p>
+  </li>
+  <li>
+    <p><strong>了解职业强卡</strong>：卡牌游戏的重要特点之一就是——有神卡也有废卡，总有一些卡比其他的要更强一些。每个职业都有自己专属的强卡，也有和自己特点配合最好的一些中立卡，比如德鲁伊有核心的十二张职业卡（<a href="http://www.hearthhead.com/card=254">Innervate</a> 激活x2，<a href="http://www.hearthhead.com/card=836">Wrath</a> 愤怒x2，<a href="http://www.hearthhead.com/card=64">Swipe</a> 横扫x2，<a href="http://www.hearthhead.com/card=601">Keeper of the Grove</a> 丛林守护者x2，<a href="http://www.hearthhead.com/card=692">Druid of the Claw</a> 利爪德鲁伊x2，<a href="http://www.hearthhead.com/card=920">Ancient of Lore</a> 知识古树x2）再加配合最佳的中立仆从 <a href="http://www.hearthhead.com/card=778">Harvest Golem</a> 麦田傀儡x2；猎人有核心职业卡牌 <a href="http://www.hearthhead.com/card=1243">Unleash The Hounds</a>关门放狗x2、<a href="http://www.hearthhead.com/card=1241">Starving Buzzard</a> 饥饿的秃鹫x2、<a href="http://www.hearthhead.com/card=585">Explosive Trap</a> 爆炸陷阱x2、<a href="http://www.hearthhead.com/card=1091">Misdirection</a> 误导x2 等，把这些卡有选择的加入上一步组成的集合里就是一个相当有竞争力的卡组雏形了。</p>
+  </li>
+  <li>
+    <p><strong>加入解卡</strong>：对战是两个人的博弈，不是只有自己的威胁，对方也会不断拿出威胁，那么卡组中除了上述卡牌之外还需要补充哪些解除对方威胁的卡？这要看对方主要会有什么威胁，如果对你的卡组主题来说最怕的是对方的嘲讽仆从，那么需要有针对性的带上破嘲讽的解卡（比如带沉默效果的卡，或者专门针对性的 <a href="http://www.hearthhead.com/card=1656">The Black Knight</a> 黑骑士）；如果你的卡组主题就是要和对手拼后期的，那么你必须有足够的破解对方大牌的解牌，如 <a href="http://www.hearthhead.com/card=77">Polymorph</a> 变形术、<a href="http://www.hearthhead.com/card=766">Hex</a> 妖术、<a href="http://www.hearthhead.com/card=570">Tinkmaster Overspark</a> 工匠大师 等。</p>
+  </li>
+  <li>
+    <p><strong>平衡曲线</strong>：仔细审视到目前为止的卡组法力曲线，一般合格的曲线是以某个关键费用（通常是4费）为中心呈现的正态分布曲线，如果曲线过于偏向左或者右，那就需要有针对性的调整。炉石传说里设计了很多效果类似但是费用不同（当然属性也不一样）的卡牌，拿掉一些过于拥挤费用上的卡牌，用较稀少费用的类似效果卡牌代替。有时候卡组会不够30张，有时候会30张装不下，也在这个步骤里进行合理的调配吧。</p>
+  </li>
+  <li>
+    <p><strong>实验和调整</strong>：有条件的朋友可以找好友组特定卡组来实验，或者在休闲模式多打些，都是可以的，然后有针对性的进行调整，比如经常在某费无牌可出，可能需要重新思考法力曲线的平衡，经常被某特定卡牌或者套路欺负，那么可以增加一些针对的卡，这个就只能慢慢体会了。</p>
+  </li>
+  <li>
+    <p><strong>实战</strong>：无论怎么样最后总是要上战场的，去天梯实战吧！Rank 5 以前都有连胜奖励，即使输掉一些对局也不太要紧，心态放好就行。</p>
+  </li>
+  <li>
+    <p><strong>学而时习之</strong>：做任何事要做好都不容易，不时看看相关的论坛，和玩友多交流交流，看看自己喜欢的职业有哪些新的组卡和打法思路，经常会有启发；对自己不太用的职业也有必要了解，不做到知己知彼是不可能有好成绩的。</p>
+  </li>
+</ul>
+
+<p>好长的一篇！那么……就到这里吧，谢谢看完的朋友们捧场（估计没几个吧），希望对大家有帮助，有问题欢迎留言讨论！</p>
+
+<hr />
+
+<script type="text/javascript" src="http://static.wowhead.com/widgets/power.js"></script>
+<script>var wowhead_tooltips = { "colorlinks": true, "iconizelinks": true, "renamelinks": true }</script>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>所以“快攻”只是一个不太准确的翻译，但已经被普遍采用所以我仍然采用这一译法。<a href="#fnref:1" rel="reference">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>胜利条件：原文为 “winning condition”，即设计卡组时预设的主要获胜场景，是非常重要的概念，在本文后半部分还会重点阐述。<a href="#fnref:2" rel="reference">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>和“快攻”一样，“中速”也是个并不太准确但约定俗成的译法。<a href="#fnref:3" rel="reference">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>这一点和下面会提到的著名的 “Beatdown vs. Control” 概念有很大的关系，请对照。<a href="#fnref:4" rel="reference">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>炉石传说开发团队早就明确表示过，由于对游戏体验的巨大伤害，不能通过对手互动行为阻止的必杀组合技是不允许出现的。<a href="#fnref:5" rel="reference">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>即下文会阐述的 Card Advandage，也是卡牌游戏中的重要概念，请对照。<a href="#fnref:6" rel="reference">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Merry Christmas, from My iPhone]]></title>
