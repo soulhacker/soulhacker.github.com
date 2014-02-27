@@ -2,22 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Internet | Paradigm X]]></title>
-  <link href="http://cn.paradigmx.net/blog/categories/internet/atom.xml" rel="self"/>
-  <link href="http://cn.paradigmx.net/"/>
-  <updated>2014-02-04T18:01:43+08:00</updated>
-  <id>http://cn.paradigmx.net/</id>
+  <link href="http://cn.soulhacker.me/blog/categories/internet/atom.xml" rel="self"/>
+  <link href="http://cn.soulhacker.me/"/>
+  <updated>2014-02-28T00:02:16+08:00</updated>
+  <id>http://cn.soulhacker.me/</id>
   <author>
     <name><![CDATA[soulhacker]]></name>
-    <email><![CDATA[neo@paradigmx.net]]></email>
+    <email><![CDATA[neo@soulhacker.me]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[平台无关的移动应用？]]></title>
-    <link href="http://cn.paradigmx.net/blog/2011/12/21/the-law-of-universal-apps/"/>
+    <link href="http://cn.soulhacker.me/blog/2011/12/21/the-law-of-universal-apps/"/>
     <updated>2011-12-21T10:29:00+08:00</updated>
-    <id>http://cn.paradigmx.net/blog/2011/12/21/the-law-of-universal-apps</id>
+    <id>http://cn.soulhacker.me/blog/2011/12/21/the-law-of-universal-apps</id>
     <content type="html"><![CDATA[<p>早上看到消极 <a href="https://twitter.com/cxiaoji">@cxiaoji</a> 发的推很有意思，原文在<a href="https://twitter.com/cxiaoji/status/149167077385707521">这里</a>和<a href="https://twitter.com/cxiaoji/status/149221508567408640">这里</a>，引用如下：  </p>
 
 <!--more-->

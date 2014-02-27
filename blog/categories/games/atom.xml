@@ -2,22 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Games | Paradigm X]]></title>
-  <link href="http://cn.paradigmx.net/blog/categories/games/atom.xml" rel="self"/>
-  <link href="http://cn.paradigmx.net/"/>
-  <updated>2014-02-04T18:01:43+08:00</updated>
-  <id>http://cn.paradigmx.net/</id>
+  <link href="http://cn.soulhacker.me/blog/categories/games/atom.xml" rel="self"/>
+  <link href="http://cn.soulhacker.me/"/>
+  <updated>2014-02-28T00:02:16+08:00</updated>
+  <id>http://cn.soulhacker.me/</id>
   <author>
     <name><![CDATA[soulhacker]]></name>
-    <email><![CDATA[neo@paradigmx.net]]></email>
+    <email><![CDATA[neo@soulhacker.me]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[炉石传说入门]]></title>
-    <link href="http://cn.paradigmx.net/blog/2014/02/03/hearthstone-fundamentals/"/>
+    <link href="http://cn.soulhacker.me/blog/2014/02/03/hearthstone-fundamentals/"/>
     <updated>2014-02-03T16:07:00+08:00</updated>
-    <id>http://cn.paradigmx.net/blog/2014/02/03/hearthstone-fundamentals</id>
+    <id>http://cn.soulhacker.me/blog/2014/02/03/hearthstone-fundamentals</id>
     <content type="html"><![CDATA[<h2 id="section">引子</h2>
 
 <p>不知不觉我已经玩了四个多月的炉石传说（HearthStone: Heroes of Warcraft）了，随着全球各服进入公测，势必会有越来越多的朋友加入，其中不少应该是没有什么卡牌游戏基础的，为了帮助大家尽快迈过刚开始的门槛，更好地体验这款优秀游戏，我决定借着春节宅在家的时间编写这篇入门指引，希望对朋友们有所帮助。</p>

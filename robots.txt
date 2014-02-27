@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://cn.paradigmx.net/sitemap.xml 
+Sitemap: http://cn.soulhacker.me/sitemap.xml 

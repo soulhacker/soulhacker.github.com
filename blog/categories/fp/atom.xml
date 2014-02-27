@@ -2,22 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: FP | Paradigm X]]></title>
-  <link href="http://cn.paradigmx.net/blog/categories/fp/atom.xml" rel="self"/>
-  <link href="http://cn.paradigmx.net/"/>
-  <updated>2014-02-04T18:01:43+08:00</updated>
-  <id>http://cn.paradigmx.net/</id>
+  <link href="http://cn.soulhacker.me/blog/categories/fp/atom.xml" rel="self"/>
+  <link href="http://cn.soulhacker.me/"/>
+  <updated>2014-02-28T00:02:16+08:00</updated>
+  <id>http://cn.soulhacker.me/</id>
   <author>
     <name><![CDATA[soulhacker]]></name>
-    <email><![CDATA[neo@paradigmx.net]]></email>
+    <email><![CDATA[neo@soulhacker.me]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
     <title type="html"><![CDATA[译文：为何 SICP 意义重大]]></title>
-    <link href="http://cn.paradigmx.net/blog/2013/05/02/why-sicp-matters/"/>
+    <link href="http://cn.soulhacker.me/blog/2013/05/02/why-sicp-matters/"/>
     <updated>2013-05-02T21:50:00+08:00</updated>
-    <id>http://cn.paradigmx.net/blog/2013/05/02/why-sicp-matters</id>
+    <id>http://cn.soulhacker.me/blog/2013/05/02/why-sicp-matters</id>
     <content type="html"><![CDATA[<p><strong>原文</strong>：<a href="http://www.cs.berkeley.edu/~bh/sicp.html">Why <em>Structure and Interpretation of Computer Programs</em> Matters</a><br />
 <strong>作者</strong>：<em>Brian Harvey, University of California, Berkeley</em><br />
 <strong>译者</strong>：<em>Neo Lee a.k.a @soulhacker</em></p>
@@ -77,9 +77,9 @@
   
   <entry>
     <title type="html"><![CDATA[译文：函数式编程另类指南]]></title>
-    <link href="http://cn.paradigmx.net/blog/2013/03/06/functional-programming-for-the-rest-of-us/"/>
+    <link href="http://cn.soulhacker.me/blog/2013/03/06/functional-programming-for-the-rest-of-us/"/>
     <updated>2013-03-06T22:02:00+08:00</updated>
-    <id>http://cn.paradigmx.net/blog/2013/03/06/functional-programming-for-the-rest-of-us</id>
+    <id>http://cn.soulhacker.me/blog/2013/03/06/functional-programming-for-the-rest-of-us</id>
     <content type="html"><![CDATA[<p><em>Functional Programming For The Rest of Us</em> 是一篇很特别的函数式编程入门简介，它用 Java 的语法清晰的说明了函数式编程中最难解的一组概念，可能对很多人越过学习 FP 初期的峭壁会有不小的帮助。原文由当时在 Stony Brook 大学念 CS 的博士生 Slava Akhmechet（此人是分布式 JSON 数据库 <a href="http://www.rethinkdb.com">RethinkDB</a> 的发起人和开发者之一）写于 2006 年，早先国内有 <a href="https://twitter.com/lihaitao">@lihaitao</a> 很不错的译文，可惜原译文链接已失效，各处的转载都有各种质量缺陷，所以我整理并修订了原译文的一些错误并转载于此，作为归档和更好传播之用。在此对原文作者和译者致以真诚谢意。</p>
 
 <p>原文：<a href="http://www.defmacro.org/ramblings/fp.html">Functional Programming For The Rest of Us</a><br />
