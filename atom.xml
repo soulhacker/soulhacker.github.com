@@ -4,7 +4,7 @@
   <title><![CDATA[Paradigm X]]></title>
   <link href="http://cn.soulhacker.me/atom.xml" rel="self"/>
   <link href="http://cn.soulhacker.me/"/>
-  <updated>2014-09-20T13:12:36+08:00</updated>
+  <updated>2015-07-31T19:00:56+08:00</updated>
   <id>http://cn.soulhacker.me/</id>
   <author>
     <name><![CDATA[soulhacker]]></name>
@@ -927,7 +927,7 @@ handler.handleMessage(someMsg, getClientCodeOne);</pre></div>
 
 <h3 id="currying">Currying</h3>
 
-<p>我认识的大多数人都读过”四人帮”的那本<a href="http://www.amazon.com/gp/product/0201633612/103-9055240-2348603">设计模式</a>，任何有自尊的程序员都会告诉你那本书是语言中立的（agnostic），模式在软件工程中是通用的，和使用的语言无关。这个个高贵的宣言，但不幸有违现实。</p>
+<p>我认识的大多数人都读过”四人帮”的那本<a href="http://www.amazon.com/gp/product/0201633612/103-9055240-2348603">设计模式</a>，任何有自尊的程序员都会告诉你那本书是语言中立的（agnostic），模式在软件工程中是通用的，和使用的语言无关。这是个高贵的宣言，但不幸有违现实。</p>
 
 <p>函数式编程具有突出的表达能力，在函数式语言中，语言已达此高度，设计模式就不再是必需，最终你将能消灭设计模式而以概念编程。适配器 （Adapter）模式就是这样的一个例子（究竟适配器和 Facade 模式区别在哪里？可能有些人需要在这里再多费些篇章），而一旦语言有了叫作 <em>currying</em> 的技术，这一模式就可以被消除。</p>
 
