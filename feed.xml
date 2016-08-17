@@ -1,0 +1,1211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Paradigm X</title>
+        <description>All those innovative, insightful, intelligent, intriguing things.</description>
+        <link>http://cn.soulhacker.me/</link>
+        <atom:link href="http://cn.soulhacker.me/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Wed, 17 Aug 2016 15:32:45 +0800</pubDate>
+        <lastBuildDate>Wed, 17 Aug 2016 15:32:45 +0800</lastBuildDate>
+        <generator>Jekyll v2.4.0</generator>
+        
+            <item>
+                <title>软件开发外传（三篇）</title>
+                <description>&lt;h2&gt;编程之禅&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;figure class=&quot;quote&quot;&gt;&lt;blockquote&gt;&lt;p&gt;听到一阵骚乱，编程大师走进学徒的小隔间。&lt;/p&gt;
+
+&lt;p&gt;“这些该死的电脑！” 学徒正在怒吼，“为了让它们干点事儿我就要用上三、四种编辑器，他们经常把我搞晕，一发晕我就把整个文件都删了，这完全无法忍受啊！”&lt;/p&gt;
+
+&lt;p&gt;编程大师注视着学徒，“那么你打算怎么拯救自己呢？”&lt;/p&gt;
+
+&lt;p&gt;学徒思考了一会儿，答道：“我要开发一个全新的编辑器，一个完美的编辑器换掉所有其他的！”&lt;/p&gt;
+
+&lt;p&gt;编程大师突然出手敲了学徒脑袋一下，不是很重，但是学徒还是吓了一大跳，“您为什么要打我…”&lt;/p&gt;
+
+&lt;p&gt;“我一点儿也不想再多学一种编辑器。”大师答道。&lt;/p&gt;
+
+&lt;p&gt;突然之间，学徒明白了点什么。&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption class=&quot;quote-source&quot;&gt;&lt;span class=&quot;quote-author&quot;&gt;Geoffrey James&lt;/span&gt; &lt;cite class=&quot;quote-title&quot;&gt;&lt;a class=&quot;quote-link&quot; href=&quot;http://www.amazon.com/The-Zen-Programming-Geoffrey-James/dp/0931137098&quot;&gt;Book 4 Chapter 6, The Zen of Programming&lt;/a&gt;&lt;/cite&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h2&gt;买还是不买这可就是问题&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/h2&gt;
+
+&lt;blockquote&gt;&lt;p&gt;程序员甲：如果觉得这个工具好，你应该花钱去买它，不然大家都只想要免费工具甚至盗版，慢慢就没人愿意开发真正高水准的工具了，最后吃亏的还是用户啊！&lt;/p&gt;
+
+&lt;p&gt;程序员乙：你说的有一定道理，我原来也是这么想的，可是自从我买了 TextMate 之后，它就不怎么更新了…&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;h2&gt;弱即是强&lt;/h2&gt;
+
+&lt;figure class=&quot;quote&quot;&gt;&lt;blockquote&gt;&lt;p&gt;Any application that can be written in JavaScript, will eventually be written in JavaScript.&lt;/p&gt;
+
+&lt;p&gt;凡是能用 JavaScript 写出的应用程序，最后（大家）都会用 JavaScript 去写。&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption class=&quot;quote-source&quot;&gt;&lt;span class=&quot;quote-author&quot;&gt;Jeff Atwood&lt;/span&gt; &lt;cite class=&quot;quote-title&quot;&gt;&lt;a class=&quot;quote-link&quot; href=&quot;http://blog.codinghorror.com/the-principle-of-least-power/&quot;&gt;Atwood&#39;s Law&lt;/a&gt;&lt;/cite&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;quote&quot;&gt;&lt;blockquote&gt;&lt;p&gt;The less powerful the language, the more you can do with the data stored in that language. If you write it in a simple declarative form, anyone can write a program to analyze it.&lt;/p&gt;
+
+&lt;p&gt;语言越弱，你就越能充分使用其中保存的数据；如果使用一种非常简单的声明式语法，随便谁都可以写一段程序来分析它。&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption class=&quot;quote-source&quot;&gt;&lt;span class=&quot;quote-author&quot;&gt;Tim Berners-Lee&lt;/span&gt; &lt;cite class=&quot;quote-title&quot;&gt;&lt;a class=&quot;quote-link&quot; href=&quot;http://www.w3.org/DesignIssues/Principles.html&quot;&gt;The Principle of Least Power&lt;/a&gt;&lt;/cite&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;注意前者是后者的特例，因为 JavaScript 就是&lt;em&gt;看上去&lt;/em&gt;很弱的语言，随便谁都可以写一段“脚本儿”来干点啥，偏偏它是和世界上最强大的数据集（互联网上的文档）配合得最多的“脚本儿”，于是 JavaScript 现在成了无论前端后端还是桌面全都通吃的编程语言之王，如果你只打算学习一门编程语言的话，那就只能是 JavaScript 了（我不知道是大雾还是无误 -_-&lt;/p&gt;
+
+&lt;h3&gt;The END&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;灵感来自 &lt;a href=&quot;https://news.ycombinator.com/item?id=7308071&quot;&gt;HackerNews&lt;/a&gt;，原作是 Geoffrey James 经典的《编程之禅》和《编程之道》系列。 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;灵感来自 &lt;a href=&quot;https://news.ycombinator.com/item?id=7310643&quot;&gt;HackerNews&lt;/a&gt;，发贴的是另一个颇有特色的编辑器 Chocolate 的作者。 &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+                <pubDate>Fri, 28 Feb 2014 15:14:00 +0800</pubDate>
+                <link>http://cn.soulhacker.me/2014/02/28/paradox/</link>
+                <guid isPermaLink="true">http://cn.soulhacker.me/2014/02/28/paradox/</guid>
+                
+                <category>Internet</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>炉石传说入门</title>
+                <description>&lt;h2&gt;引子&lt;/h2&gt;
+
+&lt;p&gt;不知不觉我已经玩了四个多月的炉石传说（HearthStone: Heroes of Warcraft）了，随着全球各服进入公测，势必会有越来越多的朋友加入，其中不少应该是没有什么卡牌游戏基础的，为了帮助大家尽快迈过刚开始的门槛，更好地体验这款优秀游戏，我决定借着春节宅在家的时间编写这篇入门指引，希望对朋友们有所帮助。&lt;/p&gt;
+
+&lt;p&gt;炉石传说是一款虚拟卡牌游戏，玩家收集虚拟的卡片，然后构建强力的牌组来与其他玩家进行回合制对战。其基本概念来自传统桌面游戏的一个分支：集换式卡牌游戏（TCGs，trading card games），其典型代表是万智牌（Magic: the Gathering）和游戏王（Yu-Gi-Oh!），暴雪尝试通过简化规则和抛弃实体卡来扩大潜在玩家群体，并借助魔兽世界（WarCraft）庞大的传说（lore）资源和爱好者群体，建立一个休闲为主、兼顾竞技的数字化卡牌游戏平台，也是暴雪进入免费网络游戏和游戏微支付盈利模式的又一次尝试。到目前为止游戏取得了不错的成绩，但也出现了一些问题，其中之一就是相比暴雪其他游戏，炉石传说具有一定的入门门槛：虽然即使什么都不知道也可以在开始阶段获得很多乐趣，但是稍微深入一点就会遇到不少问题，这主要是因为卡牌游戏本身比较小众，这时候了解一些卡牌游戏的基本概念会很有帮助，这也是本文的主要目标。&lt;/p&gt;
+
+&lt;p&gt;本文分为两个大的部分，第一部分我摘译了来自著名电竞社区 TeamLiquid 的一篇非常棒的入门指南 “&lt;a href=&quot;http://www.liquidhearth.com/forum/viewmessage.php?topic_id=410&quot;&gt;A Beginner’s Guide to HS Terms&lt;/a&gt;”，这篇文章由资深的万智牌玩家编写，是我看到过的对卡牌游戏基础概念解说最为精到的文字，不仅可以帮助新手快速理解卡牌游戏的核心概念，也有助于更好地融入游戏社区。第二部分则是结合我自己的游戏经验，谈谈如何在炉石传说的构筑卡组对战（Play mode）中走的更远。&lt;/p&gt;
+
+&lt;p&gt;因为我自己主要在美服玩，同时为了照顾国服玩的朋友，下文中提到的卡牌都提供了中英对照的名称，并附有来自 HearthHead 网站的浮动图片显示。另外在第一部分的摘译中我也对原文进行了少量的更新以适应目前的环境，并增加了许多针对中文玩家的说明，有条件的朋友如有兴趣可以阅读下原文。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h2&gt;Part I - 术语指南&lt;/h2&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/guide-to-hs-terms.png&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;以下是炉石传说涉及到的一些卡牌游戏术语列表，它们大多不是炉石传说创造出来的——事实上大部分是由万智牌（可以认为是这类游戏的开创者）的开发者和玩家定义的，虽然炉石传说具有不少独创的特点，但是在基本概念上是完全通用的。这些术语被划分为三部分：卡组类型、一般术语和高级概念，这里一般和高级的区别在于，一般术语涵盖的是游戏机制本身的一些概念，而高级概念更多和游戏玩家的策略有关，是玩游戏的过程中会碰到的一些更复杂的概念。&lt;/p&gt;
+
+&lt;h3&gt;卡组类型&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Aggro 快攻&lt;/strong&gt;：力争占据主动权并尽快攻击对手英雄来结束战斗的卡组。这种卡组一般比较容易组成而且也易于理解，但有一点必须注意，aggro 卡组并不永远意味着快速展开和铺怪&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;，有相对慢一些的卡组也属于这个分类，比如在万智牌中很出名的 “&lt;a href=&quot;http://www.starcitygames.com/magic/misc/810_A_Brief_History_Of_Stompy.html&quot;&gt;Stompy&lt;/a&gt;” 或者 “Big Aggro” 都是这样的例子，他们的共同点是早期占场然后不断放下一些较平均值更重量级的仆从来压制对手，&lt;a href=&quot;http://www.hearthhead.com/card=90&quot;&gt;Chillwind Yeti&lt;/a&gt;（冰风雪人）是最典型的例子，因为它通常都是四费阶段三围最好的仆从。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Control 控制&lt;/strong&gt;：这是炉石传说中另一个常见的卡组类型，它们的特征是力争存活到游戏后期然后依靠少量强大的威胁赢得游戏。如果你基本上只靠 &lt;a href=&quot;http://www.hearthhead.com/card=374&quot;&gt;Ragnaros&lt;/a&gt;（拉格纳罗斯）、&lt;a href=&quot;http://www.hearthhead.com/card=1186&quot;&gt;Ysera&lt;/a&gt;（伊瑟拉）、&lt;a href=&quot;http://www.hearthhead.com/card=777&quot;&gt;Lord Jaraxxus&lt;/a&gt;（加拉克苏斯大王） 作为胜利条件&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;，在游戏的大部分时间里力争生存直到这些巨巨出场帮助你赢得胜利，那么这就是典型的控制卡组。在刚刚开始内测的时候，很多人经常把控制类卡组和下面这个类型搞混。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Midrange 中速&lt;/strong&gt;：在炉石社区里很多标为“控制类型”的卡组其实属于这个类型，公平地说这里的界限并没有那么清晰，但对有经验的卡牌游戏玩家来说还是有一些明显差异的。典型的中速卡组力争在每一回合取得一点点优势，流行的卡牌 &lt;a href=&quot;http://www.hearthhead.com/card=281&quot;&gt;Argent Commander&lt;/a&gt;（银色指挥官）以及能够强化其他仆从的仆从都是很好的例子。如果你的卡组设计为在游戏中从一开始就不断累积场上优势，那么这是中速类型&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;。中速卡组的取胜之道是：面对快攻卡组要打得像控制卡组，而面对控制卡组要打得像快攻卡组&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;&lt;p&gt;控制和中速类型卡组经常让人混淆的主要原因之一是中速牌组往往力图通过较大的仆从和比较超值的法术来“控”场，这一点后面还会阐述，不过这里要强调的是，某些时候打的比较偏“控制”并不意味着卡组是控制类型。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Combo 组合&lt;/strong&gt;：即依靠一组特定组合卡牌的效果赢得对局的卡组，这是最难创建的卡组类型，因为真正的一击必杀组合技往往在游戏推出前就被设计者干掉了&lt;sup id=&quot;fnref:5&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;，曾经的猎人 &lt;a href=&quot;http://www.hearthhead.com/card=1243&quot;&gt;Unleash The Hounds&lt;/a&gt;（关门放狗）OTK（one turn kill，即一回合击杀）卡组是迄今为止最好的例子，当时的关门放狗卡牌能够帮助猎人在空场的情况下凭空一回合创造超过30点伤害，后来该卡牌被暴雪重做为目前的形态，从而消除了该组合的可能性。事实上在经典的卡牌游戏里有两类组合卡组：互动型和非互动型，其中互动型是稍微不那么令人沮丧的，前述猎人 OTK 卡组就属于这一类；而非互动型组合卡组基本不会出现在炉石传说中，如果感兴趣，可以了解下游戏王里著名的“黑暗大法师”卡牌，这是一套五张卡牌，只要集齐黑暗大法师身体的五个部分于手牌就立刻赢得对局，这种组合卡组和对手完全没关系，只要能快速的检索卡组，对手对你获胜是完全无法施加影响的，事实上游戏王里设计这组卡也更多是为了剧情需要。相对来说，猎人 OTK 卡组是完全可以阻止的，只要在第七回合之前在场上铺上足够的嘲讽仆从就行了。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;&lt;p&gt;在万智牌中也有少量的非互动型组合卡组：做X+Y+Z即获胜，但取胜条件往往包含某些需要显式打出的牌（而不是黑暗大法师那种仅仅在手就行），而万智牌和炉石传说的一个基本差异在于万智牌中你永远可以在对手的打牌阶段进行反制，所以万智牌里这并不成为一个太大的问题，但炉石传说里就不应该出现这种类型的卡组了（除非开发者脑抽）。&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Aggro-control 控场快攻&lt;/strong&gt;：由于基本互动机制的设计，相比万智牌在炉石传说中更容易出现这种卡组，这种卡组往往通过一开始建立小的场上威胁然后转入快速打脸，也就是早期控场然后猛攻对方英雄。这种类型的卡组比纯快攻稍慢，前期比较重视控场，一些着重于武器卡牌的卡组经常属于这种类型，因为可以通过武器来消除对方场上仆从，然后使用己方场上仆从快攻对方英雄来取胜。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Tempo 节奏&lt;/strong&gt;：这是另一个非常难构建的类型，在所有卡组类型里属于比较非主流的，因为它通常会放弃&lt;em&gt;卡牌优势&lt;/em&gt;&lt;sup id=&quot;fnref:6&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;，通常这种类型的卡组会扔出几个快速威胁——比如 &lt;a href=&quot;http://www.hearthhead.com/card=405&quot;&gt;Mana Wyrm&lt;/a&gt;（法力游龙）——然后想办法拖延对方的节奏，阻止对方消除自己的这个威胁，然后这个威胁会越变越大对对手产生巨大伤害。一些节奏卡组的典型好卡包括：&lt;a href=&quot;http://www.hearthhead.com/card=519&quot;&gt;Freezing Trap&lt;/a&gt;（冰冻陷阱）、&lt;a href=&quot;http://www.hearthhead.com/card=587&quot;&gt;Frost Nova&lt;/a&gt;（冰霜新星），他们都不会带来卡牌优势（多数时候是净亏卡），但是如果你的战术目标就是拖延对手那就无所谓了。其他常见的节奏卡组核心威胁卡还有：&lt;a href=&quot;http://www.hearthhead.com/card=1693&quot;&gt;King Mukla&lt;/a&gt;（穆克拉）、&lt;a href=&quot;http://www.hearthhead.com/card=932&quot;&gt;Gadgetzan Auctioneer&lt;/a&gt;（加基森拍卖师）等，而其他用来占据节奏优势的卡包括 &lt;a href=&quot;http://www.hearthhead.com/card=461&quot;&gt;Sap&lt;/a&gt;（闷棍）、&lt;a href=&quot;http://www.hearthhead.com/card=113&quot;&gt;Counterspell&lt;/a&gt;（法术反制）、&lt;a href=&quot;http://www.hearthhead.com/card=990&quot;&gt;Conceal&lt;/a&gt;（隐藏）等。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;一般术语&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Board Wipes 清场&lt;/strong&gt;：指如 &lt;a href=&quot;http://www.hearthhead.com/card=1004&quot;&gt;Flamestrike&lt;/a&gt;（烈焰风暴）、&lt;a href=&quot;http://www.hearthhead.com/card=841&quot;&gt;Holy Nova&lt;/a&gt;（神圣新星）这类群体伤害效果，由于来自魔兽世界游戏的习惯，在炉石传说社区中经常被称为 AoE（Area of Effect，范围效果），但这个“范围”的提法显得有点不够严谨，炉石传说中确实有一些“范围”相关的效果卡，比如 &lt;a href=&quot;http://www.hearthhead.com/card=430&quot;&gt;Cone of Cold&lt;/a&gt;（冰锥术）和 &lt;a href=&quot;http://www.hearthhead.com/card=394&quot;&gt;Explosive Shot&lt;/a&gt;（爆炸射击），但在卡牌游戏里习惯称之为“多目标移除”效果（multitarget removal）。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Bounce 回手&lt;/strong&gt;：这个词儿等价于“将一个场上的仆从返回其所有者手牌”，这类卡常见于节奏卡组中，一般来说是亏卡的效果。回手一个仆从比击杀要差因为对手总还是可以再次使用被回手的卡，所以运用这种效果需要仔细的设计。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Burn 直伤&lt;/strong&gt;：等价于“对X造成Y点伤害” ，经常是针对对方英雄，所以中文社区也经常称之为打脸。快攻卡组在中期以后通常都会不断的打脸直到对方倒下。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Cantrip 过牌&lt;/strong&gt;：等价于任何带有“抽X张卡”的效果，这类卡通常都是很有价值的，因为它们至少抽一张卡来替代自己，这会带来所谓的&lt;em&gt;卡牌优势&lt;/em&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Clock 计时器&lt;/strong&gt;：这个是稍微没那么常见的术语，但却很重要，你的威胁可以看做一个计时器，也就是在多少回合之后你可以杀死你的对手（如果你的威胁不被解除），比如在空场情况下，你的对手有12点生命，那么出场一个 &lt;a href=&quot;http://www.hearthhead.com/card=281&quot;&gt;Argent Commander&lt;/a&gt;（银色指挥官）等于一个3回合的计时器，这个概念对于快攻和节奏卡组来说格外重要，相应的，控制卡组更多会这么去思考：对方会给我多大的压力（我还能撑多少回合）？&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Curve （法力）曲线&lt;/strong&gt;：组成卡组的卡牌按照各费用统计分别有多少张，组成一个分布图，这往往能看出卡组偏向游戏前中还是后期，各种卡组类型会有不太一样的典型曲线，虽然不是绝对的，但经常具有参考价值。在炉石传说的组卡界面里，鼠标停在英雄头像处就会显示当前的卡组曲线。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Filtering 滤牌&lt;/strong&gt;：从卡组的某个子集中选出一部分卡，有时候还允许玩家挑选其中的某张。和过牌不一样，这通常不直接带来&lt;em&gt;卡牌优势&lt;/em&gt;，但是因为可以有目标地选择有用的牌，对于组合卡组和某些控制卡组来说是很强大的效果，典型的例子是 &lt;a href=&quot;http://www.hearthhead.com/card=1047&quot;&gt;Tracking&lt;/a&gt;（追踪术）。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Going Off 发动/起爆&lt;/strong&gt;：一个组合卡组在某特定回合“发动”然后你就挂了 -_-&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Ping 点（掉）&lt;/strong&gt;：对目标施以刚好一点伤害并击杀它，或者之后用其他较弱的仆从换掉它，法师的英雄技能和 &lt;a href=&quot;http://www.hearthhead.com/card=573&quot;&gt;Shiv&lt;/a&gt;（毒刃） 这样的法术都经常用来干这个。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Ramp 跳卡&lt;/strong&gt;：指获得额外资源的效果，从而你可以提前打出某些卡，或者在一回合打出更多的卡，炉石传说中的德鲁伊英雄的招牌特征就是拥有游戏中最强的跳卡能力，无论是 &lt;a href=&quot;http://www.hearthhead.com/card=254&quot;&gt;Innervate&lt;/a&gt;（激活） 还是 &lt;a href=&quot;http://www.hearthhead.com/card=1124&quot;&gt;Wild Growth&lt;/a&gt;（野性成长）都是典型的跳卡效果。对其他职业来说最典型的跳卡选项是抽中后手而获得的幸运币。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Synergy 协同增效&lt;/strong&gt;：首先这个词儿和 “Combo 必杀组合” 不是同义词，一般来说 combo 会直接带来胜利（比如前述猎人的 OTK），而 synergy 的含义要广泛的多，只要多张卡的效果超过分别效果简单相加就可以认为它们之间有某种“协同增效”，比如任何带有激怒（Enrage）效果的仆从和 &lt;a href=&quot;http://www.hearthhead.com/card=285&quot;&gt;Cruel Taskmaster&lt;/a&gt;（严酷的监工）。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Top Deck 顶牌&lt;/strong&gt;：这个术语来自实体卡牌游戏，就是待抽卡堆最上面的一张牌。在卡牌游戏中有两种说法与之有关，一种就是指当回合抽上来这张牌，比如说我“神抽了一张X”（top decking X）然后靠这个翻盘了，另一种是指某方已经用光了手牌，每回合只能指望抽上来的那张牌，这叫 “playing off the top”，这经常体现巨大劣势，因为几乎没有什么选择可做，即使血量优势很大，也可能在无手牌的状态下被对手逆转。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;高级概念&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Beatdown vs. Control 抢血与控制&lt;/strong&gt;：这大概是卡牌游戏里最重要的概念之一，如果可能的话请一定读一下这篇万智牌元老级玩家 Mike Flores 的经典文章：&lt;a href=&quot;http://www.starcitygames.com/magic/fundamentals/3692_Whos_The_Beatdown.html&quot;&gt;Who’s the Beatdown&lt;/a&gt;，虽然他举的例子都是万智牌而且是一些古旧的卡，但是概念是十几年都没变的（在可预见的将来也不会变）。简单的说，就是无论你使用什么类型的卡组，对手使用什么类型的卡组，在每一个特定的对局中，都有一方倾向于抢血（尽快杀死对面的英雄），而另一方就倾向于控制（存活并在后期解决战斗），如果在对局中对于“谁需要抢血”判断错误，往往就不可避免的会走向失败（当然判断正确也不一定会胜利）。这个问题的困难（以及重要性）在于，可能你的卡组在99%的对局中都是控制方，但并不意味着它必须在每一局都是控制方，某次你会碰到一个比你更“控制”的卡组，在这个对局中你必须打抢血。记得前面说的中速卡组吗？最早的中速卡组就是在这个概念的启发下设计出来的，其目标就是针对典型的控制卡组打抢血，而针对典型的快攻卡组打控制，从而在大量对局中取得较高的胜率。事实上在我写这个文章的时候，统治天梯的卡组就是中速卡组。Mike Flores 的文章里也给出了一些判断“谁该抢血”的一般性建议，摘录如下供参考：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;quote&quot;&gt;&lt;blockquote&gt;&lt;ol&gt;
+  &lt;li&gt;谁的卡组持有更多伤害输出？通常他应该打抢血。&lt;/li&gt;
+  &lt;li&gt;谁的卡组持有更多去除卡？通常他应该打控制。&lt;/li&gt;
+  &lt;li&gt;谁持有更多控制法术和抽卡牌？一般情况下他应该打控制。&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;&lt;figcaption class=&quot;quote-source&quot;&gt;&lt;span class=&quot;quote-author&quot;&gt;Mike Flores&lt;/span&gt; &lt;cite class=&quot;quote-title&quot;&gt;&lt;a class=&quot;quote-link&quot; href=&quot;http://www.starcitygames.com/magic/fundamentals/3692_Whos_The_Beatdown.html&quot;&gt;Who&#39;s The Beatdown?&lt;/a&gt;&lt;/cite&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;有时候根据上述规则可以判断某方必然（只能）打抢血，但由于某些特定的卡牌组合，该方实际上很难成功抢血（比如对手有太多治疗能力，或者太快的直接伤害能力），那么这就形成了“卡组克制”，该方在这类对局中胜率就很堪忧了。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;The Vanilla Test 还原测试&lt;/strong&gt;：这是一种万智牌玩家经常使用的非常酷的对卡牌价值进行判断的方法。简单说就是：如果把卡牌的规则文本（即卡牌下半方框里的文字）完全去掉，这卡如何？以削弱前的 &lt;a href=&quot;http://www.hearthhead.com/card=608&quot;&gt;Shattered Sun Cleric&lt;/a&gt;（破碎残阳祭司）为例，削弱前她是3费的一张3/3体格的仆从，即使完全不考虑卡牌文字，这也是完全可以上场的卡牌，再加上给另一仆从+1/+1的效果，这是一张大大优于常规的卡（所以结果大家都知道，她被砍成现在的3/2了 -_-）。相反的例子是 &lt;a href=&quot;http://www.hearthhead.com/card=605&quot;&gt;Ancient Watcher&lt;/a&gt;（上古看守者），这是一张2费的4/5，所以文字必然是极大的负效果（无法攻击），所以运用这张卡的关键就是如何弱化甚至去除这种负效果（现在流行的给他施加嘲讽甚至干脆沉默掉他的效果都被证明非常有价值）。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Card Advantage 卡牌优势&lt;/strong&gt;：这是另一个非常常见的术语，但是在很多情况下都没有被准确的表述。最具争议的例子是 &lt;a href=&quot;http://www.hearthhead.com/card=284&quot;&gt;Novice Engineer&lt;/a&gt;（工程师学徒），当你出这张卡，你抽一张卡，同时场上站了一个1/1的仆从，表面上看这是1换2，但问题是在炉石传说目前的阶段，一张牌的价值并没有精确的定义，很多人认为1/1的学徒并不值“一张卡”，所以她的价值低于1换2，相对的，&lt;a href=&quot;http://www.hearthhead.com/card=825&quot;&gt;Azure Drake&lt;/a&gt;（碧蓝幼龙）毫无争议的被看作至少是1换2的价值，因为对手很少能用少于一张卡来移除它，而它很容易带来额外的价值从而超过1换2的价值。另一个比较没有争议的1换2（多）的典型是 &lt;a href=&quot;http://www.hearthhead.com/card=1004&quot;&gt;Flamestrike&lt;/a&gt;（烈焰风暴），只要对手场上不少于2张牌，这张牌的价值就至少是1换2。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;一个常见的误区是把&lt;em&gt;卡牌优势&lt;/em&gt;用作说明手牌多或者场上有更多仆从，这都是不对的，正确的方式是把它理解为一个记分牌，两个对手通过尽可能高效地使用他的卡牌资源来竞赛，比如某方打出1换2，那么就得到+1分，某方被迫用3张卡牌（手牌或者场上仆从）去换掉对手一张牌，那么就得到-2分，卡牌效率得分高是拥有“卡牌优势”的充分必要条件。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Expected Value 期望值&lt;/strong&gt;：期望值是很多游戏中都用到的工具，不过最经常用在扑克牌戏（如德州扑克）中，用来计算在某个特定局面下各种可能带来的平均回报，最常见就是用来计算获胜的可能性。例如：你是一个法师，依靠 &lt;a href=&quot;http://www.hearthhead.com/card=192&quot;&gt;Ice Block&lt;/a&gt;（寒冰屏障）活下来，只有一抽决定你的生死，你的卡组只剩三张牌：&lt;a href=&quot;http://www.hearthhead.com/card=1087&quot;&gt;Pyroblast&lt;/a&gt;（炎爆术）、&lt;a href=&quot;http://www.hearthhead.com/card=315&quot;&gt;Fireball&lt;/a&gt;（火球术）和 &lt;a href=&quot;http://www.hearthhead.com/card=658&quot;&gt;Leper Gnome&lt;/a&gt;（麻风侏儒）。在这个局面下，如果你的对手剩6点生命的话，你的获胜期望值就是 66%，如果他有10点生命，你的获胜期望值就只有 33% 了。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Part II - 卡组构筑初步&lt;/h2&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/hs-deck-constructing.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这一部分我会结合上面谈到的基本概念以及我自己的经验，给刚迈进炉石传说的新人朋友们一些建议，仅供参考。&lt;/p&gt;
+
+&lt;h3&gt;基础知识&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;炉石传说有两个核心游戏模式：构筑模式（使用自己拥有的卡构建卡组的 Play mode）和竞技场模式（随机选卡的 Arena mode），竞技场模式主要目的是提供一个免费获取卡牌的途径，它和构筑模式非常不同，下面说的一切都只针对构筑模式。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;炉石传说从一开始就被设计为休闲为主、兼顾竞技的游戏，所以选择自己舒服的玩法就好，并不需要太过追求战绩。但如果确实希望自己在天梯上取得一定的成绩才会觉得满足的话……请继续看下去（&lt;strong&gt;否则可以到此为止啦&lt;/strong&gt;）。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;卡牌游戏的核心循环是：收集卡牌 - 构建卡组 - 对战 - 调整卡组 - 对战 - 收集更多卡牌 - …，这里面每一个环节都很重要也可以很有乐趣。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;收集卡牌需要付出金钱和/或时间，一般来说就是量力而为，全卡有全卡的玩法，不全也有不全的玩法，但总的来说必须要去收集，有不断增长的卡集才会有继续玩的乐趣。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;从无到有的构建一个有竞争力的卡组不是每个人都能做到的，所以一开始肯定要参考网上流传的各种优质卡组，但一边对战一边调整，使之更适合自己拥有的卡集以及自己的打牌风格是必备的能力，需要不断磨练。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;没有万能的卡组，任何卡组都有天敌，所以还有一个潜在的游戏内容：游戏元环境（meta），也就是“目前大家主要在玩什么样的卡组”，能够根据对这个问题的判断调整自己的卡组来提高胜率才算是较成熟（serious）的构筑模式玩家。掌握游戏元环境的方法主要是借助网络等渠道了解最新信息，玩家间交流以及实战中获得信息。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;卡牌游戏通常都是易会难精，很多人打了一阵就觉得打牌没什么，通常似乎就那么几个选择而已，其实在水平达到更高水准之前压根就不知道还有别的选择，往往是前期一个看似不起眼的选择差异最终导致不一样的结果。相信熟悉桥牌的朋友会很容易理解这个概念。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;卡组构筑&lt;/h3&gt;
+
+&lt;p&gt;上面已经提到，通常我们都是先参考流行卡组，边打边微调提升自己运用的实际效果，然后慢慢的学会更多的自主设计卡组，这个过程一般不会太快，但是了解一些套路会有帮助。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;选择英雄&lt;/strong&gt;：这个问题的答案，当然是“有爱最大”，但也应该了解一些常识：有些职业比其他的职业更容易构建出有一定竞争力的卡组（比如牧师和盗贼），而另一些职业需要更多投入取得一些价值不菲的关键卡（比如德鲁伊和圣骑士）；有些职业的英雄技能是相对比较容易上手的（比如法师和盗贼），等等，这些信息会有助于做出最初的选择。当然如果一开始就打算投入一笔不多不少的钱，完全可以全职业制霸，选自己最喜欢或者最热门的英雄开玩就好。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;选择卡组类型&lt;/strong&gt;：上面列举了很多卡组的类型，对于新人来说至少要在偏快速还是偏后期中做出选择，因为这两个方向需要的卡牌和打牌风格差异都很大，一开始选错可能会走不少冤枉路，按照自己的性格和准备投入的资源选择吧。一般来说快攻卡组会比较廉价，也会有一定的胜率，但比较看脸，大多数人都会先从这种开始。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;确定卡组主题&lt;/strong&gt;：这里的关键就是“&lt;strong&gt;胜利条件（winning condition）&lt;/strong&gt;”，也就是说，在什么情况下你会取胜？例如经典的猎人 Turn 7 卡组，其原理是：从1到7回合一共会得到 28 点法力水晶，如果能保证每点水晶给予对手英雄一点伤害那么就可以在第八回合用英雄能力“稳固射击”取得胜利，这就是胜利条件。那么整个卡组就围绕这个主题来进行：每费选出能冲锋或者战吼给予对手对应点数伤害的仆从和法术，这就是卡组的基础了。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;了解职业强卡&lt;/strong&gt;：卡牌游戏的重要特点之一就是——有神卡也有废卡，总有一些卡比其他的要更强一些。每个职业都有自己专属的强卡，也有和自己特点配合最好的一些中立卡，比如德鲁伊有核心的十二张职业卡（&lt;a href=&quot;http://www.hearthhead.com/card=254&quot;&gt;Innervate&lt;/a&gt; 激活x2，&lt;a href=&quot;http://www.hearthhead.com/card=836&quot;&gt;Wrath&lt;/a&gt; 愤怒x2，&lt;a href=&quot;http://www.hearthhead.com/card=64&quot;&gt;Swipe&lt;/a&gt; 横扫x2，&lt;a href=&quot;http://www.hearthhead.com/card=601&quot;&gt;Keeper of the Grove&lt;/a&gt; 丛林守护者x2，&lt;a href=&quot;http://www.hearthhead.com/card=692&quot;&gt;Druid of the Claw&lt;/a&gt; 利爪德鲁伊x2，&lt;a href=&quot;http://www.hearthhead.com/card=920&quot;&gt;Ancient of Lore&lt;/a&gt; 知识古树x2）再加配合最佳的中立仆从 &lt;a href=&quot;http://www.hearthhead.com/card=778&quot;&gt;Harvest Golem&lt;/a&gt; 麦田傀儡x2；猎人有核心职业卡牌 &lt;a href=&quot;http://www.hearthhead.com/card=1243&quot;&gt;Unleash The Hounds&lt;/a&gt; 关门放狗x2、&lt;a href=&quot;http://www.hearthhead.com/card=1241&quot;&gt;Starving Buzzard&lt;/a&gt; 饥饿的秃鹫x2、&lt;a href=&quot;http://www.hearthhead.com/card=585&quot;&gt;Explosive Trap&lt;/a&gt; 爆炸陷阱x2、&lt;a href=&quot;http://www.hearthhead.com/card=1091&quot;&gt;Misdirection&lt;/a&gt; 误导x2 等，把这些卡有选择的加入上一步组成的集合里就是一个相当有竞争力的卡组雏形了。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;加入解卡&lt;/strong&gt;：对战是两个人的博弈，不是只有自己的威胁，对方也会不断拿出威胁，那么卡组中除了上述卡牌之外还需要补充哪些解除对方威胁的卡？这要看对方主要会有什么威胁，如果对你的卡组主题来说最怕的是对方的嘲讽仆从，那么需要有针对性的带上破嘲讽的解卡（比如带沉默效果的卡，或者专门针对性的 &lt;a href=&quot;http://www.hearthhead.com/card=1656&quot;&gt;The Black Knight&lt;/a&gt; 黑骑士）；如果你的卡组主题就是要和对手拼后期的，那么你必须有足够的破解对方大牌的解牌，如 &lt;a href=&quot;http://www.hearthhead.com/card=77&quot;&gt;Polymorph&lt;/a&gt; 变形术、&lt;a href=&quot;http://www.hearthhead.com/card=766&quot;&gt;Hex&lt;/a&gt; 妖术、&lt;a href=&quot;http://www.hearthhead.com/card=570&quot;&gt;Tinkmaster Overspark&lt;/a&gt; 工匠大师 等。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;平衡曲线&lt;/strong&gt;：仔细审视到目前为止的卡组法力曲线，一般合格的曲线是以某个关键费用（通常是4费）为中心呈现的正态分布曲线，如果曲线过于偏向左或者右，那就需要有针对性的调整。炉石传说里设计了很多效果类似但是费用不同（当然属性也不一样）的卡牌，拿掉一些过于拥挤费用上的卡牌，用较稀少费用的类似效果卡牌代替。有时候卡组会不够30张，有时候会30张装不下，也在这个步骤里进行合理的调配吧。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;实验和调整&lt;/strong&gt;：有条件的朋友可以找好友组特定卡组来实验，或者在休闲模式多打些，都是可以的，然后有针对性的进行调整，比如经常在某费无牌可出，可能需要重新思考法力曲线的平衡；经常被某特定卡牌或者套路欺负，那么可以增加一些针对的卡；出现手牌不足或者老抽不齐关键卡牌，就要考虑增加一些过牌；需要的卡牌太多，就需要一些特定关键卡来集成几种效果从而压缩卡组，等等，这些就只能慢慢体会了。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;实战&lt;/strong&gt;：无论怎么样最后总是要上战场的，去天梯实战吧！Rank 5 以前都有连胜奖励，即使输掉一些对局也不太要紧，心态放好就行。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;学而时习之&lt;/strong&gt;：做任何事要做好都不容易，不时看看相关的论坛，和玩友多交流交流，看看自己喜欢的职业有哪些新的组卡和打法思路，经常会有启发；对自己不太用的职业也有必要了解，不做到知己知彼是不可能有好成绩的。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;好长的一篇！那么……就到这里吧，谢谢看完的朋友们捧场（估计没几个吧），希望对大家有帮助，有问题欢迎留言讨论！&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://static.wowhead.com/widgets/power.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;var wowhead_tooltips = { &quot;colorlinks&quot;: true, &quot;iconizelinks&quot;: true, &quot;renamelinks&quot;: true }&lt;/script&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;所以“快攻”只是一个不太准确的翻译，但已经被普遍采用所以我仍然采用这一译法。 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;胜利条件：原文为 “winning condition”，即设计卡组时预设的主要获胜场景，是非常重要的概念，在本文后半部分还会重点阐述。 &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;和“快攻”一样，“中速”也是个并不太准确但约定俗成的译法。 &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot;&gt;
+      &lt;p&gt;这一点和下面会提到的著名的 “Beatdown vs. Control” 概念有很大的关系，请对照。 &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:5&quot;&gt;
+      &lt;p&gt;炉石传说开发团队早就明确表示过，由于对游戏体验的巨大伤害，不能通过对手互动行为阻止的必杀组合技是不允许出现的。 &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:6&quot;&gt;
+      &lt;p&gt;即下文会阐述的 Card Advantage，也是卡牌游戏中的重要概念，请对照。 &lt;a href=&quot;#fnref:6&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+                <pubDate>Mon, 03 Feb 2014 16:07:00 +0800</pubDate>
+                <link>http://cn.soulhacker.me/2014/02/03/hearthstone-fundamentals/</link>
+                <guid isPermaLink="true">http://cn.soulhacker.me/2014/02/03/hearthstone-fundamentals/</guid>
+                
+                <category>Games</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>Merry Christmas, from My iPhone</title>
+                <description>&lt;p&gt;明天就是圣诞节了，在这里跟各位朋友提前说一声“圣诞快乐”。年末商战渐入高潮，看了几支大品牌的圣诞广告，有点感想没法在几条推里说完，就在这里和大家分享吧。&lt;/p&gt;
+
+&lt;p&gt;首先是 Apple 为其 iPhone 5s 制作的电视广告 “&lt;a href=&quot;http://www.youtube.com/watch?v=ImlmVqH_5HM&quot;&gt;Misunderstood&lt;/a&gt;”，如果还没看过的话，可以在 Apple 的 YouTube 官方频道&lt;a href=&quot;http://www.youtube.com/watch?v=ImlmVqH_5HM&quot;&gt;观看&lt;/a&gt;。这支长达 1 分半钟的广告讲述了一大家人的白色圣诞节，主角是一位略显内向羞涩的少年，他一边和家人一起参与各种活动，一边无时不刻地摆弄着自己的 iPhone 5s 智能手机，似乎是在说科技产品让人之间疏远？当然不是，最后少年在圣诞早晨打开大屏幕电视，用 iOS 的 AirPlay 功能在电视上播放了自己这些天拍摄和剪辑的视频，里面记录了大家族团聚的各种难忘瞬间，最后在感人的催泪弹中结束。同时 Apple 还在自己的官方频道上传了一段长度约 2 分钟名为 “&lt;a href=&quot;http://www.youtube.com/watch?v=JEGLhdaFBSE&quot;&gt;A Harris family holiday&lt;/a&gt;” 的视频，基本上是广告里少年所制作的视频的完整版本（我很好奇这是不是真的完全用 iPhone 拍摄和制作完成的）。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/misunderstood.jpg&quot; width=&quot;800&quot; alt=&quot;Apple Holiday Ad 2013 - Misunderstood&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;就像其他好的艺术品，这支广告并不是简单传达单调的概念，而是能给每个观众带来不一样的感触，而每个人的观感是和他的经历、价值观等密切相关的。就我自己来说，我觉得这支广告的独特之处在于它就像 Apple 一样，独特、大胆，敢于与众不同。为什么这么说？这是圣诞购物季，在 Samsung 这种公司使劲儿&lt;a href=&quot;youtube.com/watch?v=T8nJKWJTsUg&quot;&gt;推销它的产品如何 powerful&lt;/a&gt; 的时候，Apple 却敢于在广告的大部分时间里传达这么一种显得负面的印象：在大家族团聚时，这个少年似乎更在意自己的 iPhone，这种“高科技淡化人际情感”的担心很多人都有，Apple 在这里直面了这个问题，并在一个巧妙的结尾里给出了自己的答案：我们开发的是优秀的工具，它也许会让人沉迷，但在有想法的人手里，它能超越过去任何工具，变不可能为可能，带来无与伦比的效果。“为世界上最棒的人带来最棒的工具”正是 Apple 的核心价值观，深埋于已故创始人 Steve Jobs 的成长经历中，展现在经典的 “Think Different” 广告中，Jobs 去世后 Laurene P. Jobs 也在&lt;a href=&quot;http://www.cultofmac.com/223449/steve-jobss-widow-speaks-out-his-legacy-is-beautiful-for-me-to-live-with-video/&quot;&gt;接受采访时讲过&lt;/a&gt;——现在我很高兴的看到，在 Jobs 离去两年多以后，Apple 还是那个 Apple，那个也许产品功能不独特，但最善于把握&lt;a href=&quot;http://soulhacker.me/2012/03/31/soul-link/&quot;&gt;产品与人之间情感连接&lt;/a&gt;的 Apple。后来（同样很开心地）发现，我的感受和长期与 Apple 共事的广告大师 Ken Segall 不谋而合，他在自己 blog 的一篇短文里写道：&lt;/p&gt;
+
+&lt;figure class=&quot;quote&quot;&gt;&lt;blockquote&gt;&lt;p&gt;The twist, of course, is that this kid is different. Far from withdrawn, he’s actually inspired. He’s using technology to give the family a gift from the heart — one that will be treasured for years to come.&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption class=&quot;quote-source&quot;&gt;&lt;span class=&quot;quote-author&quot;&gt;Ken Segall&lt;/span&gt; &lt;cite class=&quot;quote-title&quot;&gt;&lt;a class=&quot;quote-link&quot; href=&quot;http://kensegall.com/2013/12/apple-thinks-different-for-christmas/&quot;&gt;Apple thinks different for Christmas&lt;/a&gt;&lt;/cite&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;这支广告播出之后当然也不是只有好评，Forbes 的编辑 Jennifer Rooney 就有&lt;a href=&quot;http://www.forbes.com/sites/jenniferrooney/2013/12/17/the-iphone-misunderstood-christmas-ad-is-a-sad-commentary-on-culture-and-does-apple-no-favors/&quot;&gt;一篇评论&lt;/a&gt;对此颇不以为然，这篇文章被转到比较偏技术向人群聚集的 &lt;a href=&quot;http://www.reddit.com/r/technology/comments/1tix2m/apples_christmas_ad_a_sad_commentary_on_culture/&quot;&gt;/r/technology&lt;/a&gt; 立刻引来大把评论，可以看到大部分观众表示感受到了创意和感动，尤其是不少上了年纪的大叔回忆起自己刚当爹的时候扛着重型装备全程拍孩子的（既兴奋又疲劳的）日子。&lt;/p&gt;
+
+&lt;p&gt;Apple 曾经是科技公司里重视商业广告的异类，但随着后 PC 时代的概念广为人们所接受，计算机沿着智能手机开辟的疆土，终将延展到“无处不在的计算”领域，成为和家用电器、手表围巾一样的消费商品，所以我们也可以看到越来越多的科技巨头重视商业广告，借助新旧媒体扩大品牌影响力，请看 Samsung 这这支 “&lt;a href=&quot;https://www.youtube.com/watch?v=T8nJKWJTsUg&quot;&gt;Are You Geared Up?&lt;/a&gt;”，还有 Nokia 的这支 “&lt;a href=&quot;http://www.youtube.com/watch?v=Q7xVrI-tUIQ&quot;&gt;For Work. For Play&lt;/a&gt;”，还有 Microsoft 这支很 last century 的 “&lt;a href=&quot;https://www.youtube.com/watch?v=L1wx1pDWax0&quot;&gt;Teacher&lt;/a&gt;”，水准高下各位自有公论。&lt;/p&gt;
+
+&lt;p&gt;最后还要再说一次: Merry Christmas, to all tech lovers. You ARE the future of human beings.&lt;/p&gt;
+
+</description>
+                <pubDate>Tue, 24 Dec 2013 18:34:00 +0800</pubDate>
+                <link>http://cn.soulhacker.me/2013/12/24/merry-christmas/</link>
+                <guid isPermaLink="true">http://cn.soulhacker.me/2013/12/24/merry-christmas/</guid>
+                
+                <category>Internet</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>译文：为何 SICP 意义重大</title>
+                <description>&lt;p&gt;&lt;strong&gt;原文&lt;/strong&gt;：&lt;a href=&quot;http://www.cs.berkeley.edu/~bh/sicp.html&quot;&gt;Why &lt;em&gt;Structure and Interpretation of Computer Programs&lt;/em&gt; Matters&lt;/a&gt;&lt;br /&gt;
+&lt;strong&gt;作者&lt;/strong&gt;：&lt;em&gt;Brian Harvey, University of California, Berkeley&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;译者&lt;/strong&gt;：&lt;em&gt;Neo Lee a.k.a @soulhacker&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;译者序&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;p&gt;Brian Harvey 是加州大学伯克利分校计算机科学专业的教授。2011 年是麻省理工大学（MIT）建校 150 周年，为了庆祝，《波士顿环球报&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;》准备了一份 MIT 作出的重要创新列表，著名的计算机科学专业入门教材 Structure and Interpretation of Computer Programs (SICP) 名列其中，Brian Harvey 受邀对 SICP 的重要价值和意义书写一份说明，本文就是他当时的回应。关于函数式编程范型的价值和意义，是一个在计算机科学尤其是软件开发领域经常被提出的话题，通常也伴随着这样那样的争论：它深刻的理论背景与内涵、和人们常规思维模型的差异、一直难以流行的宿命引发的“曲高和寡还是不切实际”的争论，等等。我自己可能由于从小喜欢数学的缘故，对函数式编程范型一直很有好感，也深信如另一位大牛，John Hughes 在其名作 Why Functional Programming Matters&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;（不知道这两篇文章相似的标题是巧合，还是 Harvey 教授有意模仿了 WhyFP）中阐述的，函数式编程有其独特价值，很可能更接近我们追求的更理想的软件工程目标。SICP 从一个侧面似乎也证实了：一种一直没有流行起来的、非常典型的函数式编程语言，作为 LISP 方言的 Scheme，非常好的完成了“给大学一年级新生一个严谨扎实的编程概念基础”的任务，而 Harvey 教授的文章，非常简明、清晰的阐述了 SICP 的创新价值，即使在数十年之后的今天，也没有过时。下面是译文，除了特别标出的唯一一处以外，其他脚注都是我加上的，与原作者无关，请留意。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;&lt;strong&gt;译文&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;p&gt;SICP 在很多方面都非常具有革命性，其中最重要的是，它显著的提高了计算机科学（CS）入门课程内容的智力水平。在 SICP 之前，CS 专业的第一门课通常都充斥着某种特定编程语言的细节，但 SICP 采取的方法是站在这些细节的背后，努力学会从大局着眼去思考计算的过程，它引导学生把注意力聚焦在“抽象”这个关键点，学会去寻找特定问题背后的一般模式，然后构建软件工具来解决这些一般性的问题。SICP 大量应用“函数也是数据”的概念，这个概念初期学起来很困难，但掌握之后极其强大（微积分是同一概念的另一种表现形式，也经常让很多之前数学课程都学得不错的学生栽跟头）。SICP 在 CS 专业的第一门课中展示了三种不同的编程范型（函数式、面向对象和描述式&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;），而大部分其他课程甚至连一种也没真正的讨论过。&lt;/p&gt;
+
+&lt;p&gt;SICP 另外一个革命性标志是选择了 Scheme 作为教学编程语言。从有 CS 专业直到今天，大部分 CS 入门课程主要使用当时的“热门”语言，从 Pascal 到 C 到 C++ 到 Java 再到 Python。Scheme 从来未在行业中广泛应用，但它是 CS 入门课程的完美语言，因为它使用一个非常简单、一致的记法&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;来处理所有事情，而其他语言用一种记法来处理变量赋值，另外一种记法来处理条件执行，另外 2-3 种记法处理循环，再来一种处理函数调用，使用这些语言的课程得花上一半的时间来教授这些记法，而我在伯克利的基于 SICP 的课程上，只用第一个小时来讲记法就够了，整个学期剩下的时间我们都用来学习思想，而不是语法。同时，尽管有着无与伦比的简单性（也许恰恰是因为这种简单性），Scheme 仍是一种很全面的通用语言，所以我们能凭之窥见三种不同编程范型的概貌，尤其是可以让我们了解面向对象编程是怎么实现的，这样所有的面向对象编程语言对于我们的学生来说就不再像某种神奇的戏法。&lt;/p&gt;
+
+&lt;p&gt;Scheme 是 Lisp 的一种方言，所以它能非常好地将函数作为数据来处理，同时它又是专业编程工作采用的 Lisp 方言的一个简化版本，去掉了很多枝节和装饰物。Abelson 和 Sussman&lt;sup id=&quot;fnref:5&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt; 非常大胆的在他们的入门课程中选择了最适合教学的编程语言，而无视了实际工作需要的各种其他编程语言，因为他们相信一旦掌握了那些真正重要的思想，学习另一种编程语言完全不是问题，就像进行一次周末例行大扫除一样，我从自己的经历出发也完全认同这一点。我经常对我的学生说：“你将在职业生涯中使用的编程语言还没被发明出来，所以我们没法在这里教给你，但我们必须教会你一些重要的技能，这样当它们出现时你很快就能学会。”&lt;/p&gt;
+
+&lt;p&gt;最后，SICP 对于大学新生能达到的程度非常积极乐观，SICP 课程学生要编写编程语言的解释器，这通常被认为更适合于二年级或更高年级的学生。SICP 课本并不易懂，没有侧边栏、五颜六色的提示框和有趣的图片（这是现代教科书针对注意力难以长时间集中的学生的典型设计），它也没有冗复的练习题，每道练习题都讲授了一个重要的新思想；它使用大量的文字，但回报是更深入的阅读，每个句子都有其深意。&lt;/p&gt;
+
+&lt;p&gt;从统计角度来说，以 SICP 为基础的课程只占一个很少的比例，但这本书的影响远远超出了这个少数比例，它启发了一系列后来教科书的作者，令他们有意识地努力去达到 SICP 树立的标准。而选择 Scheme 作为教学编程语言的也扩展到了从中学直到研究生院的范围。更多主流课程开始更重视编程范型，虽然它们大多只关注面向对象这一个编程范型。“计算机科学学科应该更加关注思想，而不全是关于编程实践”的观念也不断发展，进一步包括了一些非技术方面的思想，比如与计算相关的业务上下文和社会关联等。&lt;/p&gt;
+
+&lt;p&gt;SICP 本身享有在 CS 入门教科书中少见的长寿命，一般来说一本教科书的寿命与其基于的编程语言挂钩，而 SICP 在 长达 25 年的时间里始终强健，迄今丝毫没有停印的迹象。在这 25 年间计算领域发生了巨大的变化，从巨大的主机系统发展到个人计算机再到今天手机上的互联网，但驱动所有这些变革背后的重要思想是一样的，他们都很好的体现在 SICP 中。&lt;/p&gt;
+
+&lt;p&gt;我从 1987 年开始教授以 SICP 为基础的课程，这些课程随着时间一点点的改进，我们加入了关于并行计算、并发控制、用户界面设计以及客户/服务器模型等内容，但它们本质上仍是同样的课程。每隔几年系里都会有人提出把第一门课换成另外的某种 X 语言，但我总是说：“当有人写出基于 X 语言的世界上最好的计算机科学教科书之后再说吧。” 到目前为止每次系里最后都投票决定继续基于 SICP 课程来教学。我们很快就能看到这课程是不是可以坚持到我退休&lt;sup id=&quot;fnref:6&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+
+&lt;p&gt;最近关于 MIT 正在进行的电子工程和计算机科学（EECS）低年级课程重新设计的讨论越来越热烈，外部有人将其总结为“MIT 决定转向 Python”，但这是个误解。MIT 的决定主要是将以往基于内容领域组织的课程（编程范型，然后依次是电子电路，信号处理，架构等）转变为基于应用来组织（让我们搭建一个机器人并为其编程，让我们制造一部手机并为之开发软件等等），为了这个目标，几乎所有的课程都必须重新规划组织，编程语言的选择只是其中最不重要的一部分。他们的新模式对教学来说非常具有挑战性，因为所有课程都需要电子工程系和计算机科学系的紧密合作。也许未来某天这种应用为先的方式会引发一场伟大的变革，就像 SICP 曾经的那样，但目前还没实现。&lt;/p&gt;
+
+&lt;p&gt;在我自己的经历中，罕有学生在上我的课时候就感觉良好，但对我们所有 CS 学生的调查显示，这课程是他们数年后回忆起来最喜欢的课。经常有多年前的学生拜访或发电邮告诉我，他们在工作中实际用上的很多重要想法，在他们念书时都认为是不切实际的象牙塔学术思想，Google 在数据并行处理领域的重要发明 MapReduce 软件，就深深植根于函数式编程的思想，这也算是对“象牙塔学术思想”的一种正名吧。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;MIT 所在的波士顿地区发行量最大的报纸，成立于 1872 年，1993 年被《纽约时报》收购。 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://www.cse.chalmers.se/~rjmh/Papers/whyfp.html&quot;&gt;&lt;em&gt;Why Functional Programming Matters&lt;/em&gt;&lt;/a&gt;, &lt;em&gt;John Hughes, 1984, 1989, 1990&lt;/em&gt;. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;描述式编程范型 &lt;a href=&quot;http://en.wikipedia.org/wiki/Declarative_programming&quot;&gt;Declarative Programming&lt;/a&gt;：摒弃控制流程，以描述和组合计算规则为主的编程模式，最典型的描述式编程范型应用包括结构化查询语言 SQL，以及逻辑编程语言 Prolog，绝大部分函数式编程语言中也大量采用这一范型，Scheme 即为很好的例子。 &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot;&gt;
+      &lt;p&gt;记法，即 notation，是非常重要但经常被忽视的概念同时也是工具，有兴趣的朋友可以看看另外两位大家 &lt;em&gt;Brian Kernighan&lt;/em&gt; 和 &lt;em&gt;Rob Pike&lt;/em&gt; 合著的 &lt;a href=&quot;http://cm.bell-labs.com/cm/cs/tpop/&quot;&gt;&lt;em&gt;The Practice of Programming&lt;/em&gt;&lt;/a&gt; （国内有电子工业出版社的译本，裘宗燕老师的翻译质量相当不错）的第 9 章。 &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:5&quot;&gt;
+      &lt;p&gt;&lt;em&gt;Harold Abelson&lt;/em&gt; 和 &lt;em&gt;Gerald Jay Sussman&lt;/em&gt;，MIT 的两位计算机科学教授，SICP 的原作者。 &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:6&quot;&gt;
+      &lt;p&gt;&lt;strong&gt;原文作者注&lt;/strong&gt;：看来结果没能（完全）实现，伯克利新的入门课程采用 Python，但教案尽量保留了原先 SICP 的思想（某些地方甚至沿用了原来的文本）。 &lt;a href=&quot;#fnref:6&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+                <pubDate>Thu, 02 May 2013 21:50:00 +0800</pubDate>
+                <link>http://cn.soulhacker.me/2013/05/02/why-sicp-matters/</link>
+                <guid isPermaLink="true">http://cn.soulhacker.me/2013/05/02/why-sicp-matters/</guid>
+                
+                <category>Programming</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>FUJIFILM X100S</title>
+                <description>&lt;p&gt;作为一个 FUJIFILM X100 的忠实用户，实在是比较难抵抗 &lt;a href=&quot;http://www.fujifilm.com/products/digital_cameras/x/fujifilm_x100s/&quot;&gt;X100S&lt;/a&gt; 所有改进带来的诱惑，所以我在犹豫中错过第一批货之后还是订下一台，由于第二批货出厂一再延迟，到今天才终于辗转运到我手上。下面开始 show off…&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h3&gt;用 X100 拍 X100S&lt;/h3&gt;
+
+&lt;p&gt;买的港版赠送原厂皮套和一张 16G Class 10 Kinston 存储卡，这卡可以换给我原先的 X100，新机器继续用我的 Eye-fi（X100S 已经内置对 Eye-Fi 的支持）：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/x100s-1.jpg&quot; width=&quot;800&quot; alt=&quot;港版套装&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;开箱，港版还附赠一个转换头：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/x100s-3.jpg&quot; width=&quot;800&quot; alt=&quot;开箱&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;来张标准照:&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/x100s-4.jpg&quot; width=&quot;800&quot; alt=&quot;X100S 正面&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;上面：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/x100s-5.jpg&quot; width=&quot;800&quot; alt=&quot;X100S 上面&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;背面：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/x100s-6.jpg&quot; width=&quot;800&quot; alt=&quot;X100S 背面&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;接上广角扩展镜头 &lt;a href=&quot;http://www.fujifilm.com/products/digital_cameras/accessories/lens/conversionlens/x100wideconversionlens/&quot;&gt;WCL-X100&lt;/a&gt;：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/x100s-7.jpg&quot; width=&quot;800&quot; alt=&quot;X100S + WCL-X100&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/x100s-9.jpg&quot; width=&quot;800&quot; alt=&quot;X100S + WCL-X100&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;顺便说下，WCL-X100 镜头素质也很好，接上后等效焦距为 28mm，视野差距大致如下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/x100s-bc.jpg&quot; width=&quot;800&quot; alt=&quot;X100S WCL-X100 vs. Original&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;崭新的原厂皮套：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/x100s-a.jpg&quot; width=&quot;800&quot; alt=&quot;X100S X100S + 皮套&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;用 X100S 拍 X100&lt;/h3&gt;
+
+&lt;p&gt;以后 X100 就退休了，可能给我丫头玩（或者卖掉？），向陪我两年、跑了三大洲的老大哥致敬〜&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/x100-1.jpg&quot; width=&quot;800&quot; alt=&quot;GJ X100&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/x100-2.jpg&quot; width=&quot;800&quot; alt=&quot;GJ X100&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/x100-3.jpg&quot; width=&quot;800&quot; alt=&quot;GJ X100&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;X100S vs. X100&lt;/h3&gt;
+
+&lt;p&gt;那么，到底有什么差别呢？拿起 iPhone 拍一组对比看看。&lt;/p&gt;
+
+&lt;p&gt;首先看正面，几乎没有差别，仔细看的话切换光学和电子取景器的拨钮稍有差异：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/duet-1.jpg&quot; width=&quot;800&quot; alt=&quot;X100S vs. X100 正面&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;上面红色的“S”字母显示出型号的差异，以及去掉了初代机器展示独特性的文字：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/duet-6.jpg&quot; width=&quot;800&quot; alt=&quot;X100S vs. X100 上面&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;右侧面完全一样：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/duet-5.jpg&quot; width=&quot;800&quot; alt=&quot;X100S vs. X100 右侧面&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;左侧面的对焦模式选择进行了微调，把连续自动对焦和单张自动对焦换了个位置，这是好改进，因为 AF-S 是最常用的模式，以前不小心碰到这个钮可能推到 AF-C 模式上，会额外的耗电：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/duet-2.jpg&quot; width=&quot;800&quot; alt=&quot;X100S vs. X100 左侧面&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;背面的改动最多：右下角有 “MADE IN JAPAN” 字样；原来的 AF 按钮和 Drive 按钮换了一个位置，现在可以右手单手选择对焦点，Drive 本来就不是随时会用的功能；右下角的 RAW 按钮换成了 Q 按钮，用于显示一个 4x4 的 dashboard 来快速切换常用的各种设定（个性设定、ISO、动态范围、白平衡等 16 个）。后两项都是提高操控性的好改进。&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/x100s/duet-4.jpg&quot; width=&quot;800&quot; alt=&quot;X100S vs. X100 背面&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;除了上列立刻可以看到的改进，稍微把玩了下发现如下改进也不错：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对焦确实快了很多很多，仅此一项就值得升级。富士这些年在&lt;a href=&quot;http://www.dpreview.com/news/2010/8/5/fujifilmpd&quot;&gt;混合对焦黑科技&lt;/a&gt;上的投资，将以前只有笨重的 DSLR 才有的相位检测自动对焦技术引入到无反光镜的数码相机里，效果显著。&lt;/li&gt;
+  &lt;li&gt;电子取景器（EVF）分辨率和显示效果都有比较明显的提升。&lt;/li&gt;
+  &lt;li&gt;电子取景器为手动对焦模式增加了电子裂像屏，本来已经很酷很好玩的混合取景器又增加了新玩法，效果不错，以后拍摄微距等需要非常精确聚焦的场合可以用。&lt;/li&gt;
+  &lt;li&gt;设定界面进行了不小的调整，以前一些不太合理的地方基本都修正了；增加了开关 Eye-fi 无线传输的选项，可以省不少电。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;大致就是这样吧，以后拍了片子再来给大家分享。&lt;/p&gt;
+</description>
+                <pubDate>Mon, 29 Apr 2013 12:03:00 +0800</pubDate>
+                <link>http://cn.soulhacker.me/2013/04/29/fujifilm-x100s/</link>
+                <guid isPermaLink="true">http://cn.soulhacker.me/2013/04/29/fujifilm-x100s/</guid>
+                
+                <category>Photography</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>从台湾三星写手门看网络营销的底线</title>
+                <description>&lt;p&gt;所谓的「台湾三星写手门」，就是前不久被不知名台湾黑客爆出&lt;a href=&quot;http://taiwansamsungleaks.org/&quot;&gt;三星内部邮件&lt;/a&gt;，显示三星在台湾如何雇佣网络水军，运用发布虚假评测、控制论坛舆情等手法抹黑对手（主要是 HTC）抬高自己。此事在台湾掀起了不小的波澜，具体内容可以点击下面的链接查看有人整理好的&lt;a href=&quot;http://home.gamer.com.tw/creationDetail.php?sn=1963795&quot;&gt;懒人包&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;三星不惜重金、不择手段的进行所谓“市场营销”在一定圈子内早已是公开的秘密，只是一般消费者很难完全了解。而这件事里最有趣的问题在于：到底网络（病毒）营销的底线在哪里？每个人都有自己道德和职业准则，我虽然没做过专职的市场营销，但在科技领域创业和工作很多年，下面是我挂一漏万的列表，仅供参考。
+&lt;!-- more --&gt;
+首先是正常的、合法也符合一般道德标准的做法：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在保持公司主体清晰的前提下雇请公关公司协助或者进行营销策划及实施&lt;/li&gt;
+  &lt;li&gt;通过合法手段搜集民意舆情&lt;/li&gt;
+  &lt;li&gt;邀请或雇请社会名人进行产品广告宣传，并明示为广告&lt;/li&gt;
+  &lt;li&gt;利用热点事件和自身产品的结合进行宣传&lt;/li&gt;
+  &lt;li&gt;针对危机由公司主体出面进行合理、正面的解释及澄清&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;然后是我国普遍存在的灰色地带，个人也较不屑的做法：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;雇请水军通过刷版、刷榜、刷票等方式提升产品知名度、打压对手的传播&lt;/li&gt;
+  &lt;li&gt;付费或其他方式要求媒体撤稿&lt;/li&gt;
+  &lt;li&gt;雇请写手编写具有倾向性的产品评测&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最后是红灯区，违法与否需要专业判断，但至少是严重不合商业规则和一般道德准则：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;暗中资助公司主体不出现的营销活动，伪装中立第三方观点来提升自己和/或贬低对手&lt;/li&gt;
+  &lt;li&gt;炮制虚假内容或促进传播无根据传闻，达到提升自己和/或贬低对手的目的&lt;/li&gt;
+  &lt;li&gt;在当事人不知情的情况下设计利用热点人物和事件进行商业营销（典型的案例如三星与台湾三太子的事件）&lt;/li&gt;
+  &lt;li&gt;通过欺骗和要挟迫使独立媒体进行倾向于自己的报道（典型案例如 IFA 2012 上三星与几名独立科技博客作者之间的事件）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;p.s. 三星是家非常独特的公司，作为人均 GDP 数倍于我国的发达国家的头号企业，其商业和道德底线大有完胜我国众高段选手的架势，真是令人叹为观止。&lt;/p&gt;
+
+&lt;p&gt;– &lt;br /&gt;
+本文原发于微信公众帐号「Paradigm X」，它会围绕科技极客世界的新鲜话题不定期发布原创短评。 &lt;br /&gt;
+获得每天更新：请在微信 app 中搜索「Paradigm X」或加 ID：ParadigmX 或扫描以下二维码：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;left&quot; src=&quot;/images/paradigmx-weixin-qrcode.jpg&quot; width=&quot;129&quot; height=&quot;129&quot; alt=&quot;Paradigm X QR Code&quot; /&gt;&lt;/p&gt;
+</description>
+                <pubDate>Sat, 20 Apr 2013 15:18:00 +0800</pubDate>
+                <link>http://cn.soulhacker.me/2013/04/20/bottom-line-of-viral-marketing/</link>
+                <guid isPermaLink="true">http://cn.soulhacker.me/2013/04/20/bottom-line-of-viral-marketing/</guid>
+                
+                <category>Internet</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>关于数码摄影的预言</title>
+                <description>&lt;p&gt;下面是我对于数码摄影未来的预言，可能会随着时间的推移添加一些内容，但不会修改已经发布的内容。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;胶片在很长的时间里都不会消失，但没有什么力量能扭转其逐渐萎缩的趋势。&lt;/li&gt;
+  &lt;li&gt;反光镜作为胶片时代的特色，将逐步从数码相机中消失，SLR&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 会被 SLT&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;、MIRC&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; 或类似系统取代，但传统相机厂商的顽固性会让这个过程很漫长。&lt;/li&gt;
+  &lt;li&gt;大尺寸感光元件&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;将很快成为主流配置，而更小感光元件对应的袖珍数码相机&lt;sup id=&quot;fnref:5&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;市场份额会被智能手机蚕食，在 5-10 年之后基本消失。&lt;/li&gt;
+  &lt;li&gt;全幅感光元件不再是 SLR 的专利，未来 2 年各类数码相机的顶级型号都将配备全幅感光元件，其价格将加速下降。&lt;/li&gt;
+  &lt;li&gt;未来 2 年中越来越多的数码相机将内置 WiFi 支持，从而实现和智能手机以及其他数字设备之间方便地互操作，SONY 在其 NEX-6 和 5R 中展现的手机遥控拍摄和照片无线上传、同步、播放能力早该普及。&lt;/li&gt;
+  &lt;li&gt;未来 3-5 年中越来越多的数码相机将支持 geotagging，可能借助内置的 GPS 芯片，或者借助与相机配对的智能手机或者其他电子设备。&lt;/li&gt;
+  &lt;li&gt;Android 相机在很长时间里都很难找准定位，不会取得很大成功。&lt;/li&gt;
+  &lt;li&gt;在更长的时间跨度上（比如 10 年），数码摄影会进一步实现专业工具的平民化，无论是高质量的照片集，还是高质量的微电影，借助各种降低它们创作门槛的硬软件工具，都会越来越普及。&lt;/li&gt;
+  &lt;li&gt;数码摄影的创新才刚刚开始，传统摄影技术一边进行着局部渐进式改良，一边也在等待全新创造物的降临，类似 Lytro 的光场（light field）相机这样的技术仅仅是个序幕。
+&lt;!-- more --&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;–&lt;/p&gt;
+
+&lt;p&gt;本文原发于微信公众帐号「Paradigm X」，它会围绕科技极客世界的新鲜话题不定期发布原创短评。 &lt;br /&gt;
+获得每天更新：请在微信 app 中搜索「Paradigm X」或加 ID：ParadigmX 或扫描以下二维码：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/paradigmx-weixin-qrcode.jpg&quot; width=&quot;129&quot; height=&quot;129&quot; alt=&quot;Paradigm X QR Code&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;&lt;strong&gt;单镜头反光相机（Single-Lens Reflex cameras，SLR）&lt;/strong&gt;：有一个可以升起和放下的反光镜，借助它和五棱镜光学取景器实现一个镜头完成取景和拍摄的双重任务。 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;&lt;strong&gt;单镜头半透反光镜相机（Single-Lens Translucent cameras，SLT）&lt;/strong&gt;，有一个固定不动的半透明反光镜，通过电子取景器（EVF）取景，半透明反光镜的作用主要是实现类似 SLR 的相位对焦。这是 SONY 的专利技术，所以此类别目前只包括 SONY 的 Alpha 系列数码相机。和 SLR 相比较小较轻，连拍速度也更快，但是非常耗电。 &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;&lt;strong&gt;无反光镜可换镜头相机（Mirrorless InterChangeable-lens Camera，MIRC）&lt;/strong&gt;：完全不使用任何反光镜，使用 EVF 取景，可换镜头，比 SLT 更加小巧；由于没有反光镜，通常采用反差对焦方式，自动对焦的精确度、速度和适应度都较差，但富士（Fujifilm）2010 年公布的 F300EXR 数码相机搭载了一种同时支持相位对焦和反差对焦的混合自动对焦系统，由 CCD 芯片和对应的图像处理芯片协作完成，能够在无反光镜的拍摄系统中实现高速的自动对焦，目前已经应用在富士、理光、尼康、佳能的某些机型中。 &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot;&gt;
+      &lt;p&gt;&lt;strong&gt;大尺寸感光元件&lt;/strong&gt;：全幅（36x24mm）、APS-C（25.1x16.7mm）、MFT 即 3/4 系统（17.3x13.0mm）。 &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:5&quot;&gt;
+      &lt;p&gt;&lt;strong&gt;袖珍相机（Compact cameras）&lt;/strong&gt;：所有不可换镜头的数码相机，还可依不同维度细分为大感光元件和小感光元件，全操控和傻瓜式，类 SLR 和卡片式等小类。 &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+                <pubDate>Wed, 10 Apr 2013 14:03:00 +0800</pubDate>
+                <link>http://cn.soulhacker.me/2013/04/10/prophecy-of-digital-photography/</link>
+                <guid isPermaLink="true">http://cn.soulhacker.me/2013/04/10/prophecy-of-digital-photography/</guid>
+                
+                <category>Photography</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>谈谈“专业化”</title>
+                <description>&lt;p&gt;这个话题源自老罗（罗永浩）和他的团队基于 Android 开发的 Smartisan OS 软件，或者说来自一位朋友在微博和 Twitter 上对其 3 月 27 日发布会的评论（收到了相当猛烈的反应呢）：&lt;/p&gt;
+
+&lt;figure class=&quot;quote&quot;&gt;&lt;blockquote&gt;&lt;p&gt;来说下为什么我今天这么用力吐槽老“锤子”。我觉得“锤子”关注者一大批是希望看到一个外行来抽专业人士的耳光的心态而支持老罗的，这种“不尊重专业”的态度是这个民族自本国沦陷以来一直没有改掉的陋习。我并不觉得这样的风气应该继续提倡，而好在今天没有让我失望，专业的事情还是交给专业的人做吧。&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption class=&quot;quote-source&quot;&gt;&lt;span class=&quot;quote-author&quot;&gt;&lt;a class=&quot;quote-link&quot; href=&quot;https://twitter.com/GossipSama/status/316920394110103552&quot;&gt;Tweet from @GossipSama&lt;/a&gt;&lt;/span&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;转天虎嗅网发了一篇题为“&lt;a href=&quot;http://www.huxiu.com/article/12124/1.html&quot;&gt;锤子现场速写：他不贱，只是矫情&lt;/a&gt;”的文章，里面提到了另外一个很有意思的概念“对技术的敬畏”：&lt;/p&gt;
+
+&lt;figure class=&quot;quote&quot;&gt;&lt;blockquote&gt;&lt;p&gt;老罗在谈到对语音功能的看法时，让笔者史无前例的第一次开始怀疑老罗对技术的理解。尽管老罗敢招七个人就做手机 OS（谁说七个人就做不出来？），尽管老罗之前是教英语的（他说自己之前也卖过电脑，算 IT 人）。但是老罗认为，像 Siri 这样的语音交互产品，作为“人工小秘书”来讲，“从根本上就错了”，“人工智能不可能达到那种程度”。&lt;/p&gt;
+
+&lt;p&gt;先不说 Siri 是否就是一个“人工小秘书”，活在科技时代的人或许应该有一个共识，那就是永远对技术的未来充满敬畏。你永远不知道明天会发生什么，永远不要对科技盖棺定论，老罗推崇的乔布斯也不会这样做。&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption class=&quot;quote-source&quot;&gt;&lt;span class=&quot;quote-author&quot;&gt;&lt;a class=&quot;quote-link&quot; href=&quot;http://www.huxiu.com/article/12124/1.html&quot;&gt;锤子现场速写：他不贱，只是矫情 | 虎嗅网&lt;/a&gt;&lt;/span&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;“专业的事交给专业的人去做”以及“对技术的未来保持敬畏”其实是一脉相承的观念，都是我非常认同的，但我也深知它们都是很容易被误读或者误解的观点，值得跳出 140 个字的框框多写点东西。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;首先我们来看看，什么是叫专业化。在维基百科英文版上有 &lt;a href=&quot;http://en.wikipedia.org/wiki/Professionalization&quot;&gt;Professionalization&lt;/a&gt; 这一词条（中文版尚无），第一段解释本身就不短，而且里面还有多达 8 个脚注以及 9 个转向其他词条的链接，说明这并不是一个易于定义的基本概念。我们来把它稍微简化和分解一下，经过思考可以得到以下的认识：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;专业化是逐步区分开“专业”和“业余”的一个过程，而“专业”和“业余”的主要差别是在特定领域投入的时间和专注度，这是一个量的积累差异而非质的差异。&lt;/li&gt;
+  &lt;li&gt;专业化是一个社会化过程，有时候专业和业余之间并没有非常清晰的界限，这就好比围棋里业余高段选手棋力大致和职业初段相当，具体界限的划分需要依靠领域内建立的一套民主机制来定义，同样类比围棋的话，就是确定段位等级的一套办法。&lt;/li&gt;
+  &lt;li&gt;专业是针对特定领域的，越专就越难广博，一个领域的专业人士可能对其他领域一无所知，就像夏洛克・福尔摩斯不知道地球围着太阳转；另一方面，某些领域比较为大众所关注，而另一些领域未必，这决定了同样付出的前提下，有些专业人士会比其他的专业人士更引入瞩目。&lt;/li&gt;
+  &lt;li&gt;专业化是和知识以及技能体系密不可分的，不同领域的知识和技能积累程度不同，专业化程度也是很不一样的。一般来说，越是成熟、历史悠久的领域，积累的知识和技能越是深入，往往细分为多个分支，其专业化程度也就越高。&lt;/li&gt;
+  &lt;li&gt;某个领域的知识和技能演进到一定程度，其专业门槛又会表现出某种下降趋势，其根本原因是位于领域金字塔顶端的专业人士开始把知识和技能封装成工具和流程，使得不具备很高专业水准的人可以借助这些工具和流程完成原本需要更高专业水准才能完成的工作。这实际上是专业化的进一步发展，也是以分工协同为特征的社会化大生产的基石；另一方面，金字塔顶端的专业人士也不断提升领域的教育能力，用更有效的教育来培养更多的各级专业人士。这是所有领域的发展规律，如果无法建立这样的正向循环，这个领域只会慢慢衰亡。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在这些认识的基础上，我们可以理解，为什么在消费电子和智能手机这样既年轻又大众化的领域，会出现格外热烈的种种争论：本身很新并且融合了很多不同领域（也就是说，对里面某个领域多少有些接触了解的人多得很），同时又是大多数人亲身体验和接触的东西（没吃过猪肉还没见过猪跑？）。这里面误解很多，我们下面就列举一些最典型的。&lt;/p&gt;
+
+&lt;h3&gt;误解一：“职业即专业”&lt;/h3&gt;
+
+&lt;p&gt;专业不等于职业，虽然大多数领域里不作为职业的专业人士比较少见，但是确实也存在，比如在美国就有过例子，一位家庭主妇闲来无事花费数年钻研二维堆叠问题，取得的一些成果是职业数学家都未曾得到的；职业也不等于专业，比如以程序员为终生职业的人多如牛毛，但多数最多只能算入门，离这个领域的专业要求相去甚远。&lt;a href=&quot;https://twitter.com/GossipSama&quot;&gt;@GossipSama&lt;/a&gt; 有一则推生动的说明了这个差异：&lt;/p&gt;
+
+&lt;figure class=&quot;quote&quot;&gt;&lt;blockquote&gt;&lt;p&gt;专业不是专科，而是对一个领域经年的不断投入、学习、总结、自我检讨、自我改进。其中，时间成本就很重要，这个世界有天才，但是依然有很多东西需要时间的投入去历练。就像以前的生煎包好吃是因为以前的师傅 20 年 30 年一直在做生煎包，而现在的生煎包师傅可能做了几年就转行了。&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption class=&quot;quote-source&quot;&gt;&lt;span class=&quot;quote-author&quot;&gt;&lt;a class=&quot;quote-link&quot; href=&quot;https://twitter.com/GossipSama/status/316924908124897280&quot;&gt;Tweet from @GossipSama&lt;/a&gt;&lt;/span&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;计算机这个领域目前还在很幼年的阶段，发展演变迅速，知识和技能的累积很快，但归纳和体系化是滞后的，使得学习成长不得不依靠大量实践和前辈的言传身教，悟性和投入时间缺一不可，悟性差点，有好的带头人和足够的时间投入还可以弥补，而没有投入足够时间的团队（包括他们在加入这个团队之前的积累）基本很难成事&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;。如果不信的话可以自己设想一下下面这个问题，一个没有相关经验的团队要花多少时间建立一个靠谱的解决方案：&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;一个 Android ROM 或者 launcher 或者随便什么 app 要支持多种机型，在发布之前应该在所有自己声称支持的机型上进行测试，这包含了多个小团队开发的多个软件组件，他们之间有依赖关系，某个组件更新需要对所有受到影响的部分重复已经做过的所有测试，测试在多个设备上进行，如何自动化这些测试来提高效率？如何根据测试结果协调各个小组的进度面向一致的目标里程碑进行工作？&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;对了，这类问题一点也不特殊，在软件开发过程中遍地都是，愁得老板们最后只好认输，把没有经过完整测试的软件扔出去然后把头埋进沙子里假装听不见用户的吐槽——我相信砸过西门子冰箱的老罗一定不齿于这么干。&lt;/p&gt;
+
+&lt;h3&gt;误解二：“专业无用”&lt;/h3&gt;
+
+&lt;blockquote&gt;&lt;p&gt;“专业有什么了不起的，王侯将相宁有种乎！”&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;别笑，这是真有人在新浪微博回应本文开头的评论的话。历史上最早说“王侯将相宁有种乎”的人的本意，除了朴素的“人人生而平等”的民主观外，还蕴含着一种“我经过努力可以做和你一样的事，而且比你做的更好”的雄心和自信，如果这件事不需要长时间的学习、思考、训练和积累的话，雄心、自信加上天赋基本可以解决问题——那时候适逢末世，王侯将相们倒也确实不需要什么特殊技能和知识。治国事大，我说不上来什么规律，但具体到智能手机这件事，一般我们会将其生态环境（其实整个计算机行业都类似）划分为四层：核心硬件、平台（操作系统+开发环境+应用商店）、系统集成、软件及服务，这个行业的历史和规律告诉我们：这里面前两层都需要相对很长时间的积累才能跨过门槛，然后还需要绝佳的时机和运气才能建立竞争优势；系统集成包括将核心硬件组合成消费者产品，以及对标准软硬件的适配和定制，门槛相对稍低；软件和服务的范围很广，差异很大，有的非常难做好，有的相对容易很多，就不展开说了。&lt;/p&gt;
+
+&lt;p&gt;那么我们来看看老罗和他的团队做的这个东西算什么。其官方称之为“Smartisan OS based on Android”，似乎是定位为基于 Android 源代码改的操作系统，实际上根据发布会披露的信息，目前阶段还完全没有碰到操作系统和软硬件集成的部分，所有功能都通过上层软件的修改即可实现，也就是大家习惯说的“第三方 launcher”，基本上算整个生态环境里技术门槛最低的环节之一，也就是说老罗选了一个并非不可能的任务——但是（这个但是可要用力的说出来），这仍不简单，原因如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;手机和传统的桌面计算机不一样，涉众更广，用户涵盖了知识背景完全不同的人群，其中很多人完全没有使用计算机和互联网的经验和常识。&lt;/li&gt;
+  &lt;li&gt;目前智能手机市场基本没有超出 Apple 在 2007 年规划的格局，而这是一家以用户集成体验为主要卖点的公司。&lt;/li&gt;
+  &lt;li&gt;Android 系统里 launcher 作为交互入口是用户体验里很关键的环节，既要避开系统本身固有的各种问题（比如操作系统和各种硬件的适配问题），有时还要替设计不佳的 app 的错误买单。&lt;/li&gt;
+  &lt;li&gt;Android 市场现状和第三方 launcher 的特点决定了其（几乎）唯一有效的推广渠道就是预装（和硬件集成厂商以及运营商合作），而这是一个初始成本要求较高的渠道。&lt;/li&gt;
+  &lt;li&gt;第三方 launcher 并非创新，而是已经充分竞争的领域，现在进入需要有非常大的差异化才有可能建立市场口碑，进而降低推广成本，而这些差异化可能必须从不那么容易实现的细分领域入手。老罗半开玩笑的说被 MIUI 当初六个人的团队规模误导，不知道他是不是明白，这就是进入时机的差异导致的必然。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;除了这些市场上的、非常难改变的客观环境以外，做 launcher 的门槛是拼用户体验，而拼用户体验本质上是拼用户数量和对用户的了解，这里有个小例子可能有助理解：MIUI 新版有个很有意思的小功能，给联系人里没有设置头像的人根据 TA 的姓名，取最后一个字作为头像，如果最后一个字是“哥”“姐”“叔”之类的，则会用其前面一个字。这不是什么了不起的创新，但为什么这么晚才加入到功能集里呢？因为这是很细分的用户需求，能想到就不易，我想这和 MIUI 的用户积累应该是有很大关系的，而一个新进入市场的 player 能一开始就在这种层面和诸如 MIUI 这样的用户积累竞争吗？我个人是非常怀疑的，并不是不可能竞争，而是必须要付出数倍的投入和努力才可以，人家也不会坐在那里等你嘛。&lt;/p&gt;
+
+&lt;p&gt;除了用户体验，还有技术问题。时时听到有人说：“技术不是问题”，这就好比说“凡是钱能解决的都不是问题”，这话在且仅在钱足够多的情况下才成立，而技术问题也仅在团队技术能力达标的前提下才不是问题，在智能手机这个领域，这个技术能力的标杆可以用 CyanogenMod 和 MIUI 的团队来衡量，国内能达到这标杆水准的团队一只手就能数完。&lt;/p&gt;
+
+&lt;h3&gt;误解三：“专家？砖家吧”&lt;/h3&gt;
+
+&lt;p&gt;其实我是在大专院校里长大的，非常了解国内科技领域的专业人士是怎么一代一代的沦落到现在这境地的，几十年缺乏创新的学术环境也难怪大家失去了“对技术的敬畏”。但我始终是个（谨慎的）乐观主义者，相信只要时间足够长，每个人都会明白那些短视的、自私的行为是于人于己有害的，慢慢回到一个比较健康的环境来，其实也不复杂，就是每个人在自己认为自己比较专业的领域多较真，肯花点时间去传播自己认为正确的观点认识，愿意与人在逻辑的基础上讨论和争论，就行了。&lt;/p&gt;
+
+&lt;p&gt;另外，凡事都有两面，除了一些被利益驱动为金钱背书的恶劣行径，很多被民众嘲讽的“砖家言论”从某种角度看还是有其来由的，只不过在对应的具体问题上显得脱离实际罢了&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;，这在全世界都并不鲜见，对这些有问题的认知，应该基于科学方法来进行驳斥，即基于事实证据、可重复试验以及形式逻辑体系，有针对性的提出异见。专业人士会有胡说八道的时候，但这并不是否定所有专业判断的理由，如果据此来决定自己的判断，岂不是陷入了另一种对专家的盲信？&lt;/p&gt;
+
+&lt;p&gt;另外，前面也提到了计算机这个领域目前还处在幼年期，是半理论半实践的状态，理论还在追赶实践的步伐，这个领域真正的专业人士不太容易犯脱离实际的错误，只是近年这个领域也出现了不少江湖骗子（包括一些内心强大到连自己也骗倒的），如何识别他们是个挑战。&lt;/p&gt;
+
+&lt;h3&gt;误解四：“站在巨人的肩膀上”&lt;/h3&gt;
+
+&lt;p&gt;很多流行语都有这个意味，比如“弯道超车”，颇有大跃进时期赶英超美的气势。这样的事情并非完全不可能，但一切要回到“客观规律”的分析上来。站在巨人的肩膀上确实可以前进的更快，但这程度远不如人们想象的那么显著。目前的智能手机领域，巨人们提供了这样一些肩膀：iPhone 和 iOS 建立的移动应用模式，开源的 Android 操作系统，智能手机高速发展的市场趋势，一大批成长中的相关人才，问题是爬上这些肩膀并站稳并不是那么简单的事情。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;也许能模仿 iPhone 的设计，但对很多设计细节并不知道为什么要这么设计，也不知道在最后呈现出这些设计之前 Apple 内部毙掉了多少其他方案以及为什么&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;，要搞明白这一切，时间是要付出的必要成本，Google 和 Microsoft 的团队都能告诉你那时间也没比 Apple 少花多少。&lt;/li&gt;
+  &lt;li&gt;通用操作系统是软件系统里复杂度最高的几个类别之一，iOS 也好，Android 和 WP 也好，都不是什么久经考验坚若磐石的软件系统（当然他们确实借助了某些久经考验坚若磐石的基础软件代码），他们都在快速的迭代和改进中，里面的技术陷阱多到令人发指的程度，在省下自己编写基础框架的工作量同时，也带来持续学习和摸索的工作量，即使在今天惊人的互联网节奏下，也不是几个月就能趟过的浅滩。&lt;/li&gt;
+  &lt;li&gt;各种专利保护为简单复制增加了很多成本，而用户的个性化需求也不鼓励雷同。&lt;/li&gt;
+  &lt;li&gt;快速发展的市场吸引了全球所有第一流的公司以巨大的投入参与进来，市场成本和风险对小的创业者来说都不可小视。&lt;/li&gt;
+  &lt;li&gt;和几年前相比，智能手机相关的硬软件工程人员、产品设计人员等都有大幅增加，但和人才市场的需求相比，仍然处在供不应求的状态，尤其是经验丰富、具备管理、产品和技术交叉技能的良才，市场价格仍在攀升，这个竞争带来的成本压力不亚于市场上的产品竞争，不幸的是，到目前为止，老罗的团队里并没有这些领域的一流人才。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;再说一次：做智能机比以前容易多了，但仍然是有相当门槛的，尤其当你面对的是 Apple、Google、Samsung、华为、魅族这样一些各怀绝技的对手时；做 ROM 或者 launcher，MIUI、FlyOS 和 Go 也都不简单。客观的说，老罗有些创意是不错的，至少是有个性有想法，也有市场的，但团队必须具有不亚于这些对手的综合实力才能把创意变成用户满意的体验。好好花时间建立和磨练好团队，做好持久战的准备，才是这个领域的成功之道。&lt;/p&gt;
+
+&lt;h3&gt;番外：预言&lt;/h3&gt;
+
+&lt;p&gt;有朋友看了初稿之后预言说：&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;很多人看完第一句之后，他们最想知道的答案是你到底是罗粉还是罗黑，然后，他们就会直接拉到最后一段，结果看完还是没明白…于是就条件反射的按照自己看完的直觉理解一下，结果一半人在评论里面骂你罗粉，另外一半人在评论里面骂你罗黑……&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;特补充立次为证 -_-&lt;/p&gt;
+
+&lt;p&gt;–&lt;/p&gt;
+
+&lt;p&gt;本文原发于微信公众帐号「Paradigm X」，它会围绕科技极客世界的新鲜话题不定期发布原创短评。 &lt;br /&gt;
+获得每天更新：请在微信 app 中搜索「Paradigm X」或加 ID：ParadigmX 或扫描以下二维码：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/paradigmx-weixin-qrcode.jpg&quot; width=&quot;129&quot; height=&quot;129&quot; alt=&quot;Paradigm X QR Code&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;所以专业化的团队特别值钱，而有积累的重复创业团队比较容易得到投资人的信任，这也是重要原因之一。 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;即使孔乙己卖弄的“茴”字的四种写法，在某些领域也不完全是无用的知识。 &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;这其实就是臭名昭著的“像素级克隆”模式的理论依据：如果不完美的克隆每个像素，哪怕稍微改动一点也许就正好是个失败方案（笑）。 &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+                <pubDate>Mon, 08 Apr 2013 23:17:00 +0800</pubDate>
+                <link>http://cn.soulhacker.me/2013/04/08/talk-about-pro/</link>
+                <guid isPermaLink="true">http://cn.soulhacker.me/2013/04/08/talk-about-pro/</guid>
+                
+                <category>Internet</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>译文：函数式编程另类指南</title>
+                <description>&lt;p&gt;&lt;em&gt;Functional Programming For The Rest of Us&lt;/em&gt; 是一篇很特别的函数式编程入门简介，它用 Java 的语法清晰的说明了函数式编程中最难解的一组概念，可能对很多人越过学习 FP 初期的峭壁会有不小的帮助。原文由当时在 Stony Brook 大学念 CS 的博士生 Slava Akhmechet（此人是分布式 JSON 数据库 &lt;a href=&quot;http://www.rethinkdb.com&quot;&gt;RethinkDB&lt;/a&gt; 的发起人和开发者之一）写于 2006 年，早先国内有 &lt;a href=&quot;https://twitter.com/lihaitao&quot;&gt;@lihaitao&lt;/a&gt; 很不错的译文，可惜原译文链接已失效，各处的转载都有各种质量缺陷，所以我整理并修订了原译文的一些错误并转载于此，作为归档和更好传播之用。在此对原文作者和译者致以真诚谢意。&lt;/p&gt;
+
+&lt;p&gt;原文：&lt;a href=&quot;http://www.defmacro.org/ramblings/fp.html&quot;&gt;Functional Programming For The Rest of Us&lt;/a&gt;&lt;br /&gt;
+作者：Slava Akhmechet&lt;br /&gt;
+原译：&lt;a href=&quot;http://chn.blogbeta.com/232.html&quot;&gt;函数式编程另类指南&lt;/a&gt;&lt;br /&gt;
+译者：&lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#108;&amp;#105;&amp;#104;&amp;#097;&amp;#105;&amp;#116;&amp;#097;&amp;#111;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;lihaitao&lt;/a&gt;&lt;br /&gt;
+修订：Neo Lee a.k.a @soulhacker&lt;/p&gt;
+
+&lt;h3&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;程序员拖沓成性，每天到了办公室后，泡咖啡、检查邮箱、阅读 RSS feed、到技术站点查阅最新的文章、在编程论坛的相关版面浏览公共讨论，并一次次地刷新以免漏掉一条信息。然后是午饭，回来后盯了 IDE 没几分钟，就再次检查邮箱、倒咖啡。最后在不知不觉中，结束了一天。&lt;/p&gt;
+
+&lt;p&gt;不平凡的事是每隔一段时间会跳出一些很有挑战性的文章。如果没错，这些天你至少发现了一篇这类文章——很难快速通读它们，于是就将其束之高阁，直到突然你发现自己已经有了一个长长的链接列表和一个装满了 PDF 文件的目录，然后你梦想着到一个人迹罕至的森林里的小木屋苦读一年以期赶上，要是每天清晨你沿着那里的林中小溪散步时会有人带来食物和带走垃圾就更好了。
+&lt;!-- more --&gt;
+虽然我对你的列表一无所知，但我的列表却是一大堆关于函数式编程的文章，而这些基本上是最难阅读的了。它们用枯燥的学院派语言写成，即使”在华尔街浸淫十年的计算专家（veterans）”也不能理解函数式编程（也写作 FP）都在探讨些什么。如果你去问花旗集团（Citi Group）或德意志银行（Deutsche Bank）的项目经理&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;，为什么选择了 JMS 而不是 Erlang，他们可能回答不能在产业级的应用中使用学院派语言。问题是，一些最为复杂、有着最严格需求的系统却是用函数式编程元素写成的。这种说法不能让人信服。&lt;/p&gt;
+
+&lt;p&gt;的确，关于函数式编程的文章和论文难于理解，但他们本来不必这么晦涩。这一知识隔阂的形成完全是历史原因。函数式编程的概念本身并不困难。这篇文章可以作为”简易的函数式编程导引”。是一座从命令式（imperative）思维模式到函数式编程的桥梁。去取杯咖啡回来继续读下去吧，不定啥时候你的同事就会开始取笑你对函数式编程发表的观点了。&lt;/p&gt;
+
+&lt;p&gt;那么什么是函数式编程呢？它怎么产生？它可以被掌握吗（Is it edible）？如果它真如其倡导者所言，为什么没有在行业中得到更广泛的使用？为什么好像只有那些拿着博士学位的人才使用它？最要紧的是，为什么它就[哔]这么难学？这些 closure、continuation、currying、lazy evaluation 和 side effects 等等究竟是些什么东西？没有大学参与的项目怎么使用它？相比命令式思想友好、圣洁和亲近的一切的一切，为什么它看上去这么诡异？我们将于不久扫清这些疑问。首先让我来解释形成实际生活和学界文章之间巨大隔阂的缘起，简单得像一次公园的散步。&lt;/p&gt;
+
+&lt;h3&gt;信步游园&lt;/h3&gt;
+
+&lt;p&gt;启动时间机器，我们漫步在两千多年以前一个被遗忘了太久的春光明媚的日子，那是公元前 380 年。雅典城墙外的橄榄树荫里，柏拉图和一个英俊的奴隶小男孩朝着学院走去。”天气真好”，”饮食不错”，然后话题开始转向哲思。&lt;/p&gt;
+
+&lt;p&gt;“瞧那两个学生，”为了使问题更容易理解，柏拉图仔细地挑选着用词，”你认为谁更高呢？”&lt;br /&gt;
+小男孩看着那两个人站着的水漕说，”他们差不多一样高”。&lt;br /&gt;
+柏拉图说：”你的差不多一样是什么意思？” “我在这里看他们是一样高的，不过我肯定如果走近些就会看出他们高度的差别。”&lt;br /&gt;
+柏拉图笑了，他正把这个孩子带到正确的方向。”那么你是说，我们这个世界没有完全的等同了？”&lt;br /&gt;
+小男孩想了一会儿回答，”对，我不这样认为，任何事物总有一些区别，即使我们看不到它。”&lt;br /&gt;
+这句话非常到位！”那么如果这世上没有完全的相等，你又是如何理解‘完全’相等这个概念的呢？”&lt;br /&gt;
+小男孩迷惑得说：”我不知道。”&lt;br /&gt;
+最初尝试着理解数学的本源（nature）时也会产生这种疑惑。&lt;/p&gt;
+
+&lt;p&gt;柏拉图暗示这个世上的万物都只是一个对完美的近似。他还认识到我们即使没有接触到完美但依然可以理解这一概念。所以他得出结论，完美的数学形式只能存在于另一个世界，我们通过和那个世界的某种联系在一定程度上知晓他们。很明显我们不能看到完美的圆，但我们可以理解什么是完美的圆并用数学公式将它表达出来。那么，什么是数学？为什么宇宙可以用数学定理描述？数学可以描述宇宙中的所有现象吗？&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Philosophy_of_mathematics&quot;&gt;数学哲学&lt;/a&gt;是一个很复杂的课题。像大多数哲学学科一样它更倾向于提出问题而不是给出解答。这些意见中很多都循回绕转于一个事实，即数学实际上是一个谜语：我们设置了一系列基本的、不冲突的原理和一些可以施加于这些原理的操作规则，然后我们就能堆砌这些规则以形成更复杂的规则。数学家把这种方法叫做”形式系统”或”演算”。如果愿意，我们可以很快写出一个关于 Tetris（译者注：经典的俄罗斯方块游戏）的形式系统。实际上，工作中的 Tetris 实现就是一个形式系统，只是被指定使用了个不常见的表现形式。&lt;/p&gt;
+
+&lt;p&gt;人马座 α 星的某个生物文明也许不能理解我们的 Tetris 和圆的范式，因为可能他们唯一能感知输入的是带有嗅觉的某个器官。他们也许永远不会发现 Tetris 范式，但很可能会有一个圆的范式，我们很可能无法阅读它，因为我们的嗅觉没有那么复杂，可是一旦我们理解了（past）这一范式的表示形式（通过这种传感器和标准解码技术来理解这种语言），其底层的概念就可被任何智能文明所理解。&lt;/p&gt;
+
+&lt;p&gt;有趣的是如果从来没有智能文明存在，Tetris 和圆的范式仍然严密合理，只是没有人注定将会发现他们。如果产生了一种智能文明，他就会发现一些形式系统来帮助描述宇宙的规律。但他还是不大可能发现 Tetris 因为宇宙中再没有和它相似的事物。在现实世界中这类无用的形式系统或迷题的例子数不胜数，Tetris 只是其中的一个典型。我们甚至不能确定自然数是否是对客观世界的完全近似，比如我们可以简单的设想一个很大的数，它不能用来描述我们的宇宙中任何东西，因为它（足够大）但又不是无穷大。&lt;/p&gt;
+
+&lt;h3&gt;历史一瞥&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
+
+&lt;p&gt;再次启动时间机器，这一次的旅行近了很多，我们回到 1930 年代。大萧条正在蹂躏着这个半新不旧的时代。空前的经济下挫影响着几乎所有阶层的家庭生活，只有少数人还能够保持着饥谨危机前的安逸。一些人就如此幸运地位列其中，我们关心的是普林斯顿大学的数学家们。&lt;/p&gt;
+
+&lt;p&gt;采用了歌特式风格设计建造的新办公室给普林斯顿罩上天堂般的幸福光环，来自世界各地的逻辑学家被邀请到普林斯顿建设一个新的学部。虽然彼时的美国民众已很难弄到一餐面包，普林斯顿的条件则是可以在高高的穹顶下，精致雕凿的木质墙饰边上整日的品茶讨论或款款漫步于楼外的林荫之中。&lt;/p&gt;
+
+&lt;p&gt;阿隆佐·丘奇就是一个在这种近于奢侈的环境中生活着的数学家。他在普林斯顿获得本科学位后被邀留在研究生院继续攻读。阿隆佐认为那里的建筑实属浮华，所以他很少一边喝茶一边与人讨论数学，他也不喜欢到林中散步。阿隆佐是一个孤独者：因为只有一个人时他才能以最高的效率工作。虽然如此，他仍与一些普林斯顿人保持着定期联系，其中包括阿伦·图灵、约翰·冯·诺依曼和库尔特·哥德尔。&lt;/p&gt;
+
+&lt;p&gt;这四个人都对形式系统很感兴趣，而不太留意现实世界，以便致力于解决抽象的数学难题。他们的难题有些共同之处：都是探索关于计算的问题。如果我们有了无限计算能力的机器，哪些问题可以被解决？我们可以使他们自动地得以解决吗？是否还是有些问题无法解决？为什么？不同设计的各种机器是否具有相同的计算能力？&lt;/p&gt;
+
+&lt;p&gt;通过和其它人的合作，阿隆佐·丘奇提出了一个被称为 λ 演算（lambda calculus）的形式系统。这个系统本质上是一种虚拟的机器的编程语言，他的基础是一些以函数为参数和返回值的函数。函数用希腊字母 λ 标识，这个形式系统因此得名&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;。利用这一形式系统，阿隆佐就可以对上述诸多问题推理并给出结论性的答案。&lt;/p&gt;
+
+&lt;p&gt;独立于阿隆佐，阿伦·图灵也在进行着相似的工作，他提出了一个不同的形式系统（现在被称为图灵机），并使用这一系统独立地给出了和阿隆佐相似的结论。后来人们证明图灵机和 λ 演算能力等同。&lt;/p&gt;
+
+&lt;p&gt;如果第二次世界大战没有在那时打响，我们的故事本可以到此结束，我会就此歇笔，而你也将浏览到下一个页面。彼时整个世界笼罩在战争的火光和硝烟之中，美国陆军和海军前所未有的大量使用炮弹，为了改进炮弹的精确度，部队组织了大批的科学家持续地计算微分方程以解出弹道发射轨迹。在渐渐意识到这个任务用人力手工完成太耗精力后，人们开始着手开发各种设备来攻克这个难关。第一个解出了弹道轨迹的机器是 IBM 制造的 Mark I，它重达 5 吨，有 75 万个组件，每秒可以完成三次操作。&lt;/p&gt;
+
+&lt;p&gt;竞争当然没有就此结束，1949 年，EDVAC（Electronic Discrete Variable Automatic Computer，爱达瓦克）推出并获得了极大的成功。这是对冯·诺依曼架构的第一个实践实例，实际上也是图灵机的第一个现实实现。那一年开始好运与阿隆佐·丘奇无缘。&lt;/p&gt;
+
+&lt;p&gt;直到 1950 年代将尽，一位 MIT 的教授 John McCarthy（也是普林斯顿毕业生）对阿隆佐·丘奇的工作产生了兴趣。1958年，他公开了表处理语言 Lisp。Lisp 是对阿隆佐·丘奇的 λ 演算系统的实现，但同时它工作在冯·诺依曼计算机上！很多计算机科学家认识到了 Lisp 的表达能力。1973 年，MIT 人工智能实验室的一组程序员开发了被称为 Lisp 机器的硬件－阿隆佐 λ 演算的硬件实现！&lt;/p&gt;
+
+&lt;h3&gt;函数式编程&lt;/h3&gt;
+
+&lt;p&gt;函数式编程是对阿隆佐·丘奇理论的实践应用。但也并非全部 λ 演算都被应用到了实践中，因为 λ 演算不是被设计为在物理局限下工作的。因此，象面向对象的编程一样，函数式编程是一系列理念，而不是严格的教条。现在有很多种函数式编程语言，他们中的大多数以不同方式完成不同任务。在本文中我将就最广泛使用的源自函数式编程的思想作一解释，并将用 Java 语言举例（是的，你完全可以用 Java 写出函数式程序，如果你有显著的受虐倾向）。在下面的小节中，我将会把 Java 作为一种函数式语言，并对其稍加修改使它成为一种可用的函数式语言。现在开始吧。&lt;/p&gt;
+
+&lt;p&gt;λ 演算被设计用来探询关于计算的问题，所以函数式编程主要处理计算，并用&lt;code&gt;函数&lt;/code&gt;来完成这一过程。函数是函数式编程的基本单位，函数几乎被用于一切，包括最简单的计算，甚至变量都由计算取代。在函数式编程中，变量只是表达式的别名（这样我们就不必把所有东西打在一行里）。变量是不能更改的，所有变量只能被赋值一次。用 Java 的术语来说，这意味着所有单一变量都被声明为 final（或 C++ 的 const）。在函数式编程中没有非 final 的变量。&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;因为函数式编程中所有变量都是 final 的，所以可以提出这样两个有趣的表述：没有必要总是写出关键字 final，没有必要把变量再称为变量。于是现在我们对 Java 作出两个修改：在我们的函数式 Java 中所有变量默认都是 final 的，我们将变量（variable）称为符号（symbol）。&lt;/p&gt;
+
+&lt;p&gt;你也许会质疑，用我们新创造的语言还能写出有些复杂度的程序吗？如果每个符号都是不可变更(non-mutable)的，那么就无法改变任何状态！其实事实并非完全如此。在阿隆佐研究其 λ 演算时，他并不想将某个状态维护一段时间以期未来对其进行修改。他关注的是对数据的操作（也通常被称为”演算体 caculating stuff”）。既然已经证明 λ 演算与图灵机等价，它可以完成所有命令式编程语言能够完成的任务。那么，我们怎么才能做到呢？&lt;/p&gt;
+
+&lt;p&gt;答案是函数式程序能保存状态，只是它并非通过变量而是使用函数来保存状态。状态保存在函数的参数中，保存在堆栈上。如果你要保存某个状态一段时间并时不时地对其进行一些修改，可以写个递归函数。举个例子，我们写个函数来翻转 Java 的字符串。记住，我们声明的每个变量默认都是 final 的&lt;sup id=&quot;fnref:5&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;这个函数很慢，因为它不断地调用自己&lt;sup id=&quot;fnref:6&quot;&gt;&lt;a href=&quot;#fn:6&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;，它还是个嗜内存魔，因为要持续分配对象。不过它的确是在用函数式风格。你可能会问，怎么有人会这样写程序？好的，我这就慢慢讲来。&lt;/p&gt;
+
+&lt;h3&gt;函数式编程的优点&lt;/h3&gt;
+
+&lt;p&gt;你可能会认为我根本无法对上面那个畸形的函数给出个合理的解释。我开始学习函数式编程时就是这么认为的。不过我是错了。有很好的理由使用这种风格，当然其中一些属主观因素。例如，函数式程序被认为更容易阅读。因为连街上乱跑的娃娃都知道，是否容易理解是个见仁见智的判断，所以我将略去这些主观方面的理由。幸运的是，还有很多的客观理由。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;单元测试&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;因为函数式编程的每一个符号都是 final 的，没有函数产生过副作用。因为从未在某个地方修改过值，也没有函数修改过在其作用域之外的量并被其他函数使用（如类成员或全局变量）。这意味着函数求值的结果只是其返回值，而惟一影响其返回值的就是函数的参数。&lt;/p&gt;
+
+&lt;p&gt;这是单元测试者的梦中仙境（wet dream）。对被测试程序中的每个函数，你只需在意其参数，而不必考虑函数调用顺序，不用谨慎地设置外部状态。所有要做的就是传递代表了边际情况的参数。如果程序中的每个函数都通过了单元测试，你就对这个软件的质量有了相当的自信。而命令式编程就不能这样乐观了，在 Java 或 C++ 中只检查函数的返回值还不够——我们还必须验证这个函数可能修改了的外部状态。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;调试&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;如果一个函数式程序不如你期望地运行，调试也是轻而易举。因为函数式程序的 bug 不依赖于执行前与其无关的代码路径，你遇到的问题就总是可以再现。在命令式程序中，bug 时隐时现，因为在那里函数的功能依赖与其他函数的副作用，你可能会在和 bug 产生无关的方向探寻很久，毫无收获。函数式程序就不是这样——如果一个函数的结果是错误的，那么无论之前你还执行过什么，这个函数总是返回相同的错误结果。&lt;/p&gt;
+
+&lt;p&gt;一旦你将那个问题再现出来，寻其根源将毫不费力，甚至会让你开心。中断那个程序的执行然后检查调用栈，和命令式编程一样，栈里每一次函数调用的参数都呈现在你眼前。但是在命令式程序中只有这些参数还不够，函数还依赖于成员变量，全局变量和其他类的状态（它们也依赖着同样多的其他东西）。函数式程序里函数只依赖于它的参数，而那些信息就在你注视的目光下！还有，在命令式程序里，只检查一个函数的返回值不能够让你确信这个函数已经正常工作了，你还要去查看那个函数作用域外数十个对象的状态来确认。对函数式程序，你要做的所有事就是查看其返回值！&lt;/p&gt;
+
+&lt;p&gt;沿着堆栈检查函数的参数和返回值，只要发现一个不尽合理的结果就进入那个函数然后一步步跟踪下去，重复这一个过程，直到它让你发现了 bug 的生成点。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;并行&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;函数式程序无需任何修改即可并行执行。不用担心死锁和临界区，因为你从未用锁！函数式程序里没有任何数据被同一线程修改两次，更不用说两个不同的线程了。这意味着可以不假思索地简单增加线程而不会引发折磨着并行应用程序的传统问题。&lt;/p&gt;
+
+&lt;p&gt;事实既然如此，为什么并不是所有人都在需要高度并行作业的应用中采用函数式程序？嗯，他们正在这样做。爱立信公司设计了一种叫作 &lt;a href=&quot;http://www.erlang.org/&quot;&gt;Erlang&lt;/a&gt; 的函数式语言并将它使用在需要极高抗错性和可扩展性的电信交换机上。还有很多人也发现了 Erlang 的优势并&lt;a href=&quot;http://www.erlang.org/faq/faq.html#AEN50&quot;&gt;开始使用它&lt;/a&gt;。我们谈论的是电信通信控制系统，这与设计华尔街的典型系统相比对可靠性和可升级性要求高得多。实际上，Erlang 系统并不是”可伸缩”和”可靠”——Java 系统才是——Erlang 系统是”坚如磐石”。&lt;/p&gt;
+
+&lt;p&gt;关于并行的故事还没有就此停止，即使你的程序本身就是单线程的，那么函数式程序的编译器仍然可以优化它使其运行于多个 CPU 上。请看下面这段代码：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;somewhatLongOperation1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;somewhatLongOperation2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;concatenate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;在函数编程语言中，编译器会分析代码，辨认出潜在耗时的创建字符串 s1 和 s2 的函数，然后并行地运行它们。这在命令式语言中是不可能的，因为在那里，每个函数都有可能修改了函数作用域以外的状态并且其后续的函数又会依赖这些修改。在函数式语言里，自动分析函数并找出适合并行执行的候选函数简单的像自动进行的函数内联化！在这个意义上，函数式风格的程序是”不会过时的技术（future proof）”（虽然不喜欢用行业广告语，但这里要破例一次）。硬件厂商已经无法让 CPU 运行得更快了，于是他们增加了处理器核心的速度并因并行而获得了四倍的速度提升。当然他们也顺便忘了提及：我们多花的钱只对支持并行运行的软件有用，只有一小部分的命令式程序可以（不加修改地）并行运行在这些新的硬件上，而 100% 的（纯）函数式程序都可以，因为函数式程序天生支持并行处理。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;代码热部署&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;过去要在 Windows 上安装更新，重启计算机是难免的，而且还不只一次，即使只是安装了一个新版的媒体播放器。Windows XP 大大改进了这一状态，但仍不理想（我今天工作时运行了 Windows Update，现在一个烦人的图标总是显示在托盘里除非我重启一次机器）。Unix 系统一直以来以更好的模式运行，安装更新时只需停止系统相关的组件，而不是整个操作系统。即使如此，对一个大规模的服务器应用这还是不能令人满意的。电信系统必须 100% 时间在线运行，因为如果在系统更新时紧急拨号失效，就可能造成生命损失。华尔街的公司也没有理由必须在周末停止服务以安装更新。&lt;/p&gt;
+
+&lt;p&gt;理想的情况是完全不停止系统任何组件来更新相关的代码。在命令式的世界里这是不可能的。考虑运行时上载一个 Java 类并重载一个新的定义，那么所有这个类的实例都将不可用，因为它们被保存的状态丢失了。我们可以着手写些繁琐的版本控制代码来解决这个问题，然后将这个类的所有实例序列化，再销毁这些实例，继而用这个类新的定义来重新创建这些实例，然后载入先前被序列化的数据并希望载入代码可以不出问题地将这些数据移植到新的实例。在此之上，每次更新都要重新手动编写这些用来移植的代码，而且要相当谨慎地防止破坏对象间的相互关系。理论简单，但实践可不容易。&lt;/p&gt;
+
+&lt;p&gt;对函数式的程序，所有的状态即传递给函数的参数都被保存在了堆栈上，这使的热部署轻而易举！实际上，所有我们需要做的就是对工作中的代码和新版本的代码做一个差异比较，然后部署新代码。其他的工作将由一个语言工具自动完成！如果你认为这是个科幻故事，请再思考一下：多年来 Erlang 工程师一直&lt;a href=&quot;http://www.erlang.org/doc/reference_manual/code_loading.html#12.3&quot;&gt;更新&lt;/a&gt;着他们在线上运转着的系统，而无需中断它。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;机器辅助的推理和优化&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;函数式语言的一个有趣的属性就是他们可以用数学方式推理。因为一种函数式语言只是一个形式系统的实现，所有在纸上完成的运算都可以应用于以这种语言书写的程序。比如，编译器可以把一段代码变换为等价但更高效的代码，由于变化遵循严格的数学原理其等价性是可证明的&lt;sup id=&quot;fnref:7&quot;&gt;&lt;a href=&quot;#fn:7&quot; class=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;。多年来关系型数据库一直在进行着这类优化，没有理由不能把这一技术应用到常规软件上。&lt;/p&gt;
+
+&lt;p&gt;另外，还能使用这些技术来证明部分程序的正确，甚至可能创建工具来分析代码并为单元测试自动生成边界用例！这对那些要求极其稳定的系统价值不可估量，比如心脏起搏器（pacemaker）或空中交通控制系统；如果你编写的不是非常关键的应用，这类工具也是让你领先于竞争对手的杀手锏。&lt;/p&gt;
+
+&lt;h3&gt;高阶函数&lt;/h3&gt;
+
+&lt;p&gt;我记得自己在了解了上面列出的种种优点后曾想：”这都很棒，可是如果我不得不用天生残缺的语言对着全是 final 的变量编程，好特性也毫无意义。” 这其实是误解。在如 Java 这般的命令式语言环境里，所有变量都是 final 将带来一堆问题，但是在函数式语言里并非如此，函数式语言提供了不同的抽象工具使你忘记曾经习惯于修改变量。高阶函数就是这样一种工具。&lt;/p&gt;
+
+&lt;p&gt;函数式语言中的函数不同于 Java 或 C 中的函数，而是一个超集——它有着 Java 函数拥有的所有功能，但还有更多。创建函数的方式和 C 中相似:&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;这里有些东西和等价的 C 代码有区别。现在扩展我们的 Java 编译器使其支持这种记法：当我们输入上述代码后编译器会把它转换成下面的 Java 代码（别忘了，所有东西都是 final 的）：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;add_function_t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;add_function_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add_function_t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;这里的符号 add 并不是一个函数。这是一个有一个成员函数的很小的类。我们现在可以把 add 作为函数参数放入我们的代码中。还可以把它赋给另一个符号。我们在运行时创建的 add_function_t 的实例如果不再被使用就将会被垃圾回收掉。这些使得函数成为第一级的对象无异于整数或字符串。操作（作为参数的）函数的函数被称为高阶函数。别让这个术语吓着你，这和 Java 的 class 操作其它（作为参数的）class 没什么区别。我们本可把它们称为”高阶类”但没有人注意到这个，因为 Java 背后没有一个强大的学术社区。&lt;/p&gt;
+
+&lt;p&gt;那么何时以及如何使用高阶函数呢？我很高兴你这样问，如果你不曾考虑类的继承层次，就可能写出一整团堆砌的代码块。当你发现其中一些代码重复出现，就把他们提取成函数（幸运的是这些依然可以在学校里学到），如果你发现在那个函数里一些逻辑动作根据情况有变，就把他提取成高阶函数。糊涂了？下面是 一个来自我工作中的实例：假如我的一些 Java 代码接受一条信息，用多种方式处理它然后转发到其他服务器。&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MessageHandler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handleMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;c1&quot;&gt;// …&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setClientCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;ABCD_123&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;c1&quot;&gt;// …&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;n&quot;&gt;sendMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;c1&quot;&gt;// …&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;假设现在要更改这个系统，我们要把信息转发到两个服务器而不是一个，一切基本都像刚才一样，但第二个服务器接受另一种客户代码（client code）格式，怎么处理这种情况？我们可以检查信息的目的地并相应修改客户端代码的格式，如下：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MessageHandler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handleMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;c1&quot;&gt;// …&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDestination&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;server1&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;            &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setClientCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;ABCD_123&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;            &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setClientCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;123_ABC&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;c1&quot;&gt;// …&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;10&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;n&quot;&gt;sendMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;11&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;12&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;c1&quot;&gt;// …&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;13&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;然而这不是可扩展的方法，如果加入了更多的服务器，这个函数将线性增长，更新它会成为梦魇。面向对象的方法是把 MessageHandler 作为基类，在子类中定制客户代码操作：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MessageHandler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handleMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;c1&quot;&gt;// …&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setClientCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getClientCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;c1&quot;&gt;// …&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;n&quot;&gt;sendMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getClientCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;c1&quot;&gt;// …&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;10&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;11&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;12&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MessageHandlerOne&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MessageHandler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;13&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getClientCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;14&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;ABCD_123&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;15&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;16&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;17&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;18&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MessageHandlerTwo&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MessageHandler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;19&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getClientCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;20&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;123_ABCD&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;21&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;22&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;现在就可以对每个服务器实例化一个适合的处理类，添加服务器的操作变得容易维护了。但对于这么一个简单的修改仍然要添加大量的代码。为了支持不同的客户代码我们创建了两个新的类型！现在我们用高阶函数完成同样的功能：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MessageHandler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handleMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getClientCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;c1&quot;&gt;// …&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;n&quot;&gt;Message&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setClientCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getClientCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;c1&quot;&gt;// …&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;n&quot;&gt;sendMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;c1&quot;&gt;// …&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;10&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;11&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getClientCodeOne&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;12&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;ABCD_123&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;13&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;14&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;15&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getClientCodeTwo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;16&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;123_ABCD&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;17&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;18&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;19&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;MessageHandler&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MessageHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;20&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;handleMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;someMsg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getClientCodeOne&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;没有创建新的类型和新的 class 层次，只是传入合适的函数作为参数，完成了面向对象方式同样的功能，同时还有一些额外的优点。没有使自己囿于类的层次之中：可以在运行时传入函数并在任何时候以更高的粒度更少的代码修改他们。编译器高效地为我们生成了面向对象的”粘合”代码！除此之外，我们还获得了 所有函数式编程的其他好处。当然函数式语言提供的抽象不只这些，高阶函数只是一个开始。&lt;/p&gt;
+
+&lt;h3&gt;Currying&lt;/h3&gt;
+
+&lt;p&gt;我认识的大多数人都读过”四人帮”的那本&lt;a href=&quot;http://www.amazon.com/gp/product/0201633612/103-9055240-2348603&quot;&gt;设计模式&lt;/a&gt;，任何有自尊的程序员都会告诉你那本书是语言中立的（agnostic），模式在软件工程中是通用的，和使用的语言无关。这是个高贵的宣言，但不幸有违现实。&lt;/p&gt;
+
+&lt;p&gt;函数式编程具有突出的表达能力，在函数式语言中，语言已达此高度，设计模式就不再是必需，最终你将能消灭设计模式而以概念编程。适配器 （Adapter）模式就是这样的一个例子（究竟适配器和 Facade 模式区别在哪里？可能有些人需要在这里再多费些篇章），而一旦语言有了叫作 &lt;em&gt;currying&lt;/em&gt; 的技术，这一模式就可以被消除。&lt;/p&gt;
+
+&lt;p&gt;适配器模式最有名的是被应用在 Java 的”默认”行为抽象上。在函数式编程里，模式被应用到函数，模式带有一个接口并将它转换成另一个对他人有用的接口。这有一个适配器模式的例子：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;square&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;上面的代码把一个整数幂运算接口转换成为了一个平方接口。在学术文章里，这个雕虫小技被叫作 currying（得名于逻辑学家 Haskell
+Curry，他曾将相关的数学理论形式化）。因为在函数式编程中函数（反之如 class）被作为参数来回传递，currying 很频繁地被用来把函数调整为更适宜的接口。因为函数的接口是他的参数，使用 currying 可以减少参数的数目（如上例所示）。&lt;/p&gt;
+
+&lt;p&gt;函数式语言内建了这一技术。不用手动地创建一个包装了原函数的函数，函数式语言可以为你代劳。同样地，扩展我们（假想）的 Java 语言，让他支持这个技术：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;square&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;这将为我们自动创建出一个有一个参数的函数 square。他把第二个参数设置为 2 再调用函数 pow。这行代码会被编译为如下的 Java 代码：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;square_function_t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;square&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;square_function_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;square&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;square_function_t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;正如你所见，通过简单地创建一个对原函数的包装，在函数式编程中，这就是 currying —— 快速简易创建包装的捷径。把精力集中在你的业务上，让编译器为你写出必要的代码！什么时候使用 currying？这很简单，任何时候你想要使用适配器模式（包装）时。&lt;/p&gt;
+
+&lt;h3&gt;惰性求值&lt;/h3&gt;
+
+&lt;p&gt;一旦我们接纳了函数式哲学，惰性（或延迟）求值这一技术会变得非常有趣。在讨论并行时已经见过下面的代码片断：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;somewhatLongOperation1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;somewhatLongOperation2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;concatenate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;在一个命令式语言中求值顺序是确定的，因为每个函数都有可能会变更或依赖于外部状态，所以就必须有序的执行这些函数：首先是
+somewhatLongOperation1，然后 somewhatLongOperation2，最后 concatenate，在函数式语言里就不尽然了。&lt;/p&gt;
+
+&lt;p&gt;前面提到只要确保没有函数修改或依赖于全局变量，somewhatLongOperation1 和 somewhatLongOperation2 可以被并行执行。假设我们不想并行运行这两个函数，那是不是就按照字面顺序执行他们好了呢？答案是否定的，我们只在其他函数依赖于 s1 和 s2 时才需要执行这两个函数。我们甚至在 concatenate 调用之前都不必执行他们——可以把他们的求值延迟到 concatenate 函数内实际用到他们的位置。如果用一个带有条件分支的函数替换 concatenate 并且只用了两个参数中的一个，另一个参数就永远没有必要被求值。在 Haskell 语言中，不确保一切都（完全）按顺序执行，因为 Haskell 只在必要时才会对其求值。&lt;/p&gt;
+
+&lt;p&gt;惰性求值优点众多，但缺点也不少。我们会在这里讨论它的优点而在下一节中解释其缺点。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;优化&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;惰性求值有显著的优化潜力。惰性编译器看函数式代码就像数学家面对代数表达式——可以消去一部分而完全不去运行它，重新调整代码段以求更高的效率，甚至重整代码以降低出错，所有确定性优化（guaranteeing optimizations）不会破坏代码。这是严格用形式原语描述程序的巨大优势——代码固守着数学定律并可以数学的方式进行推理。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;抽象控制结构&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;惰性求值提供了更高一级的抽象，它使得原本不可能的事情变成可能。例如，考虑实现如下的控制结构：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;unless&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isEuropean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;n&quot;&gt;sendToSEC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;我们希望只在祖先不是欧洲人时才执行 sendToSEC。如何实现 unless？如果没有惰性求值，我们需要某种形式的宏（macro）系统，但
+Haskell 这样的语言不需要它。把他实现为一个函数即可：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;unless&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;condition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;注意如果条件为真，代码将不被执行。我们不能在一个严格（strict）的语言中再现这种求值，因为 unless 调用之前会先对参数进行求值。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;无穷（infinite）数据结构&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;惰性求值允许定义无穷数据结构，对严格语言来说实现这个要复杂的多。考虑一个 Fibonacci 数列，显然我们无法在有限的时间内计算出或在有限的内存里保存一个无穷列表。在严格语言如 Java 中，只能定义一个能返回 Fibonacci 数列中特定成员的 Fibonacci 函数，在 Haskell
+中，我们对其进一步抽象并定义一个关于 Fibonacci 数的无穷列表，因为作为一个惰性的语言，只有列表中实际被用到的部分才会被求值。这使得可以抽象出很多问题并从一个更高的层次重新审视他们（例如，我们可以在一个无穷列表上使用表处理函数）。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;缺点&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;当然从来不存在免费的午餐。惰性求值有很多的缺点，主要就在于…惰性。有很多现实世界的问题需要严格（按序）计算。例如考虑下例：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Please enter your name: &amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;readLine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;在惰性求值的语言里，不能保证第一行会在第二行之前执行！那么我们就不能进行输入输出操作，不能有意义地使用本地（native）接口（因为他们相互依赖其副作用必须被有序的调用），从而与整个世界隔离。如果引入允许特定执行顺序的原语又将失去数学地推理代码的诸多好处（为此将葬送函数式编程与其相关的所有优点）。幸运的是，我们并非丧失了一切，数学家为此探索并开发出了许多技巧来保证在一定函数式设置下（functional setting）代码能以特定顺序执行。这样我们就赢得了两个世界。这些技术包括 continuation， monad 和 uniqueness typing（一致型别）。我只会在本文中解释 continuation，把 monad 和 uniqueness typing 留到将来的文章中。有趣的是，除了确保函数求值顺序， continuation 在很多别的情况下也很有用。这点等一会儿就会提到。&lt;/p&gt;
+
+&lt;h3&gt;Continuations&lt;/h3&gt;
+
+&lt;p&gt;Continuations 对于程序设计的意义，就像达芬奇密码对人类历史的意义：即对人类最大秘密的惊人揭示。也许不是，但他在概念上的突破性至少和负数平方根的意义等同。&lt;/p&gt;
+
+&lt;p&gt;我们在学习函数时只了解了一半事实，因为我们基于一个错误的假定：函数只能将结果返回到它的调用端。从这个意义上说 continuation 是广义的函数，函数不必返回到其调用端而可以返回到程序的任何地方。我们把 “continuation” 作为参数传给一个函数，它指定了这个函数返回的位置。这个描述可能听起来挺复杂，看看下面的代码：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;square&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;函数 add 在其被调用的位置将结果 15 赋给了 i，接下来 i 的值被用来调用 square。注意所有的惰性求值编译器都不能调整这几行代码因为第二行依赖着第一行的成功求值。下面用 continuation 风格又称 CPS（Continuation Programming Style）来重写这段代码，这里函数 add 会将结果返回到 square 而不是原来的调用函数。&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;square&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;这个例子中 add 有了另一个参数——一个 add 必须在它求值结束时用其返回值调用的函数。这里 square 是 add 的一个 continuation。这两种情况下，j 都将等于 255。&lt;/p&gt;
+
+&lt;p&gt;这就是强制使惰性语言有序地求值两个表达式的第一个技巧。考虑下面这个（熟悉的）IO 代码：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Please enter your name: &amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;readLine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;这两行不相依赖所以编译器会自由的重新调整他们的执行顺序。然而，如果我们用 CPS 来重写这段代码，就会有一个依赖，编译器会因此而强制对这两行代码有序执行。&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Please enter your name: &amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;readLine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;这里（我们假定改造过的） println 需要用自己的返回结果作为参数去调用 readLine 并将 readLine 返回值作为自己的返回值。这样就能确保这两行被有序执行而且 readLine 一定被执行（因为整个计算期望最后的结果为结果）。Java 的 println 返回 void 但如果它返回的是一个抽象值（readLine 所期待的），我们就解决了这个问题。这样串接的函数调用很快会让代码难以读懂，不过这可以避免，比如我们可以给语言添加些语法糖（syntactic sugar）将其变成按正常顺序输入的表达式，然后由编译器自动为我们串接这些函数调用。这样就可以如愿地强制求值顺序并保留一切函数式编程的好处（包括数学地对我们程序进行推理的能力）。如果还是不明白，试着把函数看作只有一个成员的类的实例，重写上述代码使得 println 和 readLine 成为类的实例，就比较容易清楚了。&lt;/p&gt;
+
+&lt;p&gt;如果我在此结束本节，那将仅仅涉及到 continuation 最浅显的应用，我们可以用 CPS 重写整个程序，所有的函数都增加一个额外的 continuation 参数并把函数结果传给它；也可以用另一种方法来重写：简单地把函数当作 continuation 的总是返回到调用端的特例。这种转换很容易自动化（事实上，许多编译器就是这么做的）。&lt;/p&gt;
+
+&lt;p&gt;一旦我们将一个程序转为了 CPS，那么很明显每个指令都将有些 continuation, 这是一个该指令在执行结束时会用其执行结果调用的函数（在通常的非 CPS 程序中，就是跳转到调用端的指令）。从上面随便选个例子，比如 add(5, 10)，在用 CPS 风格写的程序里，add 的 continuation 是一个 add 执行结束时会调用的函数，那么在非 CPS 的程序里它是什么呢？我们可以把程序转为 CPS，但有必要这么做吗？&lt;/p&gt;
+
+&lt;p&gt;其实没有必要。仔细看一下我们的 CPS 转换过程，如果尝试为它写一个编译器，那么经过长久思考后，你会意识到这个 CPS 的版本根本不需要栈！没有函数会以传统的意义”返回”，它只是用结果调用了另一个函数。我们无需在调用时将函数参数压栈再于调用结束时弹出栈，而只是简单的把他们保存在一大块内存中，然后使用跳转指令。不再需要原来的参数——他们不会再次被用到，因为没有函数会返回。&lt;/p&gt;
+
+&lt;p&gt;所以，用 CPS 风格写成的程序没有堆栈，但每个函数却有一个额外的参数可被调用；非 CPS 风格的程序没有可以被调用的这个参数，但却有栈；栈中存放着什么？只是参数和一个指向函数返回地址的指针。你看出端倪了吗？栈中只是放着 continuation 的信息！ 栈中指向返回指令的指针本质上和 CPS 程序里将被调用的函数是等价的。如果你想探究 add(5,10) 的 continuation，只要简单地检查它在堆栈的执行点！&lt;/p&gt;
+
+&lt;p&gt;所以，continuation 和栈上指向返回地址的指针是等价的，只是 continuation 被显式传递，所以不必和函数被调用点是同一位置。如果还记得 continuation 就是一个函数，并且在我们的语言里，函数被编译为一个类的实例，你就会理解指向栈中返回指令的指针实际就是 continuation。因为我们的函数（就像一个类的实例）只是一个指针，这意味着给定程序中任意时间和任意位置，你都可以去请求一个”当前 continuation”（current continuation，它就是当前的栈的信息）。&lt;/p&gt;
+
+&lt;p&gt;这样我们就知道了什么是”当前 continuation”。它有什么意义？一旦我们得到了当前的 continuation 并将它保存在某处，我们就最终将程序当前的状态保存了下来——及时地冷冻下来。这就像操作系统进入休眠状态。一个 continuation 对象里保存了从我们获得它的地方重新启动程序的必要信息。操作系统在每次发生线程间的上下文切换时也是如此。唯一的区别是它保留着全部控制。请求一个 continuation 对象（在 Scheme 里，可以调用 call-with-current-continuation 函数）后，你就会获得一个包括了当前 continuation 的对象，也就是堆栈信息（在 CPS 程序里就是下一个要调用的函数），可以把这个对象保存在一个变量（或者是磁盘）里。当你用这个 continuation “重启”程序时，就会转回到你取得这个对象的那个状态，这就象切换回一个被挂起的线程或唤醒休眠的操作系统，区别是用 continuation，你可以多次地重复这一过程，而当操作系统被唤醒时，休眠信息就被销毁了，如果那些信息没有被销毁，你也就可以一次次地将它唤醒到同一点，就象重返过去一样。有了 continuation 你就有了这个控制力！&lt;/p&gt;
+
+&lt;p&gt;Continuation 应该在什么情况下使用呢？通常在尝试模拟一个本质上是无状态的应用时可以简化你的任务。Continuation 很适合在 &lt;a href=&quot;http://www.seaside.st/&quot;&gt;Web 应用程序&lt;/a&gt;中使用。微软公司的 ASP.NET 技术极尽苦心地模拟状态以便你在开发 Web 应用时少费周折，可如果 C# 支持了 continuation，ASP.NET 的复杂度就可以减半，你只需要保存一个 continuation，当用户下次发出 Web 请求时重启它即可。对程序员来说，web 应用程序将不再有中断，程序只是简单的从下一行重启！利用 continuation 这一抽象解决问题真是令人难以置信的便利，考虑到越来越多的胖客户端应用程序正在向服务器端转移，将来 continuation 也会变得越来越重要。&lt;/p&gt;
+
+&lt;h3&gt;模式匹配&lt;/h3&gt;
+
+&lt;p&gt;模式匹配不是什么新的创新特性，事实上，它和函数式编程的关系不大。把产生模式匹配归因于函数式编程的唯一的原因是函数式语言早就提供了模式匹配，然而现在的命令式语言还大多做不到。&lt;/p&gt;
+
+&lt;p&gt;让我们用一个例子深入了解一下模式匹配。这是一个 Java 的 Fibonacci 函数：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;让我们用 Java 衍生出的函数式语言来支持模式匹配：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;10&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;11&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;两者有什么区别？编译器为我们实现了分支。这有什么大不了？的确没什么，有人注意到很多函数包括了复杂的 switch 语句（尤其是在函数式程序中）所以认为这种抽象形式很好。我们把一个函数定义分离成多个，然后把模式置于参数中（有点象重载）。当这个函数被调用时，编译器比较传入参数和函数定义然后选择其中正确的一个，这一般是通过选择可选的最特定的定义来完成。例如，int fib(int n) 可以在 n 等于 1 时被调用，但是实际上 fib(n) 没有被调用，因为 fib(1) 更加特定。&lt;/p&gt;
+
+&lt;p&gt;模式匹配通常要比我这个例子复杂，比如，高级模式匹配系统可以让我们这样做：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/*…*/&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/*…*/&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;模式匹配什么时候适用？情况太多了！每当你有一个嵌套着 if 的复杂的数据结构，这时就可以用模式匹配以更少的代码完成得更好。一个很好的例子闪现在我脑海，这就是所有 Win32 平台都提供了的标准的 WinProc 函数（即使它通常被抽象了）。通常模式匹配系统能检测集合也可以应付简单的值。例如，当传给函数一个数组后，就可以找出所有首元素为 1 第三个元素大于 3 的所有数组。&lt;/p&gt;
+
+&lt;p&gt;模式匹配还有一个好处：如果需要增加或修改条件，那么不必对付一个巨大的函数，只需增加或修改适合的定义即可，这消除了”四人帮”（GoF）书中的一大类设计模式。条件越复杂，模式匹配就越有用，一旦习惯了它，你就会担心没有了模式匹配的日子如何打发。&lt;/p&gt;
+
+&lt;h3&gt;Closures&lt;/h3&gt;
+
+&lt;p&gt;到此我们已经讨论了纯函数式语言——实现了 λ 演算又不包括与丘奇形式系统矛盾的语言——里的特性，可是还有很多在 λ 演算框架之外的函数语言的有用特征。虽然一个公理系统的实现可以让我们象数学表达式那样思考程序但它未必是实际可行的。许多语言选择去合并一些函数式的元素而没有严格的坚持函数式的教条。很多象这样的语言（如 Common Lisp）不要求变量是 final 的——可以对其修改。他们还不要求函数只依赖于其参数——允许函数访问外部状态。但这些语言也的确包含着函数式的特征——如高阶函数，在非纯粹的函数式语言里传递函数作为参数和限制在 λ 演算系统中的作法有些不同，它需要一种常被称为词法闭包（lexical closure）的有趣特性。下面我给出几个例子。记住，这里变量不再是 final 的，函数可以引用其作用域外的变量：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;Function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;makePowerFn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;power&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;powerFn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;power&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;powerFn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;Function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;square&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;makePowerFn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;square&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// returns 9&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;函数 make-power-fn 返回了一个函数，它有一个参数，并对这个参数进行一定阶的幂运算。如果对 square(3) 求值会有什么结果？变量 power 不在 powerFn 的作用域中，因为 makePowerFn 已经返回它的栈桢而不复存在。那么 square 如何工作？一定是这个语言以某种方式将 power 的值保存了起来以便 square 使用。如果我们再新建一个函数 cube，用来计算参数的立方又会怎样？运行环境必须存储两个 power 的拷贝，每个我们用 make-power-fn 生成的函数都用一个拷贝。保存这些值的现象就被称为 closure。Closure 不只保存宿主函数的参数，例如 closure 可能会是这样：&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;Function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;makeIncrementer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;increment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;Function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inc1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;makeIncrementer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;10&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;Function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inc2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;makeIncrementer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;11&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;12&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;inc1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// returns 1;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;13&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;inc1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// returns 2;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;14&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;inc1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// returns 3;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;15&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;inc2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// returns 1;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;16&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;inc2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// returns 2;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;17&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;inc2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// returns 3;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;运行时已保存了 n，所以递增器可以访问它，而且运行时为每个递增器都保存了一份 n 的拷贝，即使这些拷贝本应在 makeIncrementer
+返回时消失。这些代码被如何编译？closure 在底层是如何工作的？很幸运，我们可以去幕后看看。&lt;/p&gt;
+
+&lt;p&gt;常识会很有帮助，首先应注意到的是，局部变量的生命周期不再由简单的作用域限定，而变成不确定的，从而可以得出结论它们不能保存在栈上，而必须保存在堆上&lt;sup id=&quot;fnref:8&quot;&gt;&lt;a href=&quot;#fn:8&quot; class=&quot;footnote&quot;&gt;8&lt;/a&gt;&lt;/sup&gt;。这样一来，closure 的实现就象我们前面讨论的函数一样了，只是它还有一个指向周围变量的引用。&lt;/p&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;some_function_t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;#x7b;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;n&quot;&gt;SymbolTable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parentScope&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;c1&quot;&gt;// …&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;#x7d;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;当一个 closure 引用了一个不在其作用域的变量时，它会在其祖先作用域中查找这个引用，就是这样！Closure 将函数式和面向对象的世界紧密结合。当你创建了一个包含了一些状态的类并把它传到别处时，考虑一下 closure。Closure 就是这样在取出作用域中的变量的同时创建”成员变量”，所以你不必亲自去做这些！&lt;/p&gt;
+
+&lt;h3&gt;下一步的计划&lt;/h3&gt;
+
+&lt;p&gt;关于函数式编程，本文作了浅显地讨论。有时候一次粗浅的涉猎可能会进展为重大的收获，对我们来说这是好事。将来我还计划写写 category 理论、monad、函数式数据结构、函数式语言中的类型（type）体系、函数式并发、函数式数据库等等，可能还有很多。如果我得以（在学习的过程中）写出了上述诸多主题中的一半，我的生命就会完整了。还有，Google 是我们的朋友。&lt;/p&gt;
+
+&lt;p&gt;如果你有任何问题，意见或建议，请发到邮箱 &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#099;&amp;#111;&amp;#102;&amp;#102;&amp;#101;&amp;#101;&amp;#109;&amp;#117;&amp;#103;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;&amp;#099;&amp;#111;&amp;#102;&amp;#102;&amp;#101;&amp;#101;&amp;#109;&amp;#117;&amp;#103;&amp;#064;&amp;#103;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&lt;/a&gt;。很高兴收到你的反馈。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;2005 年秋天我找工作时常常提出这个问题，当时我得到的是数量可观的一脸茫然，考虑到这些人基本上年薪都在 30 万美元以上，他们理应对他们可以得到的工具有更深入的理解。 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;这看上去像是个悖论：物理学家和数学家被迫接受这个现实：他们完全无法确认宇宙万物是否遵循着某种数学家们可以定义的规则。 &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;我一直厌恶提供了一堆枯燥的日期，人名和地点的纪年式历史课，对我而言，历史是改变了这个世界的人的生活，是他们行为之后的个人动机，是他们得以影响亿万生灵的体制。所以这个关于历史的小节注定无法完整，只讨论了于本文关系密切的人物与事件。 &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:4&quot;&gt;
+      &lt;p&gt;我在学习函数式编程的时候，很不喜欢术语 λ，因为我没有真正理解它的意义。在这个上下文里，λ 是一个函数，那个希腊字母只是方便书写的数学记法，每当你听到 λ 时，只要在脑中把它翻译成函数即可。 &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:5&quot;&gt;
+      &lt;p&gt;有趣的是 Java 的字符串是不可变更的，探讨这一离经叛道的设计的原因也非常有趣，不过在这里会分散我们对原目标的注意力。 &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:6&quot;&gt;
+      &lt;p&gt;大多数函数式编程语言的编译器能通过将递归尽可能转为迭代来进行优化，这被称为尾递归。 &lt;a href=&quot;#fnref:6&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:7&quot;&gt;
+      &lt;p&gt;反之未必成立，虽然有时可以证明某两段代码等价，但并不是对随意的两段代码都能做到的。 &lt;a href=&quot;#fnref:7&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:8&quot;&gt;
+      &lt;p&gt;这实际上不比存储在栈上慢，因为一旦引入了垃圾回收器，内存分配就成为了一个 O(1) 的操作。 &lt;a href=&quot;#fnref:8&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+                <pubDate>Wed, 06 Mar 2013 22:02:00 +0800</pubDate>
+                <link>http://cn.soulhacker.me/2013/03/06/functional-programming-for-the-rest-of-us/</link>
+                <guid isPermaLink="true">http://cn.soulhacker.me/2013/03/06/functional-programming-for-the-rest-of-us/</guid>
+                
+                <category>Programming</category>
+                
+                
+            </item>
+        
+            <item>
+                <title>创与投的悲喜剧</title>
+                <description>&lt;p&gt;《创业家》杂志的文章原创度大多很高，通常来源于和第一线相关人士的直接接触，在国内同类媒体里是我比较尊敬的一个。9 月号《创业家》封面文章题为「VC 潜规则」，网站上有&lt;a href=&quot;http://www.chuangyejia.com/index1.php?m=content&amp;amp;c=index&amp;amp;a=show&amp;amp;catid=123&amp;amp;id=8192&quot;&gt;主要内容的节选&lt;/a&gt;，里面提到的问题并非危言耸听，基本都有具体案例做支持，同时文章中有意无意的建立了创业和投资双方对立的景象，从市场规律来说这并不正常。&lt;/p&gt;
+
+&lt;p&gt;我接触到的不少互联网早期项目的创业者和投资者其实心态是没有问题的：创业者寻求符合自己条件的资本帮助自己更快的迈过下一个坎，而投资者希望创业者（最终或至少阶段性）成功使自己能搭车赚钱。目前越界违规乃至违法的行为，大多因为国内创新环境不佳，真正靠谱的项目不多，创投双方都有短视和投机心理，加之信用和监管方面的缺失，也使违规成本及风险降低，于是有点劣币驱逐良币的势头。但我还是坚信，市场上充分最大化双方利益才是时代的潮流，而在创投领域，通过合理的规则体系及资本运作来鼓励创新和创造价值，是最符合创投双方长远利益的，所以我愿意花点时间来就着上述《创业家》文章中提到的问题逐个评论，为什么这些问题本不该出现，而创投双方只要想明白了，其实可以一起努力做的更好。
+&lt;!-- more --&gt;&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;最值得创业者警惕的莫过于投资人投成大股东。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;这条是显而易见的，但我要说，其实投资人成为大股东是双输的结果。首先对于风投来说，其目的并不是把钱投出去，而是收回来，所以退出才是关键，如果某个投资人握有过多股份，就很难再找到新的投资方，退出机制就成了大问题；其次，即使不考虑退出，一旦投资人持股超过创业团队，创业团队及其领袖很容易就会迷失自己的目标，因为他很难再将产品/公司看作「自己的孩子」，这对产品和公司来说经常是致命的，而产品和公司失败了，投资人自己也就没有任何回报了。另一种情况是企业已经非常稳定，业务蒸蒸日上，股票也通过二级市场或者 IPO 公开流通，这时候创业者非控股甚至非第一大股东都是很正常的，需要的是一些反恶意收购的策略和方法。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;最让创业者厌恶的是不尊重创始团队，过度干预企业日常经营。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;这往往是不成熟的投资人干出来的事，或者说是一些创业、管理和导师瘾没过足的成功人士跑到投资领域来搅的混水。我倾向于称之为创业导师而不是风险投资人（其实创业需要导师么？）。是的，好的投资者可以对行业对产品有自己的观点与倾向，PG 还教创业者&lt;a href=&quot;http://www.paulgraham.com/ambitious.html&quot;&gt;哪些产品值得去做&lt;/a&gt;呢，但这只是布道，属于利用自己的积累为创新产业做贡献（反过来也可以提升投资者成功几率）。
+而创业项目风险投资，用一位前辈的话来说，叫金融产品零售，和叫化子类似，能做的只是看和选，有那么多想法与其指导别人还不如自己干一个吧。不过我一直认同的、投资者应该尝试指导创业者的唯一例外，就是关于股份制企业治理，大多数创业者缺乏这方面的经验，我的一位同事每发一份投资意向书（term sheet）就赠送对方一本关于股份制公司融资和治理的书，是个不错的个性化实践，值得推广。&lt;/p&gt;
+
+&lt;p&gt;从创业者角度来说，和股东、董事会打交道是自己工作职责的一部分，伟大如 Steve Jobs 也在 35 岁之后才学会和董事会打交道的方法，所以也不用把这问题看得太重，最后很多其实都是交流上的问题，当然一开始就要把股东、董事会、管理团队的责权利明确下来，这是公司长治久安的根基。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;最让创业者觉得恶心的是不尊重商业机密，获取企业信息后转投资竞争对手。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;投资之后投资者和创业者应该是伙伴关系，投资前可不是。本质上这是一种商战，投资者、创业者以及各自的竞争者其实是复杂的博弈关系，如果创业者不熟悉这个领域的商业规则，是完全可能在规则框架内被阴了的。投资者在融资过程中不可避免的需要向潜在的投资者披露一些信息，这时候创业者应该有一些考虑：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;尽量选择在对自己有利的时机披露必要的信息，仔细研究自己的业务，划分出不同的级别的可披露信息加以管理。&lt;/li&gt;
+  &lt;li&gt;信息披露和相关的保密义务挂钩，关键信息，尤其是对企业可能产生重大影响的敏感信息应在有足够保护的情况下披露；对违反保密协议的行为完全可以用法律手段保护自己的权益。&lt;/li&gt;
+  &lt;li&gt;要对自己的业务有个正确认知，并不是很多信息都那么敏感，如果因为不披露或者披露之后不如竞争对手而失去被投资机会，这其实没啥可抱怨的。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;&lt;p&gt;最让创业者觉得可恨的是缺乏投资诚意，投资意向书的实际投资率较低。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;投资意向书（term sheet）是个比较特别的文件，既表示比较确定的意向但又不代表承诺，既明确了大量后续操作的原则但又没有太多法律约束力。当然，在诚信和品牌比较被看重的环境下，投资者会对意向书相当谨慎，主要是考虑到给了意向书而最后不投会损失自己的声誉，从而影响未来的生意，而在其他环境下，投资者可以既不违反纸面上的规则，又可以利用意向书来玩一些诡计。&lt;/p&gt;
+
+&lt;p&gt;可能因为资本市场的规则体系基本是资方制定的缘故，框架一般都会偏向投资人一方，在理解到本质上融资过程是一场商战之后，创业者更应该谨慎对待意向书谈判，必须充分了解相关背景知识，必要时可以寻求专业律师或融资顾问的帮助。实际上意向书里几乎所有的条款都是可谈判的，几乎每个关键论述都有对投资者有利、较中性和对创业者有利的三种版本，创业者应该努力避免太悬殊的信息不对称而吃亏。&lt;/p&gt;
+
+&lt;p&gt;另外应该时刻记住，这是个有充分选择的商业社会（是的，即使在我国也算是）。除去在尽职调查（DD）中发现严重问题这类情况不算，如果一个投资者签意向书后最终签投资协议的比例不到一半，愿意找他的创业者一定会越来越少，如果不是这样，我只能说，只认钱不认人的笨创业者太多了。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;最让创业者觉得闹心的是缺乏耐心，对创业团队的经营目标设定脱离企业发展规律，要求业绩对赌。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;我觉得应该这么看：这是个选择的问题。如果觉得条件无法接受，可以不选；如果对自己的业绩没有把握，可以不赌；如果对估值不满意，可以想办法说服对方自己的价值为什么可以更高。所谓「缺乏耐心」，所谓「脱离企业发展规律」，实质上是双方价值观以及对未来的判断和预期不一致，这种情况下强行合作后患无穷。&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;最让创业者鄙视的是在投资过程中谋求个人占股、回扣等个人利益的投资人。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;这种案例中双方都是该谴责甚至承担法律责任的，但目前确实立法和行业规则跟不上市场发展的要求，但这也不是我们能去改变的，我们能做的只能是自律，以及在合法和力所能及的范围内披露真相，所以这个似乎没法太深入去讨论。&lt;/p&gt;
+</description>
+                <pubDate>Fri, 19 Oct 2012 09:57:00 +0800</pubDate>
+                <link>http://cn.soulhacker.me/2012/10/19/vc-drama/</link>
+                <guid isPermaLink="true">http://cn.soulhacker.me/2012/10/19/vc-drama/</guid>
+                
+                <category>Startup</category>
+                
+                
+            </item>
+        
+    </channel>
+</rss>

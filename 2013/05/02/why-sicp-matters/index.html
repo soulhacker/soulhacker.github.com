@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">    
+    <title>译文：为何 SICP 意义重大</title> 
+    <meta name="description" content="All those innovative, insightful, intelligent, intriguing things.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" />
+    <link rel="stylesheet" href="/css/main.css" />
+    
+    <link href='/stylesheets/all-59a811c39081ff1a1a7a90aa4876191a.css' media='all' rel='stylesheet' type='text/css'>
+    
+    <link rel="canonical" href="http://cn.soulhacker.me/2013/05/02/why-sicp-matters/">
+    <link rel="alternate" type="application/rss+xml" title="Paradigm X Feed" href="http://cn.soulhacker.me/feed.xml">
+</head>
+<body>
+    <nav id="top" class="site-navigation">
+        <div class="inner">
+            <button id="menu-toggle" aria-expanded="false">Menu</button>
+            <div class="nav-menu">
+                <ul class="menu">
+                
+                  
+                  
+                  <li class="">
+                    <a class="" href="/">主页</a>
+                  </li>
+                
+                  
+                  
+                  <li class="">
+                    <a class="" href="/tags/">所有文章</a>
+                  </li>
+                
+                  
+                  
+                  <li class="">
+                    <a class="" href="/about.html">关于本站</a>
+                  </li>
+                
+                  
+                  
+                  <li class="">
+                    <a class="" href="http://soulhacker.me">English Articles</a>
+                  </li>
+                
+                </ul>        
+            </div><!-- .nav-menu -->
+            <a class="subscribe-button fa-feed square fill-horizontal" href="/feed.xml"><span class="screen-reader-text">Subscribe</span></a>
+        </div><!-- .inner -->
+    </nav><!-- .site-navigation -->
+    <header class="site-header">
+        <div class="inner">
+            <h1 class="site-title"><a class="logo-text" href="/">Paradigm X</a></h1>
+            <p class="site-description">一个灵魂黑客的印象旅程</p>
+        </div><!-- .inner -->
+    </header>
+    <div class="site-content">
+    <div class="inner">
+        <main class="site-main">
+            <article class="post">
+                <header class="entry-header"> 
+                    <div class="entry-header-wrap">
+                        
+                        <h1 class="entry-title">译文：为何 SICP 意义重大</h1>
+                    </div><!-- .entry-header-wrap -->
+                    <div class="entry-meta">
+                        by <span class="post-author">Neo Lee</span> on <time class="published" datetime="2013-05-02">May 2, 2013</time>
+                    </div><!-- .entry-meta -->
+                </header><!-- .entry-header -->
+                <div class="entry-content">
+                    <p><strong>原文</strong>：<a href="http://www.cs.berkeley.edu/~bh/sicp.html">Why <em>Structure and Interpretation of Computer Programs</em> Matters</a><br />
+<strong>作者</strong>：<em>Brian Harvey, University of California, Berkeley</em><br />
+<strong>译者</strong>：<em>Neo Lee a.k.a @soulhacker</em></p>
+
+<p><strong>译者序</strong>：</p>
+
+<p>Brian Harvey 是加州大学伯克利分校计算机科学专业的教授。2011 年是麻省理工大学（MIT）建校 150 周年，为了庆祝，《波士顿环球报<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>》准备了一份 MIT 作出的重要创新列表，著名的计算机科学专业入门教材 Structure and Interpretation of Computer Programs (SICP) 名列其中，Brian Harvey 受邀对 SICP 的重要价值和意义书写一份说明，本文就是他当时的回应。关于函数式编程范型的价值和意义，是一个在计算机科学尤其是软件开发领域经常被提出的话题，通常也伴随着这样那样的争论：它深刻的理论背景与内涵、和人们常规思维模型的差异、一直难以流行的宿命引发的“曲高和寡还是不切实际”的争论，等等。我自己可能由于从小喜欢数学的缘故，对函数式编程范型一直很有好感，也深信如另一位大牛，John Hughes 在其名作 Why Functional Programming Matters<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>（不知道这两篇文章相似的标题是巧合，还是 Harvey 教授有意模仿了 WhyFP）中阐述的，函数式编程有其独特价值，很可能更接近我们追求的更理想的软件工程目标。SICP 从一个侧面似乎也证实了：一种一直没有流行起来的、非常典型的函数式编程语言，作为 LISP 方言的 Scheme，非常好的完成了“给大学一年级新生一个严谨扎实的编程概念基础”的任务，而 Harvey 教授的文章，非常简明、清晰的阐述了 SICP 的创新价值，即使在数十年之后的今天，也没有过时。下面是译文，除了特别标出的唯一一处以外，其他脚注都是我加上的，与原作者无关，请留意。</p>
+
+<!-- more -->
+
+<p><strong>译文</strong>：</p>
+
+<p>SICP 在很多方面都非常具有革命性，其中最重要的是，它显著的提高了计算机科学（CS）入门课程内容的智力水平。在 SICP 之前，CS 专业的第一门课通常都充斥着某种特定编程语言的细节，但 SICP 采取的方法是站在这些细节的背后，努力学会从大局着眼去思考计算的过程，它引导学生把注意力聚焦在“抽象”这个关键点，学会去寻找特定问题背后的一般模式，然后构建软件工具来解决这些一般性的问题。SICP 大量应用“函数也是数据”的概念，这个概念初期学起来很困难，但掌握之后极其强大（微积分是同一概念的另一种表现形式，也经常让很多之前数学课程都学得不错的学生栽跟头）。SICP 在 CS 专业的第一门课中展示了三种不同的编程范型（函数式、面向对象和描述式<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>），而大部分其他课程甚至连一种也没真正的讨论过。</p>
+
+<p>SICP 另外一个革命性标志是选择了 Scheme 作为教学编程语言。从有 CS 专业直到今天，大部分 CS 入门课程主要使用当时的“热门”语言，从 Pascal 到 C 到 C++ 到 Java 再到 Python。Scheme 从来未在行业中广泛应用，但它是 CS 入门课程的完美语言，因为它使用一个非常简单、一致的记法<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>来处理所有事情，而其他语言用一种记法来处理变量赋值，另外一种记法来处理条件执行，另外 2-3 种记法处理循环，再来一种处理函数调用，使用这些语言的课程得花上一半的时间来教授这些记法，而我在伯克利的基于 SICP 的课程上，只用第一个小时来讲记法就够了，整个学期剩下的时间我们都用来学习思想，而不是语法。同时，尽管有着无与伦比的简单性（也许恰恰是因为这种简单性），Scheme 仍是一种很全面的通用语言，所以我们能凭之窥见三种不同编程范型的概貌，尤其是可以让我们了解面向对象编程是怎么实现的，这样所有的面向对象编程语言对于我们的学生来说就不再像某种神奇的戏法。</p>
+
+<p>Scheme 是 Lisp 的一种方言，所以它能非常好地将函数作为数据来处理，同时它又是专业编程工作采用的 Lisp 方言的一个简化版本，去掉了很多枝节和装饰物。Abelson 和 Sussman<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> 非常大胆的在他们的入门课程中选择了最适合教学的编程语言，而无视了实际工作需要的各种其他编程语言，因为他们相信一旦掌握了那些真正重要的思想，学习另一种编程语言完全不是问题，就像进行一次周末例行大扫除一样，我从自己的经历出发也完全认同这一点。我经常对我的学生说：“你将在职业生涯中使用的编程语言还没被发明出来，所以我们没法在这里教给你，但我们必须教会你一些重要的技能，这样当它们出现时你很快就能学会。”</p>
+
+<p>最后，SICP 对于大学新生能达到的程度非常积极乐观，SICP 课程学生要编写编程语言的解释器，这通常被认为更适合于二年级或更高年级的学生。SICP 课本并不易懂，没有侧边栏、五颜六色的提示框和有趣的图片（这是现代教科书针对注意力难以长时间集中的学生的典型设计），它也没有冗复的练习题，每道练习题都讲授了一个重要的新思想；它使用大量的文字，但回报是更深入的阅读，每个句子都有其深意。</p>
+
+<p>从统计角度来说，以 SICP 为基础的课程只占一个很少的比例，但这本书的影响远远超出了这个少数比例，它启发了一系列后来教科书的作者，令他们有意识地努力去达到 SICP 树立的标准。而选择 Scheme 作为教学编程语言的也扩展到了从中学直到研究生院的范围。更多主流课程开始更重视编程范型，虽然它们大多只关注面向对象这一个编程范型。“计算机科学学科应该更加关注思想，而不全是关于编程实践”的观念也不断发展，进一步包括了一些非技术方面的思想，比如与计算相关的业务上下文和社会关联等。</p>
+
+<p>SICP 本身享有在 CS 入门教科书中少见的长寿命，一般来说一本教科书的寿命与其基于的编程语言挂钩，而 SICP 在 长达 25 年的时间里始终强健，迄今丝毫没有停印的迹象。在这 25 年间计算领域发生了巨大的变化，从巨大的主机系统发展到个人计算机再到今天手机上的互联网，但驱动所有这些变革背后的重要思想是一样的，他们都很好的体现在 SICP 中。</p>
+
+<p>我从 1987 年开始教授以 SICP 为基础的课程，这些课程随着时间一点点的改进，我们加入了关于并行计算、并发控制、用户界面设计以及客户/服务器模型等内容，但它们本质上仍是同样的课程。每隔几年系里都会有人提出把第一门课换成另外的某种 X 语言，但我总是说：“当有人写出基于 X 语言的世界上最好的计算机科学教科书之后再说吧。” 到目前为止每次系里最后都投票决定继续基于 SICP 课程来教学。我们很快就能看到这课程是不是可以坚持到我退休<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+
+<p>最近关于 MIT 正在进行的电子工程和计算机科学（EECS）低年级课程重新设计的讨论越来越热烈，外部有人将其总结为“MIT 决定转向 Python”，但这是个误解。MIT 的决定主要是将以往基于内容领域组织的课程（编程范型，然后依次是电子电路，信号处理，架构等）转变为基于应用来组织（让我们搭建一个机器人并为其编程，让我们制造一部手机并为之开发软件等等），为了这个目标，几乎所有的课程都必须重新规划组织，编程语言的选择只是其中最不重要的一部分。他们的新模式对教学来说非常具有挑战性，因为所有课程都需要电子工程系和计算机科学系的紧密合作。也许未来某天这种应用为先的方式会引发一场伟大的变革，就像 SICP 曾经的那样，但目前还没实现。</p>
+
+<p>在我自己的经历中，罕有学生在上我的课时候就感觉良好，但对我们所有 CS 学生的调查显示，这课程是他们数年后回忆起来最喜欢的课。经常有多年前的学生拜访或发电邮告诉我，他们在工作中实际用上的很多重要想法，在他们念书时都认为是不切实际的象牙塔学术思想，Google 在数据并行处理领域的重要发明 MapReduce 软件，就深深植根于函数式编程的思想，这也算是对“象牙塔学术思想”的一种正名吧。</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>MIT 所在的波士顿地区发行量最大的报纸，成立于 1872 年，1993 年被《纽约时报》收购。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="http://www.cse.chalmers.se/~rjmh/Papers/whyfp.html"><em>Why Functional Programming Matters</em></a>, <em>John Hughes, 1984, 1989, 1990</em>. <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>描述式编程范型 <a href="http://en.wikipedia.org/wiki/Declarative_programming">Declarative Programming</a>：摒弃控制流程，以描述和组合计算规则为主的编程模式，最典型的描述式编程范型应用包括结构化查询语言 SQL，以及逻辑编程语言 Prolog，绝大部分函数式编程语言中也大量采用这一范型，Scheme 即为很好的例子。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>记法，即 notation，是非常重要但经常被忽视的概念同时也是工具，有兴趣的朋友可以看看另外两位大家 <em>Brian Kernighan</em> 和 <em>Rob Pike</em> 合著的 <a href="http://cm.bell-labs.com/cm/cs/tpop/"><em>The Practice of Programming</em></a> （国内有电子工业出版社的译本，裘宗燕老师的翻译质量相当不错）的第 9 章。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p><em>Harold Abelson</em> 和 <em>Gerald Jay Sussman</em>，MIT 的两位计算机科学教授，SICP 的原作者。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p><strong>原文作者注</strong>：看来结果没能（完全）实现，伯克利新的入门课程采用 Python，但教案尽量保留了原先 SICP 的思想（某些地方甚至沿用了原来的文本）。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                </div><!-- .entry-content -->
+                <footer class="entry-footer">
+                    <div class="share-post">
+                        <span>Share</span>
+                        <a class="fa-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=%E8%AF%91%E6%96%87%EF%BC%9A%E4%B8%BA%E4%BD%95%20SICP%20%E6%84%8F%E4%B9%89%E9%87%8D%E5%A4%A7&amp;url=http://cn.soulhacker.me/2013/05/02/why-sicp-matters/"><span class="screen-reader-text">Twitter</span></a>
+                        <a class="fa-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://cn.soulhacker.me/2013/05/02/why-sicp-matters/&amp;t=%E8%AF%91%E6%96%87%EF%BC%9A%E4%B8%BA%E4%BD%95%20SICP%20%E6%84%8F%E4%B9%89%E9%87%8D%E5%A4%A7"><span class="screen-reader-text">Facebook</span></a>
+                        <a class="fa-google-plus" target="_blank" href="http://plus.google.com/share?url=http://cn.soulhacker.me/2013/05/02/why-sicp-matters/"><span class="screen-reader-text">Google+</span></a>
+                    </div><!-- .share-post -->
+                    
+                    <div class="tag-links">
+                        Tags: <a href="/tags/index.html#Programming" title="Pages tagged Programming" rel="tag">Programming</a>
+                    </div>
+                    
+                </footer><!-- .entry-footer -->
+            </article><!-- .post -->
+            <div class="author-box">
+                <div class="author-info">
+                    <div class="author-avatar" style="background-image: url(/images/author-image.jpg)"><span class="screen-reader-text">Neo Lee's Picture</span></div>
+                    <div class="author-details">
+                        <h2 class="author-title">About Neo Lee</h2>
+                        <p class="author-bio">互联网架构师，产品设计，创业者，终生游戏迷和音乐迷。</p>
+                        <span class="author-location"><i class="fa-map-marker" aria-hidden="true"></i> 中国上海</span>
+                        <span class="author-website"><i class="fa-chain" aria-hidden="true"></i> <a href="http://cn.soulhacker.me" target="_blank"> http://cn.soulhacker.me</a></span>
+                    </div><!-- .author-details -->
+                </div><!-- .author-info -->
+            </div><!-- .author-box -->
+            <nav class="post-navigation">
+                <h2 class="screen-reader-text">Post navigation</h2>
+                
+                <div class="nav-previous">
+                    <div class="nav-inside">
+                        
+                        <div class="nav-before">Previous</div>
+                        <div class="nav-title"><a href="/2013/04/29/fujifilm-x100s/">FUJIFILM X100S</a></div>
+                        <div class="nav-date">April 29, 2013</div>
+                    </div><!-- .nav-inside -->
+                </div><!-- .nav-previous -->
+                
+                
+                <div class="nav-next">
+                    <div class="nav-inside">
+                        
+                        <div class="nav-before">Next</div>
+                        <div class="nav-title"><a href="/2013/12/24/merry-christmas/">Merry Christmas, from My iPhone</a></div>
+                        <div class="nav-date">December 24, 2013</div>
+                    </div><!-- .nav-inside -->
+                </div><!-- .nav-next -->
+                
+            </nav><!-- .post-navigation -->
+            
+        </main><!-- .site-main -->
+        <aside class="sidebar">
+
+    
+    <section class="widget widget-text">
+        <h2 class="widget-title">About Neo Lee</h2>
+        <p>互联网架构师，产品设计，创业者，终生游戏迷和音乐迷。</p>
+    </section><!-- .widget-text -->
+    
+
+    
+
+    
+    <section class="widget widget-text">
+        <p><a href="http://cn.soulhacker.me" target="_blank"><img src="/images/banner.jpg" alt="Optional Banner Ad" /></a></p>
+    </section><!-- .widget-text-->
+    
+
+    <section class="widget widget-recent-posts">
+        <h2 class="widget-title">Latest Posts</h2>
+        <ul class="recent-posts">
+            
+            <li class="recent-item"><a href="/2014/02/28/paradox/">软件开发外传（三篇）</a> <span>February 28, 2014</span></li>
+            
+            <li class="recent-item"><a href="/2014/02/03/hearthstone-fundamentals/">炉石传说入门</a> <span>February 3, 2014</span></li>
+            
+            <li class="recent-item"><a href="/2013/12/24/merry-christmas/">Merry Christmas, from My iPhone</a> <span>December 24, 2013</span></li>
+            
+            <li class="recent-item"><a href="/2013/05/02/why-sicp-matters/">译文：为何 SICP 意义重大</a> <span>May 2, 2013</span></li>
+            
+            <li class="recent-item"><a href="/2013/04/29/fujifilm-x100s/">FUJIFILM X100S</a> <span>April 29, 2013</span></li>
+            
+        </ul><!-- .recent-posts -->
+    </section><!-- .widget-recent-posts -->
+
+    <!--Create a sorted array of tags-->
+    
+    
+    <section class="widget widget-tags">
+        <h2 class="widget-title">Tags</h2>
+        <div class="tagcloud">
+            
+            <a href="/tags/#Games">Games</a>
+            
+            <a href="/tags/#Internet">Internet</a>
+            
+            <a href="/tags/#Photography">Photography</a>
+            
+            <a href="/tags/#Programming">Programming</a>
+            
+            <a href="/tags/#Sci-Fi">Sci-Fi</a>
+            
+            <a href="/tags/#Startup">Startup</a>
+            
+        </div><!-- .tagcloud -->
+    </section><!-- .widget -->
+
+</aside><!-- .sidebar -->
+    </div><!-- .inner -->
+</div><!-- .site-content -->
+
+    <footer class="site-footer">
+    <div class="inner">
+        <div class="social-links">
+            
+            <a href="https://twitter.com/soulhacker" class="fa-twitter square fill-horizontal"><span class="screen-reader-text">Twitter</span></a>
+            
+            
+            <a href="https://www.facebook.com/neo.lee.x" class="fa-facebook square fill-horizontal"><span class="screen-reader-text">Facebook</span></a>
+            
+            
+            
+            <a href="https://github.com/neolee" class="fa-github-alt square fill-horizontal"><span class="screen-reader-text">GitHub</span></a>
+            
+            
+            
+            
+            
+            <a href="http://instagram.com/soulhacker" class="fa-instagram square fill-horizontal"><span class="screen-reader-text">Instagram</span></a>
+            
+            
+            
+            <a class="fa-feed square fill-horizontal" href="/feed.xml"><span class="screen-reader-text">RSS</span></a>
+        </div><!-- .social-links -->
+        <div class="site-info">
+            &copy; <a href="/">Paradigm X</a> all rights reserved. <br />Powered by <a target="_blank" href="https://jekyllrb.com/">Jekyll</a>. BlogInn theme by <a target="_blank" href="http://justgoodthemes.com/">JustGoodThemes</a>
+            <a href="#top" id="top-link" class="fa-chevron-up top-link square fill-horizontal"><span class="screen-reader-text">Back to the top</span></a>
+        </div><!-- .site-info -->
+    </div><!-- .inner -->
+</footer><!-- .site-footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/plugins.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+</body>
+</html>
