@@ -1017,6 +1017,13 @@ green     #859900  operators, other keywords
   height: auto; }
 
 /*
+ * Block quote source line fix
+ */
+figcaption.quote-source {
+  margin-top: -20px;
+  margin-bottom: 20px; }
+
+/*
  * Pull quotes
  */
 .pullquote-right:before {
