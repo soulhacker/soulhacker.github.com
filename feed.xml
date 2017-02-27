@@ -5,9 +5,131 @@
         <description>All those innovative, insightful, intelligent, intriguing things.</description>
         <link>http://cn.soulhacker.me/</link>
         <atom:link href="http://cn.soulhacker.me/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 17 Aug 2016 23:22:29 +0800</pubDate>
-        <lastBuildDate>Wed, 17 Aug 2016 23:22:29 +0800</lastBuildDate>
+        <pubDate>Mon, 27 Feb 2017 23:25:39 +0800</pubDate>
+        <lastBuildDate>Mon, 27 Feb 2017 23:25:39 +0800</lastBuildDate>
         <generator>Jekyll v2.4.0</generator>
+        
+            <item>
+                <title>我又装了一次机</title>
+                <description>&lt;p&gt;如题，我又装了一次机。意思是，我自己攒了一台组装电脑，然后自己装了系统，不是一个，而是 Windows 和 Linux 俩。上一次干类似的事大约是 2004 年。&lt;/p&gt;
+
+&lt;p&gt;总的感想是：这个行业虽然算不上“一日千里”，但十几年的时间还是改变了不少东西：Windows 再也不是那个每次重启都有可能起不来的玩意儿，Linux 再也不是要折腾一天才能访问中文网站并差强人意地播放音视频的怪兽。然而也有些事情似乎永远也不会变，比如 Mac 无论多么优雅强大，显卡以及显卡的驱动永远跟不上时代——这也是我这次装机的动机：我要深度（wán）学（yóu）习（xì）啊！&lt;/p&gt;
+
+&lt;p&gt;本着 &lt;em&gt;一步到位&lt;/em&gt; 和 &lt;em&gt;安静小巧&lt;/em&gt; 两大原则，装机配置如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CPU：&lt;a href=&quot;https://item.jd.com/1748176.html&quot;&gt;Intel i7-6700k&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;主板：&lt;a href=&quot;https://item.jd.com/2389154.html&quot;&gt;ASUS Z170I PRO GAMING (Intel Z170/LGA 1151)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;内存：&lt;a href=&quot;https://item.jd.com/2966629.html&quot;&gt;CORSAIR Vengeance LED DDR4 3000 32GB (16Gx2)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;显卡：&lt;a href=&quot;https://item.jd.com/3076376.html&quot;&gt;GIGABYTE GTX1080 G1 GAMING 8GD&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;存储：&lt;a href=&quot;https://item.jd.com/4173866.html&quot;&gt;Samsung 960 EVO 1TB M.2 NVMe&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;显示器：&lt;a href=&quot;https://item.jd.com/1287970.html&quot;&gt;Dell P2715Q&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;机箱：&lt;a href=&quot;https://item.jd.com/2902818.html&quot;&gt;JONSBO VR1 Mini-ITX&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;电源：&lt;a href=&quot;https://item.jd.com/855414.html&quot;&gt;Seasonic X-750&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;散热器：&lt;a href=&quot;https://item.jd.com/2248473.html&quot;&gt;NOCTUA NH-U9S&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;因为核心动机锁定了 GTX1080 和 4K 显示，所以其他配套上就完了，最后正好两万以下搞定（嗯我知道电源有点 overkill…&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;吐槽时间&lt;/strong&gt;：在一个早就没了光驱的时代，华硕和技嘉还是选择光盘来提供驱动和工具，理解不能。&lt;/p&gt;
+
+&lt;p&gt;操作系统方面，Windows 没啥好说的，装系统、升级系统、装 Battle.net、装 Steam、装 Origin（对不起你就是台游戏机 (⊙﹏⊙)b&lt;/p&gt;
+
+&lt;p&gt;简单扫了下网上的资料，发现搞科学计算和人工智能的人都不折腾，所以就 &lt;a href=&quot;http://releases.ubuntu.com/16.04/&quot;&gt;Ubuntu 16.04 LTS&lt;/a&gt; 了，然后装 NVIDIA 驱动、装 CUDA 和 cuDNN、装 TensorFlow…这个流程里有些 tricky 的陷阱，浪费了我大半天，最后找到的最简单有效的路径如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对较新主板的 BIOS（UEFI）和 16.04 LTS，&lt;a href=&quot;https://wiki.ubuntu.com/SecurityTeam/SecureBoot&quot;&gt;Secure Boot&lt;/a&gt; 会阻止加载第三方硬件驱动，有两个选择：简单粗暴的禁用它（Ubuntu 安装程序有提示），或者对第三方驱动进行签名授信，本着不折腾的原则，我直接安装时就把它禁了…&lt;/li&gt;
+  &lt;li&gt;下载 &lt;a href=&quot;https://developer.nvidia.com/cuda-downloads&quot;&gt;CUDA Toolkit 8.0&lt;/a&gt;，这个页面上针对 Ubuntu 有四个可选的下载选项，其中最好的选项是“deb (network)” 这个，别的都是坑…&lt;/li&gt;
+  &lt;li&gt;安装这个包并更新索引：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;sudo dpkg -i cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;sudo apt update&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;这个时候去 Ubuntu 的系统设置里打开 Software &amp;amp; Updates，在 Additional Drivers 下面可以看到最新 NVIDIA 驱动的选项，选之，会自动安装好，之后需要重启，这个方法可以避开一大堆手工操作的麻烦，是这次装 Ubuntu 感觉比以前进步最大的一点。&lt;/li&gt;
+  &lt;li&gt;然后就可以风平浪静的：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;sudo apt-get install cuda&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;下载 &lt;a href=&quot;https://developer.nvidia.com/cudnn&quot;&gt;cuDNN&lt;/a&gt; 并安装：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;tar xvzf cudnn-8.0-linux-x64-v5.1.tgz
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TensorFlow 的主站点被墙，所以需要科学上网，或者用国内的镜像站，比如 &lt;a href=&quot;https://mirror.tuna.tsinghua.edu.cn/help/tensorflow/&quot;&gt;这里&lt;/a&gt;，具体安装推荐用 virtualenv 或者 &lt;a href=&quot;https://www.continuum.io/downloads&quot;&gt;Anaconda&lt;/a&gt; 环境都可以：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;TF_BINARY_URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;https://mirrors.tuna.tsinghua.edu.cn/tensorflow/linux/gpu/tensorflow_gpu-1.0.0-cp27-none-linux_x86_64.whl
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;c&quot;&gt;# virtualenv&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install python-pip python-dev python-virtualenv
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;virtualenv --system-site-packages ~/tensorflow
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/tensorflow/bin/activate
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;tensorflow&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install --upgrade &lt;span class=&quot;nv&quot;&gt;$TF_BINARY_URL&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Anaconda&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;10&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;conda create -n tensorflow
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;11&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;activate tensorflow
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;12&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;tensorflow&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip install --ignore-installed --upgrade &lt;span class=&quot;nv&quot;&gt;$TF_BINARY_URL&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;最后…图。因为我的显卡是晚了两天到的，所以先装了其他部分用集显启动装的 Windows：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/zion/system-photo-01-small.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/zion/system-photo-02-small.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/zion/system-photo-03-small.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/zion/system-photo-04-small.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/zion/system-photo-05-small.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;毕竟这么多年了，看到这个画面还是舒了口气：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/zion/system-photo-06-small.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后显卡来了…&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/zion/system-photo-07-small.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/zion/system-photo-08-small.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/zion/system-photo-09-small.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;回家把服役七年的 iMac 抱到客厅安置好，收拾干净的书桌：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/zion/system-photo-10-small.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;闪亮登场：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/zion/system-photo-11-small.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我的 MBP 更没位置放了…&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/zion/system-photo-12-small.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Windows 10 桌面：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/zion/desktop-win10.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ubuntu 桌面：&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/zion/desktop-ubuntu.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;按照 TensorFlow 的例子画了个 Mandelbrot 集，话说当年在大学写的第一个 Pascal 程序也是画的这个，这算是轮回么……&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/posts/zion/mandelbrot.jpg&quot; width=&quot;800&quot; /&gt;&lt;/p&gt;
+</description>
+                <pubDate>Mon, 27 Feb 2017 17:09:30 +0800</pubDate>
+                <link>http://cn.soulhacker.me/2017/02/27/my-new-pc/</link>
+                <guid isPermaLink="true">http://cn.soulhacker.me/2017/02/27/my-new-pc/</guid>
+                
+                <category>Programming</category>
+                
+                
+            </item>
         
             <item>
                 <title>软件开发外传（三篇）</title>
@@ -1162,54 +1284,6 @@ Haskell 这样的语言不需要它。把他实现为一个函数即可：&lt;/p
                 <guid isPermaLink="true">http://cn.soulhacker.me/2013/03/06/functional-programming-for-the-rest-of-us/</guid>
                 
                 <category>Programming</category>
-                
-                
-            </item>
-        
-            <item>
-                <title>创与投的悲喜剧</title>
-                <description>&lt;p&gt;《创业家》杂志的文章原创度大多很高，通常来源于和第一线相关人士的直接接触，在国内同类媒体里是我比较尊敬的一个。9 月号《创业家》封面文章题为「VC 潜规则」，网站上有&lt;a href=&quot;http://www.chuangyejia.com/index1.php?m=content&amp;amp;c=index&amp;amp;a=show&amp;amp;catid=123&amp;amp;id=8192&quot;&gt;主要内容的节选&lt;/a&gt;，里面提到的问题并非危言耸听，基本都有具体案例做支持，同时文章中有意无意的建立了创业和投资双方对立的景象，从市场规律来说这并不正常。&lt;/p&gt;
-
-&lt;p&gt;我接触到的不少互联网早期项目的创业者和投资者其实心态是没有问题的：创业者寻求符合自己条件的资本帮助自己更快的迈过下一个坎，而投资者希望创业者（最终或至少阶段性）成功使自己能搭车赚钱。目前越界违规乃至违法的行为，大多因为国内创新环境不佳，真正靠谱的项目不多，创投双方都有短视和投机心理，加之信用和监管方面的缺失，也使违规成本及风险降低，于是有点劣币驱逐良币的势头。但我还是坚信，市场上充分最大化双方利益才是时代的潮流，而在创投领域，通过合理的规则体系及资本运作来鼓励创新和创造价值，是最符合创投双方长远利益的，所以我愿意花点时间来就着上述《创业家》文章中提到的问题逐个评论，为什么这些问题本不该出现，而创投双方只要想明白了，其实可以一起努力做的更好。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;blockquote&gt;&lt;p&gt;最值得创业者警惕的莫过于投资人投成大股东。&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;这条是显而易见的，但我要说，其实投资人成为大股东是双输的结果。首先对于风投来说，其目的并不是把钱投出去，而是收回来，所以退出才是关键，如果某个投资人握有过多股份，就很难再找到新的投资方，退出机制就成了大问题；其次，即使不考虑退出，一旦投资人持股超过创业团队，创业团队及其领袖很容易就会迷失自己的目标，因为他很难再将产品/公司看作「自己的孩子」，这对产品和公司来说经常是致命的，而产品和公司失败了，投资人自己也就没有任何回报了。另一种情况是企业已经非常稳定，业务蒸蒸日上，股票也通过二级市场或者 IPO 公开流通，这时候创业者非控股甚至非第一大股东都是很正常的，需要的是一些反恶意收购的策略和方法。&lt;/p&gt;
-
-&lt;blockquote&gt;&lt;p&gt;最让创业者厌恶的是不尊重创始团队，过度干预企业日常经营。&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;这往往是不成熟的投资人干出来的事，或者说是一些创业、管理和导师瘾没过足的成功人士跑到投资领域来搅的混水。我倾向于称之为创业导师而不是风险投资人（其实创业需要导师么？）。是的，好的投资者可以对行业对产品有自己的观点与倾向，PG 还教创业者&lt;a href=&quot;http://www.paulgraham.com/ambitious.html&quot;&gt;哪些产品值得去做&lt;/a&gt;呢，但这只是布道，属于利用自己的积累为创新产业做贡献（反过来也可以提升投资者成功几率）。
-而创业项目风险投资，用一位前辈的话来说，叫金融产品零售，和叫化子类似，能做的只是看和选，有那么多想法与其指导别人还不如自己干一个吧。不过我一直认同的、投资者应该尝试指导创业者的唯一例外，就是关于股份制企业治理，大多数创业者缺乏这方面的经验，我的一位同事每发一份投资意向书（term sheet）就赠送对方一本关于股份制公司融资和治理的书，是个不错的个性化实践，值得推广。&lt;/p&gt;
-
-&lt;p&gt;从创业者角度来说，和股东、董事会打交道是自己工作职责的一部分，伟大如 Steve Jobs 也在 35 岁之后才学会和董事会打交道的方法，所以也不用把这问题看得太重，最后很多其实都是交流上的问题，当然一开始就要把股东、董事会、管理团队的责权利明确下来，这是公司长治久安的根基。&lt;/p&gt;
-
-&lt;blockquote&gt;&lt;p&gt;最让创业者觉得恶心的是不尊重商业机密，获取企业信息后转投资竞争对手。&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;投资之后投资者和创业者应该是伙伴关系，投资前可不是。本质上这是一种商战，投资者、创业者以及各自的竞争者其实是复杂的博弈关系，如果创业者不熟悉这个领域的商业规则，是完全可能在规则框架内被阴了的。投资者在融资过程中不可避免的需要向潜在的投资者披露一些信息，这时候创业者应该有一些考虑：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;尽量选择在对自己有利的时机披露必要的信息，仔细研究自己的业务，划分出不同的级别的可披露信息加以管理。&lt;/li&gt;
-  &lt;li&gt;信息披露和相关的保密义务挂钩，关键信息，尤其是对企业可能产生重大影响的敏感信息应在有足够保护的情况下披露；对违反保密协议的行为完全可以用法律手段保护自己的权益。&lt;/li&gt;
-  &lt;li&gt;要对自己的业务有个正确认知，并不是很多信息都那么敏感，如果因为不披露或者披露之后不如竞争对手而失去被投资机会，这其实没啥可抱怨的。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;&lt;p&gt;最让创业者觉得可恨的是缺乏投资诚意，投资意向书的实际投资率较低。&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;投资意向书（term sheet）是个比较特别的文件，既表示比较确定的意向但又不代表承诺，既明确了大量后续操作的原则但又没有太多法律约束力。当然，在诚信和品牌比较被看重的环境下，投资者会对意向书相当谨慎，主要是考虑到给了意向书而最后不投会损失自己的声誉，从而影响未来的生意，而在其他环境下，投资者可以既不违反纸面上的规则，又可以利用意向书来玩一些诡计。&lt;/p&gt;
-
-&lt;p&gt;可能因为资本市场的规则体系基本是资方制定的缘故，框架一般都会偏向投资人一方，在理解到本质上融资过程是一场商战之后，创业者更应该谨慎对待意向书谈判，必须充分了解相关背景知识，必要时可以寻求专业律师或融资顾问的帮助。实际上意向书里几乎所有的条款都是可谈判的，几乎每个关键论述都有对投资者有利、较中性和对创业者有利的三种版本，创业者应该努力避免太悬殊的信息不对称而吃亏。&lt;/p&gt;
-
-&lt;p&gt;另外应该时刻记住，这是个有充分选择的商业社会（是的，即使在我国也算是）。除去在尽职调查（DD）中发现严重问题这类情况不算，如果一个投资者签意向书后最终签投资协议的比例不到一半，愿意找他的创业者一定会越来越少，如果不是这样，我只能说，只认钱不认人的笨创业者太多了。&lt;/p&gt;
-
-&lt;blockquote&gt;&lt;p&gt;最让创业者觉得闹心的是缺乏耐心，对创业团队的经营目标设定脱离企业发展规律，要求业绩对赌。&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;我觉得应该这么看：这是个选择的问题。如果觉得条件无法接受，可以不选；如果对自己的业绩没有把握，可以不赌；如果对估值不满意，可以想办法说服对方自己的价值为什么可以更高。所谓「缺乏耐心」，所谓「脱离企业发展规律」，实质上是双方价值观以及对未来的判断和预期不一致，这种情况下强行合作后患无穷。&lt;/p&gt;
-
-&lt;blockquote&gt;&lt;p&gt;最让创业者鄙视的是在投资过程中谋求个人占股、回扣等个人利益的投资人。&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;这种案例中双方都是该谴责甚至承担法律责任的，但目前确实立法和行业规则跟不上市场发展的要求，但这也不是我们能去改变的，我们能做的只能是自律，以及在合法和力所能及的范围内披露真相，所以这个似乎没法太深入去讨论。&lt;/p&gt;
-</description>
-                <pubDate>Fri, 19 Oct 2012 09:57:00 +0800</pubDate>
-                <link>http://cn.soulhacker.me/2012/10/19/vc-drama/</link>
-                <guid isPermaLink="true">http://cn.soulhacker.me/2012/10/19/vc-drama/</guid>
-                
-                <category>Startup</category>
                 
                 
             </item>
