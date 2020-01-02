@@ -23,6 +23,12 @@ a {
         box-shadow: 0 -1px 0 #444444 inset;
         border-left: solid 0.1em #353535;
     }
+    table thead {
+        background-color: #686868;
+    }
+    #container main article p code {
+        background-color: #662222;
+    }
     .mid-image, figure.mid img {
         box-shadow: 0 3px 3px #444444;
     }
