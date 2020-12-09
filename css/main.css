@@ -45,18 +45,24 @@ a {
     padding: 0.5em 0.5em;
 }
 
+figure.floatright {
+    float: right;
+    margin: 0.7rem;
+}
+
 figure.floatright img {
     max-width: 240px;
     height: auto;
-    float: right;
+}
+
+figure.floatleft {
+    float: left;
     margin: 0.7rem;
 }
 
 figure.floatleft img {
     max-width: 240px;
     height: auto;
-    float: left;
-    margin: 0.7rem;
 }
 
 figure.mid > figcaption {
