@@ -5,13 +5,15 @@
     <loc>/posts/</loc>
     <lastmod>2020-01-03T17:23:41+08:00</lastmod>
   </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2020-01-03T17:23:41+08:00</lastmod>
+  </url><url>
+    <loc>/about/</loc>
+  </url><url>
     <loc>/tags/internet/</loc>
     <lastmod>2020-01-03T17:23:41+08:00</lastmod>
   </url><url>
     <loc>/</loc>
-    <lastmod>2020-01-03T17:23:41+08:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2020-01-03T17:23:41+08:00</lastmod>
   </url><url>
     <loc>/posts/2020-happy-new-year/</loc>
@@ -81,7 +83,5 @@
     <lastmod>2011-08-05T18:41:00+08:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
-  </url><url>
-    <loc>/about/</loc>
   </url>
 </urlset>
