@@ -3,7 +3,7 @@
 <html lang="en-us">
 
 <head>
-  <title>译文：为何 SICP 意义重大 | Paradigm X</title>
+  <title>译文：为何 SICP 意义重大 - Paradigm X</title>
   <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="The HTML5 Herald" />
@@ -14,9 +14,10 @@
 译者序：
 Brian Harvey 是加州大学伯克利分校计算机科学专业的教授。2011 年是麻省理工大学（MIT）建校 150 周年，为了庆祝，《波士顿环球报1》准备了一份 MIT 作出的重要创新列表，著名的计算机科学专业入门教材 Structure and Interpretation of Computer Programs (SICP) 名列其中，Brian Harvey 受邀对 SICP 的重要价值和意义书写一份说明，本文就是他当时的回应。关于函数式编程范型的价值和意义，是一个在计算机科学尤其是软件开发领域经常被提出的话题，通常也伴随着这样那样的争论：它深刻的理论背景与内涵、和人们常规思维模型的差异、一直难以流行的宿命引发的“曲高和寡还是不切实际”的争论，等等。我自己可能由于从小喜欢数学的缘故，对函数式编程范型一直很有好感，也深信如另一位大牛，John Hughes 在其名作 Why Functional Programming Matters2（不知道这两篇文章相似的标题是巧合，还是 Harvey 教授有意模仿了 WhyFP）中阐述的，函数式编程有其独特价值，很可能更接近我们追求的更理想的软件工程目标。SICP 从一个侧面似乎也证实了：一种一直没有流行起来的、非常典型的函数式编程语言，作为 LISP 方言的 Scheme，非常好的完成了“给大学一年级新生一个严谨扎实的编程概念基础”的任务，而 Harvey 教授的文章，非常简明、清晰的阐述了 SICP 的创新价值，即使在数十年之后的今天，也没有过时。下面是译文，除了特别标出的唯一一处以外，其他脚注都是我加上的，与原作者无关，请留意。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/why-sicp-matters/" />
+<meta property="og:url" content="/posts/why-sicp-matters/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2013-05-02T21:50:00+08:00" />
 <meta property="article:modified_time" content="2013-05-02T21:50:00+08:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="译文：为何 SICP 意义重大"/>
@@ -26,20 +27,24 @@ Brian Harvey 是加州大学伯克利分校计算机科学专业的教授。2011
 译者序：
 Brian Harvey 是加州大学伯克利分校计算机科学专业的教授。2011 年是麻省理工大学（MIT）建校 150 周年，为了庆祝，《波士顿环球报1》准备了一份 MIT 作出的重要创新列表，著名的计算机科学专业入门教材 Structure and Interpretation of Computer Programs (SICP) 名列其中，Brian Harvey 受邀对 SICP 的重要价值和意义书写一份说明，本文就是他当时的回应。关于函数式编程范型的价值和意义，是一个在计算机科学尤其是软件开发领域经常被提出的话题，通常也伴随着这样那样的争论：它深刻的理论背景与内涵、和人们常规思维模型的差异、一直难以流行的宿命引发的“曲高和寡还是不切实际”的争论，等等。我自己可能由于从小喜欢数学的缘故，对函数式编程范型一直很有好感，也深信如另一位大牛，John Hughes 在其名作 Why Functional Programming Matters2（不知道这两篇文章相似的标题是巧合，还是 Harvey 教授有意模仿了 WhyFP）中阐述的，函数式编程有其独特价值，很可能更接近我们追求的更理想的软件工程目标。SICP 从一个侧面似乎也证实了：一种一直没有流行起来的、非常典型的函数式编程语言，作为 LISP 方言的 Scheme，非常好的完成了“给大学一年级新生一个严谨扎实的编程概念基础”的任务，而 Harvey 教授的文章，非常简明、清晰的阐述了 SICP 的创新价值，即使在数十年之后的今天，也没有过时。下面是译文，除了特别标出的唯一一处以外，其他脚注都是我加上的，与原作者无关，请留意。"/>
 
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.102.3" />
     
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
   <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
   <link rel="stylesheet" type="text/css" href="/css/styles.css" /><link rel='stylesheet' href='/css/main.css'></head>
 
 <body>
   <div id="container">
     <header>
+      
       <h1>
-                <a href="/">Paradigm X</a>
-            </h1>
+        <a href="/">Paradigm X</a>
+      </h1>
 
       <ul id="social-media">
              <li>
@@ -69,7 +74,7 @@ Brian Harvey 是加州大学伯克利分校计算机科学专业的教授。2011
         </li>
         
         <li>
-            <a class="" href="/posts/">
+            <a class="active" href="/posts/">
                 <i class="fa-li fa  fa-lg"></i><span>全部文章</span>
             </a>
         </li>
@@ -83,6 +88,7 @@ Brian Harvey 是加州大学伯克利分校计算机科学专业的教授。2011
     </ul>
 </nav>
 
+
     <main>
 
 
@@ -93,11 +99,12 @@ Brian Harvey 是加州大学伯克利分校计算机科学专业的教授。2011
     <h1>译文：为何 SICP 意义重大</h1>
 
     
-    <aside>
+      <aside>
     <ul>
         <li>
             <time class="post-date" datetime="2013-05-02T21:50:00&#43;08:00">May 2, 2013</time>
         </li>
+        
         
 
         
@@ -118,6 +125,9 @@ Brian Harvey 是加州大学伯克利分校计算机科学专业的教授。2011
     
 
     
+      
+
+    
 
     <p><strong>原文</strong>：<a href="http://www.cs.berkeley.edu/~bh/sicp.html">Why <em>Structure and Interpretation of Computer Programs</em> Matters</a><br>
 <strong>作者</strong>：<em>Brian Harvey, University of California, Berkeley</em><br>
@@ -134,49 +144,51 @@ Brian Harvey 是加州大学伯克利分校计算机科学专业的教授。2011
 <p>我从 1987 年开始教授以 SICP 为基础的课程，这些课程随着时间一点点的改进，我们加入了关于并行计算、并发控制、用户界面设计以及客户/服务器模型等内容，但它们本质上仍是同样的课程。每隔几年系里都会有人提出把第一门课换成另外的某种 X 语言，但我总是说：“当有人写出基于 X 语言的世界上最好的计算机科学教科书之后再说吧。” 到目前为止每次系里最后都投票决定继续基于 SICP 课程来教学。我们很快就能看到这课程是不是可以坚持到我退休<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>。</p>
 <p>最近关于 MIT 正在进行的电子工程和计算机科学（EECS）低年级课程重新设计的讨论越来越热烈，外部有人将其总结为“MIT 决定转向 Python”，但这是个误解。MIT 的决定主要是将以往基于内容领域组织的课程（编程范型，然后依次是电子电路，信号处理，架构等）转变为基于应用来组织（让我们搭建一个机器人并为其编程，让我们制造一部手机并为之开发软件等等），为了这个目标，几乎所有的课程都必须重新规划组织，编程语言的选择只是其中最不重要的一部分。他们的新模式对教学来说非常具有挑战性，因为所有课程都需要电子工程系和计算机科学系的紧密合作。也许未来某天这种应用为先的方式会引发一场伟大的变革，就像 SICP 曾经的那样，但目前还没实现。</p>
 <p>在我自己的经历中，罕有学生在上我的课时候就感觉良好，但对我们所有 CS 学生的调查显示，这课程是他们数年后回忆起来最喜欢的课。经常有多年前的学生拜访或发电邮告诉我，他们在工作中实际用上的很多重要想法，在他们念书时都认为是不切实际的象牙塔学术思想，Google 在数据并行处理领域的重要发明 MapReduce 软件，就深深植根于函数式编程的思想，这也算是对“象牙塔学术思想”的一种正名吧。</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>MIT 所在的波士顿地区发行量最大的报纸，成立于 1872 年，1993 年被《纽约时报》收购。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p>MIT 所在的波士顿地区发行量最大的报纸，成立于 1872 年，1993 年被《纽约时报》收购。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
-<p><a href="http://www.cse.chalmers.se/~rjmh/Papers/whyfp.html"><em>Why Functional Programming Matters</em></a>, <em>John Hughes, 1984, 1989, 1990</em>. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:2">
+<p><a href="http://www.cse.chalmers.se/~rjmh/Papers/whyfp.html"><em>Why Functional Programming Matters</em></a>, <em>John Hughes, 1984, 1989, 1990</em>.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
-<p>描述式编程范型 <a href="http://en.wikipedia.org/wiki/Declarative_programming">Declarative Programming</a>：摒弃控制流程，以描述和组合计算规则为主的编程模式，最典型的描述式编程范型应用包括结构化查询语言 SQL，以及逻辑编程语言 Prolog，绝大部分函数式编程语言中也大量采用这一范型，Scheme 即为很好的例子。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:3">
+<p>描述式编程范型 <a href="http://en.wikipedia.org/wiki/Declarative_programming">Declarative Programming</a>：摒弃控制流程，以描述和组合计算规则为主的编程模式，最典型的描述式编程范型应用包括结构化查询语言 SQL，以及逻辑编程语言 Prolog，绝大部分函数式编程语言中也大量采用这一范型，Scheme 即为很好的例子。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
-<p>记法，即 notation，是非常重要但经常被忽视的概念同时也是工具，有兴趣的朋友可以看看另外两位大家 <em>Brian Kernighan</em> 和 <em>Rob Pike</em> 合著的 <a href="http://cm.bell-labs.com/cm/cs/tpop/"><em>The Practice of Programming</em></a> （国内有电子工业出版社的译本，裘宗燕老师的翻译质量相当不错）的第 9 章。 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:4">
+<p>记法，即 notation，是非常重要但经常被忽视的概念同时也是工具，有兴趣的朋友可以看看另外两位大家 <em>Brian Kernighan</em> 和 <em>Rob Pike</em> 合著的 <a href="http://cm.bell-labs.com/cm/cs/tpop/"><em>The Practice of Programming</em></a> （国内有电子工业出版社的译本，裘宗燕老师的翻译质量相当不错）的第 9 章。&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:5" role="doc-endnote">
-<p><em>Harold Abelson</em> 和 <em>Gerald Jay Sussman</em>，MIT 的两位计算机科学教授，SICP 的原作者。 <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:5">
+<p><em>Harold Abelson</em> 和 <em>Gerald Jay Sussman</em>，MIT 的两位计算机科学教授，SICP 的原作者。&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:6" role="doc-endnote">
-<p><strong>原文作者注</strong>：看来结果没能（完全）实现，伯克利新的入门课程采用 Python，但教案尽量保留了原先 SICP 的思想（某些地方甚至沿用了原来的文本）。 <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:6">
+<p><strong>原文作者注</strong>：看来结果没能（完全）实现，伯克利新的入门课程采用 Python，但教案尽量保留了原先 SICP 的思想（某些地方甚至沿用了原来的文本）。&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
 </article>
 
 
 <section class="post-nav">
     <ul>
-        
         <li>
+        
             <a href="/posts/fujifilm-x100s/"><i class="fa fa-chevron-circle-left"></i> FUJIFILM X100S</a>
+        
         </li>
-        
-        
         <li>
-            <a href="/posts/merry-christmas/">Merry Christmas, from My iPhone <i class="fa fa-chevron-circle-right"></i> </a>
-        </li>
         
+            <a href="/posts/merry-christmas/">Merry Christmas, from My iPhone <i class="fa fa-chevron-circle-right"></i> </a>
+        
+        </li>
     </ul>
 </section>
+  
     
     
+  
 
 
 
@@ -184,12 +196,19 @@ Brian Harvey 是加州大学伯克利分校计算机科学专业的教授。2011
 
 </main>
     <footer>
-        <h6>Copyright © 2020 - Neo Lee |
-            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="/index.xml">Subscribe </a></h6>
+        <ul>
+            <li>
+                <h6>Copyright © 2022 - Neo Lee | 
+                    Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+                    <a href="/index.xml">Subscribe </a></h6>
+            </li>
+            
+            
+        </ul>
     </footer>
 </div>
 <script src="/js/scripts.js"></script>
+
 
 </body>
 
