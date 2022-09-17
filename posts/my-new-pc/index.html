@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
   
   
-  <link rel="stylesheet" type="text/css" href="/css/styles.css" /><link rel='stylesheet' href='/css/main.css'></head>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css" /><link rel='stylesheet' href='/css/main.css'><link rel='stylesheet' href='/css/syntax.css'></head>
 
 <body>
   <div id="container">
@@ -148,34 +148,34 @@
 <li>下载 <a href="https://developer.nvidia.com/cuda-downloads">CUDA Toolkit 8.0</a>，这个页面上针对 Ubuntu 有四个可选的下载选项，其中最好的选项是“deb (network)” 这个，别的都是坑…</li>
 <li>安装这个包并更新索引：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dpkg -i cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
-</span></span><span style="display:flex;"><span>sudo apt update
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo dpkg -i cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+</span></span><span class="line"><span class="cl">sudo apt update
 </span></span></code></pre></div><ul>
 <li>这个时候去 Ubuntu 的系统设置里打开 Software &amp; Updates，在 Additional Drivers 下面可以看到最新 NVIDIA 驱动的选项，选之，会自动安装好，之后需要重启，这个方法可以避开一大堆手工操作的麻烦，是这次装 Ubuntu 感觉比以前进步最大的一点。</li>
 <li>然后就可以风平浪静的：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install cuda
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get install cuda
 </span></span></code></pre></div><ul>
 <li>下载 <a href="https://developer.nvidia.com/cudnn">cuDNN</a> 并安装：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar xvzf cudnn-8.0-linux-x64-v5.1.tgz
-</span></span><span style="display:flex;"><span>sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
-</span></span><span style="display:flex;"><span>sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tar xvzf cudnn-8.0-linux-x64-v5.1.tgz
+</span></span><span class="line"><span class="cl">sudo cp cuda/include/cudnn.h /usr/local/cuda/include/
+</span></span><span class="line"><span class="cl">sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/
 </span></span></code></pre></div><ul>
 <li>TensorFlow 的主站点被墙，所以需要科学上网，或者用国内的镜像站，比如 <a href="https://mirror.tuna.tsinghua.edu.cn/help/tensorflow/">这里</a>，具体安装推荐用 virtualenv 或者 <a href="https://www.continuum.io/downloads">Anaconda</a> 环境都可以：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ export TF_BINARY_URL<span style="color:#f92672">=</span>https://mirrors.tuna.tsinghua.edu.cn/tensorflow/linux/gpu/tensorflow_gpu-1.0.0-cp27-none-linux_x86_64.whl
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># virtualenv</span>
-</span></span><span style="display:flex;"><span>$ sudo apt-get install python-pip python-dev python-virtualenv
-</span></span><span style="display:flex;"><span>$ virtualenv --system-site-packages ~/tensorflow
-</span></span><span style="display:flex;"><span>$ source ~/tensorflow/bin/activate
-</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>tensorflow<span style="color:#f92672">)</span>$ pip install --upgrade $TF_BINARY_URL
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Anaconda</span>
-</span></span><span style="display:flex;"><span>$ conda create -n tensorflow
-</span></span><span style="display:flex;"><span>$ source activate tensorflow
-</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>tensorflow<span style="color:#f92672">)</span>$ pip install --ignore-installed --upgrade $TF_BINARY_URL
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">export</span> <span class="nv">TF_BINARY_URL</span><span class="o">=</span>https://mirrors.tuna.tsinghua.edu.cn/tensorflow/linux/gpu/tensorflow_gpu-1.0.0-cp27-none-linux_x86_64.whl
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># virtualenv</span>
+</span></span><span class="line"><span class="cl">$ sudo apt-get install python-pip python-dev python-virtualenv
+</span></span><span class="line"><span class="cl">$ virtualenv --system-site-packages ~/tensorflow
+</span></span><span class="line"><span class="cl">$ <span class="nb">source</span> ~/tensorflow/bin/activate
+</span></span><span class="line"><span class="cl"><span class="o">(</span>tensorflow<span class="o">)</span>$ pip install --upgrade <span class="nv">$TF_BINARY_URL</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Anaconda</span>
+</span></span><span class="line"><span class="cl">$ conda create -n tensorflow
+</span></span><span class="line"><span class="cl">$ <span class="nb">source</span> activate tensorflow
+</span></span><span class="line"><span class="cl"><span class="o">(</span>tensorflow<span class="o">)</span>$ pip install --ignore-installed --upgrade <span class="nv">$TF_BINARY_URL</span>
 </span></span></code></pre></div><p>最后…图。因为我的显卡是晚了两天到的，所以先装了其他部分用集显启动装的 Windows：</p>
 <figure class="mid"><img src="/images/posts/zion/system-photo-01-small.jpg"
          alt="主板、CPU 和内存"/><figcaption>
@@ -273,6 +273,8 @@
 </figure>
 
 </article>
+
+
 
 
 <section class="post-nav">
