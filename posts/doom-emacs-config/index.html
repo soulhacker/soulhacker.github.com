@@ -1,0 +1,793 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+  <title>Doom Emacs 配置 - Paradigm X</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="[Neo Lee]" /><meta property="og:title" content="Doom Emacs 配置" />
+<meta property="og:description" content="前言 这份配置完全基于 vanilla Emacs 的按键组合，没有启用 evil 模式的按键方式，如果希望使用 Doom Emacs 缺省的 evil 方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。
+Doom Emacs 的配置都在变量 doom-user-dir 指向的目录（根据安装时的选择可能是 ~/.doom.d/ 或 ~/.config/doom/ ）下，主要是三个文件：
+init.el ：启用/停用 Doom Emacs 预先配置好的模块（ modules ）； package." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-09-18T00:00:00+00:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Doom Emacs 配置"/>
+<meta name="twitter:description" content="前言 这份配置完全基于 vanilla Emacs 的按键组合，没有启用 evil 模式的按键方式，如果希望使用 Doom Emacs 缺省的 evil 方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。
+Doom Emacs 的配置都在变量 doom-user-dir 指向的目录（根据安装时的选择可能是 ~/.doom.d/ 或 ~/.config/doom/ ）下，主要是三个文件：
+init.el ：启用/停用 Doom Emacs 预先配置好的模块（ modules ）； package."/>
+
+<meta name="generator" content="Hugo 0.103.0" />
+    
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/styles.css" /><link rel='stylesheet' href='/css/main.css'><link rel='stylesheet' href='/css/syntax.css'></head>
+
+<body>
+  <div id="container">
+    <header>
+      
+      <h1>
+        <a href="/">Paradigm X</a>
+      </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/neolee" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://twitter.com/soulhacker" title="Twitter">
+               <i class="fab fa-twitter fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+      <p><em>Vision quests of a soulhacker</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="active" href="/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>全部文章</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="/tags/">
+                <i class="fa-li fa  fa-lg"></i><span>标签</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="/about/">
+                <i class="fa-li fa  fa-lg"></i><span>关于</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Doom Emacs 配置</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2022-09-18T00:00:00Z">Sep 18, 2022</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="/tags/tools">#Tools</a>
+                
+            </em>
+        </li>
+        
+
+        <li>12 minute read</li>
+    </ul>
+</aside>
+
+    
+
+    
+      
+
+    
+
+    <h2 id="前言">前言</h2>
+<blockquote>
+<p>这份配置完全基于 vanilla Emacs 的按键组合，没有启用 <code>evil</code> 模式的按键方式，如果希望使用 Doom Emacs 缺省的 <code>evil</code> 方式，可以参考其他一些大牛，比如的 <a href="https://tecosaur.github.io/emacs-config/config.html">Tec Osaur</a> 的非常有教益的版本。</p>
+</blockquote>
+<p>Doom Emacs 的配置都在变量 <code>doom-user-dir</code> 指向的目录（根据安装时的选择可能是 <code>~/.doom.d/</code> 或 <code>~/.config/doom/</code> ）下，主要是三个文件：</p>
+<ul>
+<li><code>init.el</code> ：启用/停用 Doom Emacs 预先配置好的模块（ <em>modules</em> ）；</li>
+<li><code>package.el</code> ：自己另行下载安装的软件包（ <em>packages</em> ），Doom Emacs 使用 <code>straight.el</code> 包管理器 <a href="https://github.com/radian-software/straight.el">→</a>；</li>
+<li><code>config.el</code> ：各种配置，大部分预制模块不需要或者只需要少许配置，因为 Doom 已经做了相对好的配置，自行安装的包则需要按包的文档做必要的配置；当然如果对 Doom 提供的配置不满意，也可以在此动手覆盖其配置。</li>
+</ul>
+<p>要更改配置就编辑这三个文件即可，但我们采用 <em>literate config</em> ，这是个很酷的功能 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，我们只要把所有配置代码都用 <code>org-babel</code> 的 <em>source block</em> 写在这个 <code>config.org</code> 文件中（对，你现在看到的就是这个文件自动导出而成的），然后用 <code>org-babel</code> 提供的 <code>org-babel-tangle-file</code> 函数来自动生成上述三个文件，这个 <em>bootstrap</em> 过程只需要做一次，之后 Doom 提供的 <code>literate</code> 模块会自动维护。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">emacs --batch --eval <span class="s2">&#34;(progn (require &#39;org) (setq org-confirm-babel-evaluate nil) (org-babel-tangle-file \&#34;~/.config/doom/config.org\&#34;))&#34;</span>
+</span></span></code></pre></div><p>对配置文件做任何修改之后使用 <code>doom sync</code> 命令来更新环境（这个命令也会从这个文件出发更新配置文件），还可以用 <code>doom doctor</code> 来检查配置中可能存在的问题（最常见的问题是依赖的外部程序找不到或者没配好）；Doom Emacs 更新比较频繁，而且鼓励用户滚动更新紧跟开发分支，所以可以定期用 <code>doom upgrade</code> 来更新 Doom Emacs 本身及所有启用的包。</p>
+<p>本着不折腾的原则，我对功能实现方案总的选择标准是：</p>
+<ul>
+<li>能用预制模块的尽量用；</li>
+<li>能用缺省配置的尽量用；</li>
+<li>重视持续维护和移植的代价；</li>
+<li>还是不喜欢 <code>evil</code> 。</li>
+</ul>
+<h2 id="预制模块">预制模块</h2>
+<p>Doom 提供的大量预制模块大多是最优选，很多地方也提供了主流方案多选一，并进行了非常恰当的配置，是宝藏，我的配置主要以这些预制模块为主。</p>
+<p>如果不清楚某个模块效果到底如何，可以启用试试；<a href="https://docs.doomemacs.org/latest/#/modules">官方文档</a>虽然还不完整，但已经挺有用了，可以了解每个模块的基本配置项、依赖和一些常见问题，千万不要错过。</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight" collapsed="t"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">;;; init.el -*- lexical-binding: t; -*-</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">doom!</span> <span class="nb">:input</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">&lt;&lt;doom-input&gt;&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:completion</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">&lt;&lt;doom-completion&gt;&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:ui</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">&lt;&lt;doom-ui&gt;&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:editor</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">&lt;&lt;doom-editor&gt;&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:emacs</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">&lt;&lt;doom-emacs&gt;&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:term</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">&lt;&lt;doom-term&gt;&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:checkers</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">&lt;&lt;doom-checkers&gt;&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:tools</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">&lt;&lt;doom-tools&gt;&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:os</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">&lt;&lt;doom-os&gt;&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:lang</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">&lt;&lt;doom-lang&gt;&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:email</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">&lt;&lt;doom-email&gt;&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:app</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">&lt;&lt;doom-app&gt;&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:config</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">&lt;&lt;doom-config&gt;&gt;</span>
+</span></span><span class="line"><span class="cl">       <span class="p">)</span>
+</span></span></code></pre></div><h3 id="基本设置">基本设置</h3>
+<p>Doom 的 <code>:config</code> 缺省配置大多很好，少数需要定制的后面再说；另外很重要的是启用 <code>literate</code> 模块。</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="nv">literate</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">default</span> <span class="nv">+bindings</span> <span class="nv">+smartparens</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="用户界面">用户界面</h3>
+<p>这部分包含了 Doom 的 <code>:completion</code> <code>:ui</code> <code>:editor</code> <code>:emacs</code> <code>:term</code> <code>:checkers</code> <code>:tools</code> <code>:os</code> 几大类别。</p>
+<p>无处不在的自动补全功能，选择最时髦的 <code>vertico</code> 。</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">company</span> <span class="nv">+childframe</span><span class="p">)</span>       <span class="c1">; the ultimate code completion backend</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;helm                      ; the *other* search engine for love and life</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;ido                       ; the other *other* search engine...</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;ivy                       ; a search engine for love and life</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">vertico</span> <span class="nv">+icons</span><span class="p">)</span>            <span class="c1">; the search engine of the future</span>
+</span></span></code></pre></div><p>这里面有偏视觉和娱乐的（前者如 <code>hl-todo</code> <code>ligatures</code> 后者如 <code>doom-quit</code> ），但大多数是很实用的，比如 <code>window-select</code> 大幅强化了多窗口时切换窗口 <code>C-x o</code> 的体验（实际使用的是 <code>ace-window</code> ）。另外 <code>unicode</code> 这个非常重要，如果不打开会有很多中文显示方面的问题。</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;deft                      ; notational velocity for Emacs</span>
+</span></span><span class="line"><span class="cl"><span class="nv">doom</span>                        <span class="c1">; what makes DOOM look the way it does</span>
+</span></span><span class="line"><span class="cl"><span class="nv">doom-dashboard</span>              <span class="c1">; a nifty splash screen for Emacs</span>
+</span></span><span class="line"><span class="cl"><span class="nv">doom-quit</span>                   <span class="c1">; DOOM quit-message prompts when you quit Emacs</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">emoji</span> <span class="nv">+ascii</span> <span class="nv">+unicode</span> <span class="nv">+github</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">hl-todo</span>                     <span class="c1">; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;hydra</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;indent-guides             ; highlighted indent columns</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">ligatures</span> <span class="nv">+extra</span><span class="p">)</span>          <span class="c1">; ligatures and symbols to make your code pretty again</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;minimap                   ; show a map of the code on the side</span>
+</span></span><span class="line"><span class="cl"><span class="nv">modeline</span>                    <span class="c1">; snazzy, Atom-inspired modeline, plus API</span>
+</span></span><span class="line"><span class="cl"><span class="nv">nav-flash</span>                   <span class="c1">; blink cursor line after big motions</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;neotree                   ; a project drawer, like NERDTree for vim</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ophints</span>                     <span class="c1">; highlight the region an operation acts on</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">popup</span> <span class="nv">+all</span> <span class="nv">+defaults</span><span class="p">)</span>      <span class="c1">; tame sudden yet inevitable temporary windows</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;tabs                      ; a tab bar for Emacs</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">treemacs</span> <span class="nv">+lsp</span><span class="p">)</span>             <span class="c1">; a project drawer, like neotree but cooler</span>
+</span></span><span class="line"><span class="cl"><span class="nv">unicode</span>                     <span class="c1">; extended unicode support for various languages</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">vc-gutter</span> <span class="nv">+pretty</span><span class="p">)</span>         <span class="c1">; vcs diff in the fringe</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;vi-tilde-fringe           ; fringe tildes to mark beyond EOB</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">window-select</span> <span class="nv">+number</span><span class="p">)</span>     <span class="c1">; visually switch windows</span>
+</span></span><span class="line"><span class="cl"><span class="nv">workspaces</span>                  <span class="c1">; tab emulation, persistence &amp; separate workspaces</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;zen                       ; distraction-free coding or writing</span>
+</span></span></code></pre></div><p>编辑相关的模块这里，我做的最大选择是不用 <code>evil</code> ，当然很多 Spacemacs 和 Doom 用户都会选择这个模式，但我单纯的就是不适应。这里要特别提一下的是 <code>lipsy</code> ，这是针对 Lisp 类语言的一个编辑模式，非常巧妙的实现了不切换模式而用上了 Vim 普通模式中的一些高效操作，我认为比传统的 <code>paredit</code> 和 <code>smartparens</code> 都更高明。</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;(evil +everywhere)        ; come to the dark side, we have cookies</span>
+</span></span><span class="line"><span class="cl"><span class="nv">file-templates</span>              <span class="c1">; auto-snippets for empty files</span>
+</span></span><span class="line"><span class="cl"><span class="nv">fold</span>                        <span class="c1">; (nigh) universal code folding</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;(format +onsave)          ; automated prettiness</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;god                       ; run Emacs commands without modifier keys</span>
+</span></span><span class="line"><span class="cl"><span class="nv">lispy</span>                       <span class="c1">; vim for lisp, for people who don&#39;t like vim</span>
+</span></span><span class="line"><span class="cl"><span class="nv">multiple-cursors</span>            <span class="c1">; editing in many places at once</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;objed                     ; text object editing for the innocent</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;parinfer                  ; turn lisp into python, sort of</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;rotate-text               ; cycle region at point between text candidates</span>
+</span></span><span class="line"><span class="cl"><span class="nv">snippets</span>                    <span class="c1">; my elves. They type so I don&#39;t have to</span>
+</span></span><span class="line"><span class="cl"><span class="nv">word-wrap</span>                   <span class="c1">; soft wrapping with language-aware indent</span>
+</span></span></code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">dired</span> <span class="nv">+dirvish</span> <span class="nv">+icons</span><span class="p">)</span>     <span class="c1">; making dired pretty [functional]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">electric</span>                    <span class="c1">; smarter, keyword-based electric-indent</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">ibuffer</span> <span class="nv">+icons</span><span class="p">)</span>            <span class="c1">; interactive buffer management</span>
+</span></span><span class="line"><span class="cl"><span class="nv">undo</span>                        <span class="c1">; persistent, smarter undo for your inevitable mistakes</span>
+</span></span><span class="line"><span class="cl"><span class="nv">vc</span>                          <span class="c1">; version-control and Emacs, sitting in a tree</span>
+</span></span></code></pre></div><p>Doom 支持几种内置的终端模拟器，效果最好的应该是 <code>vterm</code> 。</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;eshell                    ; the elisp shell that works everywhere</span>
+</span></span><span class="line"><span class="cl"><span class="nv">vterm</span>                       <span class="c1">; the best terminal emulation in Emacs</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;shell                     ; simple shell REPL for Emacs</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;term                      ; basic terminal emulator for Emacs</span>
+</span></span></code></pre></div><p>关于拼写检查，我试了各种组合，目前最好的应该还是 <code>flyspell</code> 和 <code>aspell</code> 。</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">syntax</span> <span class="nv">+childframe</span><span class="p">)</span>        <span class="c1">; tasing you for every semicolon you forget</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">spell</span> <span class="nv">+aspell</span> <span class="nv">+flyspell</span><span class="p">)</span>   <span class="c1">; tasing you for misspelling mispelling</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">grammar</span> <span class="nv">+lsp</span><span class="p">)</span>              <span class="c1">; tasing grammar mistake every you make</span>
+</span></span></code></pre></div><p>这一组工具我基本都是缺省选择，值得一提的是 <code>magit</code> 真棒，用起来简直上瘾，连写 <em>commit message</em> 都变得香甜了。注意 <code>lsp</code> 一定要打开，后面配置很多编程语言时会用到。</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;ansible</span>
+</span></span><span class="line"><span class="cl"><span class="nv">biblio</span>                      <span class="c1">; Writes a PhD for you (citation needed)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">debugger</span> <span class="nv">+lsp</span><span class="p">)</span>             <span class="c1">; FIXME stepping through code, to help you add bugs</span>
+</span></span><span class="line"><span class="cl"><span class="nv">direnv</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;docker</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;editorconfig              ; let someone else argue about tabs vs spaces</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ein</span>                         <span class="c1">; tame Jupyter notebooks with emacs</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">eval</span> <span class="nv">+overlay</span><span class="p">)</span>             <span class="c1">; run code, run (also, repls)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">gist</span>                        <span class="c1">; interacting with github gists</span>
+</span></span><span class="line"><span class="cl"><span class="nv">lookup</span>                      <span class="c1">; navigate your code and its documentation</span>
+</span></span><span class="line"><span class="cl"><span class="nv">lsp</span>                         <span class="c1">; M-x vscode</span>
+</span></span><span class="line"><span class="cl"><span class="nv">magit</span>                       <span class="c1">; a git porcelain for Emacs</span>
+</span></span><span class="line"><span class="cl"><span class="nv">make</span>                        <span class="c1">; run make tasks from Emacs</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;pass                      ; password manager for nerds</span>
+</span></span><span class="line"><span class="cl"><span class="nv">pdf</span>                         <span class="c1">; pdf enhancements</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;prodigy                   ; FIXME managing external services &amp; code builders</span>
+</span></span><span class="line"><span class="cl"><span class="nv">rgb</span>                         <span class="c1">; creating color strings</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;taskrunner                ; taskrunner for all your projects</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;terraform                 ; infrastructure as code</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;tmux                      ; an API for interacting with tmux</span>
+</span></span><span class="line"><span class="cl"><span class="nv">tree-sitter</span>                 <span class="c1">; syntax and parsing, sitting in a tree...</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;upload                    ; map local to remote projects via ssh/ftp</span>
+</span></span></code></pre></div><p>这两个都是与操作系统有关的补丁，前一个 Mac 用户启用，后一个则都应该启用。</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">:if</span> <span class="nv">IS-MAC</span> <span class="nv">macos</span><span class="p">)</span>          <span class="c1">; improve compatibility with macOS</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">tty</span> <span class="nv">+osc</span><span class="p">)</span>                  <span class="c1">; improve the terminal Emacs experience</span>
+</span></span></code></pre></div><h3 id="编程语言">编程语言</h3>
+<p>Doom 提供了几乎所有主流语言的预制模块，大部分都提供了对 LSP 的支持，有些 <em>language server</em> 可以直接在 Emacs 中下载配置，但有些需要自行另外安装配置。有不少 <em>language server</em> 实现不太好，所以需要自己判断，下面是我启用的一些用得到的语言，大部分都启用了 LSP，可以用 <code>doom doctor</code> 来确认需要另外配置哪些外部支持软件。另一个值得尝试的选项是 <code>+tree-sitter</code> ，一个强大的静态代码分析插件，官方文档中没有，但实际上存在。这里面必用的当然是 <code>emacs-lisp</code> 和 <code>org</code> ，不用这俩还用什么 Emacs 啊！</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;agda                      ; types of types of types of types...</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;beancount                 ; mind the GAAP</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;(cc +lsp)                 ; C &gt; C++ == 1</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">clojure</span> <span class="nv">+lsp</span><span class="p">)</span>              <span class="c1">; java with a lisp</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;common-lisp               ; if you&#39;ve seen one lisp, you&#39;ve seen them all</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;coq                       ; proofs-as-programs</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;crystal                   ; ruby at the speed of c</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;csharp                    ; unity, .NET, and mono shenanigans</span>
+</span></span><span class="line"><span class="cl"><span class="nv">data</span>                        <span class="c1">; config/data formats</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;(dart +flutter)           ; paint ui and not much else</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dhall</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;elixir                    ; erlang done right</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;elm                       ; care for a cup of TEA?</span>
+</span></span><span class="line"><span class="cl"><span class="nv">emacs-lisp</span>                  <span class="c1">; drown in parentheses</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;erlang                    ; an elegant language for a more civilized age</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;ess                       ; emacs speaks statistics</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;factor</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;faust                     ; dsp, but you get to keep your soul</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;fortran                   ; in FORTRAN, GOD is REAL (unless declared INTEGER)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;fsharp                    ; ML stands for Microsoft&#39;s Language</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;fstar                     ; (dependent) types and (monadic) effects and Z3</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;gdscript                  ; the language you waited for</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">go</span> <span class="nv">+lsp</span><span class="p">)</span>                   <span class="c1">; the hipster dialect</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;(graphql +lsp)            ; Give queries a REST</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">haskell</span> <span class="nv">+lsp</span> <span class="nv">+tree-sitter</span><span class="p">)</span> <span class="c1">; a language that&#39;s lazier than I am</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;hy                        ; readability of scheme w/ speed of python</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;idris                     ; a language you can depend on</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">json</span> <span class="nv">+lsp</span> <span class="nv">+tree-sitter</span><span class="p">)</span>    <span class="c1">; At least it ain&#39;t XML</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">java</span> <span class="nv">+lsp</span><span class="p">)</span>                 <span class="c1">; the poster child for carpal tunnel syndrome</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">javascript</span> <span class="nv">+lsp</span><span class="p">)</span>           <span class="c1">; all(hope(abandon(ye(who(enter(here))))))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;julia                     ; a better, faster MATLAB</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;kotlin                    ; a better, slicker Java(Script)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">latex</span>                       <span class="c1">; writing papers in Emacs has never been so fun</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;lean                      ; for folks with too much to prove</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;ledger                    ; be audit you can be</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;lua                       ; one-based indices? one-based indices</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">markdown</span> <span class="nv">+grip</span><span class="p">)</span>            <span class="c1">; writing docs for people to ignore</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;nim                       ; python + lisp at the speed of c</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;nix                       ; I hereby declare &#34;nix geht mehr!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;ocaml                     ; an objective camel</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">org</span> <span class="nv">+dragdrop</span> <span class="nv">+gnuplot</span> <span class="nv">+hugo</span> <span class="nv">+journal</span> <span class="nv">+jupyter</span>
+</span></span><span class="line"><span class="cl"><span class="nv">+noter</span> <span class="nv">+pandoc</span> <span class="nv">+present</span> <span class="nv">+pretty</span> <span class="nv">+roam2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">; organize your plain life in plain text</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;php                       ; perl&#39;s insecure younger brother</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;plantuml                  ; diagrams for confusing people more</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;purescript                ; javascript, but functional</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">python</span> <span class="nv">+lsp</span><span class="p">)</span>               <span class="c1">; beautiful is better than ugly</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;qt                        ; the &#39;cutest&#39; gui framework ever</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;racket                    ; a DSL for DSLs</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;raku                      ; the artist formerly known as perl6</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;rest                      ; Emacs as a REST client</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;rst                       ; ReST in peace</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;(ruby +rails)             ; 1.step {|i| p &#34;Ruby is #{i.even? ? &#39;love&#39; : &#39;life&#39;}&#34;}</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">rust</span> <span class="nv">+lsp</span> <span class="nv">+tree-sitter</span><span class="p">)</span>    <span class="c1">; Fe2O3.unwrap().unwrap().unwrap().unwrap()</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;scala                     ; java, but good</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;(scheme +guile)           ; a fully conniving family of lisps</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">sh</span> <span class="nv">+tree-sitter</span><span class="p">)</span>           <span class="c1">; she sells {ba,z,fi}sh shells on the C xor</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;sml</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;solidity                  ; do you need a blockchain? No.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;swift                     ; who asked for emoji variables?</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;terra                     ; Earth and Moon in alignment for performance.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;web                       ; the tubes</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;yaml                      ; JSON, but readable</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">zig</span> <span class="nv">+lsp</span><span class="p">)</span>                  <span class="c1">; C, but simpler</span>
+</span></span></code></pre></div><h3 id="输入法">输入法</h3>
+<p>增加一些 Emacs 环境下的内置输入法，在 macOS 环境下基本没用。</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;bidi                      ; (tfel ot) thgir etirw uoy gnipleh</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;chinese</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;japanese</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;layout                    ; auie,ctsrnm is the superior home row</span>
+</span></span></code></pre></div><h3 id="万能的-emacs">万能的 Emacs</h3>
+<p>很多人会用 Emacs 来做电子邮件、IRC、RSS 等客户端，甚至拿来听歌看视频，对我来说，听歌啥的就算了，不过以后有时间想试试邮件、IRC、RSS 这些。</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">:if</span> <span class="p">(</span><span class="nv">executable-find</span> <span class="s">&#34;mu&#34;</span><span class="p">)</span> <span class="p">(</span><span class="nv">mu4e</span> <span class="nv">+org</span> <span class="nv">+gmail</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;notmuch</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;(wanderlust +gmail)</span>
+</span></span></code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;calendar</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;emms</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;everywhere                ; *leave* Emacs!? You must be joking</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;irc                       ; how neckbeards socialize</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;(rss +org)                ; emacs as an RSS reader</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;twitter                   ; twitter client https://twitter.com/vnought</span>
+</span></span></code></pre></div><h2 id="基本设置">基本设置</h2>
+<p>这里是一些只要 Emacs 启动就需要尽快设置的内容，也就是不需要考虑延迟加载的一些设置，包括一些 Emacs 本身的全局设置，也包括一些需要立刻加载的模块和包的基本设置。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">;;; config.el -*- lexical-binding: t; -*-</span>
+</span></span></code></pre></div><h3 id="个人信息">个人信息</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nf">user-full-name</span> <span class="s">&#34;Neo Lee&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">user-mail-address</span> <span class="s">&#34;neo.lee@gmail.com&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="更好的缺省值">更好的缺省值</h3>
+<p>Doom 大部分的缺省配置都是优化且实用的，但还是有少量的需要修改。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq-default</span>
+</span></span><span class="line"><span class="cl"> <span class="nv">window-combination-resize</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl"> <span class="nv">x-stretch-cursor</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl"> <span class="nv">doom-scratch-initial-major-mode</span> <span class="ss">&#39;emacs-lisp-mode</span>
+</span></span><span class="line"><span class="cl"> <span class="nv">yas-triggers-in-field</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl"> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span>
+</span></span><span class="line"><span class="cl"> <span class="nv">undo-limit</span> <span class="mi">80000000</span>
+</span></span><span class="line"><span class="cl"> <span class="nv">auto-save-default</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl"> <span class="nv">scroll-preserve-screen-position</span> <span class="ss">&#39;always</span>
+</span></span><span class="line"><span class="cl"> <span class="nv">scroll-margin</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"> <span class="nv">word-wrap-by-category</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl"> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">global-subword-mode</span> <span class="no">t</span><span class="p">)</span>
+</span></span></code></pre></div><p>因为我不用 <code>evil</code> 所以需要给 <em>local leader</em> 一个方便的组合键。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">map!</span> <span class="s">&#34;C-z&#34;</span> <span class="no">nil</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-localleader-alt-key</span> <span class="s">&#34;C-z&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>如果想显示相对行号，将这个变量值改为 <code>'relative</code> 。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">display-line-numbers-type</span> <span class="no">t</span><span class="p">)</span>
+</span></span></code></pre></div><p>Org 的根目录需要尽早设置。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">org-directory</span> <span class="s">&#34;~/Code/Org/&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="字体和主题">字体和主题</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="s">&#34;Iosevka Fixed&#34;</span> <span class="nb">:size</span> <span class="mi">16</span> <span class="nb">:weight</span> <span class="ss">&#39;light</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">doom-big-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="s">&#34;Iosevka Fixed&#34;</span> <span class="nb">:size</span> <span class="mi">20</span> <span class="nb">:weight</span> <span class="ss">&#39;light</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">doom-variable-pitch-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="s">&#34;Iosevka Fixed&#34;</span><span class="p">)</span> <span class="c1">;; inherits the :size from doom-font</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">doom-unicode-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="s">&#34;JuliaMono&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">doom-serif-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="s">&#34;Iosevka Fixed&#34;</span> <span class="nb">:weight</span> <span class="ss">&#39;light</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-themes-enable-bold</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">doom-themes-enable-italic</span> <span class="no">t</span><span class="p">)</span>
+</span></span></code></pre></div><p>随系统切换 light 和 dark mode 主题，利用 macOS 下 <code>emacs-plus</code> 增加的 <code>ns-system-appearance-change-functions</code> 钩子来实现。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">;; (setq +light-theme &#39;doom-one-light</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;       +dark-theme &#39;doom-one)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; (setq +light-theme &#39;doom-material</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;       +dark-theme &#39;doom-material-dark)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; (setq +light-theme &#39;doom-monokai-pro</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;       +dark-theme &#39;doom-monokai-pro)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+light-theme</span> <span class="ss">&#39;doom-ayu-light</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">+dark-theme</span> <span class="ss">&#39;doom-ayu-mirage</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">+apply-theme</span> <span class="p">(</span><span class="nv">appearance</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Load theme, taking current system APPEARANCE into consideration.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">mapc</span> <span class="nf">#&#39;</span><span class="nv">disable-theme</span> <span class="nv">custom-enabled-themes</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">pcase</span> <span class="nv">appearance</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="ss">&#39;light</span> <span class="p">(</span><span class="nv">load-theme</span> <span class="nv">+light-theme</span> <span class="no">t</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="ss">&#39;dark</span> <span class="p">(</span><span class="nv">load-theme</span> <span class="nv">+dark-theme</span> <span class="no">t</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">add-hook!</span> <span class="ss">&#39;ns-system-appearance-change-functions</span> <span class="ss">&#39;+apply-theme</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">doom-themes-treemacs-config</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">doom-themes-org-config</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="状态条">状态条</h3>
+<p>Doom 缺省的状态条是 <code>doom-modeline</code> ，可能是几个状态条方案里最漂亮的一个，不过这问题见仁见智，选自己喜欢的就好。如果和我一样不喜欢折腾就用它的话，有些配置需要优化。</p>
+<p>第一段调整显示顺序，并在状态条最右边增加一些空间，是为了修正显示上的 bug，不然状态显示内容最右边会被截断 <a href="https://docs.doomemacs.org/latest/modules/ui/modeline/#/troubleshooting/the-right-side-modeline-cut">→</a>，不过这样处理之后下面两段显示时钟和电池状态的代码会失效，应该是找不到插入的位置，等有时间再来排错；最后一段是几个设置，最有意义的是最后一个。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">doom-modeline</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; add padding to the right</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">doom-modeline-def-modeline</span> <span class="ss">&#39;main</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">bar</span> <span class="nv">matches</span> <span class="nv">buffer-info</span> <span class="nv">remote-host</span> <span class="nv">buffer-position</span> <span class="nv">parrot</span> <span class="nv">selection-info</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">misc-info</span> <span class="nv">checker</span> <span class="nv">input-method</span> <span class="nv">buffer-encoding</span> <span class="nv">major-mode</span> <span class="nv">process</span> <span class="nv">vcs</span> <span class="s">&#34;   &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; time on modeline</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">display-time-string-forms</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&#39;</span><span class="p">((</span><span class="nf">propertize</span> <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34; 🕘 &#34;</span> <span class="nv">24-hours</span> <span class="s">&#34;:&#34;</span> <span class="nv">minutes</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">display-time-mode</span> <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; battery info on modeline (only on laptops)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">battery-str</span> <span class="p">(</span><span class="nv">battery</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nv">string-match-p</span> <span class="p">(</span><span class="nf">regexp-quote</span> <span class="s">&#34;Power Battery&#34;</span><span class="p">)</span> <span class="nv">battery-str</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">display-battery-mode</span> <span class="no">t</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; better default</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-modeline-bar-width</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">doom-modeline-major-mode-icon</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">doom-modeline-major-mode-color-icon</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">doom-modeline-buffer-file-name-style</span> <span class="ss">&#39;truncate-upto-project</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></div><h3 id="切换窗口">切换窗口</h3>
+<p>预制模块 <code>ace-window</code> 加强了 <code>C-x o</code> 的功能，当多于2个窗口时会显示高亮显示每个窗口左上角的一个字母，按下这个字母就切换到对应窗口，但这个字母的显示非常小，很不醒目，解决方案很简单，定制这个字母显示的样式，把它变大再加上红色底，就醒目了。 <code>ace-window</code> 还有不少别的功能，比如激活之后可以按 <code>x</code> 来删除当前窗口，按 <code>m</code> 来与选择的窗口交换内容等，具体可参见<a href="https://github.com/abo-abo/ace-window">官网说明</a>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">custom-set-faces!</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&#39;</span><span class="p">(</span><span class="nv">aw-leading-char-face</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">:foreground</span> <span class="s">&#34;white&#34;</span> <span class="nb">:background</span> <span class="s">&#34;red&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">:weight</span> <span class="nv">bold</span> <span class="nb">:height</span> <span class="mf">1.5</span> <span class="nb">:box</span> <span class="p">(</span><span class="nb">:line-width</span> <span class="mi">10</span> <span class="nb">:color</span> <span class="s">&#34;red&#34;</span><span class="p">)))</span>
+</span></span></code></pre></div><h3 id="花式文本显示">花式文本显示</h3>
+<p>预制模块 <code>ligature</code> 及其 <code>+extra</code> 选项会用一些漂亮的文字符号来替代一些固定文本组合，比如用 <code>λ</code> 代替 Lisp 类语言里的 <code>lambda</code> 和 <code>fn</code> 关键字，用 <code>𝒇</code> 代替 <code>function</code> 关键字，用 <code>⟻</code> 代替 <code>import</code> 关键字等，没啥用就图个乐，不过在某些语言里这个玩意儿会影响理解和编码，所以对这些语言禁用掉是个明智选择。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">+appened-to-negation-list</span> <span class="p">(</span><span class="nv">head</span> <span class="nv">tail</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">sequencep</span> <span class="nv">head</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">delete-dups</span>
+</span></span><span class="line"><span class="cl">       <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">eq</span> <span class="p">(</span><span class="nf">car</span> <span class="nv">tail</span><span class="p">)</span> <span class="ss">&#39;not</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="p">(</span><span class="nf">append</span> <span class="nv">head</span> <span class="nv">tail</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">         <span class="p">(</span><span class="nf">append</span> <span class="nv">tail</span> <span class="nv">head</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">tail</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">modulep!</span> <span class="nb">:ui</span> <span class="nv">ligatures</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">+ligatures-extras-in-modes</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">+appened-to-negation-list</span>
+</span></span><span class="line"><span class="cl">         <span class="nv">+ligatures-extras-in-modes</span>
+</span></span><span class="line"><span class="cl">         <span class="o">&#39;</span><span class="p">(</span><span class="nv">not</span> <span class="nv">c-mode</span> <span class="nv">c++-mode</span> <span class="nv">emacs-lisp-mode</span> <span class="nv">python-mode</span> <span class="nv">scheme-mode</span> <span class="nv">racket-mode</span> <span class="nv">rust-mode</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">+ligatures-in-modes</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">+appened-to-negation-list</span>
+</span></span><span class="line"><span class="cl">         <span class="nv">+ligatures-in-modes</span>
+</span></span><span class="line"><span class="cl">         <span class="o">&#39;</span><span class="p">(</span><span class="nv">not</span> <span class="nv">emacs-lisp-mode</span> <span class="nv">scheme-mode</span> <span class="nv">racket-mode</span><span class="p">))))</span>
+</span></span></code></pre></div><h3 id="语言服务器">语言服务器</h3>
+<p>Emacs 支持微软开源的 LSP 接口以及各种各样的语言服务器时间还不长，问题也有一些，不过未来可期。我们可以做一些定制来让来自 LSP 的代码分析结果和建议显示更易读。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">lsp-ui</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">lsp-ui-sideline-enable</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-sideline-show-code-actions</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-sideline-show-diagnostics</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-sideline-show-hover</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-log-io</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-lens-enable</span> <span class="no">t</span>               <span class="c1">; not working properly with ccls!</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-diagnostics-provider</span> <span class="nb">:auto</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-enable-symbol-highlighting</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-headerline-breadcrumb-enable</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-headerline-breadcrumb-segments</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">symbols</span><span class="p">)))</span>
+</span></span></code></pre></div><p>还有些语言服务器需要专门的配置，比如新兴语言 <code>zig</code> 的语言服务器 <code>zls</code> 。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">lsp-zig-zls-executable</span> <span class="s">&#34;~/Code/Repo/zls/zig-out/bin/zls&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="拼写检查">拼写检查</h3>
+<p>无论使用 <code>spell-fu</code> 还是 <code>flyspell</code> 都需要配置个人词汇表的保存位置，我都放在 <code>doom-user-dir</code> 目录下了。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">spell-fu</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">defun</span> <span class="nv">+spell-fu-register-dictionary</span> <span class="p">(</span><span class="nv">lang</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;Add `LANG` to spell-fu multi-dict, with a personal dictionary.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">;; Add the dictionary</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">spell-fu-dictionary-add</span> <span class="p">(</span><span class="nv">spell-fu-get-ispell-dictionary</span> <span class="nv">lang</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">personal-dict-file</span> <span class="p">(</span><span class="nf">expand-file-name</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&#34;aspell.%s.pws&#34;</span> <span class="nv">lang</span><span class="p">)</span> <span class="nv">doom-user-dir</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">;; Create an empty personal dictionary if it doesn&#39;t exists</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">unless</span> <span class="p">(</span><span class="nf">file-exists-p</span> <span class="nv">personal-dict-file</span><span class="p">)</span> <span class="p">(</span><span class="nf">write-region</span> <span class="s">&#34;&#34;</span> <span class="no">nil</span> <span class="nv">personal-dict-file</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">;; Add the personal dictionary</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">spell-fu-dictionary-add</span> <span class="p">(</span><span class="nv">spell-fu-get-personal-dictionary</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&#34;%s-personal&#34;</span> <span class="nv">lang</span><span class="p">)</span> <span class="nv">personal-dict-file</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">add-hook!</span> <span class="ss">&#39;spell-fu-mode-hook</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">+spell-fu-register-dictionary</span> <span class="s">&#34;en&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">flyspell</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">ispell-personal-dictionary</span> <span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&#34;aspell.pws&#34;</span> <span class="nv">doom-user-dir</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">map!</span>
+</span></span><span class="line"><span class="cl">   <span class="p">[</span><span class="nv">s-down-mouse-1</span><span class="p">]</span> <span class="ss">&#39;flyspell-correct-word</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></div><h2 id="补充软件包">补充软件包</h2>
+<p>Doom 的缺省配置和预制模块能覆盖我绝大部分需求，所以需要我另外添加的软件包很少，这些软件包需要写在 <code>packages.el</code> 里。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">;;; packages.el -*- no-byte-compile: t; -*-</span>
+</span></span></code></pre></div><h3 id="buffer-move"><code>buffer-move</code></h3>
+<p>用快捷键快速在几个窗口间交换 buffer，比如同时打开 <code>.c</code> 和 <code>.h</code> 文件，先在左边窗口编辑 <code>.h</code> 文件，然后把右边窗口的 <code>.c</code> 文件换过来进行编辑，使用这个包用一个组合键就能做到。其实预制模块里的 <code>ace-window</code> 也可以做类似的事情，但 <code>buffer-mover</code> 一个按键搞定更快。这里我用 <code>:recipe</code> 子句来禁用这个包的编译，因为这个包有个 bug，编译后会报错。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">buffer-move</span> <span class="nb">:recipe</span> <span class="p">(</span><span class="nb">:build</span> <span class="p">(</span><span class="nb">:not</span> <span class="nv">compile</span><span class="p">)))</span>
+</span></span></code></pre></div><p>安装和启用之后，在 <code>config.el</code> 里配置自己习惯的按键组合（我用 <code>Control+Command+方向键</code> ）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">map!</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="nv">C-s-up</span><span class="p">]</span>        <span class="nf">#&#39;</span><span class="nv">buf-move-up</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="nv">C-s-down</span><span class="p">]</span>      <span class="nf">#&#39;</span><span class="nv">buf-move-down</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="nv">C-s-left</span><span class="p">]</span>      <span class="nf">#&#39;</span><span class="nv">buf-move-left</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="nv">C-s-right</span><span class="p">]</span>     <span class="nf">#&#39;</span><span class="nv">buf-move-right</span>
+</span></span><span class="line"><span class="cl"> <span class="p">)</span>
+</span></span></code></pre></div><h3 id="org-roam-ui"><code>org-roam-ui</code></h3>
+<p><code>org-roam-ui</code> <a href="https://github.com/org-roam/org-roam-ui">→</a> 提供强大的知识网络笔记系统 <code>org-roam</code> 的网络可视化，并可与 <code>org-roam</code> 紧密整合。注意：</p>
+<ol>
+<li><code>org-roam-ui</code> 只支持 <code>org-roam v2</code> ，如果使用 <code>org-roam v1</code> 的话请用 <code>org-roam-server</code> <a href="https://github.com/org-roam/org-roam-server">→</a>。</li>
+<li><code>org-roam-ui</code> 需要最新版本的 <code>org-roam</code> ，而 Doom 的包版本相对保守，所以要用 <code>unpin!</code> 函数来告诉 Doom 不用缺省版本而采用开发分支最新版本。</li>
+</ol>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">unpin!</span> <span class="nv">org-roam</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">org-roam-ui</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="xenops"><code>xenops</code></h3>
+<p><code>xenops</code> 和 <code>org-fragtog</code> 都是用来在 <code>org-mode</code> 里实时渲染显示 \(LaTeX\) 公式的，它们都会实时将公式渲染为图片（前者用 SVG 格式，后者用 PNG 格式）并缓存，然后显示出来，区别在于 <code>org-fragtog</code> 是同步模式，渲染时会卡住 Emacs，等它好了你才能继续操作，而 <code>xenops</code> 使用 <code>emacs-aio</code> 实现异步渲染，它干活的时候你也可以继续干活，它渲染好就会自动显示出来。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">xenops</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; (package! org-fragtog)</span>
+</span></span></code></pre></div><h3 id="python-black"><code>python-black</code></h3>
+<p>懒汉的选择，一键格式化 Python 源码，再也不用被缩进地狱欺负了 -_- 我选择 <code>black</code> 的原因是它不需要配置，所有源码格式规则都是确定的，不用搞什么无谓的“个性化”。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">python-black</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="两个小玩具">两个小玩具</h3>
+<p><code>keycast</code> 可以跟踪并显示所有按键操作，在录制与 Emacs 有关的 screencast 时有用，其实我用的很少，ScreenFlow 提供更漂亮的解决方案，但在 Linux 下是个不错的方案。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">keycast</span><span class="p">)</span>
+</span></span></code></pre></div><p>这个包允许你在 Emacs 里查询、下载和查看 <a href="https://xkcd.com">xkcd</a> 漫画，嘿嘿嘿！</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">xkcd</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="org-mode">Org Mode</h2>
+<p><code>org-mode</code> 是 Emacs 的招牌应用，一个全副武装的 <code>org-mode</code> 可以在一致的环境下完成日程计划、笔记、博客、论文等各种写作任务，不仅可以写出文本、结构化列表、表格，还可以插入图片、 \(LaTeX\) 公式、可运行的程序代码、可追踪的任务，还可以借助 <code>org-roam</code> 实现笔记的知识网络化。这些功能是以 <code>org-mode</code> 为中心的一组软件包配合实现的，所以配置也相对多一点。</p>
+<h3 id="基本配置">基本配置</h3>
+<p>设置 <em>agenda</em> 使用的 Org 文档的位置，可以指定目录和文件名 <em>pattern</em> 。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-agenda-files</span> <span class="p">(</span><span class="nv">directory-files-recursively</span> <span class="nv">org-directory</span> <span class="s">&#34;\\.org$&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></div><p>Org 文档导出 \(LaTeX\) 文档时需要做一些配置，一是引入 <code>ctex</code> 包，否则中文处理会有问题；二是配置一下带链接文本的格式，不然会是带着红色框的文本，非常恐怖；另外是一些 \(LaTeX\) 的常规设置。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-latex-default-packages-alist</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">remove</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;AUTO&#34;</span> <span class="s">&#34;inputenc&#34;</span> <span class="no">t</span><span class="p">)</span> <span class="nv">org-latex-default-packages-alist</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-latex-pdf-process</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;xelatex -interaction nonstopmode %f&#34;</span>
+</span></span><span class="line"><span class="cl">                                <span class="s">&#34;xelatex -interaction nonstopmode %f&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-latex-packages-alist</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;&#34;</span> <span class="s">&#34;ctex&#34;</span> <span class="no">t</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-latex-hyperref-template</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;\\hypersetup{linktoc=all,colorlinks=true,urlcolor=blue,linkcolor=blue}&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></div><p>在编辑 Org 文档时，经常点击链接跳转到另一篇笔记，这时候快速返回可以设置为快捷键，我用的是 <code>Control-Command-b</code> 。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">map!</span> <span class="nb">:map</span> <span class="nv">org-mode-map</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;C-s-b&#34;</span> <span class="nf">#&#39;</span><span class="nv">org-mark-ring-goto</span>
+</span></span><span class="line"><span class="cl">        <span class="p">))</span>
+</span></span></code></pre></div><h3 id="运行代码块">运行代码块</h3>
+<p>我们借助 <code>org-babel</code> 来实现可运行的代码块，我目前只用 Jupyter 这一种运行引擎，以后要扩展别的语言也比较方便。注意第一段里 <code>:kernel</code> 参数，需要设为系统里存在的某个 Jupyter <em>kernel</em> 的名字，且系统环境里应该装有 Jupyter（即存在可用 <code>jupyter</code> 程序）；使用中如果需要 <code>pip</code> 安装 Python 软件包，也是安装在这个 <em>kernel</em> 环境下。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">org-babel-default-header-args:jupyter-python</span> <span class="o">&#39;</span><span class="p">((</span><span class="nb">:async</span> <span class="o">.</span> <span class="s">&#34;no&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                                     <span class="p">(</span><span class="nb">:session</span> <span class="o">.</span> <span class="s">&#34;jp&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                                     <span class="p">(</span><span class="nb">:kernel</span> <span class="o">.</span> <span class="s">&#34;wop&#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;org-tempo</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">org-babel-do-load-languages</span> <span class="ss">&#39;org-babel-load-languages</span>
+</span></span><span class="line"><span class="cl">                               <span class="o">&#39;</span><span class="p">((</span><span class="nv">emacs-lisp</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                 <span class="p">(</span><span class="nv">python</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                 <span class="p">(</span><span class="nv">shell</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                 <span class="p">(</span><span class="nv">latex</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                 <span class="p">(</span><span class="nv">sql</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                 <span class="p">(</span><span class="nv">sqlite</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                 <span class="p">(</span><span class="nv">calc</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                 <span class="p">(</span><span class="nv">jupyter</span> <span class="o">.</span> <span class="no">t</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org-src</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">lang</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">python</span> <span class="nv">jupyter</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">cl-pushnew</span> <span class="p">(</span><span class="nf">cons</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&#34;jupyter-%s&#34;</span> <span class="nv">lang</span><span class="p">)</span> <span class="nv">lang</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">org-src-lang-modes</span> <span class="nb">:key</span> <span class="nf">#&#39;car</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></div><p>缺省配置下运行结果区块里不能正确处理 <em>ANSI text color code</em> <a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-48/">→</a>，下面是 <em>workaround</em> 。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">;; FIXME the ansi-color text issue in org-babel result block.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; Source: https://github.com/nnicandro/emacs-jupyter/issues/376</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; Here is the function that jupyter-mime.el relies on,</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; found in an older ansi-color.el in an older emacs distribution.</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">ansi-color--find-face</span> <span class="p">(</span><span class="nv">codes</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Return the face corresponding to CODES.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; Sort the codes in ascending order to guarantee that &#34;bold&#34; comes before</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; any of the colors.  This ensures that `ansi-color-bold-is-bright&#39; is</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">;; applied correctly.</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">let</span> <span class="p">(</span><span class="nv">faces</span> <span class="nv">bright</span> <span class="p">(</span><span class="nv">codes</span> <span class="p">(</span><span class="nf">sort</span> <span class="p">(</span><span class="nf">copy-sequence</span> <span class="nv">codes</span><span class="p">)</span> <span class="nf">#&#39;&lt;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">while</span> <span class="nv">codes</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">when-let</span> <span class="p">((</span><span class="nv">face</span> <span class="p">(</span><span class="nv">ansi-color-get-face-1</span> <span class="p">(</span><span class="nb">pop</span> <span class="nv">codes</span><span class="p">)</span> <span class="nv">bright</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">and</span> <span class="nv">ansi-color-bold-is-bright</span> <span class="p">(</span><span class="nf">eq</span> <span class="nv">face</span> <span class="ss">&#39;ansi-color-bold</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nb">setq</span> <span class="nv">bright</span> <span class="no">t</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nb">push</span> <span class="nv">face</span> <span class="nv">faces</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">;; Avoid some long-lived conses in the common case.</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nf">cdr</span> <span class="nv">faces</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nf">nreverse</span> <span class="nv">faces</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nf">car</span> <span class="nv">faces</span><span class="p">))))</span>
+</span></span></code></pre></div><h3 id="实时公式预览">实时公式预览</h3>
+<p>如前所述，目前我用的是 <code>xenops</code> ，不过 <code>org-fratog</code> 的配置也放着了。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">xenops</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:hook</span> <span class="p">(</span><span class="nv">latex-mode</span> <span class="o">.</span> <span class="nv">xenops-mode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:hook</span> <span class="p">(</span><span class="nv">LaTeX-mode</span> <span class="o">.</span> <span class="nv">xenops-mode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:hook</span> <span class="p">(</span><span class="nv">org-mode</span> <span class="o">.</span> <span class="nv">xenops-mode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:defer</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">map!</span> <span class="nb">:map</span> <span class="nv">xenops-mode-map</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">:n</span> <span class="s">&#34;RET&#34;</span> <span class="nf">#&#39;</span><span class="nv">xenops-dwim</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">xenops-cache-directory</span> <span class="p">(</span><span class="nf">concat</span> <span class="nv">doom-cache-dir</span> <span class="s">&#34;xenops/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">xenops-reveal-on-entry</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">xenops-math-latex-process</span> <span class="ss">&#39;dvisvgm</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">xenops-math-image-scale-factor</span> <span class="mf">1.5</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; (add-hook! &#39;org-mode-hook #&#39;org-fragtog-mode)</span>
+</span></span></code></pre></div><h3 id="知识网络">知识网络</h3>
+<h4 id="org-roam"><code>org-roam</code></h4>
+<p>其实我刚开始用 <code>org-roam</code> ，所以只有最简单的配置，一些复杂的模板之类的都还没开始用。这里最重要的配置是 Roam 笔记的根目录，另外我稍微修改了下缺省的 <em>capture template</em> ，在元数据里加了 <em>tag</em> 。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">org-roam</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:custom</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">org-roam-directory</span> <span class="p">(</span><span class="nv">file-truename</span> <span class="s">&#34;~/Code/Org/roam/&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">org-roam-completion-everywhere</span> <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:bind</span> <span class="p">((</span><span class="s">&#34;C-c n l&#34;</span> <span class="o">.</span> <span class="nv">org-roam-buffer-toggle</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">         <span class="p">(</span><span class="s">&#34;C-c n f&#34;</span> <span class="o">.</span> <span class="nv">org-roam-node-find</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">         <span class="p">(</span><span class="s">&#34;C-c n g&#34;</span> <span class="o">.</span> <span class="nv">org-roam-graph</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">         <span class="p">(</span><span class="s">&#34;C-c n i&#34;</span> <span class="o">.</span> <span class="nv">org-roam-node-insert</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">         <span class="p">(</span><span class="s">&#34;C-c n c&#34;</span> <span class="o">.</span> <span class="nv">org-roam-capture</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">         <span class="p">(</span><span class="s">&#34;C-c n j&#34;</span> <span class="o">.</span> <span class="nv">org-roam-dailies-capture-today</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-roam-capture-templates</span>
+</span></span><span class="line"><span class="cl">        <span class="o">`</span><span class="p">((</span><span class="s">&#34;d&#34;</span> <span class="s">&#34;default&#34;</span> <span class="nv">plain</span> <span class="s">&#34;%?&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:if-new</span> <span class="p">(</span><span class="nv">file+head</span> <span class="s">&#34;%&lt;%Y%m%d%H%M%S&gt;-${slug}.org&#34;</span>
+</span></span><span class="line"><span class="cl">                              <span class="s">&#34;#+title: ${title}\n#+filetags:\n\n&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:unnarrowed</span> <span class="no">t</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">org-roam-db-autosync-mode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;org-roam-protocol</span><span class="p">))</span>
+</span></span></code></pre></div><h4 id="org-roam-ui"><code>org-roam-ui</code></h4>
+<p>这个知识网络的可视化会显示在浏览器中，通过 <em>websocket</em> 与 Emacs 通信。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org-roam</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">use-package!</span> <span class="nv">websocket</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">use-package!</span> <span class="nv">org-roam-ui</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">:config</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-roam-ui-sync-theme</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">          <span class="nv">org-roam-ui-follow</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">          <span class="nv">org-roam-ui-update-on-save</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">          <span class="nv">org-roam-ui-open-on-start</span> <span class="no">t</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></div><h2 id="其他配置">其他配置</h2>
+<h3 id="smartparens">Smartparens</h3>
+<p>因为我用 <code>lipsy</code> 所以其实 <code>smaertparens</code> 用的不多，不过作为保底，还是配了一下常用按键组合。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">map!</span>
+</span></span><span class="line"><span class="cl"> <span class="p">(</span><span class="nb">:after</span> <span class="nv">smartparens</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">:map</span> <span class="nv">smartparens-mode-map</span>
+</span></span><span class="line"><span class="cl">   <span class="s">&#34;C-M-f&#34;</span>       <span class="nf">#&#39;</span><span class="nv">sp-forward-sexp</span>
+</span></span><span class="line"><span class="cl">   <span class="s">&#34;C-M-b&#34;</span>       <span class="nf">#&#39;</span><span class="nv">sp-backward-sexp</span>
+</span></span><span class="line"><span class="cl">   <span class="s">&#34;C-M-u&#34;</span>       <span class="nf">#&#39;</span><span class="nv">sp-backward-up-sexp</span>
+</span></span><span class="line"><span class="cl">   <span class="s">&#34;C-M-d&#34;</span>       <span class="nf">#&#39;</span><span class="nv">sp-down-sexp</span>
+</span></span><span class="line"><span class="cl">   <span class="s">&#34;C-M-p&#34;</span>       <span class="nf">#&#39;</span><span class="nv">sp-backward-down-sexp</span>
+</span></span><span class="line"><span class="cl">   <span class="s">&#34;C-M-n&#34;</span>       <span class="nf">#&#39;</span><span class="nv">sp-up-sexp</span>
+</span></span><span class="line"><span class="cl">   <span class="s">&#34;C-)&#34;</span>         <span class="nf">#&#39;</span><span class="nv">sp-forward-slurp-sexp</span>
+</span></span><span class="line"><span class="cl">   <span class="s">&#34;C-}&#34;</span>         <span class="nf">#&#39;</span><span class="nv">sp-forward-barf-sexp</span>
+</span></span><span class="line"><span class="cl">   <span class="s">&#34;C-(&#34;</span>         <span class="nf">#&#39;</span><span class="nv">sp-backward-slurp-sexp</span>
+</span></span><span class="line"><span class="cl">   <span class="s">&#34;C-{&#34;</span>         <span class="nf">#&#39;</span><span class="nv">sp-backward-barf-sexp</span>
+</span></span><span class="line"><span class="cl">   <span class="s">&#34;C-M-s&#34;</span>       <span class="nf">#&#39;</span><span class="nv">sp-splice-sexp</span>
+</span></span><span class="line"><span class="cl">   <span class="p">))</span>
+</span></span><span class="line"><span class="cl"> <span class="p">)</span>
+</span></span></code></pre></div><h3 id="python">Python</h3>
+<p>前阵子写 Python 的东西比较多，所以写了几个小工具方便一些常用操作，包括用 <code>python-black</code> 格式化源代码。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">python</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">defun</span> <span class="nv">+python-make-fstring</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;Change string to fstring&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">nth</span> <span class="mi">3</span> <span class="p">(</span><span class="nv">syntax-ppss</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">p</span> <span class="p">(</span><span class="nf">point</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nf">goto-char</span> <span class="p">(</span><span class="nf">nth</span> <span class="mi">8</span> <span class="p">(</span><span class="nv">syntax-ppss</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nf">insert</span> <span class="s">&#34;f&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nf">goto-char</span> <span class="nv">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nf">forward-char</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">defun</span> <span class="nv">+python-format-buffer</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;Format python buffer with black&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">python-black-buffer</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">map!</span> <span class="nb">:map</span> <span class="nv">python-mode-map</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;C-c x s&#34;</span> <span class="nf">#&#39;</span><span class="nv">+python-make-fstring</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;C-c x f&#34;</span> <span class="nf">#&#39;</span><span class="nv">+python-format-buffer</span><span class="p">))</span>
+</span></span></code></pre></div><h3 id="xkcd">xkcd</h3>
+<p>干活累了看看漫画，不亦乐乎！</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">xkcd</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:commands</span> <span class="p">(</span><span class="nv">xkcd-get</span> <span class="nv">xkcd</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">xkcd-cache-dir</span> <span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&#34;xkcd/&#34;</span> <span class="nv">doom-cache-dir</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">xkcd-cache-latest</span> <span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&#34;xkcd/latest&#34;</span> <span class="nv">doom-cache-dir</span><span class="p">)))</span>
+</span></span></code></pre></div><div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Literate Config：这个很酷的想法来源于 Donald Knuth 老爷子40年前提出的 <em>Literate Programming</em> ，就是把文字和程序写在同一文档里，用两个程序来处理这个文档，一个叫 <em>tangle</em> ，可以把里面所有代码提取出来组成一个可以运行的程序，另一个叫 <em>export</em> ，可以将文档整体导出成各种可读格式供人阅读。关于这个优雅想法的更深入讨论，可以读读<a href="https://leanpub.com/lit-config/read">这本书</a>。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+</article>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"
+    integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js"
+    integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false }
+            ]
+        });
+    });
+</script>
+
+
+<section class="post-nav">
+    <ul>
+        <li>
+        
+            <a href="/posts/emacs-reloaded/"><i class="fa fa-chevron-circle-left"></i> Emacs Reloaded</a>
+        
+        </li>
+        <li>
+        
+        </li>
+    </ul>
+</section>
+  
+    
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <ul>
+            <li>
+                <h6>Copyright © 2022 - Neo Lee | 
+                    Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+                    <a href="/index.xml">Subscribe </a></h6>
+            </li>
+            
+            
+        </ul>
+    </footer>
+</div>
+<script src="/js/scripts.js"></script>
+
+
+</body>
+
+</html>
+

@@ -9,21 +9,17 @@
 <meta name="description" content="The HTML5 Herald" />
 <meta name="author" content="[Neo Lee]" /><meta property="og:title" content="Emacs Reloaded" />
 <meta property="og:description" content="两年更的我来了！
-最近启动了项目 \(\lambda(y)\) （图谋已久，详情以后再说），其终极目标是整理编程相关的知识网络，这样的任务自然归于 Emacs 独一无二的 org-mode ，所以我把 Emacs 系统又拾掇了一遍，发现最近几年 Emacs 的生态又有了长足进步，特记于此，也算为这沧海遗珠的推广做点贡献。
-Emacs 首先，强烈推荐 Emacs 28.x 版本，这个版本合并了 GccEmacs 的成果，支持本地编译，对 Emacs 的运行速度有明显提升，尤其是使用一些比较大的模块时。这个版本还修了一个与中文有关的千年 bug，下面也会提到。目前版本 28 分支最新是 28.2，是首选，当然用 29 也可以，不过 29 太新了，对海量的第三方模块来说风险还是偏高，不推荐。
-要使用本地编译功能，只需要带 --with-native-compilation 开关编译 28." />
+最近启动了一个和知识网络有关的项目，这样的任务自然归于 Emacs 独一无二的 org-mode ，所以我把 Emacs 系统又拾掇了一遍，发现最近几年 Emacs 的生态又有了长足进步，特记于此，也算为这沧海遗珠的推广做点贡献。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/emacs-reloaded/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-09-16T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-09-16T00:00:00+00:00" />
+<meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-09-18T00:00:00+00:00" />
 
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Emacs Reloaded"/>
 <meta name="twitter:description" content="两年更的我来了！
-最近启动了项目 \(\lambda(y)\) （图谋已久，详情以后再说），其终极目标是整理编程相关的知识网络，这样的任务自然归于 Emacs 独一无二的 org-mode ，所以我把 Emacs 系统又拾掇了一遍，发现最近几年 Emacs 的生态又有了长足进步，特记于此，也算为这沧海遗珠的推广做点贡献。
-Emacs 首先，强烈推荐 Emacs 28.x 版本，这个版本合并了 GccEmacs 的成果，支持本地编译，对 Emacs 的运行速度有明显提升，尤其是使用一些比较大的模块时。这个版本还修了一个与中文有关的千年 bug，下面也会提到。目前版本 28 分支最新是 28.2，是首选，当然用 29 也可以，不过 29 太新了，对海量的第三方模块来说风险还是偏高，不推荐。
-要使用本地编译功能，只需要带 --with-native-compilation 开关编译 28."/>
+最近启动了一个和知识网络有关的项目，这样的任务自然归于 Emacs 独一无二的 org-mode ，所以我把 Emacs 系统又拾掇了一遍，发现最近几年 Emacs 的生态又有了长足进步，特记于此，也算为这沧海遗珠的推广做点贡献。"/>
 
 <meta name="generator" content="Hugo 0.103.0" />
     
@@ -34,7 +30,7 @@ Emacs 首先，强烈推荐 Emacs 28.x 版本，这个版本合并了 GccEmacs �
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
   
   
-  <link rel="stylesheet" type="text/css" href="/css/styles.css" /><link rel='stylesheet' href='/css/main.css'></head>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css" /><link rel='stylesheet' href='/css/main.css'><link rel='stylesheet' href='/css/syntax.css'></head>
 
 <body>
   <div id="container">
@@ -100,7 +96,7 @@ Emacs 首先，强烈推荐 Emacs 28.x 版本，这个版本合并了 GccEmacs �
       <aside>
     <ul>
         <li>
-            <time class="post-date" datetime="2022-09-16T00:00:00Z">Sep 16, 2022</time>
+            <time class="post-date" datetime="2022-09-18T00:00:00Z">Sep 18, 2022</time>
         </li>
         
         
@@ -128,16 +124,19 @@ Emacs 首先，强烈推荐 Emacs 28.x 版本，这个版本合并了 GccEmacs �
     
 
     <p>两年更的我来了！</p>
-<p>最近启动了项目 \(\lambda(y)\) （图谋已久，详情以后再说），其终极目标是整理编程相关的知识网络，这样的任务自然归于 Emacs 独一无二的 <code>org-mode</code> ，所以我把 Emacs 系统又拾掇了一遍，发现最近几年 Emacs 的生态又有了长足进步，特记于此，也算为这沧海遗珠的推广做点贡献。</p>
+<p>最近启动了一个和知识网络有关的项目，这样的任务自然归于 Emacs 独一无二的 <code>org-mode</code> ，所以我把 Emacs 系统又拾掇了一遍，发现最近几年 Emacs 的生态又有了长足进步，特记于此，也算为这沧海遗珠的推广做点贡献。</p>
 <h2 id="emacs">Emacs</h2>
-<p>首先，强烈推荐 Emacs 28.x 版本，这个版本合并了 <a href="https://www.emacswiki.org/emacs/GccEmacs">GccEmacs</a> 的成果，支持本地编译，对 Emacs 的运行速度有明显提升，尤其是使用一些比较大的模块时。这个版本还修了一个与中文有关的千年 bug，下面也会提到。目前版本 28 分支最新是 28.2，是首选，当然用 29 也可以，不过 29 太新了，对海量的第三方模块来说风险还是偏高，不推荐。</p>
-<p>要使用本地编译功能，只需要带 <code>--with-native-compilation</code> 开关编译 28.x 源码即可，但一般来说不需要自己动手，有很多方便的选项，具体可以参考<a href="https://www.emacswiki.org/emacs/GccEmacs#h5o-1">官方安装指南</a>。在我的 M1 芯片 MacBook Pro 上，最好的选择是 Homebrew 用户贡献源 <a href="https://github.com/d12frosted/homebrew-emacs-plus">d12frosted/emacs-plus</a>：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>brew tap d12frosted/emacs-plus
-</span></span><span style="display:flex;"><span>brew install emacs-plus@28 --with-native-comp --with-elrumo2-icon
+<p>首先，强烈推荐 Emacs 28.x 版本，这个版本合并了 <a href="https://www.emacswiki.org/emacs/GccEmacs">GccEmacs</a> 的成果，支持本地编译，对 Emacs 的运行速度有明显提升，尤其是使用一些比较大的模块时。这个版本还修了一个与中英混排换行有关的千年 bug。目前 Emacs 28 分支最新是 28.2，是首选，不要用 29，太新了，对海量第三方模块来说风险还是偏高，不推荐。</p>
+<p>要使用本地编译功能，只需要带 <code>--with-native-compilation</code> 开关编译 28.x 源码即可，但一般来说不需要自己动手，有很多方便的选项（Windows 除外），具体可以参考<a href="https://www.emacswiki.org/emacs/GccEmacs#h5o-1">官方安装指南</a>。对使用 Apple 芯片的 Mac 系统，最好的选择是 Homebrew 的用户源 <a href="https://github.com/d12frosted/homebrew-emacs-plus">d12frosted/emacs-plus</a>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew tap d12frosted/emacs-plus
+</span></span><span class="line"><span class="cl">brew install emacs-plus@28 --with-native-comp --with-elrumo2-icon
 </span></span></code></pre></div><h2 id="doom-emacs">Doom Emacs</h2>
-<p>从最早的 vanilla Emacs 到 <a href="https://en.soulhacker.me/posts/clojure-toolchain-reloaded/">Emacs Live</a>，再到 <a href="https://github.com/syl20bnr/spacemacs">Spacemacs</a>，这次转到了新崛起的 <a href="https://github.com/doomemacs/doomemacs">Doom Emacs</a>。如果 vanilla Emacs 是一张干净的画布，一切都需要你自己涂画，那么 Spacemacs 则是社区合作喷涂的面画墙，虽然足够绚丽，但留给你发挥的空间并不多；而 Doom Emacs 是一面几乎空白的大墙，上面有 Henrik Lissner 选择的少量图案，还有他和他的小伙伴们准备好的一些画具和一些预制贴块，你可以根据自己的需要或者组合或者自己喷涂，来得到你想要的作品。我个人非常喜欢这种哲学，所谓 <em>make common things simple, others possible</em> 。</p>
-<p>Doom Emacs 的安装很简单，配置需要花些时间。</p>
-
+<p>从最早的 vanilla Emacs 到 <a href="https://en.soulhacker.me/posts/clojure-toolchain-reloaded/">Emacs Live</a>，再到 <a href="https://github.com/syl20bnr/spacemacs">Spacemacs</a>，这次转到了新崛起的 <a href="https://github.com/doomemacs/doomemacs">Doom Emacs</a>。如果 vanilla Emacs 是一张干净的画布，一切都需要你自己涂画，那么 Spacemacs 则是社区合作喷涂的一面涂鸦墙，虽然足够绚丽，但留给你发挥的空间并不多；而 Doom Emacs 是一面几乎空白的大墙，上面有 Henrik Lissner 选择的少量图案，还有他和他的小伙伴们准备好的一些画具和一些预制贴块，你可以根据自己的需要或者组合或者自己喷涂，来得到你想要的作品。我个人非常喜欢这种哲学，所谓 <em>make common things simple, others possible</em> 。</p>
+<p>Doom Emacs 的安装很简单，将 <code>~/.emacs.d</code> 目录改名或移动到别处备份好，确认系统里有这几个依赖工具： <code>Git 2.23+</code> <code>ripgrep 11.0+</code> <code>GNU find</code> <code>fd 7.3.0+</code> ，然后：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone --depth <span class="m">1</span> https://github.com/doomemacs/doomemacs ~/.emacs.d
+</span></span><span class="line"><span class="cl">~/.emacs.d/bin/doom install
+</span></span></code></pre></div><p>按照提示做好初始安装就好，顺手把 <code>~/.emacs.d/bin</code> 加入系统 <code>PATH</code> 中，现在可以运行 Emacs，基本的功能配置已经可用了。</p>
+<p>接下去就是慢慢打磨配置，直到自己满意为止。我的 <em>literate config</em> 在<a href="/posts/doom-emacs-config/">这里</a>，供参考。</p>
 
 </article>
 
@@ -171,6 +170,8 @@ Emacs 首先，强烈推荐 Emacs 28.x 版本，这个版本合并了 GccEmacs �
         
         </li>
         <li>
+        
+            <a href="/posts/doom-emacs-config/">Doom Emacs 配置 <i class="fa fa-chevron-circle-right"></i> </a>
         
         </li>
     </ul>
