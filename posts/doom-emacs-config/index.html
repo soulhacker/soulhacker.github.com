@@ -557,7 +557,7 @@
 </span></span></code></pre></div><h2 id="org-mode">Org Mode</h2>
 <p><code>org-mode</code> 是 Emacs 的招牌应用，一个全副武装的 <code>org-mode</code> 可以在一致的环境下完成日程计划、笔记、博客、论文等各种写作任务，不仅可以写出文本、结构化列表、表格，还可以插入图片、 \(LaTeX\) 公式、可运行的程序代码、可追踪的任务，还可以借助 <code>org-roam</code> 实现笔记的知识网络化。这些功能是以 <code>org-mode</code> 为中心的一组软件包配合实现的，所以配置也相对多一点。</p>
 <h3 id="基本配置">基本配置</h3>
-<p>设置 <em>agenda</em> 使用的 Org 文档的位置，可以指定目录和文件名 <em>pattern</em> 把所有 <code>.org</code> 文件放进去：</p>
+<p>设置 <code>org-agenda</code> 使用的 Org 文档的位置，可以指定目录和文件名 <em>pattern</em> 把所有 <code>.org</code> 文件放进去：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">org-agenda-files</span> <span class="p">(</span><span class="nv">directory-files-recursively</span> <span class="nv">org-directory</span> <span class="s">&#34;\\.org$&#34;</span><span class="p">))</span>
 </span></span></code></pre></div><p>但通常还是指定几个分类任务文件就好了。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org</span>
@@ -568,7 +568,12 @@
 </span></span><span class="line"><span class="cl">              <span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&#34;Projects.org&#34;</span> <span class="nv">org-directory</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">              <span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&#34;Notes.org&#34;</span> <span class="nv">org-directory</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">              <span class="p">)))</span>
-</span></span></code></pre></div><p>Org 文档导出 \(LaTeX\) 文档时需要做一些配置，一是引入 <code>ctex</code> 包，否则中文处理会有问题；二是配置一下带链接文本的格式，不然会是带着红色框的文本，非常恐怖；另外是一些 \(LaTeX\) 的常规设置。</p>
+</span></span></code></pre></div><p>另一个和 <code>org-agenda</code> 有关的场景，就是用 <code>org-roam</code> 写东西很快就会有非常多的文件，有些笔记一时写不完可以加上 <code>TODO</code> 标签，然后就需要一个又快又方便的手段来整理这些 <code>TODO</code> 列表，对这个问题 Emacs 社区有位 Boris Buliga（a.k.a <a href="https://github.com/d12frosted">d12frosted</a>，这位还是 <code>homebrew-emacs-plus</code> 和 <code>flyspell-correct</code> 的维护者）给出了一个<a href="https://d12frosted.io/posts/2021-01-16-task-management-with-roam-vol5.html">漂亮的解决方案</a>，简单说就是检测到 <code>TODO</code> 时自动给文件打一个 <code>project</code> 标签（如果检测到当前文件所有 <code>TODO</code> 都没有了就自动移除标签），然后直接通过 org-roam 的数据库动态将这些文件添进 <code>org-agenda</code> 文件列表。从他分享的 <a href="https://gist.github.com/d12frosted/a60e8ccb9aceba031af243dff0d19b2e">gist</a> 里克隆代码到本地，然后加载就可以了。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org-roam</span>
+</span></span><span class="line"><span class="cl"> <span class="p">(</span><span class="nv">load!</span> <span class="s">&#34;lisp/vulpea-agenda&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="p">)</span>
+</span></span></code></pre></div><p>原来的版本有个问题，就是我们上面给变量 <code>org-agenda-files</code> 指定的文件会被移除，所以我做了一点 patch 之后才合用 <a href="https://gist.github.com/neolee/7e0c2abf2254c72baafb4a1000f0fbf0">→</a>。</p>
+<p>Org 文档导出 \(LaTeX\) 文档时需要做一些配置，一是引入 <code>ctex</code> 包，否则中文处理会有问题；二是配置一下带链接文本的格式，不然会是带着红色框的文本，非常恐怖；另外是一些 \(LaTeX\) 的常规设置。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-latex-default-packages-alist</span>
 </span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">remove</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;AUTO&#34;</span> <span class="s">&#34;inputenc&#34;</span> <span class="no">t</span><span class="p">)</span> <span class="nv">org-latex-default-packages-alist</span><span class="p">))</span>
