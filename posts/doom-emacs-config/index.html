@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-09-20T20:29:14+08:00" />
+<meta property="article:modified_time" content="2022-09-21T14:39:12+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
@@ -102,7 +102,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2022-09-20T20:29:14&#43;08:00">Sep 20, 2022</time>
+            Modified on <time datetime="2022-09-21T14:39:12&#43;08:00">Sep 21, 2022</time>
         </li>
         
         
@@ -367,7 +367,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1">;;japanese</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;layout                    ; auie,ctsrnm is the superior home row</span>
 </span></span></code></pre></div><h3 id="万能的-emacs">万能的 Emacs</h3>
-<p>很多人会用 Emacs 来做电子邮件、IRC、RSS 等客户端，甚至拿来听歌看视频，对我来说，听歌啥的就算了，不过以后有时间想试试邮件、IRC、RSS 这些。</p>
+<p>有人会用 Emacs 来做任何事，包括电子邮件、IRC、RSS 等等，甚至听歌看视频，对我来说，听歌啥的就算了，不过邮件还是用的。</p>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">:if</span> <span class="p">(</span><span class="nv">executable-find</span> <span class="s">&#34;mu&#34;</span><span class="p">)</span> <span class="p">(</span><span class="nv">mu4e</span> <span class="nv">+org</span> <span class="nv">+gmail</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;notmuch</span>
@@ -384,7 +384,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">;;; config.el -*- lexical-binding: t; -*-</span>
 </span></span></code></pre></div><h3 id="个人信息">个人信息</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nf">user-full-name</span> <span class="s">&#34;Neo Lee&#34;</span>
-</span></span><span class="line"><span class="cl">      <span class="nv">user-mail-address</span> <span class="s">&#34;neo.lee@gmail.com&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">user-mail-address</span> <span class="s">&#34;neo@soulhacker.me&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="更好的缺省值">更好的缺省值</h3>
 <p>Doom 大部分的缺省配置都是优化且实用的，但还是有少量的需要修改。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq-default</span>
@@ -525,6 +525,31 @@
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">ispell-personal-dictionary</span> <span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&#34;aspell.pws&#34;</span> <span class="nv">doom-user-dir</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">map!</span>
 </span></span><span class="line"><span class="cl">   <span class="p">[</span><span class="nv">s-down-mouse-1</span><span class="p">]</span> <span class="ss">&#39;flyspell-correct-word</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></div><h3 id="电子邮件">电子邮件</h3>
+<p>在配置好 <code>isync</code> 和 <code>mu</code> 之后（比较 tricky 的部分是使用 GnuPG 来加密密码，可以参考<a href="https://f-santos.gitlab.io/2020-04-24-mu4e.html">这篇</a>以及<a href="https://gist.github.com/koshatul/2427643668d4e89c0086f297f9ed2130">这篇</a>），在 Emacs 中使用 <code>mu4e</code> 就很简单了。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">set-email-account!</span> <span class="s">&#34;neo&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&#39;</span><span class="p">((</span><span class="nv">mu4e-sent-folder</span>       <span class="o">.</span> <span class="s">&#34;/neo/Sent&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">mu4e-drafts-folder</span>     <span class="o">.</span> <span class="s">&#34;/neo/Drafts&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">mu4e-trash-folder</span>      <span class="o">.</span> <span class="s">&#34;/neo/Trash&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">mu4e-refile-folder</span>     <span class="o">.</span> <span class="s">&#34;/neo/All Mail&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">smtpmail-smtp-user</span>     <span class="o">.</span> <span class="s">&#34;neo@soulhacker.me&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">user-mail-address</span>      <span class="o">.</span> <span class="s">&#34;neo@soulhacker.me&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">mu4e-compose-signature</span> <span class="o">.</span> <span class="s">&#34;--\nNeo Lee a.k.a. soulhacker&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">send-mail-function</span> <span class="ss">&#39;smtpmail-send-it</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">smtpmail-smtp-server</span> <span class="s">&#34;localhost&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">smtpmail-smtp-service</span> <span class="mi">1025</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">smtpmail-stream-type</span> <span class="ss">&#39;starttls</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">org-msg-signature</span> <span class="s">&#34;\n#+begin_signature\n--\nNeo Lee a.k.a. soulhacker\n#+end_signature&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">mu4e</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">mu4e-headers-auto-update</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">mu4e-update-interval</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">mu4e-view-show-images</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">mu4e-use-fancy-chars</span> <span class="no">t</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">)</span>
 </span></span></code></pre></div><h2 id="补充软件包">补充软件包</h2>
 <p>Doom 的缺省配置和预制模块能覆盖我绝大部分需求，所以需要我另外添加的软件包很少，这些软件包需要写在 <code>packages.el</code> 里。</p>
