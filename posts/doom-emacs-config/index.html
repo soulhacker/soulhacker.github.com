@@ -9,18 +9,18 @@
 <meta name="description" content="The HTML5 Herald" />
 <meta name="author" content="[Neo Lee]" /><meta property="og:title" content="Doom Emacs 配置" />
 <meta property="og:description" content="
-这份配置完全基于 vanilla Emacs 的按键组合，没有启用 evil 模式的按键方式，如果希望使用 Doom Emacs 缺省的 evil 方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。
+这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-09-21T14:39:12+08:00" />
+<meta property="article:modified_time" content="2022-09-21T17:45:23+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Doom Emacs 配置"/>
 <meta name="twitter:description" content="
-这份配置完全基于 vanilla Emacs 的按键组合，没有启用 evil 模式的按键方式，如果希望使用 Doom Emacs 缺省的 evil 方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。
+这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。
 "/>
 
 <meta name="generator" content="Hugo 0.103.1" />
@@ -102,7 +102,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2022-09-21T14:39:12&#43;08:00">Sep 21, 2022</time>
+            Modified on <time datetime="2022-09-21T17:45:23&#43;08:00">Sep 21, 2022</time>
         </li>
         
         
@@ -130,18 +130,19 @@
     
 
     <blockquote>
-<p>这份配置完全基于 vanilla Emacs 的按键组合，没有启用 <code>evil</code> 模式的按键方式，如果希望使用 Doom Emacs 缺省的 <code>evil</code> 方式，可以参考其他一些大牛，比如的 <a href="https://tecosaur.github.io/emacs-config/config.html">Tec Osaur</a> 的非常有教益的版本。</p>
+<p>这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 <code>evil</code> 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 <a href="https://tecosaur.github.io/emacs-config/config.html">Tec Osaur</a> 的非常有教益的版本。</p>
 </blockquote>
 <h2 id="前言">前言</h2>
-<p>Doom Emacs 的配置都在变量 <code>doom-user-dir</code> 指向的目录（根据安装时的选择可能是 <code>~/.doom.d/</code> 或 <code>~/.config/doom/</code> ）下，主要是三个文件：</p>
+<p>Doom Emacs 的配置都在变量 <code>doom-user-dir</code> 指向的目录下（根据安装时的选择可能是 <code>~/.doom.d/</code> 或 <code>~/.config/doom/</code> ），主要是三个文件：</p>
 <ul>
-<li><code>init.el</code> ：启用/停用 Doom Emacs 预先配置好的模块（ <em>modules</em> ）；</li>
-<li><code>package.el</code> ：自己另行下载安装的软件包（ <em>packages</em> ），Doom Emacs 使用 <code>straight.el</code> 包管理器 <a href="https://github.com/radian-software/straight.el">→</a>；</li>
-<li><code>config.el</code> ：各种配置，大部分预制模块不需要或者只需要少许配置，因为 Doom 已经做了相对好的配置，自行安装的包则需要按包的文档做必要的配置；当然如果对 Doom 提供的配置不满意，也可以在此动手覆盖其配置。</li>
+<li><code>init.el</code> ：启用/停用 Doom 预先配置好的模块（ <em>modules</em> ）；</li>
+<li><code>package.el</code> ：自己另行下载安装的软件包（ <em>packages</em> ），或对已启用的软件包版本进行配置，Doom Emacs 使用 <code>straight.el</code> 包管理器 <a href="https://github.com/radian-software/straight.el">→</a>；</li>
+<li><code>config.el</code> ：各种配置，大部分预制模块不需要或者只需要少许配置，因为 Doom 已经做了相对好的缺省安排，自行安装的包则需要做相应的配置；当然如果对 Doom 提供的缺省安排不满意，也可以在此动手覆盖。</li>
 </ul>
-<p>要更改配置就编辑这三个文件即可，但我们采用 <em>literate config</em> ，这是个很酷的功能 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，我们只要把所有配置代码都用 <code>org-babel</code> 的 <em>source block</em> 写在这个 <code>config.org</code> 文件中（对，你现在看到的就是这个文件自动导出而成的），然后用 <code>org-babel</code> 提供的 <code>org-babel-tangle-file</code> 函数来自动生成上述三个文件，这个 <em>bootstrap</em> 过程只需要做一次，之后 Doom 提供的 <code>literate</code> 模块会自动维护。</p>
+<p>要更改配置就编辑这三个文件即可，但我们采用 <em>literate config</em> ，这是个很酷的功能 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，我们只要把所有配置代码都用 <code>org-babel</code> 的 <em>source block</em> 写在这个 <code>config.org</code> 文件中（你现在看到的就是这个文件本身），然后用 <code>org-babel</code> 提供的 <code>org-babel-tangle-file</code> 函数来自动生成上述三个文件。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">emacs --batch --eval <span class="s2">&#34;(progn (require &#39;org) (setq org-confirm-babel-evaluate nil) (org-babel-tangle-file \&#34;~/.config/doom/config.org\&#34;))&#34;</span>
-</span></span></code></pre></div><p>对配置文件做任何修改之后使用 <code>doom sync</code> 命令来更新环境（这个命令也会从这个文件出发更新配置文件），还可以用 <code>doom doctor</code> 来检查配置中可能存在的问题（最常见的问题是依赖的外部程序找不到或者没配好）；Doom Emacs 更新比较频繁，而且鼓励用户滚动更新紧跟开发分支，所以可以定期用 <code>doom upgrade</code> 来更新 Doom Emacs 本身及所有启用的包。</p>
+</span></span></code></pre></div><p>这个 <em>bootstrap</em> 过程只需要做一次，之后 Doom 提供的 <code>literate</code> 模块会自动维护。</p>
+<p>对配置文件做任何修改之后要使用 <code>doom sync</code> 命令来更新环境（这个命令首先会自动从本文件出发重新构造新的配置文件），还可以用 <code>doom doctor</code> 来检查配置中可能存在的问题（最常见的问题是依赖的外部程序找不到或者没配好）；Doom Emacs 更新比较频繁，而且鼓励用户滚动更新紧跟开发分支，所以可以定期用 <code>doom upgrade</code> 来更新 Doom Emacs 本身及所有启用的包。</p>
 <p>本着不折腾的原则，我对功能实现方案总的选择标准是：</p>
 <ul>
 <li>能用预制模块的尽量用；</li>
@@ -150,7 +151,7 @@
 <li>还是不喜欢 <code>evil</code> 。</li>
 </ul>
 <h2 id="预制模块">预制模块</h2>
-<p>Doom 提供的大量预制模块大多是最优选，很多地方也提供了主流方案多选一，并进行了非常恰当的配置，是宝藏，我的配置主要以这些预制模块为主。</p>
+<p>Doom 提供的大量预制模块大多是当前优选，难以确定的地方也提供了主流方案多选一，并进行了比较恰当的配置，是宝藏，我的配置主要以这些预制模块为主。</p>
 <p>如果不清楚某个模块效果到底如何，可以启用试试；<a href="https://docs.doomemacs.org/latest/#/modules">官方文档</a>虽然还不完整，但已经挺有用了，可以了解每个模块的基本配置项、依赖和一些常见问题，千万不要错过。</p>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <div class="highlight" collapsed="t"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">;;; init.el -*- lexical-binding: t; -*-</span>
@@ -233,7 +234,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">window-select</span> <span class="nv">+number</span><span class="p">)</span>     <span class="c1">; visually switch windows</span>
 </span></span><span class="line"><span class="cl"><span class="nv">workspaces</span>                  <span class="c1">; tab emulation, persistence &amp; separate workspaces</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;zen                       ; distraction-free coding or writing</span>
-</span></span></code></pre></div><p>编辑相关的模块这里，我做的最大选择是不用 <code>evil</code> ，当然很多 Spacemacs 和 Doom 用户都会选择这个模式，但我单纯的就是不适应。这里要特别提一下的是 <code>lipsy</code> ，这是针对 Lisp 类语言的一个编辑模式，非常巧妙的实现了不切换模式而用上了 Vim 普通模式中的一些高效操作，我认为比传统的 <code>paredit</code> 和 <code>smartparens</code> 都更高明。</p>
+</span></span></code></pre></div><p>编辑相关的模块这里，我做的最大选择是不用 <code>evil</code> ，当然很多 Spacemacs 和 Doom 用户都会选择这个模式。这里要特别提一下的是 <code>lipsy</code> ，这是针对 Lisp 类语言的一个编辑模式，非常巧妙的实现了单按键的光标快速移动和编辑操作，但不需要切 Vim 模式，我认为比传统的 <code>paredit</code> 和 <code>smartparens</code> 都更高明。</p>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;(evil +everywhere)        ; come to the dark side, we have cookies</span>
 </span></span><span class="line"><span class="cl"><span class="nv">file-templates</span>              <span class="c1">; auto-snippets for empty files</span>
@@ -247,7 +248,8 @@
 </span></span><span class="line"><span class="cl"><span class="c1">;;rotate-text               ; cycle region at point between text candidates</span>
 </span></span><span class="line"><span class="cl"><span class="nv">snippets</span>                    <span class="c1">; my elves. They type so I don&#39;t have to</span>
 </span></span><span class="line"><span class="cl"><span class="nv">word-wrap</span>                   <span class="c1">; soft wrapping with language-aware indent</span>
-</span></span></code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</span></span></code></pre></div><p>一些 Emacs 常规功能，基本都开启就行了。</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">dired</span> <span class="nv">+dirvish</span> <span class="nv">+icons</span><span class="p">)</span>     <span class="c1">; making dired pretty [functional]</span>
 </span></span><span class="line"><span class="cl"><span class="nv">electric</span>                    <span class="c1">; smarter, keyword-based electric-indent</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">ibuffer</span> <span class="nv">+icons</span><span class="p">)</span>            <span class="c1">; interactive buffer management</span>
@@ -264,7 +266,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">syntax</span> <span class="nv">+childframe</span><span class="p">)</span>        <span class="c1">; tasing you for every semicolon you forget</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">spell</span> <span class="nv">+aspell</span> <span class="nv">+flyspell</span><span class="p">)</span>   <span class="c1">; tasing you for misspelling mispelling</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">grammar</span> <span class="nv">+lsp</span><span class="p">)</span>              <span class="c1">; tasing grammar mistake every you make</span>
-</span></span></code></pre></div><p>这一组工具我基本都是缺省选择，值得一提的是 <code>magit</code> 真棒，用起来简直上瘾，连写 <em>commit message</em> 都变得香甜了。注意 <code>lsp</code> 一定要打开，后面配置很多编程语言时会用到。</p>
+</span></span></code></pre></div><p>这一组工具我基本都是缺省选择，值得一提的是 <code>magit</code> 真棒，用起来简直上瘾，连写 <em>commit message</em> 都变得香甜了。注意 <code>lsp</code> 要打开，后面配置很多编程语言时会用到。</p>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;ansible</span>
 </span></span><span class="line"><span class="cl"><span class="nv">biblio</span>                      <span class="c1">; Writes a PhD for you (citation needed)</span>
@@ -293,7 +295,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">:if</span> <span class="nv">IS-MAC</span> <span class="nv">macos</span><span class="p">)</span>          <span class="c1">; improve compatibility with macOS</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">tty</span> <span class="nv">+osc</span><span class="p">)</span>                  <span class="c1">; improve the terminal Emacs experience</span>
 </span></span></code></pre></div><h3 id="编程语言">编程语言</h3>
-<p>Doom 提供了几乎所有主流语言的预制模块，大部分都提供了对 LSP 的支持，有些 <em>language server</em> 可以直接在 Emacs 中下载配置，但有些需要自行另外安装配置。有不少 <em>language server</em> 实现不太好，所以需要自己判断，下面是我启用的一些用得到的语言，大部分都启用了 LSP，可以用 <code>doom doctor</code> 来确认需要另外配置哪些外部支持软件。另一个值得尝试的选项是 <code>+tree-sitter</code> ，一个强大的静态代码分析插件，官方文档中没有，但实际上存在。这里面必用的当然是 <code>emacs-lisp</code> 和 <code>org</code> ，不用这俩还用什么 Emacs 啊！</p>
+<p>Doom 提供了几乎所有主流语言的预制模块，大部分都提供了对 LSP 的支持，有些 <em>language server</em> 可以直接在 Emacs 中下载配置，但有些需要另外安装配置。有不少 <em>language server</em> 实现不太好，所以需要自己判断，下面是我启用的一些用得到的语言，大部分都启用了 LSP，可以用 <code>doom doctor</code> 来确认需要另外配置的外部支持软件。另一个值得尝试的选项是 <code>+tree-sitter</code> ，一个强大的静态代码分析插件，官方文档中没有，但实际上存在。另外，无论你主要用什么编程语言， <code>emacs-lisp</code> 和 <code>org</code> 这俩都应该启用，否则还用什么 Emacs 啊！</p>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;agda                      ; types of types of types of types...</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;beancount                 ; mind the GAAP</span>
@@ -360,7 +362,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1">;;yaml                      ; JSON, but readable</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">zig</span> <span class="nv">+lsp</span><span class="p">)</span>                  <span class="c1">; C, but simpler</span>
 </span></span></code></pre></div><h3 id="输入法">输入法</h3>
-<p>增加一些 Emacs 环境下的内置输入法，在 macOS 环境下基本没用。</p>
+<p>增加一些输入法，在 macOS 系统下基本不需要。</p>
 <p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;bidi                      ; (tfel ot) thgir etirw uoy gnipleh</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;chinese</span>
@@ -380,13 +382,13 @@
 </span></span><span class="line"><span class="cl"><span class="c1">;;(rss +org)                ; emacs as an RSS reader</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;twitter                   ; twitter client https://twitter.com/vnought</span>
 </span></span></code></pre></div><h2 id="基本设置">基本设置</h2>
-<p>这里是一些只要 Emacs 启动就需要尽快设置的内容，也就是不需要考虑延迟加载的一些设置，包括一些 Emacs 本身的全局设置，也包括一些需要立刻加载的模块和包的基本设置。</p>
+<p>这里是一些只要 Emacs 启动就需要尽快设置的内容，不需要考虑延迟加载的一些设置，包括一些 Emacs 本身的全局设置，也包括一些需要尽快加载的模块和包的基本设置。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">;;; config.el -*- lexical-binding: t; -*-</span>
 </span></span></code></pre></div><h3 id="个人信息">个人信息</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nf">user-full-name</span> <span class="s">&#34;Neo Lee&#34;</span>
 </span></span><span class="line"><span class="cl">      <span class="nv">user-mail-address</span> <span class="s">&#34;neo@soulhacker.me&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="更好的缺省值">更好的缺省值</h3>
-<p>Doom 大部分的缺省配置都是优化且实用的，但还是有少量的需要修改。</p>
+<p>Doom 大部分的缺省配置都是优化且实用的，但还是有少量的需要修改。其中 <code>word-wrap-by-category</code> 这个选项是 Emacs 28 新加的，修复了 CJK 语言文本自动换行的老 bug。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq-default</span>
 </span></span><span class="line"><span class="cl"> <span class="nv">window-combination-resize</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl"> <span class="nv">x-stretch-cursor</span> <span class="no">t</span>
@@ -465,7 +467,7 @@
 </span></span><span class="line"><span class="cl">        <span class="nv">doom-modeline-buffer-file-name-style</span> <span class="ss">&#39;truncate-upto-project</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">)</span>
 </span></span></code></pre></div><h3 id="切换窗口">切换窗口</h3>
-<p>预制模块 <code>ace-window</code> 加强了 <code>C-x o</code> 的功能，当多于2个窗口时会显示高亮显示每个窗口左上角的一个字母，按下这个字母就切换到对应窗口，但这个字母的显示非常小，很不醒目，解决方案很简单，定制这个字母显示的样式，把它变大再加上红色底，就醒目了。 <code>ace-window</code> 还有不少别的功能，比如激活之后可以按 <code>x</code> 来删除当前窗口，按 <code>m</code> 来与选择的窗口交换内容等，具体可参见<a href="https://github.com/abo-abo/ace-window">官网说明</a>。</p>
+<p>预制模块 <code>ace-window</code> 加强了 <code>C-x o</code> 的功能，当多于2个窗口时会高亮显示每个窗口左上角的一个字母，按下这个字母就切换到对应窗口，但这个字母的显示非常小，很不醒目，解决方案很简单，定制这个字母显示的样式，把它变大再加上红色底，就醒目了。 <code>ace-window</code> 还有不少别的功能，比如激活之后可以按 <code>x</code> 来删除当前窗口，按 <code>m</code> 来与选择的窗口交换内容等，具体可参考<a href="https://github.com/abo-abo/ace-window">官网说明</a>。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">custom-set-faces!</span>
 </span></span><span class="line"><span class="cl">  <span class="o">&#39;</span><span class="p">(</span><span class="nv">aw-leading-char-face</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">:foreground</span> <span class="s">&#34;white&#34;</span> <span class="nb">:background</span> <span class="s">&#34;red&#34;</span>
@@ -490,7 +492,7 @@
 </span></span><span class="line"><span class="cl">         <span class="nv">+ligatures-in-modes</span>
 </span></span><span class="line"><span class="cl">         <span class="o">&#39;</span><span class="p">(</span><span class="nv">not</span> <span class="nv">emacs-lisp-mode</span> <span class="nv">scheme-mode</span> <span class="nv">racket-mode</span><span class="p">))))</span>
 </span></span></code></pre></div><h3 id="语言服务器">语言服务器</h3>
-<p>Emacs 支持微软开源的 LSP 接口以及各种各样的语言服务器时间还不长，问题也有一些，不过未来可期。我们可以做一些定制来让来自 LSP 的代码分析结果和建议显示更易读。</p>
+<p>Emacs 支持微软开源的 LSP 接口以及各种各样的语言服务器时间还不长，问题也有一些，不过未来可期。我们可以做一些定制来让来自 LSP 的代码分析结果和建议显示更好。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">lsp-ui</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">lsp-ui-sideline-enable</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-sideline-show-code-actions</span> <span class="no">t</span>
@@ -505,7 +507,7 @@
 </span></span></code></pre></div><p>还有些语言服务器需要专门的配置，比如新兴语言 <code>zig</code> 的语言服务器 <code>zls</code> 。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">lsp-zig-zls-executable</span> <span class="s">&#34;~/Code/Repo/zls/zig-out/bin/zls&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="拼写检查">拼写检查</h3>
-<p>无论使用 <code>spell-fu</code> 还是 <code>flyspell</code> 都需要配置个人词汇表的保存位置，我都放在 <code>doom-user-dir</code> 目录下了。</p>
+<p>无论使用 <code>spell-fu</code> 还是 <code>flyspell</code> 都需要配置个人词汇表的保存位置，我都放在 <code>doom-user-dir</code> 目录下了。另外 <code>flyspell</code> 激活错词修改菜单的缺省操作是鼠标中键（滚轮），MacBook 上没这玩意儿啊，所以我给改成 <code>Command+鼠标主键</code> 了。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">spell-fu</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">defun</span> <span class="nv">+spell-fu-register-dictionary</span> <span class="p">(</span><span class="nv">lang</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="s">&#34;Add `LANG` to spell-fu multi-dict, with a personal dictionary.&#34;</span>
@@ -599,11 +601,11 @@
 </span></span><span class="line"><span class="cl">              <span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&#34;Projects.org&#34;</span> <span class="nv">org-directory</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">              <span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&#34;Notes.org&#34;</span> <span class="nv">org-directory</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">              <span class="p">)))</span>
-</span></span></code></pre></div><p>另一个和 <code>org-agenda</code> 有关的场景，就是用 <code>org-roam</code> 写东西很快就会有非常多的文件，有些笔记一时写不完可以加上 <code>TODO</code> 标签，然后就需要一个又快又方便的手段来整理这些 <code>TODO</code> 列表，对这个问题 Emacs 社区有位 Boris Buliga（a.k.a <a href="https://github.com/d12frosted">d12frosted</a>，这位还是 <code>homebrew-emacs-plus</code> 和 <code>flyspell-correct</code> 的维护者）给出了一个<a href="https://d12frosted.io/posts/2021-01-16-task-management-with-roam-vol5.html">漂亮的解决方案</a>，简单说就是检测到 <code>TODO</code> 时自动给文件打一个 <code>project</code> 标签（如果检测到当前文件所有 <code>TODO</code> 都没有了就自动移除标签），然后直接通过 org-roam 的数据库动态将这些文件添进 <code>org-agenda</code> 文件列表。从他分享的 <a href="https://gist.github.com/d12frosted/a60e8ccb9aceba031af243dff0d19b2e">gist</a> 里克隆代码到本地，然后加载就可以了。</p>
+</span></span></code></pre></div><p>另一个和 <code>org-agenda</code> 有关的场景，就是用 <code>org-roam</code> 写东西很快就会有非常多的文件，有些笔记一时写不完可以加上 <code>TODO</code> 标签，然后就需要一个又快又方便的手段来整理这些 <code>TODO</code> 列表，对这个问题 Emacs 社区有位 Boris Buliga（a.k.a <a href="https://github.com/d12frosted">d12frosted</a>，这位还是 <code>homebrew-emacs-plus</code> 和 <code>flyspell-correct</code> 的维护者）给出了一个<a href="https://d12frosted.io/posts/2021-01-16-task-management-with-roam-vol5.html">漂亮的解决方案</a>，简单说就是检测到 <code>TODO</code> 时自动给文件打一个 <code>project</code> 标签（如果检测到当前文件所有 <code>TODO</code> 都没有了就自动移除标签），然后直接通过 org-roam 的数据库查询动态将这些文件添进 <code>org-agenda</code> 文件列表。从他分享的 <a href="https://gist.github.com/d12frosted/a60e8ccb9aceba031af243dff0d19b2e">gist</a> 克隆代码到本地，然后加载就可以了。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org-agenda</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">load!</span> <span class="s">&#34;lisp/vulpea-agenda&#34;</span><span class="p">))</span>
 </span></span></code></pre></div><p>原来的版本有个问题，就是我们上面给变量 <code>org-agenda-files</code> 指定的文件会被移除，所以我做了一点 patch 之后才合用 <a href="https://gist.github.com/neolee/7e0c2abf2254c72baafb4a1000f0fbf0">→</a>。</p>
-<p>Org 文档导出 \(LaTeX\) 文档时需要做一些配置，一是引入 <code>ctex</code> 包，否则中文处理会有问题；二是配置一下带链接文本的格式，不然会是带着红色框的文本，非常恐怖；另外是一些 \(LaTeX\) 的常规设置。</p>
+<p>Org 文档导出 \(LaTeX\) 文档时需要做一些配置，一是引入 <code>ctex</code> 包，否则中文处理会有问题；二是配置一下带链接文本的格式，不然会是带红色框的文本，非常恐怖；另外是一些 \(LaTeX\) 的常规设置。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-latex-default-packages-alist</span>
 </span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">remove</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;AUTO&#34;</span> <span class="s">&#34;inputenc&#34;</span> <span class="no">t</span><span class="p">)</span> <span class="nv">org-latex-default-packages-alist</span><span class="p">))</span>
@@ -632,7 +634,7 @@
 </span></span></code></pre></div><p>需要这个功能的 Org 笔记在 <em>header</em> 里加入下面一行即可（在笔记的前18行都可以）。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl"><span class="cs">#+last_modified</span><span class="c">: [ ]</span>
 </span></span></code></pre></div><h3 id="运行代码块">运行代码块</h3>
-<p>我们借助 <code>org-babel</code> 来实现可运行的代码块，我目前只用 Jupyter 这一种运行引擎，以后要扩展别的语言也比较方便。注意第一段里 <code>:kernel</code> 参数，需要设为系统里存在的某个 Jupyter <em>kernel</em> 的名字，且系统环境里应该装有 Jupyter（即存在可用 <code>jupyter</code> 程序）；使用中如果需要 <code>pip</code> 安装 Python 软件包，也是安装在这个 <em>kernel</em> 环境下。</p>
+<p>借助 <code>org-babel</code> 来实现可运行的代码块，我目前只用 Jupyter 这一种运行引擎，以后要扩展别的语言也比较方便。注意第一段里 <code>:kernel</code> 参数，需要设为系统里存在的某个 Jupyter <em>kernel</em> 的名字，且系统环境里应该装有 Jupyter（即系统 <code>PATH</code> 中能找到 <code>jupyter</code> 程序）；使用中如果需要 <code>pip</code> 安装 Python 软件包，也是安装在这个 <em>kernel</em> 环境下。顺便还需要设置使得代码块使用对应的语言模式，提供良好的语法高亮及编辑功能。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">org-babel-default-header-args:jupyter-python</span> <span class="o">&#39;</span><span class="p">((</span><span class="nb">:async</span> <span class="o">.</span> <span class="s">&#34;no&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">                                                     <span class="p">(</span><span class="nb">:session</span> <span class="o">.</span> <span class="s">&#34;jp&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">                                                     <span class="p">(</span><span class="nb">:kernel</span> <span class="o">.</span> <span class="s">&#34;wop&#34;</span><span class="p">)))</span>
