@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-09-21T20:05:27+08:00" />
+<meta property="article:modified_time" content="2022-09-23T01:28:19+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
@@ -102,7 +102,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2022-09-21T20:05:27&#43;08:00">Sep 21, 2022</time>
+            Modified on <time datetime="2022-09-23T01:28:19&#43;08:00">Sep 23, 2022</time>
         </li>
         
         
@@ -118,7 +118,7 @@
         </li>
         
 
-        <li>13 minute read</li>
+        <li>14 minute read</li>
     </ul>
 </aside>
 
@@ -343,7 +343,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1">;;php                       ; perl&#39;s insecure younger brother</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;plantuml                  ; diagrams for confusing people more</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;purescript                ; javascript, but functional</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">python</span> <span class="nv">+lsp</span><span class="p">)</span>               <span class="c1">; beautiful is better than ugly</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">python</span> <span class="nv">+lsp</span> <span class="nv">+pyright</span><span class="p">)</span>      <span class="c1">; beautiful is better than ugly</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;qt                        ; the &#39;cutest&#39; gui framework ever</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;racket                    ; a DSL for DSLs</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;raku                      ; the artist formerly known as perl6</span>
@@ -492,18 +492,61 @@
 </span></span><span class="line"><span class="cl">         <span class="nv">+ligatures-in-modes</span>
 </span></span><span class="line"><span class="cl">         <span class="o">&#39;</span><span class="p">(</span><span class="nv">not</span> <span class="nv">emacs-lisp-mode</span> <span class="nv">scheme-mode</span> <span class="nv">racket-mode</span><span class="p">))))</span>
 </span></span></code></pre></div><h3 id="语言服务器">语言服务器</h3>
-<p>Emacs 支持微软开源的 LSP 接口以及各种各样的语言服务器时间还不长，问题也有一些，不过未来可期。我们可以做一些定制来让来自 LSP 的代码分析结果和建议显示更好。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">lsp-ui</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">lsp-ui-sideline-enable</span> <span class="no">t</span>
+<p>Emacs 支持微软开源的 LSP 接口以及各种各样的语言服务器时间还不长，问题也有一些，不过未来可期。 <code>lsp-ui</code> 提供了大量的定制选项。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">lsp</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:custom</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">lsp-log-io</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-print-io</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-document-sync-method</span> <span class="ss">&#39;incremental</span> <span class="c1">; none, full, incremental, or nil</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-response-timeout</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:hook</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">lsp-mode</span> <span class="o">.</span> <span class="nv">lsp-ui-mode</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">lsp-ui</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:custom</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">lsp-ui-doc-enable</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-doc-header</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-doc-include-signature</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-doc-position</span> <span class="ss">&#39;at-point</span> <span class="c1">;; top, bottom, or at-point</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-doc-use-childframe</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-doc-use-webkit</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-flycheck-enable</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-sideline-enable</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-sideline-ignore-duplicate</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-sideline-show-symbol</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-sideline-show-hover</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-sideline-show-diagnostics</span> <span class="no">nil</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-sideline-show-code-actions</span> <span class="no">t</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-sideline-show-diagnostics</span> <span class="no">t</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-sideline-show-hover</span> <span class="no">nil</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">lsp-log-io</span> <span class="no">nil</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">lsp-lens-enable</span> <span class="no">t</span>               <span class="c1">; not working properly with ccls!</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-imenu-enable</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-imenu-kind-position</span> <span class="ss">&#39;top</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-peek-enable</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-ui-peek-fontify</span> <span class="ss">&#39;on-demand</span> <span class="c1">;; never, on-demand, or always</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-lens-enable</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">lsp-diagnostics-provider</span> <span class="nb">:auto</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">lsp-enable-symbol-highlighting</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">lsp-headerline-breadcrumb-enable</span> <span class="no">nil</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">lsp-headerline-breadcrumb-segments</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">symbols</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">lsp-headerline-breadcrumb-segments</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">symbols</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:preface</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">defun</span> <span class="nv">+toggle-lsp-ui-doc</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">if</span> <span class="nv">lsp-ui-doc-mode</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">progn</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">lsp-ui-doc-mode</span> <span class="mi">-1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">lsp-ui-doc-hide</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">progn</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">lsp-ui-doc-mode</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">lsp-ui-doc-show</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:bind</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">map!</span> <span class="nb">:map</span> <span class="nv">lsp-mode-map</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="s">&#34;C-c l r&#34;</span> <span class="nf">#&#39;</span><span class="nv">lsp-ui-peek-find-references</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="s">&#34;C-c l j&#34;</span> <span class="nf">#&#39;</span><span class="nv">lsp-ui-peek-find-definitions</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="s">&#34;C-c l i&#34;</span> <span class="nf">#&#39;</span><span class="nv">lsp-ui-peek-find-implementation</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="s">&#34;C-c l m&#34;</span> <span class="nf">#&#39;</span><span class="nv">lsp-ui-imenu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="s">&#34;C-c l s&#34;</span> <span class="nf">#&#39;</span><span class="nv">lsp-ui-sideline-mode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="s">&#34;C-c l d&#34;</span> <span class="nf">#&#39;</span><span class="nv">+toggle-lsp-ui-doc</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
 </span></span></code></pre></div><p>还有些语言服务器需要专门的配置，比如新兴语言 <code>zig</code> 的语言服务器 <code>zls</code> 。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">lsp-zig-zls-executable</span> <span class="s">&#34;~/Code/Repo/zls/zig-out/bin/zls&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="拼写检查">拼写检查</h3>
@@ -525,6 +568,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">flyspell</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">ispell-personal-dictionary</span> <span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&#34;aspell.pws&#34;</span> <span class="nv">doom-user-dir</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:bind</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">map!</span>
 </span></span><span class="line"><span class="cl">   <span class="p">[</span><span class="nv">s-down-mouse-1</span><span class="p">]</span> <span class="ss">&#39;flyspell-correct-word</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">)</span>
