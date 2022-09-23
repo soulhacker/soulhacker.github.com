@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-09-23T15:53:45+08:00" />
+<meta property="article:modified_time" content="2022-09-23T17:47:14+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
@@ -102,7 +102,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2022-09-23T15:53:45&#43;08:00">Sep 23, 2022</time>
+            Modified on <time datetime="2022-09-23T17:47:14&#43;08:00">Sep 23, 2022</time>
         </li>
         
         
@@ -623,8 +623,8 @@
 <p><code>xenops</code> 和 <code>org-fragtog</code> 都是用来在 <code>org-mode</code> 里实时渲染显示 \(LaTeX\) 公式的，它们都会实时将公式渲染为图片（前者用 SVG 格式，后者用 PNG 格式）并缓存，然后显示出来，区别在于 <code>org-fragtog</code> 是同步模式，渲染时会卡住 Emacs，等它好了你才能继续操作，而 <code>xenops</code> 使用 <code>emacs-aio</code> 实现异步渲染，它干活的时候你也可以继续干活，它渲染好就会自动显示出来。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">xenops</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;; (package! org-fragtog)</span>
-</span></span></code></pre></div><h3 id="代码格式化">代码格式化</h3>
-<p>懒汉的选择，一键格式化 Python 源码，再也不用被缩进地狱欺负了 -_- 我选择 <code>black</code> 的原因是它不需要配置，所有源码格式规则都是确定的，不用搞什么无谓的“个性化”。</p>
+</span></span></code></pre></div><h3 id="编程语言-python">编程语言 - Python</h3>
+<p>Doom 其实有个大一统的源代码格式美化模块（ <code>:editor format</code> ），但我还没时间深入研究，而且这个模块和 LSP 是彼此独立的，不知道有什么坑，所以没开。针对比较有这个需求的 Python 语言单独加了 <code>black</code> 这个懒汉的选择，作为 LSP 方案的保底。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">python-black</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="小玩具">小玩具</h3>
 <p><code>keycast</code> 可以跟踪并显示所有按键操作，在录制与 Emacs 有关的 screencast 时有用，其实我用的很少，ScreenFlow 提供更漂亮的解决方案，但在 Linux 下是个不错的方案。</p>
@@ -791,8 +791,9 @@
 </span></span><span class="line"><span class="cl">   <span class="p">))</span>
 </span></span><span class="line"><span class="cl"> <span class="p">)</span>
 </span></span></code></pre></div><h3 id="python">Python</h3>
-<p>前阵子写 Python 的东西比较多，所以写了几个小工具方便一些常用操作，包括用 <code>python-black</code> 格式化源代码。</p>
+<p>几个小工具方便一些常用操作，包括用 <code>black</code> 格式化源代码。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">python</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:preface</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">defun</span> <span class="nv">+python-make-fstring</span> <span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="s">&#34;Change string to fstring&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
@@ -806,6 +807,7 @@
 </span></span><span class="line"><span class="cl">    <span class="s">&#34;Format python buffer with black&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">interactive</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">python-black-buffer</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:bind</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">map!</span> <span class="nb">:map</span> <span class="nv">python-mode-map</span>
 </span></span><span class="line"><span class="cl">        <span class="s">&#34;C-c x s&#34;</span> <span class="nf">#&#39;</span><span class="nv">+python-make-fstring</span>
 </span></span><span class="line"><span class="cl">        <span class="s">&#34;C-c x f&#34;</span> <span class="nf">#&#39;</span><span class="nv">+python-format-buffer</span><span class="p">))</span>
