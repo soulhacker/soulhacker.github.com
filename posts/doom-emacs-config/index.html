@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-09-27T00:47:46+08:00" />
+<meta property="article:modified_time" content="2022-09-27T11:00:28+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
@@ -102,7 +102,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2022-09-27T00:47:46&#43;08:00">Sep 27, 2022</time>
+            Modified on <time datetime="2022-09-27T11:00:28&#43;08:00">Sep 27, 2022</time>
         </li>
         
         
@@ -414,6 +414,10 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">org-directory</span> <span class="s">&#34;~/Code/Org/&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>缺省配置下 <code>treemacs</code> 只会显示文件的 <code>git</code> 状态，改成文件和目录状态都显示， <code>'deferred</code> 表示异步加载。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+treemacs-git-mode</span> <span class="ss">&#39;deferred</span><span class="p">)</span>
+</span></span></code></pre></div><p>这个开关可以让 <code>treemacs</code> 将空目录尽可能合并为一项来显示，数值代表同时能合并显示的目录数上限。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">treemacs</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">treemacs-collapse-dirs</span> <span class="mi">50</span><span class="p">))</span>
 </span></span></code></pre></div><h3 id="字体和主题">字体和主题</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="s">&#34;Iosevka Fixed&#34;</span> <span class="nb">:size</span> <span class="mi">16</span> <span class="nb">:weight</span> <span class="ss">&#39;light</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">      <span class="nv">doom-big-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="s">&#34;Iosevka Fixed&#34;</span> <span class="nb">:size</span> <span class="mi">20</span> <span class="nb">:weight</span> <span class="ss">&#39;light</span><span class="p">)</span>
