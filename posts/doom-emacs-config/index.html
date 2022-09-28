@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-09-27T11:00:28+08:00" />
+<meta property="article:modified_time" content="2022-09-29T03:39:46+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
@@ -23,7 +23,7 @@
 这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。
 "/>
 
-<meta name="generator" content="Hugo 0.104.0" />
+<meta name="generator" content="Hugo 0.104.1" />
     
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
@@ -102,7 +102,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2022-09-27T11:00:28&#43;08:00">Sep 27, 2022</time>
+            Modified on <time datetime="2022-09-29T03:39:46&#43;08:00">Sep 29, 2022</time>
         </li>
         
         
@@ -392,7 +392,6 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq-default</span>
 </span></span><span class="line"><span class="cl"> <span class="nv">window-combination-resize</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl"> <span class="nv">x-stretch-cursor</span> <span class="no">t</span>
-</span></span><span class="line"><span class="cl"> <span class="nv">doom-scratch-initial-major-mode</span> <span class="ss">&#39;emacs-lisp-mode</span>
 </span></span><span class="line"><span class="cl"> <span class="nv">yas-triggers-in-field</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl"> <span class="p">)</span>
 </span></span><span class="line"><span class="cl">
@@ -402,6 +401,7 @@
 </span></span><span class="line"><span class="cl"> <span class="nv">scroll-preserve-screen-position</span> <span class="ss">&#39;always</span>
 </span></span><span class="line"><span class="cl"> <span class="nv">scroll-margin</span> <span class="mi">2</span>
 </span></span><span class="line"><span class="cl"> <span class="nv">word-wrap-by-category</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl"> <span class="nv">all-the-icons-scale-factor</span> <span class="mf">1.0</span>
 </span></span><span class="line"><span class="cl"> <span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">global-subword-mode</span> <span class="no">t</span><span class="p">)</span>
@@ -450,25 +450,26 @@
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">doom-themes-org-config</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="状态条">状态条</h3>
 <p>Doom 缺省的状态条是 <code>doom-modeline</code> ，可能是几个状态条方案里最漂亮的一个，不过这问题见仁见智，选自己喜欢的就好。如果和我一样不喜欢折腾就用它的话，有些配置需要优化。</p>
-<p>第一段调整显示顺序，并在状态条最右边增加一些空间，是为了修正显示上的 bug，不然状态显示内容最右边会被截断 <a href="https://docs.doomemacs.org/latest/modules/ui/modeline/#/troubleshooting/the-right-side-modeline-cut">→</a>，不过这样处理之后下面两段显示时钟和电池状态的代码会失效，应该是找不到插入的位置，等有时间再来排错；最后一段是几个设置，最有意义的是最后一个。</p>
+<p>第一段按照自己习惯调整显示的项目及顺序，并在状态条最右边增加一些空间来修正 <code>doom-modeline</code> 的一个 bug，不然最右边的内容会被截断 <a href="https://docs.doomemacs.org/latest/modules/ui/modeline/#/troubleshooting/the-right-side-modeline-cut">→</a>；然后是显示时钟和电池状态；最后一段修改几个缺省设置。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">doom-modeline</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:custom</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">;; add padding to the right</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">doom-modeline-def-modeline</span> <span class="ss">&#39;main</span>
 </span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">bar</span> <span class="nv">matches</span> <span class="nv">buffer-info</span> <span class="nv">remote-host</span> <span class="nv">buffer-position</span> <span class="nv">parrot</span> <span class="nv">selection-info</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">misc-info</span> <span class="nv">checker</span> <span class="nv">input-method</span> <span class="nv">buffer-encoding</span> <span class="nv">major-mode</span> <span class="nv">process</span> <span class="nv">vcs</span> <span class="s">&#34;   &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">misc-info</span> <span class="nv">checker</span> <span class="nv">lsp</span> <span class="nv">repl</span> <span class="nv">buffer-encoding</span> <span class="nv">major-mode</span> <span class="nv">process</span> <span class="nv">vcs</span> <span class="nv">mu4e</span> <span class="nv">battery</span> <span class="nv">time</span> <span class="s">&#34;    &#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">;; time on modeline</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">display-time-string-forms</span>
-</span></span><span class="line"><span class="cl">        <span class="o">&#39;</span><span class="p">((</span><span class="nf">propertize</span> <span class="p">(</span><span class="nf">concat</span> <span class="s">&#34; 🕘 &#34;</span> <span class="nv">24-hours</span> <span class="s">&#34;:&#34;</span> <span class="nv">minutes</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&#39;</span><span class="p">((</span><span class="nf">propertize</span> <span class="p">(</span><span class="nf">concat</span> <span class="nv">24-hours</span> <span class="s">&#34;:&#34;</span> <span class="nv">minutes</span><span class="p">))))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">display-time-mode</span> <span class="no">t</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">;; battery info on modeline (only on laptops)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">battery-str</span> <span class="p">(</span><span class="nv">battery</span><span class="p">)))</span>
 </span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nv">string-match-p</span> <span class="p">(</span><span class="nf">regexp-quote</span> <span class="s">&#34;Power Battery&#34;</span><span class="p">)</span> <span class="nv">battery-str</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">display-battery-mode</span> <span class="no">t</span><span class="p">)))</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">;; better default</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-modeline-bar-width</span> <span class="mi">4</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">doom-modeline-major-mode-icon</span> <span class="no">t</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">doom-modeline-major-mode-color-icon</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-modeline-bar-width</span> <span class="mi">2</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">doom-modeline-buffer-file-name-style</span> <span class="ss">&#39;truncate-upto-project</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:hook</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">add-hook!</span> <span class="ss">&#39;doom-modeline-mode-hook</span> <span class="p">(</span><span class="nv">doom-modeline-set-modeline</span> <span class="ss">&#39;main</span> <span class="ss">&#39;default</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">)</span>
 </span></span></code></pre></div><h3 id="切换窗口">切换窗口</h3>
 <p>预制模块 <code>ace-window</code> 加强了 <code>C-x o</code> 的功能，当多于2个窗口时会高亮显示每个窗口左上角的一个字母，按下这个字母就切换到对应窗口，但这个字母的显示非常小，很不醒目，解决方案很简单，定制这个字母显示的样式，把它变大再加上红色底，就醒目了。 <code>ace-window</code> 还有不少别的功能，比如激活之后可以按 <code>x</code> 来删除当前窗口，按 <code>m</code> 来与选择的窗口交换内容等，具体可参考<a href="https://github.com/abo-abo/ace-window">官网说明</a>。</p>
