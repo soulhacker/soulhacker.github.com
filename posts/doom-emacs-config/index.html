@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-09-29T17:24:59+08:00" />
+<meta property="article:modified_time" content="2022-09-29T20:48:46+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
@@ -102,7 +102,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2022-09-29T17:24:59&#43;08:00">Sep 29, 2022</time>
+            Modified on <time datetime="2022-09-29T20:48:46&#43;08:00">Sep 29, 2022</time>
         </li>
         
         
@@ -429,13 +429,17 @@
 </span></span><span class="line"><span class="cl">      <span class="nv">doom-themes-enable-italic</span> <span class="no">t</span><span class="p">)</span>
 </span></span></code></pre></div><p>随系统切换 light 和 dark mode 主题，利用 macOS 下 <code>emacs-plus</code> 增加的 <code>ns-system-appearance-change-functions</code> 钩子来实现。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">;; (setq +light-theme &#39;doom-one-light</span>
-</span></span><span class="line"><span class="cl"><span class="c1">;;       +dark-theme &#39;doom-one)</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+light-theme</span> <span class="ss">&#39;modus-operandi</span>
-</span></span><span class="line"><span class="cl">      <span class="nv">+dark-theme</span> <span class="ss">&#39;modus-vivendi</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">;; (setq +light-theme &#39;doom-acario-light</span>
-</span></span><span class="line"><span class="cl"><span class="c1">;;       +dark-theme &#39;doom-acario-dark)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;       +dark-theme &#39;doom-vibrant)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; (setq +light-theme &#39;modus-operandi</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;       +dark-theme &#39;modus-vivendi)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+light-theme</span> <span class="ss">&#39;doom-acario-light</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">+dark-theme</span> <span class="ss">&#39;doom-acario-dark</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;; (setq +light-theme &#39;doom-city-lights</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;       +dark-theme &#39;doom-city-lights)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; (setq +light-theme &#39;doom-opera-light</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;       +dark-theme &#39;doom-opera)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; (setq +light-theme &#39;doom-nord-light</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;;      +dark-theme &#39;doom-nord)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">+apply-theme</span> <span class="p">(</span><span class="nv">appearance</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="s">&#34;Load theme, taking current system APPEARANCE into consideration.&#34;</span>
