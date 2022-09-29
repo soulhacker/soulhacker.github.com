@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-09-29T03:39:46+08:00" />
+<meta property="article:modified_time" content="2022-09-29T14:38:34+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
@@ -102,7 +102,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2022-09-29T03:39:46&#43;08:00">Sep 29, 2022</time>
+            Modified on <time datetime="2022-09-29T14:38:34&#43;08:00">Sep 29, 2022</time>
         </li>
         
         
@@ -118,7 +118,7 @@
         </li>
         
 
-        <li>14 minute read</li>
+        <li>15 minute read</li>
     </ul>
 </aside>
 
@@ -450,13 +450,31 @@
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">doom-themes-org-config</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="状态条">状态条</h3>
 <p>Doom 缺省的状态条是 <code>doom-modeline</code> ，可能是几个状态条方案里最漂亮的一个，不过这问题见仁见智，选自己喜欢的就好。如果和我一样不喜欢折腾就用它的话，有些配置需要优化。</p>
-<p>第一段按照自己习惯调整显示的项目及顺序，并在状态条最右边增加一些空间来修正 <code>doom-modeline</code> 的一个 bug，不然最右边的内容会被截断 <a href="https://docs.doomemacs.org/latest/modules/ui/modeline/#/troubleshooting/the-right-side-modeline-cut">→</a>；然后是显示时钟和电池状态；最后一段修改几个缺省设置。</p>
+<p>预设有很多不同的 <code>modeline</code> 配置用于不同的 <em>major mode</em> <a href="https://github.com/seagle0128/doom-modeline/blob/master/doom-modeline.el">→</a>，在用到的状态条最右增加一些空格来修正 <code>doom-modeline</code> 的一个 bug，不然最右边的内容会被截断 <a href="https://docs.doomemacs.org/latest/modules/ui/modeline/#/troubleshooting/the-right-side-modeline-cut">→</a>，顺便也可以按自己习惯调整显示的项目及顺序；然后是时间和电池状态显示；以及一些缺省设置，最后一个设置为 <code>'truncate-upto-project</code> 也不错。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">doom-modeline</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:custom</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">;; add padding to the right</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">doom-modeline-def-modeline</span> <span class="ss">&#39;main</span>
 </span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">bar</span> <span class="nv">matches</span> <span class="nv">buffer-info</span> <span class="nv">remote-host</span> <span class="nv">buffer-position</span> <span class="nv">parrot</span> <span class="nv">selection-info</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">misc-info</span> <span class="nv">checker</span> <span class="nv">lsp</span> <span class="nv">repl</span> <span class="nv">buffer-encoding</span> <span class="nv">major-mode</span> <span class="nv">process</span> <span class="nv">vcs</span> <span class="nv">mu4e</span> <span class="nv">battery</span> <span class="nv">time</span> <span class="s">&#34;    &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">misc-info</span> <span class="nv">battery</span> <span class="nv">checker</span> <span class="nv">repl</span> <span class="nv">buffer-encoding</span> <span class="nv">indent-info</span> <span class="nv">major-mode</span> <span class="nv">process</span> <span class="nv">vcs</span> <span class="nv">mu4e</span> <span class="nv">time</span> <span class="s">&#34;    &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">doom-modeline-def-modeline</span> <span class="ss">&#39;dashboard</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">bar</span> <span class="nv">window-number</span> <span class="nv">buffer-default-directory-simple</span> <span class="nv">remote-host</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">misc-info</span> <span class="nv">battery</span> <span class="nv">irc</span> <span class="nv">mu4e</span> <span class="nv">gnus</span> <span class="nv">github</span> <span class="nv">debug</span> <span class="nv">minor-modes</span> <span class="nv">input-method</span> <span class="nv">major-mode</span> <span class="nv">process</span> <span class="nv">time</span> <span class="s">&#34;    &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">doom-modeline-def-modeline</span> <span class="ss">&#39;vcs</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">bar</span> <span class="nv">window-number</span> <span class="nv">modals</span> <span class="nv">matches</span> <span class="nv">buffer-info</span> <span class="nv">remote-host</span> <span class="nv">buffer-position</span> <span class="nv">parrot</span> <span class="nv">selection-info</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">misc-info</span> <span class="nv">battery</span> <span class="nv">irc</span> <span class="nv">mu4e</span> <span class="nv">gnus</span> <span class="nv">github</span> <span class="nv">debug</span> <span class="nv">minor-modes</span> <span class="nv">buffer-encoding</span> <span class="nv">major-mode</span> <span class="nv">process</span> <span class="nv">time</span> <span class="s">&#34;    &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">doom-modeline-def-modeline</span> <span class="ss">&#39;message</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">bar</span> <span class="nv">window-number</span> <span class="nv">modals</span> <span class="nv">matches</span> <span class="nv">buffer-info-simple</span> <span class="nv">buffer-position</span> <span class="nv">word-count</span> <span class="nv">parrot</span> <span class="nv">selection-info</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">objed-state</span> <span class="nv">misc-info</span> <span class="nv">battery</span> <span class="nv">debug</span> <span class="nv">minor-modes</span> <span class="nv">input-method</span> <span class="nv">indent-info</span> <span class="nv">buffer-encoding</span> <span class="nv">major-mode</span> <span class="nv">time</span> <span class="s">&#34;    &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">doom-modeline-def-modeline</span> <span class="ss">&#39;minimal</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">bar</span> <span class="nv">matches</span> <span class="nv">buffer-info-simple</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">media-info</span> <span class="nv">major-mode</span> <span class="nv">time</span> <span class="s">&#34;    &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">doom-modeline-def-modeline</span> <span class="ss">&#39;special</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">bar</span> <span class="nv">window-number</span> <span class="nv">modals</span> <span class="nv">matches</span> <span class="nv">buffer-info</span> <span class="nv">remote-host</span> <span class="nv">buffer-position</span> <span class="nv">word-count</span> <span class="nv">parrot</span> <span class="nv">selection-info</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">objed-state</span> <span class="nv">misc-info</span> <span class="nv">battery</span> <span class="nv">irc-buffers</span> <span class="nv">debug</span> <span class="nv">minor-modes</span> <span class="nv">input-method</span> <span class="nv">indent-info</span> <span class="nv">buffer-encoding</span> <span class="nv">major-mode</span> <span class="nv">process</span> <span class="nv">time</span> <span class="s">&#34;    &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">doom-modeline-def-modeline</span> <span class="ss">&#39;project</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">bar</span> <span class="nv">window-number</span> <span class="nv">modals</span> <span class="nv">buffer-default-directory</span> <span class="nv">remote-host</span> <span class="nv">buffer-position</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">misc-info</span> <span class="nv">battery</span> <span class="nv">irc</span> <span class="nv">mu4e</span> <span class="nv">gnus</span> <span class="nv">github</span> <span class="nv">debug</span> <span class="nv">minor-modes</span> <span class="nv">input-method</span> <span class="nv">major-mode</span> <span class="nv">process</span> <span class="nv">time</span> <span class="s">&#34;    &#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">;; time on modeline</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">display-time-string-forms</span>
 </span></span><span class="line"><span class="cl">        <span class="o">&#39;</span><span class="p">((</span><span class="nf">propertize</span> <span class="p">(</span><span class="nf">concat</span> <span class="nv">24-hours</span> <span class="s">&#34;:&#34;</span> <span class="nv">minutes</span><span class="p">))))</span>
@@ -466,10 +484,13 @@
 </span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nv">string-match-p</span> <span class="p">(</span><span class="nf">regexp-quote</span> <span class="s">&#34;Power Battery&#34;</span><span class="p">)</span> <span class="nv">battery-str</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">display-battery-mode</span> <span class="no">t</span><span class="p">)))</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">;; better default</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-modeline-bar-width</span> <span class="mi">2</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">doom-modeline-buffer-file-name-style</span> <span class="ss">&#39;truncate-upto-project</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">:hook</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">add-hook!</span> <span class="ss">&#39;doom-modeline-mode-hook</span> <span class="p">(</span><span class="nv">doom-modeline-set-modeline</span> <span class="ss">&#39;main</span> <span class="ss">&#39;default</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-modeline-bar-width</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">doom-modeline-hud</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">doom-modeline-major-mode-icon</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">doom-modeline-major-mode-color-icon</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">doom-modeline-time-icon</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">doom-modeline-display-misc-in-all-mode-lines</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">doom-modeline-buffer-file-name-style</span> <span class="ss">&#39;auto</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">)</span>
 </span></span></code></pre></div><h3 id="切换窗口">切换窗口</h3>
 <p>预制模块 <code>ace-window</code> 加强了 <code>C-x o</code> 的功能，当多于2个窗口时会高亮显示每个窗口左上角的一个字母，按下这个字母就切换到对应窗口，但这个字母的显示非常小，很不醒目，解决方案很简单，定制这个字母显示的样式，把它变大再加上红色底，就醒目了。 <code>ace-window</code> 还有不少别的功能，比如激活之后可以按 <code>x</code> 来删除当前窗口，按 <code>m</code> 来与选择的窗口交换内容等，具体可参考<a href="https://github.com/abo-abo/ace-window">官网说明</a>。</p>
@@ -617,6 +638,16 @@
 </span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="nv">C-s-left</span><span class="p">]</span>      <span class="nf">#&#39;</span><span class="nv">buf-move-left</span>
 </span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="nv">C-s-right</span><span class="p">]</span>     <span class="nf">#&#39;</span><span class="nv">buf-move-right</span>
 </span></span><span class="line"><span class="cl"> <span class="p">)</span>
+</span></span></code></pre></div><h3 id="浮动小窗口">浮动小窗口</h3>
+<p><code>mini-frame</code> 可以将 Emacs <em>minibuffer</em> 移到一个可以定制的浮动小窗口中，其实这种模式和 Emacs 原生模式各有利弊。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">mini-frame</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">mini-frame</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:init</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">mini-frame-show-parameters</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&#39;</span><span class="p">((</span><span class="nv">top</span> <span class="o">.</span> <span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">width</span> <span class="o">.</span> <span class="mf">0.7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">left</span> <span class="o">.</span> <span class="mf">0.5</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">mini-frame-mode</span><span class="p">))</span>
 </span></span></code></pre></div><h3 id="知识网络">知识网络</h3>
 <p><code>org-roam-ui</code> <a href="https://github.com/org-roam/org-roam-ui">→</a> 提供强大的知识网络笔记系统 <code>org-roam</code> 的网络可视化，并可与 <code>org-roam</code> 紧密整合。注意：</p>
 <ol>
@@ -800,7 +831,8 @@
 </span></span><span class="line"><span class="cl">   <span class="s">&#34;C-M-s&#34;</span>       <span class="nf">#&#39;</span><span class="nv">sp-splice-sexp</span>
 </span></span><span class="line"><span class="cl">   <span class="p">))</span>
 </span></span><span class="line"><span class="cl"> <span class="p">)</span>
-</span></span></code></pre></div><h3 id="python">Python</h3>
+</span></span></code></pre></div><p>**</p>
+<h3 id="python">Python</h3>
 <p>几个小工具方便一些常用操作，包括用 <code>black</code> 格式化源代码。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">python</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:preface</span>
@@ -821,6 +853,32 @@
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">map!</span> <span class="nb">:map</span> <span class="nv">python-mode-map</span>
 </span></span><span class="line"><span class="cl">        <span class="s">&#34;C-c x s&#34;</span> <span class="nf">#&#39;</span><span class="nv">+python-make-fstring</span>
 </span></span><span class="line"><span class="cl">        <span class="s">&#34;C-c x f&#34;</span> <span class="nf">#&#39;</span><span class="nv">+python-format-buffer</span><span class="p">))</span>
+</span></span></code></pre></div><h3 id="clojure">Clojure</h3>
+<p>CIDER 是 Clojure 的 <em>REPL</em> ，缺省会作为一个 <em>popup</em> 显示在窗口下方，但一般来说习惯于左右分屏，所以对做些修改。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">cider</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">set-popup-rules!</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;^\\*cider-repl&#34;</span>
+</span></span><span class="line"><span class="cl">       <span class="nb">:side</span> <span class="nv">right</span>
+</span></span><span class="line"><span class="cl">       <span class="nb">:width</span> <span class="mi">60</span>
+</span></span><span class="line"><span class="cl">       <span class="nb">:quit</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">       <span class="nb">:ttl</span> <span class="no">nil</span><span class="p">))))</span>
+</span></span></code></pre></div><h3 id="keycast">keycast</h3>
+<p>对 <code>doom-modeline</code> 需要做一些 <em>tweak</em> 才能用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">keycast</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:commands</span> <span class="nv">keycast-mode</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">define-minor-mode</span> <span class="nv">keycast-mode</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;Show current command and its key binding in the mode line.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">:global</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">if</span> <span class="nv">keycast-mode</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nb">progn</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;pre-command-hook</span> <span class="ss">&#39;keycast--update</span> <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;global-mode-string</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;&#34;</span> <span class="nv">keycast-mode-line</span> <span class="s">&#34; &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">remove-hook</span> <span class="ss">&#39;pre-command-hook</span> <span class="ss">&#39;keycast--update</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">setq</span> <span class="nv">global-mode-string</span> <span class="p">(</span><span class="nv">remove</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;&#34;</span> <span class="nv">keycast-mode-line</span> <span class="s">&#34; &#34;</span><span class="p">)</span> <span class="nv">global-mode-string</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">custom-set-faces!</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">keycast-command</span> <span class="nb">:inherit</span> <span class="nv">doom-modeline-debug</span> <span class="nb">:height</span> <span class="mf">0.9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">(</span><span class="nv">keycast-key</span> <span class="nb">:inherit</span> <span class="nv">custom-modified</span> <span class="nb">:height</span> <span class="mf">1.1</span> <span class="nb">:weight</span> <span class="nv">bold</span><span class="p">)))</span>
 </span></span></code></pre></div><h3 id="xkcd">xkcd</h3>
 <p>干活累了看看漫画，不亦乐乎！</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">xkcd</span>
