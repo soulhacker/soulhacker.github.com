@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-10-07T12:45:38+08:00" />
+<meta property="article:modified_time" content="2022-10-10T13:35:31+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
@@ -102,7 +102,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2022-10-07T12:45:38&#43;08:00">Oct 7, 2022</time>
+            Modified on <time datetime="2022-10-10T13:35:31&#43;08:00">Oct 10, 2022</time>
         </li>
         
         
@@ -419,11 +419,15 @@
 </span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">treemacs-collapse-dirs</span> <span class="mi">200</span><span class="p">))</span>
 </span></span></code></pre></div><h3 id="字体和主题">字体和主题</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="s">&#34;Iosevka Fixed&#34;</span> <span class="nb">:size</span> <span class="mi">16</span> <span class="nb">:weight</span> <span class="ss">&#39;light</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      <span class="nv">doom-big-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="s">&#34;Iosevka Fixed&#34;</span> <span class="nb">:size</span> <span class="mi">20</span> <span class="nb">:weight</span> <span class="ss">&#39;light</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      <span class="nv">doom-variable-pitch-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="s">&#34;Iosevka Fixed&#34;</span><span class="p">)</span> <span class="c1">;; inherits the :size from doom-font</span>
-</span></span><span class="line"><span class="cl">      <span class="nv">doom-unicode-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="s">&#34;JuliaMono&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      <span class="nv">doom-serif-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="s">&#34;Iosevka Fixed&#34;</span> <span class="nb">:weight</span> <span class="ss">&#39;light</span><span class="p">))</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">;; (setq +main-font &#34;PragmataPro&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+main-font</span> <span class="s">&#34;Iosevka Fixed&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+unicode-font</span> <span class="s">&#34;JuliaMono&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="nv">+main-font</span> <span class="nb">:size</span> <span class="mi">16</span> <span class="nb">:weight</span> <span class="ss">&#39;light</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">doom-big-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="nv">+main-font</span> <span class="nb">:size</span> <span class="mi">20</span> <span class="nb">:weight</span> <span class="ss">&#39;light</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">doom-variable-pitch-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="nv">+main-font</span><span class="p">)</span> <span class="c1">;; inherits the :size from doom-font</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">doom-unicode-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="nv">+unicode-font</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">doom-serif-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="nv">+main-font</span> <span class="nb">:weight</span> <span class="ss">&#39;light</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-themes-enable-bold</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl">      <span class="nv">doom-themes-enable-italic</span> <span class="no">t</span><span class="p">)</span>
