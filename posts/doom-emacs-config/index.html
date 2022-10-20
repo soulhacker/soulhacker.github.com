@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-10-14T14:37:21+08:00" />
+<meta property="article:modified_time" content="2022-10-20T15:51:04+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
@@ -102,7 +102,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2022-10-14T14:37:21&#43;08:00">Oct 14, 2022</time>
+            Modified on <time datetime="2022-10-20T15:51:04&#43;08:00">Oct 20, 2022</time>
         </li>
         
         
@@ -418,6 +418,13 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">treemacs</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">treemacs-collapse-dirs</span> <span class="mi">200</span><span class="p">))</span>
+</span></span></code></pre></div><h3 id="非图形界面下运行">非图形界面下运行</h3>
+<p>有时我们无法在图形界面下运行 Emacs，这时就需要下面这些 <em>tweak</em> ：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">unless</span> <span class="p">(</span><span class="nv">display-graphic-p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">map!</span>
+</span></span><span class="line"><span class="cl">   <span class="s">&#34;C-c b&#34;</span> <span class="ss">&#39;treemacs-select-window</span>
+</span></span><span class="line"><span class="cl">   <span class="p">[</span><span class="nv">mouse-4</span><span class="p">]</span> <span class="ss">&#39;scroll-down-line</span>
+</span></span><span class="line"><span class="cl">   <span class="p">[</span><span class="nv">mouse-5</span><span class="p">]</span> <span class="ss">&#39;scroll-up-line</span><span class="p">))</span>
 </span></span></code></pre></div><h3 id="字体和主题">字体和主题</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">;; (setq +main-font &#34;PragmataPro&#34;)</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+main-font</span> <span class="s">&#34;Iosevka Fixed&#34;</span><span class="p">)</span>
@@ -672,7 +679,8 @@
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">org-roam-ui</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="公式预览">公式预览</h3>
 <p><code>xenops</code> 和 <code>org-fragtog</code> 都是用来在 <code>org-mode</code> 里实时渲染显示 \(LaTeX\) 公式的，它们都会实时将公式渲染为图片（前者用 SVG 格式，后者用 PNG 格式）并缓存，然后显示出来，区别在于 <code>org-fragtog</code> 是同步模式，渲染时会卡住 Emacs，等它好了你才能继续操作，而 <code>xenops</code> 使用 <code>emacs-aio</code> 实现异步渲染，它干活的时候你也可以继续干活，它渲染好就会自动显示出来。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">xenops</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">display-graphic-p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">package!</span> <span class="nv">xenops</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;; (package! org-fragtog)</span>
 </span></span></code></pre></div><h3 id="编程语言-clojure">编程语言 - Clojure</h3>
 <p><code>clj-refactor</code> 这个包需要和后端 Clojure 的 <code>refactor-nrepl</code> 包版本同步，且它们更新都挺频繁，所以最好解放版本限制。</p>
