@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-10-31T19:24:12+08:00" />
+<meta property="article:modified_time" content="2022-10-31T20:22:13+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
@@ -102,7 +102,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2022-10-31T19:24:12&#43;08:00">Oct 31, 2022</time>
+            Modified on <time datetime="2022-10-31T20:22:13&#43;08:00">Oct 31, 2022</time>
         </li>
         
         
@@ -418,6 +418,9 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">treemacs</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">treemacs-collapse-dirs</span> <span class="mi">200</span><span class="p">))</span>
+</span></span></code></pre></div><p>使用 PlantUML 用本地模式比较靠谱。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">plantuml-jar-path</span> <span class="p">(</span><span class="nf">concat</span> <span class="p">(</span><span class="nf">expand-file-name</span> <span class="nv">user-emacs-directory</span><span class="p">)</span> <span class="s">&#34;plantuml/plantuml.jar&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">plantuml-default-exec-mode</span> <span class="ss">&#39;jar</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="非图形界面下运行">非图形界面下运行</h3>
 <p>有时我们无法在图形界面下运行 Emacs，这时就需要下面这些 <em>tweak</em> ：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">unless</span> <span class="p">(</span><span class="nv">display-graphic-p</span><span class="p">)</span>
@@ -740,7 +743,10 @@
 </span></span></code></pre></div><p>需要这个功能的 Org 笔记在 <em>header</em> 里加入下面一行即可（在笔记的前18行都可以）。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl"><span class="cs">#+last_modified</span><span class="c">: [ ]</span>
 </span></span></code></pre></div><h3 id="运行代码块">运行代码块</h3>
-<p>借助 <code>org-babel</code> 来实现可运行的代码块，我目前只用 Jupyter 这一种运行引擎，以后要扩展别的语言也比较方便。注意第一段里 <code>:kernel</code> 参数，需要设为系统里存在的某个 Jupyter <em>kernel</em> 的名字，且系统环境里应该装有 Jupyter（即系统 <code>PATH</code> 中能找到 <code>jupyter</code> 程序）；使用中如果需要 <code>pip</code> 安装 Python 软件包，也是安装在这个 <em>kernel</em> 环境下。顺便还需要设置使得代码块使用对应的语言模式，提供良好的语法高亮及编辑功能。</p>
+<p>借助 <code>org-babel</code> 来实现可运行的代码块，可以在代码块中应用对应的 <em>major mode</em> ，提供良好的语法高亮及编辑功能。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org-src</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;org-src-lang-modes</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;plantuml&#34;</span> <span class="o">.</span> <span class="nv">plantuml</span><span class="p">)))</span>
+</span></span></code></pre></div><p>另外我还会用 Jupyter 来运行不同语言引擎。注意第一段里 <code>:kernel</code> 参数，需要设为系统里存在的某个 Jupyter <em>kernel</em> 的名字，且系统环境里应该装有 Jupyter（即系统 <code>PATH</code> 中能找到 <code>jupyter</code> 程序）；使用中如果需要 <code>pip</code> 安装 Python 软件包，也是安装在这个 <em>kernel</em> 环境下。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">org-babel-default-header-args:jupyter-python</span> <span class="o">&#39;</span><span class="p">((</span><span class="nb">:async</span> <span class="o">.</span> <span class="s">&#34;no&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">                                                     <span class="p">(</span><span class="nb">:session</span> <span class="o">.</span> <span class="s">&#34;jp&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">                                                     <span class="p">(</span><span class="nb">:kernel</span> <span class="o">.</span> <span class="s">&#34;wop&#34;</span><span class="p">)))</span>
@@ -759,7 +765,7 @@
 </span></span><span class="line"><span class="cl">  <span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org-src</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">lang</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">python</span> <span class="nv">jupyter</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">lang</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">python</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">cl-pushnew</span> <span class="p">(</span><span class="nf">cons</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&#34;jupyter-%s&#34;</span> <span class="nv">lang</span><span class="p">)</span> <span class="nv">lang</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">                <span class="nv">org-src-lang-modes</span> <span class="nb">:key</span> <span class="nf">#&#39;car</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">)</span>
@@ -885,10 +891,6 @@
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">cider-repl-require-ns-on-set</span> <span class="no">t</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">cider-clojure-cli-aliases</span> <span class="s">&#34;:cider&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">)</span>
-</span></span></code></pre></div><h3 id="plantuml">PlantUML</h3>
-<p>使用本地包来执行 PlantUML 比较靠谱。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">plantuml-jar-path</span> <span class="s">&#34;~/.emacs.d/.local/etc/plantuml/plantuml.jar&#34;</span>
-</span></span><span class="line"><span class="cl">      <span class="nv">plantuml-default-exec-mode</span> <span class="ss">&#39;jar</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="keycast">keycast</h3>
 <p>对 <code>doom-modeline</code> 需要做一些 <em>tweak</em> 才能用。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">keycast</span>
