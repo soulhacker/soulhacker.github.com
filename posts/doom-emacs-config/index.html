@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-11-05T13:10:28+08:00" />
+<meta property="article:modified_time" content="2022-11-05T13:34:27+08:00" />
 
 
 <meta name="twitter:card" content="summary"/>
@@ -102,7 +102,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2022-11-05T13:10:28&#43;08:00">Nov 5, 2022</time>
+            Modified on <time datetime="2022-11-05T13:34:27&#43;08:00">Nov 5, 2022</time>
         </li>
         
         
@@ -664,16 +664,6 @@
 </span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="nv">C-s-left</span><span class="p">]</span>      <span class="nf">#&#39;</span><span class="nv">buf-move-left</span>
 </span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="nv">C-s-right</span><span class="p">]</span>     <span class="nf">#&#39;</span><span class="nv">buf-move-right</span>
 </span></span><span class="line"><span class="cl"> <span class="p">)</span>
-</span></span></code></pre></div><h3 id="浮动小窗口">浮动小窗口</h3>
-<p><code>mini-frame</code> 可以将 Emacs <em>minibuffer</em> 移到一个可以定制的浮动小窗口中，其实这种模式和 Emacs 原生模式各有利弊。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">mini-frame</span><span class="p">)</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">mini-frame</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">:init</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">mini-frame-show-parameters</span>
-</span></span><span class="line"><span class="cl">        <span class="o">&#39;</span><span class="p">((</span><span class="nv">top</span> <span class="o">.</span> <span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">width</span> <span class="o">.</span> <span class="mf">0.7</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">left</span> <span class="o">.</span> <span class="mf">0.5</span><span class="p">)))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">mini-frame-mode</span><span class="p">))</span>
 </span></span></code></pre></div><h3 id="知识网络">知识网络</h3>
 <p><code>org-roam-ui</code> <a href="https://github.com/org-roam/org-roam-ui">→</a> 提供强大的知识网络笔记系统 <code>org-roam</code> 的网络可视化，并可与 <code>org-roam</code> 紧密整合。注意：</p>
 <ol>
