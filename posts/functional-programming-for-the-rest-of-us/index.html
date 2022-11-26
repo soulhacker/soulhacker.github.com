@@ -35,7 +35,7 @@
 程序员拖沓成性，每天到了办公室后，泡咖啡、检查邮箱、阅读 RSS feed、到技术站点查阅最新的文章、在编程论坛的相关版面浏览公共讨论，并一次次地刷新以免漏掉一条信息。然后是午饭，回来后盯了 IDE 没几分钟，就再次检查邮箱、倒咖啡。最后在不知不觉中，结束了一天。
 不平凡的事是每隔一段时间会跳出一些很有挑战性的文章。如果没错，这些天你至少发现了一篇这类文章——很难快速通读它们，于是就将其束之高阁，直到突然你发现自己已经有了一个长长的链接列表和一个装满了 PDF 文件的目录，然后你梦想着到一个人迹罕至的森林里的小木屋苦读一年以期赶上，要是每天清晨你沿着那里的林中小溪散步时会有人带来食物和带走垃圾就更好了。"/>
 
-<meta name="generator" content="Hugo 0.105.0">
+<meta name="generator" content="Hugo 0.107.0">
     
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
@@ -176,17 +176,17 @@
 <h2 id="函数式编程">函数式编程</h2>
 <p>函数式编程是对阿隆佐·丘奇理论的实践应用。但也并非全部 λ 演算都被应用到了实践中，因为 λ 演算不是被设计为在物理局限下工作的。因此，象面向对象的编程一样，函数式编程是一系列理念，而不是严格的教条。现在有很多种函数式编程语言，他们中的大多数以不同方式完成不同任务。在本文中我将就最广泛使用的源自函数式编程的思想作一解释，并将用 Java 语言举例（是的，你完全可以用 Java 写出函数式程序，如果你有显著的受虐倾向）。在下面的小节中，我将会把 Java 作为一种函数式语言，并对其稍加修改使它成为一种可用的函数式语言。现在开始吧。</p>
 <p>λ 演算被设计用来探询关于计算的问题，所以函数式编程主要处理计算，并用 <em>函数</em> 来完成这一过程。函数是函数式编程的基本单位，函数几乎被用于一切，包括最简单的计算，甚至变量都由计算取代。在函数式编程中，变量只是表达式的别名（这样我们就不必把所有东西打在一行里）。变量是不能更改的，所有变量只能被赋值一次。用 Java 的术语来说，这意味着所有单一变量都被声明为 final（或 C++ 的 const）。在函数式编程中没有非 final 的变量。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">final</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">5</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl"><span class="kd">final</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">3</span><span class="o">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">final</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">final</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="o">;</span>
 </span></span></code></pre></div><p>因为函数式编程中所有变量都是 final 的，所以可以提出这样两个有趣的表述：没有必要总是写出关键字 final，没有必要把变量再称为变量。于是现在我们对 Java 作出两个修改：在我们的函数式 Java 中所有变量默认都是 final 的，我们将变量（variable）称为符号（symbol）。</p>
 <p>你也许会质疑，用我们新创造的语言还能写出有些复杂度的程序吗？如果每个符号都是不可变更(non-mutable)的，那么就无法改变任何状态！其实事实并非完全如此。在阿隆佐研究其 λ 演算时，他并不想将某个状态维护一段时间以期未来对其进行修改。他关注的是对数据的操作（也通常被称为&quot;演算体 caculating stuff&rdquo;）。既然已经证明 λ 演算与图灵机等价，它可以完成所有命令式编程语言能够完成的任务。那么，我们怎么才能做到呢？</p>
 <p>答案是函数式程序能保存状态，只是它并非通过变量而是使用函数来保存状态。状态保存在函数的参数中，保存在堆栈上。如果你要保存某个状态一段时间并时不时地对其进行一些修改，可以写个递归函数。举个例子，我们写个函数来翻转 Java 的字符串。记住，我们声明的每个变量默认都是 final 的<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="nf">reverse</span><span class="o">(</span><span class="n">String</span> <span class="n">arg</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="o">(</span><span class="n">arg</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="o">(</span><span class="n">arg</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">arg</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">reverse</span><span class="o">(</span><span class="n">arg</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">arg</span><span class="o">.</span><span class="na">length</span><span class="o">))</span> <span class="o">+</span> <span class="n">arg</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">0</span><span class="o">,</span><span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">reverse</span><span class="o">(</span><span class="n">arg</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">arg</span><span class="o">.</span><span class="na">length</span><span class="o">))</span> <span class="o">+</span> <span class="n">arg</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">1</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><p>这个函数很慢，因为它不断地调用自己<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>，它还是个嗜内存魔，因为要持续分配对象。不过它的确是在用函数式风格。你可能会问，怎么有人会这样写程序？好的，我这就慢慢讲来。</p>
@@ -305,16 +305,16 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">pow</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">square</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span>
 </span></span><span class="line"><span class="cl"><span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">pow</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">pow</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><p>上面的代码把一个整数幂运算接口转换成为了一个平方接口。在学术文章里，这个雕虫小技被叫作 currying（得名于逻辑学家 Haskell
 Curry，他曾将相关的数学理论形式化）。因为在函数式编程中函数（反之如 class）被作为参数来回传递，currying 很频繁地被用来把函数调整为更适宜的接口。因为函数的接口是他的参数，使用 currying 可以减少参数的数目（如上例所示）。</p>
 <p>函数式语言内建了这一技术。不用手动地创建一个包装了原函数的函数，函数式语言可以为你代劳。同样地，扩展我们（假想）的 Java 语言，让他支持这个技术：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">square</span> <span class="o">=</span> <span class="kt">int</span> <span class="nf">pow</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="n">2</span><span class="o">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">square</span> <span class="o">=</span> <span class="kt">int</span> <span class="nf">pow</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
 </span></span></code></pre></div><p>这将为我们自动创建出一个有一个参数的函数 square。他把第二个参数设置为 2 再调用函数 pow。这行代码会被编译为如下的 Java 代码：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">square_function_t</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">square</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">pow</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">pow</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="cl">
@@ -354,10 +354,10 @@ Haskell 这样的语言不需要它。把他实现为一个函数即可：</p>
 <h2 id="continuations">Continuations</h2>
 <p>Continuations 对于程序设计的意义，就像达芬奇密码对人类历史的意义：即对人类最大秘密的惊人揭示。也许不是，但他在概念上的突破性至少和负数平方根的意义等同。</p>
 <p>我们在学习函数时只了解了一半事实，因为我们基于一个错误的假定：函数只能将结果返回到它的调用端。从这个意义上说 continuation 是广义的函数，函数不必返回到其调用端而可以返回到程序的任何地方。我们把 &ldquo;continuation&rdquo; 作为参数传给一个函数，它指定了这个函数返回的位置。这个描述可能听起来挺复杂，看看下面的代码：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">add</span><span class="o">(</span><span class="n">5</span><span class="o">,</span> <span class="n">10</span><span class="o">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">add</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">square</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
 </span></span></code></pre></div><p>函数 add 在其被调用的位置将结果 15 赋给了 i，接下来 i 的值被用来调用 square。注意所有的惰性求值编译器都不能调整这几行代码因为第二行依赖着第一行的成功求值。下面用 continuation 风格又称 CPS（Continuation Programming Style）来重写这段代码，这里函数 add 会将结果返回到 square 而不是原来的调用函数。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">add</span><span class="o">(</span><span class="n">5</span><span class="o">,</span> <span class="n">10</span><span class="o">,</span> <span class="n">square</span><span class="o">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">add</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="n">square</span><span class="o">);</span>
 </span></span></code></pre></div><p>这个例子中 add 有了另一个参数——一个 add 必须在它求值结束时用其返回值调用的函数。这里 square 是 add 的一个 continuation。这两种情况下，j 都将等于 255。</p>
 <p>这就是强制使惰性语言有序地求值两个表达式的第一个技巧。考虑下面这个（熟悉的）IO 代码：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Please enter your name: &#34;</span><span class="o">);</span>
@@ -376,26 +376,26 @@ Haskell 这样的语言不需要它。把他实现为一个函数即可：</p>
 <p>模式匹配不是什么新的创新特性，事实上，它和函数式编程的关系不大。把产生模式匹配归因于函数式编程的唯一的原因是函数式语言早就提供了模式匹配，然而现在的命令式语言还大多做不到。</p>
 <p>让我们用一个例子深入了解一下模式匹配。这是一个 Java 的 Fibonacci 函数：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">fib</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="k">return</span> <span class="n">1</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="n">1</span><span class="o">)</span> <span class="k">return</span> <span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">fib</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">2</span><span class="o">)</span> <span class="o">+</span> <span class="n">fib</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">fib</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="o">)</span> <span class="o">+</span> <span class="n">fib</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><p>让我们用 Java 衍生出的函数式语言来支持模式匹配：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">fib</span><span class="o">(</span><span class="n">0</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">1</span><span class="o">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">fib</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">fib</span><span class="o">(</span><span class="n">1</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">fib</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">fib</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">fib</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">2</span><span class="o">)</span> <span class="o">+</span> <span class="n">fib</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">fib</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="o">)</span> <span class="o">+</span> <span class="n">fib</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><p>两者有什么区别？编译器为我们实现了分支。这有什么大不了？的确没什么，有人注意到很多函数包括了复杂的 switch 语句（尤其是在函数式程序中）所以认为这种抽象形式很好。我们把一个函数定义分离成多个，然后把模式置于参数中（有点象重载）。当这个函数被调用时，编译器比较传入参数和函数定义然后选择其中正确的一个，这一般是通过选择可选的最特定的定义来完成。例如，int fib(int n) 可以在 n 等于 1 时被调用，但是实际上 fib(n) 没有被调用，因为 fib(1) 更加特定。</p>
 <p>模式匹配通常要比我这个例子复杂，比如，高级模式匹配系统可以让我们这样做：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">f</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">10</span><span class="o">)</span> <span class="o">{</span> <span class="cm">/*…*/</span> <span class="o">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">f</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span> <span class="cm">/*…*/</span> <span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">f</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span> <span class="cm">/*…*/</span> <span class="o">}</span>
 </span></span></code></pre></div><p>模式匹配什么时候适用？情况太多了！每当你有一个嵌套着 if 的复杂的数据结构，这时就可以用模式匹配以更少的代码完成得更好。一个很好的例子闪现在我脑海，这就是所有 Win32 平台都提供了的标准的 WinProc 函数（即使它通常被抽象了）。通常模式匹配系统能检测集合也可以应付简单的值。例如，当传给函数一个数组后，就可以找出所有首元素为 1 第三个元素大于 3 的所有数组。</p>
 <p>模式匹配还有一个好处：如果需要增加或修改条件，那么不必对付一个巨大的函数，只需增加或修改适合的定义即可，这消除了&quot;四人帮&rdquo;（GoF）书中的一大类设计模式。条件越复杂，模式匹配就越有用，一旦习惯了它，你就会担心没有了模式匹配的日子如何打发。</p>
@@ -408,11 +408,11 @@ Haskell 这样的语言不需要它。把他实现为一个函数即可：</p>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">powerFn</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Function</span> <span class="n">square</span> <span class="o">=</span> <span class="n">makePowerFn</span><span class="o">(</span><span class="n">2</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">square</span><span class="o">(</span><span class="n">3</span><span class="o">);</span> <span class="c1">// returns 9
+</span></span><span class="line"><span class="cl"><span class="n">Function</span> <span class="n">square</span> <span class="o">=</span> <span class="n">makePowerFn</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">square</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span> <span class="c1">// returns 9
 </span></span></span></code></pre></div><p>函数 make-power-fn 返回了一个函数，它有一个参数，并对这个参数进行一定阶的幂运算。如果对 square(3) 求值会有什么结果？变量 power 不在 powerFn 的作用域中，因为 makePowerFn 已经返回它的栈桢而不复存在。那么 square 如何工作？一定是这个语言以某种方式将 power 的值保存了起来以便 square 使用。如果我们再新建一个函数 cube，用来计算参数的立方又会怎样？运行环境必须存储两个 power 的拷贝，每个我们用 make-power-fn 生成的函数都用一个拷贝。保存这些值的现象就被称为 closure。Closure 不只保存宿主函数的参数，例如 closure 可能会是这样：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Function</span> <span class="nf">makeIncrementer</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="nf">increment</span><span class="o">()</span> <span class="o">{</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="o">++</span><span class="n">n</span><span class="o">;</span>
