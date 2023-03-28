@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-02-14T23:38:33+08:00" />
+<meta property="article:modified_time" content="2023-03-28T18:34:18+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Doom Emacs 配置"/>
@@ -22,7 +22,7 @@
 这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。
 "/>
 
-<meta name="generator" content="Hugo 0.110.0">
+<meta name="generator" content="Hugo 0.111.3">
     
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
@@ -101,7 +101,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2023-02-14T23:38:33&#43;08:00">Feb 14, 2023</time>
+            Modified on <time datetime="2023-03-28T18:34:18&#43;08:00">Mar 28, 2023</time>
         </li>
         
         
@@ -432,8 +432,8 @@
 </span></span></code></pre></div><h3 id="字体和主题">字体和主题</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+main-font</span> <span class="s">&#34;Iosevka Fixed&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+unicode-font</span> <span class="s">&#34;JuliaMono&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+greek-font</span> <span class="s">&#34;Sarasa Mono CL&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+cjk-font</span> <span class="s">&#34;Sarasa Mono SC&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+greek-font</span> <span class="s">&#34;Sarasa Fixed CL&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+cjk-font</span> <span class="s">&#34;Sarasa Fixed SC&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="nv">+main-font</span> <span class="nb">:size</span> <span class="mi">16</span> <span class="nb">:weight</span> <span class="ss">&#39;light</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">      <span class="nv">doom-big-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="nv">+main-font</span> <span class="nb">:size</span> <span class="mi">20</span> <span class="nb">:weight</span> <span class="ss">&#39;light</span><span class="p">)</span>
@@ -899,6 +899,11 @@
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">cider-repl-require-ns-on-set</span> <span class="no">t</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">cider-clojure-cli-aliases</span> <span class="s">&#34;:cider&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></div><h3 id="prolog">Prolog</h3>
+<p>这个语言比较小众，所以需要设置一下缺省的文件后缀，自动对应 <em>major-mode</em> ，一般来说后缀用 <code>pl</code> 和 <code>pro</code> 都可以，前者 <code>Perl</code> 语言会用，所以我们用后一个：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">auto-mode-alist</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nf">append</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;\\.pro&#34;</span> <span class="o">.</span> <span class="nv">prolog-mode</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">              <span class="nv">auto-mode-alist</span><span class="p">))</span>
 </span></span></code></pre></div><h3 id="web">Web</h3>
 <p><code>web-mode</code> 的 <em>auto indentation</em> 经常有奇怪的行为，还是关了好。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">web-mode-enable-auto-indentation</span> <span class="no">nil</span><span class="p">)</span>
