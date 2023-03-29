@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-03-28T18:34:18+08:00" />
+<meta property="article:modified_time" content="2023-03-29T23:23:32+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Doom Emacs 配置"/>
@@ -101,7 +101,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2023-03-28T18:34:18&#43;08:00">Mar 28, 2023</time>
+            Modified on <time datetime="2023-03-29T23:23:32&#43;08:00">Mar 29, 2023</time>
         </li>
         
         
@@ -117,7 +117,7 @@
         </li>
         
 
-        <li>16 minute read</li>
+        <li>15 minute read</li>
     </ul>
 </aside>
 
@@ -431,9 +431,7 @@
 </span></span><span class="line"><span class="cl">   <span class="p">[</span><span class="nv">mouse-5</span><span class="p">]</span> <span class="ss">&#39;scroll-up-line</span><span class="p">))</span>
 </span></span></code></pre></div><h3 id="字体和主题">字体和主题</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+main-font</span> <span class="s">&#34;Iosevka Fixed&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+unicode-font</span> <span class="s">&#34;JuliaMono&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+greek-font</span> <span class="s">&#34;Sarasa Fixed CL&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+cjk-font</span> <span class="s">&#34;Sarasa Fixed SC&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+unicode-font</span> <span class="s">&#34;Sarasa Fixed SC&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="nv">+main-font</span> <span class="nb">:size</span> <span class="mi">16</span> <span class="nb">:weight</span> <span class="ss">&#39;light</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">      <span class="nv">doom-big-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="nv">+main-font</span> <span class="nb">:size</span> <span class="mi">20</span> <span class="nb">:weight</span> <span class="ss">&#39;light</span><span class="p">)</span>
@@ -444,18 +442,6 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-themes-enable-bold</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl">      <span class="nv">doom-themes-enable-italic</span> <span class="no">t</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">;; fix chinese characters not using doom-unicode-font issue</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">unicode-fonts</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">;; common math symbols</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">unicode-block</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;Mathematical Alphanumeric Symbols&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">push</span> <span class="nv">+unicode-font</span> <span class="p">(</span><span class="nv">cadr</span> <span class="p">(</span><span class="nf">assoc</span> <span class="nv">unicode-block</span> <span class="nv">unicode-fonts-block-font-mapping</span><span class="p">))))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">unicode-block</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;Greek and Coptic&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">push</span> <span class="nv">+greek-font</span> <span class="p">(</span><span class="nv">cadr</span> <span class="p">(</span><span class="nf">assoc</span> <span class="nv">unicode-block</span> <span class="nv">unicode-fonts-block-font-mapping</span><span class="p">))))</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">;; cjk characters</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">unicode-block</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;CJK Unified Ideographs&#34;</span> <span class="s">&#34;CJK Symbols and Punctuation&#34;</span> <span class="s">&#34;CJK Radicals Supplement&#34;</span> <span class="s">&#34;CJK Compatibility Ideographs&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">push</span> <span class="nv">+cjk-font</span> <span class="p">(</span><span class="nv">cadr</span> <span class="p">(</span><span class="nf">assoc</span> <span class="nv">unicode-block</span> <span class="nv">unicode-fonts-block-font-mapping</span><span class="p">)))))</span>
 </span></span></code></pre></div><p>随系统切换 light 和 dark mode 主题，利用 macOS 下 <code>emacs-plus</code> 增加的 <code>ns-system-appearance-change-functions</code> 钩子来实现。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">;; (setq +light-theme &#39;doom-one-light</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;       +dark-theme &#39;doom-vibrant)</span>
