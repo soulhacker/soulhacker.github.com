@@ -14,7 +14,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-10-16T19:30:09+08:00" />
+<meta property="article:modified_time" content="2023-10-17T17:16:09+08:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Doom Emacs 配置"/>
@@ -101,7 +101,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2023-10-16T19:30:09&#43;08:00">Oct 16, 2023</time>
+            Modified on <time datetime="2023-10-17T17:16:09&#43;08:00">Oct 17, 2023</time>
         </li>
         
         
@@ -465,9 +465,14 @@
 </span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="ss">&#39;dark</span> <span class="p">(</span><span class="nv">load-theme</span> <span class="nv">+dark-theme</span> <span class="no">t</span><span class="p">))))</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">add-hook!</span> <span class="ss">&#39;ns-system-appearance-change-functions</span> <span class="ss">&#39;+apply-theme</span><span class="p">)</span>
+</span></span></code></pre></div><p>其他关联主题和字体设置，注意 <code>treemacs</code> 并没有缺省适配 <code>nerd-icons</code> ，所以需要手动启用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">doom-themes-org-config</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">doom-themes-treemacs-config</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">doom-themes-org-config</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">treemacs</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">doom-themes-treemacs-config</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">treemacs-load-theme</span> <span class="s">&#34;nerd-icons&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
 </span></span></code></pre></div><h3 id="状态条">状态条</h3>
 <p>Doom 缺省的状态条是 <code>doom-modeline</code> ，可能是几个状态条方案里最漂亮的一个，不过这问题见仁见智，选自己喜欢的就好。如果和我一样不喜欢折腾就用它的话，有些配置需要优化。</p>
 <p>预设有很多不同的 <code>modeline</code> 配置用于不同的 <em>major mode</em> <a href="https://github.com/seagle0128/doom-modeline/blob/master/doom-modeline.el">→</a>，在用到的状态条最右增加一些空格来修正 <code>doom-modeline</code> 的一个 bug，不然最右边的内容会被截断 <a href="https://docs.doomemacs.org/latest/modules/ui/modeline/#/troubleshooting/the-right-side-modeline-cut">→</a>，顺便也可以按自己习惯调整显示的项目及顺序；然后是时间和电池状态显示；以及一些缺省设置，最后一个设置为 <code>'truncate-upto-project</code> 也不错。</p>
@@ -666,10 +671,12 @@
 </span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="nv">C-s-left</span><span class="p">]</span>      <span class="nf">#&#39;</span><span class="nv">buf-move-left</span>
 </span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="nv">C-s-right</span><span class="p">]</span>     <span class="nf">#&#39;</span><span class="nv">buf-move-right</span>
 </span></span><span class="line"><span class="cl"> <span class="p">)</span>
-</span></span></code></pre></div><h3 id="安全使用-org-mode">安全使用 <code>org-mode</code></h3>
-<p>最新的 <code>org-mode</code> <em>9.7</em> 开发分支有不少问题，而 <em>Doom Emacs</em> 缺省会跟着 <code>org-mode</code> 的 <em>master</em> 分支，经常会破坏一些本来正常工作的软件包，所以我们先停在稳定的 <em>9.6</em> 分支上。</p>
+</span></span></code></pre></div><h3 id="锁定可靠版本">锁定可靠版本</h3>
+<p>缺省的 <em>Doom Emacs</em> 有着过于激进的版本跟进策略，有些包的 <em>master</em> 分支并不可信，一旦出现问题我们需要锁定在可靠的版本上。</p>
+<h4 id="org-mode"><code>org-mode</code></h4>
+<p>最新的 <code>org-mode</code> <em>9.7</em> 开发分支有不少问题，而 <em>Doom Emacs</em> 缺省会跟着 <code>org-mode</code> 的 <em>master</em> 分支，经常会破坏一些本来正常工作的软件包，所以我们目前需要锁在 <em>9.6</em> 最新稳定版本。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">org</span> <span class="nb">:pin</span> <span class="s">&#34;806abc5a2bbcb5f884467a0145547221ba09eb59&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p>另外有些相关的软件包也有版本冲突问题，这些就钉在好用的版本上就好。</p>
+</span></span></code></pre></div><p>另外一些与 <code>org-mode</code> 相关的软件包也需要锁在相对应的较早版本上。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">jupyter</span> <span class="nb">:pin</span> <span class="s">&#34;455166712e606c9c6a8de763ea0a77548cadcef2&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">ox-hugo</span> <span class="nb">:pin</span> <span class="s">&#34;3c8c0bf28cf02128ceff9a972db3ebad01083953&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="知识网络">知识网络</h3>
