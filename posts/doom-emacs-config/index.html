@@ -7,21 +7,23 @@
   <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="The HTML5 Herald" />
-<meta name="author" content="[Neo Lee]" /><meta property="og:title" content="Doom Emacs 配置" />
-<meta property="og:description" content="
-这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。
-" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/doom-emacs-config/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-03-28T20:48:49+08:00" />
+<meta name="author" content="[Neo Lee]" /><meta property="og:url" content="/posts/doom-emacs-config/">
+  <meta property="og:site_name" content="Paradigm X">
+  <meta property="og:title" content="Doom Emacs 配置">
+  <meta property="og:description" content=" 这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-09-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-09-18T18:41:04+08:00">
+    <meta property="article:tag" content="Tools">
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Doom Emacs 配置"/>
-<meta name="twitter:description" content="
-这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。
-"/>
 
-<meta name="generator" content="Hugo 0.124.1">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Doom Emacs 配置">
+  <meta name="twitter:description" content=" 这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。">
+
+<meta name="generator" content="Hugo 0.134.2">
     
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
@@ -41,16 +43,6 @@
       </h1>
 
       <ul id="social-media">
-             <li>
-               <a href="https://github.com/neolee" title="GitHub">
-               <i class="fab fa-github fa-lg"></i>
-               </a>
-             </li>
-             <li>
-               <a href="https://twitter.com/soulhacker" title="Twitter">
-               <i class="fab fa-twitter fa-lg"></i>
-               </a>
-             </li>
       </ul>
       
       <p><em>Vision quests of a soulhacker</em></p>
@@ -100,7 +92,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2024-03-28T20:48:49&#43;08:00">Mar 28, 2024</time>
+            Modified on <time datetime="2024-09-18T18:41:04&#43;08:00">Sep 18, 2024</time>
         </li>
         
         
@@ -282,7 +274,6 @@
 </span></span><span class="line"><span class="cl"><span class="c1">;;pass                      ; password manager for nerds</span>
 </span></span><span class="line"><span class="cl"><span class="nv">pdf</span>                         <span class="c1">; pdf enhancements</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;prodigy                   ; FIXME managing external services &amp; code builders</span>
-</span></span><span class="line"><span class="cl"><span class="nv">rgb</span>                         <span class="c1">; creating color strings</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;taskrunner                ; taskrunner for all your projects</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;terraform                 ; infrastructure as code</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;tmux                      ; an API for interacting with tmux</span>
@@ -631,10 +622,10 @@
 <p>缺省的 <em>Doom Emacs</em> 有着过于激进的版本跟进策略，有些包的 <em>master</em> 分支并不可信，一旦出现问题我们需要锁定在可靠的版本上。</p>
 <h4 id="org-mode"><code>org-mode</code></h4>
 <p>最新的 <code>org-mode</code> <em>9.7</em> 开发分支有不少问题，而 <em>Doom Emacs</em> 缺省会跟着 <code>org-mode</code> 的 <em>master</em> 分支，经常会破坏一些本来正常工作的软件包，所以我们目前需要锁在 <em>9.6</em> 最新稳定版本。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">org</span> <span class="nb">:pin</span> <span class="s">&#34;806abc5a2bbcb5f884467a0145547221ba09eb59&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p>另外一些与 <code>org-mode</code> 相关的软件包也需要锁在相对应的较早版本上。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">jupyter</span> <span class="nb">:pin</span> <span class="s">&#34;455166712e606c9c6a8de763ea0a77548cadcef2&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">ox-hugo</span> <span class="nb">:pin</span> <span class="s">&#34;3c8c0bf28cf02128ceff9a972db3ebad01083953&#34;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">org</span> <span class="nb">:pin</span> <span class="s">&#34;071c6e986c424d2e496be7d0815d6e9cd83ae4e6&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>添加另外一些与 <code>org-mode</code> 相关的软件包。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">jupyter</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">ox-hugo</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="知识网络">知识网络</h3>
 <p><code>org-roam-ui</code> <a href="https://github.com/org-roam/org-roam-ui">→</a> 提供强大的知识网络笔记系统 <code>org-roam</code> 的网络可视化，并可与 <code>org-roam</code> 紧密整合。注意 <code>org-roam-ui</code> 只支持 <code>org-roam v2</code> ，如果使用 <code>org-roam v1</code> 的话请用 <code>org-roam-server</code> <a href="https://github.com/org-roam/org-roam-server">→</a>。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">org-roam-ui</span><span class="p">)</span>
@@ -919,7 +910,7 @@
     <footer>
         <ul>
             <li>
-                <h6>Copyright © 2022 - Neo Lee | 
+                <h6>Copyright © 2024 - Neo Lee | 
                     Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
                     <a href="/index.xml">Subscribe </a></h6>
             </li>
