@@ -15,7 +15,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2022-09-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-11-24T20:09:11+08:00">
+    <meta property="article:modified_time" content="2024-11-25T01:35:00+08:00">
     <meta property="article:tag" content="Tools">
 
 
@@ -93,7 +93,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2024-11-24T20:09:11&#43;08:00">Nov 24, 2024</time>
+            Modified on <time datetime="2024-11-25T01:35:00&#43;08:00">Nov 25, 2024</time>
         </li>
         
         
@@ -781,7 +781,9 @@
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-language</span> <span class="s">&#34;Chinese&#34;</span><span class="p">)</span> <span class="c1">; language to translate to</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;llm-openai</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-provider</span>
-</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-openai-compatible</span> <span class="nb">:url</span> <span class="s">&#34;http://localhost:1234/v1&#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-openai-compatible</span> <span class="nb">:url</span> <span class="s">&#34;http://localhost:1234/v1&#34;</span>
+</span></span><span class="line"><span class="cl">                                      <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5-coder-32b-instruct-mlx&#34;</span>
+</span></span><span class="line"><span class="cl">                                      <span class="nb">:embedding-model</span> <span class="s">&#34;text-embedding-nomic-embed-text-v1.5&#34;</span><span class="p">)))</span>
 </span></span></code></pre></div><h2 id="其他配置">其他配置</h2>
 <h3 id="smartparens">Smartparens</h3>
 <p>因为我用 <code>lipsy</code> 所以其实 <code>smaertparens</code> 用的不多，不过作为保底，还是配了一下常用按键组合。</p>
