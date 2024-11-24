@@ -144,7 +144,7 @@
 <h2 id="预制模块">预制模块</h2>
 <p>Doom 提供的大量预制模块大多是当前优选，难以确定的地方也提供了主流方案多选一，并进行了比较恰当的配置，是宝藏，我的配置主要以这些预制模块为主。</p>
 <p>如果不清楚某个模块效果到底如何，可以启用试试；<a href="https://docs.doomemacs.org/latest/#/modules">官方文档</a>虽然还不完整，但已经挺有用了，可以了解每个模块的基本配置项、依赖和一些常见问题，千万不要错过。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="code-snippet--init.el"></a></p>
 <div class="highlight" collapsed="t"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">;;; init.el -*- lexical-binding: t; -*-</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">doom!</span> <span class="nb">:input</span>
@@ -188,20 +188,20 @@
 </span></span><span class="line"><span class="cl">       <span class="p">)</span>
 </span></span></code></pre></div><h3 id="基本设置">基本设置</h3>
 <p>Doom 的 <code>:config</code> 缺省配置大多很好，少数需要定制的后面再说；另外很重要的是启用 <code>literate</code> 模块。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="code-snippet--doom-config"></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="nv">literate</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">default</span> <span class="nv">+bindings</span> <span class="nv">+smartparens</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="用户界面">用户界面</h3>
 <p>这部分包含了 Doom 的 <code>:completion</code> <code>:ui</code> <code>:editor</code> <code>:emacs</code> <code>:term</code> <code>:checkers</code> <code>:tools</code> <code>:os</code> 几大类别。</p>
 <p>无处不在的自动补全功能，选择最时髦的 <code>vertico</code> 。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="code-snippet--doom-completion"></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">company</span> <span class="nv">+childframe</span><span class="p">)</span>       <span class="c1">; the ultimate code completion backend</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;helm                      ; the *other* search engine for love and life</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;ido                       ; the other *other* search engine...</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;ivy                       ; a search engine for love and life</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">vertico</span> <span class="nv">+icons</span><span class="p">)</span>            <span class="c1">; the search engine of the future</span>
 </span></span></code></pre></div><p>这里面有偏视觉和娱乐的（前者如 <code>hl-todo</code> <code>ligatures</code> 后者如 <code>doom-quit</code> ），但大多数是很实用的，比如 <code>window-select</code> 大幅强化了多窗口时切换窗口 <code>C-x o</code> 的体验（实际使用的是 <code>ace-window</code> ）。另外 <code>unicode</code> 这个非常重要，如果不打开会有很多中文显示方面的问题。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="code-snippet--doom-ui"></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;deft                      ; notational velocity for Emacs</span>
 </span></span><span class="line"><span class="cl"><span class="nv">doom</span>                        <span class="c1">; what makes DOOM look the way it does</span>
 </span></span><span class="line"><span class="cl"><span class="nv">doom-dashboard</span>              <span class="c1">; a nifty splash screen for Emacs</span>
@@ -226,7 +226,7 @@
 </span></span><span class="line"><span class="cl"><span class="nv">workspaces</span>                  <span class="c1">; tab emulation, persistence &amp; separate workspaces</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;zen                       ; distraction-free coding or writing</span>
 </span></span></code></pre></div><p>编辑相关的模块这里，我做的最大选择是不用 <code>evil</code> ，当然很多 Spacemacs 和 Doom 用户都会选择这个模式。这里要特别提一下的是 <code>lipsy</code> ，这是针对 Lisp 类语言的一个编辑模式，非常巧妙的实现了单按键的光标快速移动和编辑操作，但不需要切 Vim 模式，我认为比传统的 <code>paredit</code> 和 <code>smartparens</code> 都更高明。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="code-snippet--doom-editor"></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;(evil +everywhere)        ; come to the dark side, we have cookies</span>
 </span></span><span class="line"><span class="cl"><span class="nv">file-templates</span>              <span class="c1">; auto-snippets for empty files</span>
 </span></span><span class="line"><span class="cl"><span class="nv">fold</span>                        <span class="c1">; (nigh) universal code folding</span>
@@ -240,25 +240,25 @@
 </span></span><span class="line"><span class="cl"><span class="nv">snippets</span>                    <span class="c1">; my elves. They type so I don&#39;t have to</span>
 </span></span><span class="line"><span class="cl"><span class="nv">word-wrap</span>                   <span class="c1">; soft wrapping with language-aware indent</span>
 </span></span></code></pre></div><p>一些 Emacs 常规功能，基本都开启就行了。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="code-snippet--doom-emacs"></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">dired</span> <span class="nv">+dirvish</span> <span class="nv">+icons</span><span class="p">)</span>     <span class="c1">; making dired pretty [functional]</span>
 </span></span><span class="line"><span class="cl"><span class="nv">electric</span>                    <span class="c1">; smarter, keyword-based electric-indent</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">ibuffer</span> <span class="nv">+icons</span><span class="p">)</span>            <span class="c1">; interactive buffer management</span>
 </span></span><span class="line"><span class="cl"><span class="nv">undo</span>                        <span class="c1">; persistent, smarter undo for your inevitable mistakes</span>
 </span></span><span class="line"><span class="cl"><span class="nv">vc</span>                          <span class="c1">; version-control and Emacs, sitting in a tree</span>
 </span></span></code></pre></div><p>Doom 支持几种内置的终端模拟器，效果最好的应该是 <code>vterm</code> 。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="code-snippet--doom-term"></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;eshell                    ; the elisp shell that works everywhere</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;shell                     ; simple shell REPL for Emacs</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;term                      ; basic terminal emulator for Emacs</span>
 </span></span><span class="line"><span class="cl"><span class="nv">vterm</span>                       <span class="c1">; the best terminal emulation in Emacs</span>
 </span></span></code></pre></div><p>关于拼写检查，我试了各种组合，目前最好的应该还是 <code>flyspell</code> 和 <code>aspell</code> 。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="code-snippet--doom-checkers"></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">syntax</span> <span class="nv">+childframe</span><span class="p">)</span>        <span class="c1">; tasing you for every semicolon you forget</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">spell</span> <span class="nv">+aspell</span> <span class="nv">+flyspell</span><span class="p">)</span>   <span class="c1">; tasing you for misspelling mispelling</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">grammar</span> <span class="nv">+lsp</span><span class="p">)</span>              <span class="c1">; tasing grammar mistake every you make</span>
 </span></span></code></pre></div><p>这一组工具我基本都是缺省选择，值得一提的是 <code>magit</code> 真棒，用起来简直上瘾，连写 <em>commit message</em> 都变得香甜了。注意 <code>lsp</code> 要打开，后面配置很多编程语言时会用到。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="code-snippet--doom-tools"></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;ansible</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;biblio                    ; Writes a PhD for you (citation needed)</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;collab                    ; buffers with friends</span>
@@ -281,12 +281,12 @@
 </span></span><span class="line"><span class="cl"><span class="nv">tree-sitter</span>                 <span class="c1">; syntax and parsing, sitting in a tree...</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;upload                    ; map local to remote projects via ssh/ftp</span>
 </span></span></code></pre></div><p>这两个都是与操作系统有关的补丁，前一个 Mac 用户启用，后一个则都应该启用。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="code-snippet--doom-os"></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">:if</span> <span class="nv">IS-MAC</span> <span class="nv">macos</span><span class="p">)</span>          <span class="c1">; improve compatibility with macOS</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">tty</span> <span class="nv">+osc</span><span class="p">)</span>                  <span class="c1">; improve the terminal Emacs experience</span>
 </span></span></code></pre></div><h3 id="编程语言">编程语言</h3>
 <p>Doom 提供了几乎所有主流语言的预制模块，大部分都提供了对 LSP 的支持，有些 <em>language server</em> 可以直接在 Emacs 中下载配置，但有些需要另外安装配置。有不少 <em>language server</em> 实现不太好，所以需要自己判断，下面是我启用的一些用得到的语言，大部分都启用了 LSP，可以用 <code>doom doctor</code> 来确认需要另外配置的外部支持软件。另一个值得尝试的选项是 <code>+tree-sitter</code> ，一个强大的静态代码分析插件，官方文档中没有，但实际上存在。另外，无论你主要用什么编程语言， <code>emacs-lisp</code> 和 <code>org</code> 这俩都应该启用，否则还用什么 Emacs 啊！</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="code-snippet--doom-lang"></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;agda                      ; types of types of types of types...</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;beancount                 ; mind the GAAP</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;(cc +lsp)                 ; C &gt; C++ == 1</span>
@@ -355,18 +355,18 @@
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">zig</span> <span class="nv">+lsp</span><span class="p">)</span>                  <span class="c1">; C, but simpler</span>
 </span></span></code></pre></div><h3 id="输入法">输入法</h3>
 <p>增加一些输入法，在 macOS 系统下基本不需要。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="code-snippet--doom-input"></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;bidi                      ; (tfel ot) thgir etirw uoy gnipleh</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;chinese</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;japanese</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;layout                    ; auie,ctsrnm is the superior home row</span>
 </span></span></code></pre></div><h3 id="万能的-emacs">万能的 Emacs</h3>
 <p>有人会用 Emacs 来做任何事，包括电子邮件、IRC、RSS 等等，甚至听歌看视频，目前我只用邮件。</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="code-snippet--doom-email"></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">:if</span> <span class="p">(</span><span class="nv">executable-find</span> <span class="s">&#34;mu&#34;</span><span class="p">)</span> <span class="p">(</span><span class="nv">mu4e</span> <span class="nv">+org</span> <span class="nv">+gmail</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;notmuch</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;(wanderlust +gmail)</span>
-</span></span></code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</span></span></code></pre></div><p><a id="code-snippet--doom-app"></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;calendar</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;emms</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;everywhere                ; *leave* Emacs!? You must be joking</span>
