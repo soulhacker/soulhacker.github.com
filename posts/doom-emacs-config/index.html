@@ -15,7 +15,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2022-09-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-12-01T10:53:46+08:00">
+    <meta property="article:modified_time" content="2024-12-24T20:02:40+08:00">
     <meta property="article:tag" content="Tools">
 
 
@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Doom Emacs 配置">
   <meta name="twitter:description" content="这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。">
 
-<meta name="generator" content="Hugo 0.139.2">
+<meta name="generator" content="Hugo 0.140.1">
     
 
   <link rel="stylesheet" href="/css/normalize.min.css" />
@@ -93,7 +93,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2024-12-01T10:53:46&#43;08:00">Dec 1, 2024</time>
+            Modified on <time datetime="2024-12-24T20:02:40&#43;08:00">Dec 24, 2024</time>
         </li>
         
         
@@ -195,11 +195,11 @@
 <p>这部分包含了 Doom 的 <code>:completion</code> <code>:ui</code> <code>:editor</code> <code>:emacs</code> <code>:term</code> <code>:checkers</code> <code>:tools</code> <code>:os</code> 几大类别。</p>
 <p>无处不在的自动补全功能，选择最时髦的 <code>vertico</code> 。</p>
 <p><a id="code-snippet--doom-completion"></a></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">company</span> <span class="nv">+childframe</span><span class="p">)</span>       <span class="c1">; the ultimate code completion backend</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">company</span> <span class="nv">+childframe</span> <span class="nv">+icons</span><span class="p">)</span><span class="c1">; the ultimate code completion backend</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;helm                      ; the *other* search engine for love and life</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;ido                       ; the other *other* search engine...</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;ivy                       ; a search engine for love and life</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">vertico</span> <span class="nv">+icons</span><span class="p">)</span>            <span class="c1">; the search engine of the future</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">vertico</span> <span class="nv">+childframe</span> <span class="nv">+icons</span><span class="p">)</span><span class="c1">; the search engine of the future</span>
 </span></span></code></pre></div><p>这里面有偏视觉和娱乐的（前者如 <code>hl-todo</code> <code>ligatures</code> 后者如 <code>doom-quit</code> ），但大多数是很实用的，比如 <code>window-select</code> 大幅强化了多窗口时切换窗口 <code>C-x o</code> 的体验（实际使用的是 <code>ace-window</code> ）。另外 <code>unicode</code> 这个非常重要，如果不打开会有很多中文显示方面的问题。</p>
 <p><a id="code-snippet--doom-ui"></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;deft                      ; notational velocity for Emacs</span>
@@ -644,7 +644,8 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">python-black</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="大语言模型">大语言模型</h3>
 <p>近期涌现了一批将大语言模型 <em>Large Language Model</em> 的能力整合进 Emacs 的工具，我们也可以来试试。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">ellama</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">gptel</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">ellama</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="小玩具">小玩具</h3>
 <p><code>keycast</code> 可以跟踪并显示所有按键操作，在录制与 Emacs 有关的 screencast 时有用，其实我用的很少，ScreenFlow 提供更漂亮的解决方案，但在 Linux 下是个不错的方案。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">keycast</span><span class="p">)</span>
@@ -775,17 +776,31 @@
 </span></span><span class="line"><span class="cl">          <span class="p">)))</span>
 </span></span></code></pre></div><h2 id="大语言模型">大语言模型</h2>
 <p>我的 <code>ellama</code> 配置，使用本地运行的一个与 OpenAI API 兼容的服务，它可以来自 <code>Ollama</code> 或者基于 <code>llama.cpp</code> 的各种工具（比如 LM Studio）。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">ellama</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">gptel</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:init</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span>
+</span></span><span class="line"><span class="cl">   <span class="nv">gptel-model</span>   <span class="ss">&#39;default</span>
+</span></span><span class="line"><span class="cl">   <span class="nv">gptel-backend</span> <span class="p">(</span><span class="nv">gptel-make-openai</span> <span class="s">&#34;local&#34;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="nb">:stream</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">                                    <span class="nb">:protocol</span> <span class="s">&#34;http&#34;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="nb">:host</span> <span class="s">&#34;localhost:1234&#34;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="nb">:models</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">default</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">ellama</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:bind</span> <span class="p">(</span><span class="s">&#34;C-c l&#34;</span> <span class="o">.</span> <span class="nv">ellama-transient-main-menu</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:init</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">llm-warn-on-nonfree</span> <span class="no">nil</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">ellama-sessions-directory</span> <span class="s">&#34;~/.config/emacs/.local/cache/ellama-sessions&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">; (setopt ellama-keymap-prefix &#34;C-c l&#34;)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">llm-warn-on-nonfree</span> <span class="no">nil</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">ellama-fill-paragraphs</span> <span class="no">nil</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">ellama-long-lines-length</span> <span class="mi">80</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">ellama-auto-scroll</span> <span class="no">t</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-language</span> <span class="s">&#34;Chinese&#34;</span><span class="p">)</span> <span class="c1">; language to translate to</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;llm-openai</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-provider</span>
 </span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-openai-compatible</span> <span class="nb">:url</span> <span class="s">&#34;http://localhost:1234/v1&#34;</span>
 </span></span><span class="line"><span class="cl">                                      <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5-coder-32b-instruct-mlx&#34;</span>
+</span></span><span class="line"><span class="cl">                                      <span class="c1">;; :chat-model &#34;qwen2.5-coder-14b-instruct&#34;</span>
 </span></span><span class="line"><span class="cl">                                      <span class="nb">:embedding-model</span> <span class="s">&#34;text-embedding-nomic-embed-text-v1.5&#34;</span><span class="p">)))</span>
 </span></span></code></pre></div><h2 id="幻灯片">幻灯片</h2>
 <p><code>dslide</code> 基本配置。</p>
