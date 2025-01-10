@@ -15,7 +15,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2022-09-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-12-24T20:02:40+08:00">
+    <meta property="article:modified_time" content="2025-01-09T18:51:15+08:00">
     <meta property="article:tag" content="Tools">
 
 
@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Doom Emacs 配置">
   <meta name="twitter:description" content="这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。">
 
-<meta name="generator" content="Hugo 0.140.1">
+<meta name="generator" content="Hugo 0.140.2">
     
 
   <link rel="stylesheet" href="/css/normalize.min.css" />
@@ -93,7 +93,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2024-12-24T20:02:40&#43;08:00">Dec 24, 2024</time>
+            Modified on <time datetime="2025-01-09T18:51:15&#43;08:00">Jan 9, 2025</time>
         </li>
         
         
@@ -646,6 +646,9 @@
 <p>近期涌现了一批将大语言模型 <em>Large Language Model</em> 的能力整合进 Emacs 的工具，我们也可以来试试。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">gptel</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">ellama</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="阅读">阅读</h3>
+<p>Doom 自带 <code>eww</code> 浏览器，所以我只需要加一个 <code>epub</code> 的阅读器 <code>nov.el</code> 。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">nov</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="小玩具">小玩具</h3>
 <p><code>keycast</code> 可以跟踪并显示所有按键操作，在录制与 Emacs 有关的 screencast 时有用，其实我用的很少，ScreenFlow 提供更漂亮的解决方案，但在 Linux 下是个不错的方案。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">keycast</span><span class="p">)</span>
@@ -775,16 +778,16 @@
 </span></span><span class="line"><span class="cl">          <span class="nv">xenops-math-image-scale-factor</span> <span class="mf">1.5</span>
 </span></span><span class="line"><span class="cl">          <span class="p">)))</span>
 </span></span></code></pre></div><h2 id="大语言模型">大语言模型</h2>
-<p>我的 <code>ellama</code> 配置，使用本地运行的一个与 OpenAI API 兼容的服务，它可以来自 <code>Ollama</code> 或者基于 <code>llama.cpp</code> 的各种工具（比如 LM Studio）。</p>
+<p>我的 <code>ellama</code> 配置，使用本地运行的 <code>Ollama</code> 服务。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">gptel</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:init</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">gptel-expert-commands</span> <span class="no">t</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span>
-</span></span><span class="line"><span class="cl">   <span class="nv">gptel-model</span>   <span class="ss">&#39;default</span>
-</span></span><span class="line"><span class="cl">   <span class="nv">gptel-backend</span> <span class="p">(</span><span class="nv">gptel-make-openai</span> <span class="s">&#34;local&#34;</span>
-</span></span><span class="line"><span class="cl">                                    <span class="nb">:stream</span> <span class="no">t</span>
-</span></span><span class="line"><span class="cl">                                    <span class="nb">:protocol</span> <span class="s">&#34;http&#34;</span>
-</span></span><span class="line"><span class="cl">                                    <span class="nb">:host</span> <span class="s">&#34;localhost:1234&#34;</span>
-</span></span><span class="line"><span class="cl">                                    <span class="nb">:models</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">default</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">   <span class="nv">gptel-model</span>   <span class="ss">&#39;qwen2.5:14b</span>
+</span></span><span class="line"><span class="cl">   <span class="nv">gptel-backend</span> <span class="p">(</span><span class="nv">gptel-make-ollama</span> <span class="s">&#34;ollama&#34;</span>
+</span></span><span class="line"><span class="cl">                   <span class="nb">:host</span> <span class="s">&#34;localhost:11434&#34;</span>
+</span></span><span class="line"><span class="cl">                   <span class="nb">:stream</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">                   <span class="nb">:models</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">qwen2.5:14b</span> <span class="nv">qwen2.5-coder:32b</span> <span class="nv">qwq:latest</span><span class="p">))))</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">ellama</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:bind</span> <span class="p">(</span><span class="s">&#34;C-c l&#34;</span> <span class="o">.</span> <span class="nv">ellama-transient-main-menu</span><span class="p">)</span>
@@ -796,11 +799,46 @@
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">ellama-long-lines-length</span> <span class="mi">80</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">ellama-auto-scroll</span> <span class="no">t</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-language</span> <span class="s">&#34;Chinese&#34;</span><span class="p">)</span> <span class="c1">; language to translate to</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;llm-ollama</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-provider</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-ollama</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5:14b&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;snowflake-arctic-embed2:latest&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;num_ctx&#34;</span> <span class="o">.</span> <span class="mi">8192</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-summarization-provider</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-ollama</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5:14b&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;snowflake-arctic-embed2:latest&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;num_ctx&#34;</span> <span class="o">.</span> <span class="mi">32768</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-coding-provider</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-ollama</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5-coder:32b&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;snowflake-arctic-embed2:latest&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;num_ctx&#34;</span> <span class="o">.</span> <span class="mi">8192</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-translation-provider</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-ollama</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5:14b&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;snowflake-arctic-embed2:latest&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;num_ctx&#34;</span> <span class="o">.</span> <span class="mi">32768</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></div><p>如果使用本地运行的其它兼容 OpenAI API 的服务，比如 <code>llama.cpp</code> 或者 <code>LM Studio</code> ，那么相应的配置可以改为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">gptel</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:init</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span>
+</span></span><span class="line"><span class="cl">   <span class="nv">gptel-model</span>   <span class="ss">&#39;default</span>
+</span></span><span class="line"><span class="cl">   <span class="nv">gptel-backend</span> <span class="p">(</span><span class="nv">gptel-make-openai</span> <span class="s">&#34;local&#34;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="nb">:stream</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">                                    <span class="nb">:protocol</span> <span class="s">&#34;http&#34;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="nb">:host</span> <span class="s">&#34;localhost:1234&#34;</span>
+</span></span><span class="line"><span class="cl">                                    <span class="nb">:models</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">default</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">ellama</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:init</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;llm-openai</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-provider</span>
 </span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-openai-compatible</span> <span class="nb">:url</span> <span class="s">&#34;http://localhost:1234/v1&#34;</span>
-</span></span><span class="line"><span class="cl">                                      <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5-coder-32b-instruct-mlx&#34;</span>
-</span></span><span class="line"><span class="cl">                                      <span class="c1">;; :chat-model &#34;qwen2.5-coder-14b-instruct&#34;</span>
+</span></span><span class="line"><span class="cl">                                      <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5-14b-instruct&#34;</span>
+</span></span><span class="line"><span class="cl">                                      <span class="c1">; :chat-model &#34;qwen2.5-coder-32b-instruct-mlx&#34;</span>
 </span></span><span class="line"><span class="cl">                                      <span class="nb">:embedding-model</span> <span class="s">&#34;text-embedding-nomic-embed-text-v1.5&#34;</span><span class="p">)))</span>
 </span></span></code></pre></div><h2 id="幻灯片">幻灯片</h2>
 <p><code>dslide</code> 基本配置。</p>
@@ -897,6 +935,10 @@
 </span></span></code></pre></div><h3 id="web">Web</h3>
 <p><code>web-mode</code> 的 <em>auto indentation</em> 经常有奇怪的行为，还是关了好。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">web-mode-enable-auto-indentation</span> <span class="no">nil</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="epub">EPUB</h3>
+<p>将 <code>.epub</code> 文件与 <code>nov.el</code> 绑定。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">nov</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;auto-mode-alist</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;\\.epub\\&#39;&#34;</span> <span class="o">.</span> <span class="nv">nov-mode</span><span class="p">)))</span>
 </span></span></code></pre></div><h3 id="keycast">keycast</h3>
 <p>对 <code>doom-modeline</code> 需要做一些 <em>tweak</em> 才能用。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">keycast</span>
