@@ -15,7 +15,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2022-09-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-07T14:38:34+08:00">
+    <meta property="article:modified_time" content="2025-03-11T20:20:24+08:00">
     <meta property="article:tag" content="Tools">
 
 
@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Doom Emacs 配置">
   <meta name="twitter:description" content="这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。">
 
-<meta name="generator" content="Hugo 0.143.1">
+<meta name="generator" content="Hugo 0.145.0">
     
 
   <link rel="stylesheet" href="/css/normalize.min.css" />
@@ -93,7 +93,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2025-02-07T14:38:34&#43;08:00">Feb 7, 2025</time>
+            Modified on <time datetime="2025-03-11T20:20:24&#43;08:00">Mar 11, 2025</time>
         </li>
         
         
@@ -109,7 +109,7 @@
         </li>
         
 
-        <li>15 minute read</li>
+        <li>16 minute read</li>
     </ul>
 </aside>
 
@@ -267,8 +267,8 @@
 </span></span><span class="line"><span class="cl"><span class="c1">;;editorconfig              ; let someone else argue about tabs vs spaces</span>
 </span></span><span class="line"><span class="cl"><span class="nv">ein</span>                         <span class="c1">; tame Jupyter notebooks with emacs</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">eval</span> <span class="nv">+overlay</span><span class="p">)</span>             <span class="c1">; run code, run (also, repls)</span>
-</span></span><span class="line"><span class="cl"><span class="nv">lookup</span>                      <span class="c1">; navigate your code and its documentation</span>
-</span></span><span class="line"><span class="cl"><span class="nv">lsp</span>                         <span class="c1">; M-x vscode</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">lookup</span> <span class="nv">+dictionary</span><span class="p">)</span>        <span class="c1">; navigate your code and its documentation</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">lsp</span> <span class="nv">+peek</span><span class="p">)</span>                 <span class="c1">; M-x vscode</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">magit</span> <span class="nv">+forge</span><span class="p">)</span>              <span class="c1">; a git porcelain for Emacs</span>
 </span></span><span class="line"><span class="cl"><span class="nv">make</span>                        <span class="c1">; run make tasks from Emacs</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;pass                      ; password manager for nerds</span>
@@ -550,6 +550,39 @@
 </span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="s">&#34;C-c l s&#34;</span> <span class="nf">#&#39;</span><span class="nv">lsp-ui-sideline-mode</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="s">&#34;C-c l d&#34;</span> <span class="nf">#&#39;</span><span class="nv">+toggle-lsp-ui-doc</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span></code></pre></div><p>使用 <a href="https://github.com/blahgeek/emacs-lsp-booster">lsp-booster</a> 来优化语言服务器解析 JSON 数据的性能。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">lsp-booster--advice-json-parse</span> <span class="p">(</span><span class="nv">old-fn</span> <span class="kp">&amp;rest</span> <span class="nv">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Try to parse bytecode instead of json.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">or</span>
+</span></span><span class="line"><span class="cl">   <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">equal</span> <span class="p">(</span><span class="nf">following-char</span><span class="p">)</span> <span class="sc">?#</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">bytecode</span> <span class="p">(</span><span class="nf">read</span> <span class="p">(</span><span class="nf">current-buffer</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">       <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nf">byte-code-function-p</span> <span class="nv">bytecode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">         <span class="p">(</span><span class="nf">funcall</span> <span class="nv">bytecode</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">   <span class="p">(</span><span class="nf">apply</span> <span class="nv">old-fn</span> <span class="nv">args</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">advice-add</span> <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nb">progn</span> <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;json</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                       <span class="p">(</span><span class="nf">fboundp</span> <span class="ss">&#39;json-parse-buffer</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                <span class="ss">&#39;json-parse-buffer</span>
+</span></span><span class="line"><span class="cl">              <span class="ss">&#39;json-read</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">:around</span>
+</span></span><span class="line"><span class="cl">            <span class="nf">#&#39;</span><span class="nv">lsp-booster--advice-json-parse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">lsp-booster--advice-final-command</span> <span class="p">(</span><span class="nv">old-fn</span> <span class="nv">cmd</span> <span class="kp">&amp;optional</span> <span class="nv">test?</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;Prepend emacs-lsp-booster command to lsp CMD.&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">let</span> <span class="p">((</span><span class="nv">orig-result</span> <span class="p">(</span><span class="nf">funcall</span> <span class="nv">old-fn</span> <span class="nv">cmd</span> <span class="nv">test?</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">if</span> <span class="p">(</span><span class="nb">and</span> <span class="p">(</span><span class="nv">not</span> <span class="nv">test?</span><span class="p">)</span>                             <span class="c1">;; for check lsp-server-present?</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nv">not</span> <span class="p">(</span><span class="nv">file-remote-p</span> <span class="nv">default-directory</span><span class="p">))</span> <span class="c1">;; see lsp-resolve-final-command, it would add extra shell wrapper</span>
+</span></span><span class="line"><span class="cl">             <span class="nv">lsp-use-plists</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nv">not</span> <span class="p">(</span><span class="nf">functionp</span> <span class="ss">&#39;json-rpc-connection</span><span class="p">))</span>  <span class="c1">;; native json-rpc</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nv">executable-find</span> <span class="s">&#34;emacs-lsp-booster&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nb">progn</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">when-let</span> <span class="p">((</span><span class="nv">command-from-exec-path</span> <span class="p">(</span><span class="nv">executable-find</span> <span class="p">(</span><span class="nf">car</span> <span class="nv">orig-result</span><span class="p">))))</span>  <span class="c1">;; resolve command from exec-path (in case not found in $PATH)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">(</span><span class="nf">setcar</span> <span class="nv">orig-result</span> <span class="nv">command-from-exec-path</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nf">message</span> <span class="s">&#34;Using emacs-lsp-booster for %s!&#34;</span> <span class="nv">orig-result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nf">cons</span> <span class="s">&#34;emacs-lsp-booster&#34;</span> <span class="nv">orig-result</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">orig-result</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">advice-add</span> <span class="ss">&#39;lsp-resolve-final-command</span> <span class="nb">:around</span> <span class="nf">#&#39;</span><span class="nv">lsp-booster--advice-final-command</span><span class="p">)</span>
 </span></span></code></pre></div><p>其他一些语言服务器的配置。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">add-hook!</span> <span class="ss">&#39;js-mode-hook</span> <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;flycheck-disabled-checkers</span> <span class="ss">&#39;lsp</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">
@@ -643,8 +676,9 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">python-black</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="大语言模型">大语言模型</h3>
 <p>近期涌现了一批将大语言模型 <em>Large Language Model</em> 的能力整合进 Emacs 的工具，我们也可以来试试。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">gptel</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">ellama</span><span class="p">)</span>
+<p>注：因为一些 bug 目前暂时禁用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">; (package! gptel)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">; (package! ellama)</span>
 </span></span></code></pre></div><h3 id="阅读">阅读</h3>
 <p>Doom 自带 <code>eww</code> 浏览器，所以我只需要加一个 <code>epub</code> 的阅读器 <code>nov.el</code> 。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">nov</span><span class="p">)</span>
@@ -777,7 +811,8 @@
 </span></span><span class="line"><span class="cl">          <span class="nv">xenops-math-image-scale-factor</span> <span class="mf">1.5</span>
 </span></span><span class="line"><span class="cl">          <span class="p">)))</span>
 </span></span></code></pre></div><h2 id="大语言模型">大语言模型</h2>
-<p>我的 <code>ellama</code> 配置，使用本地运行的 <code>Ollama</code> 服务。</p>
+<p>我的 <code>gptel</code> 和 <code>ellama</code> 配置，使用本地运行的 <code>Ollama</code> 服务。</p>
+<p>注：因为一些 bug 目前暂时禁用。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">gptel</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:init</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">gptel-expert-commands</span> <span class="no">t</span><span class="p">)</span>
@@ -788,38 +823,53 @@
 </span></span><span class="line"><span class="cl">                   <span class="nb">:stream</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl">                   <span class="nb">:models</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">qwen2.5:14b</span> <span class="nv">qwen2.5-coder:7b</span> <span class="nv">qwen2.5-coder:32b</span> <span class="nv">qwq:latest</span> <span class="nv">phi-4:latest</span><span class="p">))))</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">ellama</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">ellama</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:ensure</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:bind</span> <span class="p">(</span><span class="s">&#34;C-c l&#34;</span> <span class="o">.</span> <span class="nv">ellama-transient-main-menu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:hook</span> <span class="p">(</span><span class="nv">org-ctrl-c-ctrl-c-final</span> <span class="o">.</span> <span class="nv">ellama-chat-send-last-message</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:init</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">ellama-sessions-directory</span> <span class="s">&#34;~/.config/emacs/.local/cache/ellama-sessions&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">; (setopt ellama-keymap-prefix &#34;C-c l&#34;)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">llm-warn-on-nonfree</span> <span class="no">nil</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">ellama-fill-paragraphs</span> <span class="no">nil</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">ellama-long-lines-length</span> <span class="mi">80</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">ellama-auto-scroll</span> <span class="no">t</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-language</span> <span class="s">&#34;Chinese&#34;</span><span class="p">)</span> <span class="c1">; language to translate to</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-keymap-prefix</span> <span class="s">&#34;C-c l&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-language</span> <span class="s">&#34;Chinese&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;llm-ollama</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-provider</span>
 </span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-ollama</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5:14b&#34;</span>
-</span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;snowflake-arctic-embed2:latest&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;nomic-embed-text&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;num_ctx&#34;</span> <span class="o">.</span> <span class="mi">8192</span><span class="p">))))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-summarization-provider</span>
 </span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-ollama</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5:14b&#34;</span>
-</span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;snowflake-arctic-embed2:latest&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;nomic-embed-text&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;num_ctx&#34;</span> <span class="o">.</span> <span class="mi">32768</span><span class="p">))))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-coding-provider</span>
 </span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-ollama</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5-coder:32b&#34;</span>
-</span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;snowflake-arctic-embed2:latest&#34;</span>
-</span></span><span class="line"><span class="cl">           <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;num_ctx&#34;</span> <span class="o">.</span> <span class="mi">8192</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;nomic-embed-text&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;num_ctx&#34;</span> <span class="o">.</span> <span class="mi">32768</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-providers</span>
+</span></span><span class="line"><span class="cl">          <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;phi-4&#34;</span> <span class="o">.</span> <span class="p">(</span><span class="nv">make-llm-ollama</span>
+</span></span><span class="line"><span class="cl">                        <span class="nb">:chat-model</span> <span class="s">&#34;phi-4&#34;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nb">:embedding-model</span> <span class="s">&#34;nomic-embed-text&#34;</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-naming-provider</span>
+</span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-ollama</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5:14b&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;nomic-embed-text&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;stop&#34;</span> <span class="o">.</span> <span class="p">(</span><span class="s">&#34;\n&#34;</span><span class="p">)))))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-naming-scheme</span> <span class="ss">&#39;ellama-generate-name-by-llm</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-translation-provider</span>
 </span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-ollama</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5:14b&#34;</span>
-</span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;snowflake-arctic-embed2:latest&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;nomic-embed-text&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;num_ctx&#34;</span> <span class="o">.</span> <span class="mi">32768</span><span class="p">))))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-extraction-provider</span> <span class="p">(</span><span class="nv">make-llm-ollama</span>
+</span></span><span class="line"><span class="cl">                                      <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5-coder:7b&#34;</span>
+</span></span><span class="line"><span class="cl">                                      <span class="nb">:embedding-model</span> <span class="s">&#34;nomic-embed-text&#34;</span>
+</span></span><span class="line"><span class="cl">                                      <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;num_ctx&#34;</span> <span class="o">.</span> <span class="mi">32768</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-chat-display-action-function</span> <span class="nf">#&#39;</span><span class="nv">display-buffer-full-frame</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-instant-display-action-function</span> <span class="nf">#&#39;</span><span class="nv">display-buffer-at-bottom</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">ellama-context-header-line-global-mode</span> <span class="mi">+1</span><span class="p">))</span>
 </span></span></code></pre></div><p>如果使用本地运行的其它兼容 OpenAI API 的服务，比如 <code>llama.cpp</code> 或者 <code>LM Studio</code> ，那么相应的配置可以改为：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">gptel</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:init</span>
