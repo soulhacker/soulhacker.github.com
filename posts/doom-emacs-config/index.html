@@ -15,7 +15,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2022-09-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-05-01T13:53:34+08:00">
+    <meta property="article:modified_time" content="2025-05-17T01:32:26+08:00">
     <meta property="article:tag" content="Tools">
 
 
@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Doom Emacs 配置">
   <meta name="twitter:description" content="这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。">
 
-<meta name="generator" content="Hugo 0.147.0">
+<meta name="generator" content="Hugo 0.147.3">
     
 
   <link rel="stylesheet" href="/css/normalize.min.css" />
@@ -93,7 +93,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2025-05-01T13:53:34&#43;08:00">May 1, 2025</time>
+            Modified on <time datetime="2025-05-17T01:32:26&#43;08:00">May 17, 2025</time>
         </li>
         
         
@@ -654,7 +654,8 @@
 </span></span><span class="line"><span class="cl"> <span class="p">)</span>
 </span></span></code></pre></div><h3 id="锁定可靠版本">锁定可靠版本</h3>
 <p>缺省的 <em>Doom Emacs</em> 有着过于激进的版本跟进策略，有些包的 <em>master</em> 分支并不可信，一旦出现问题我们需要锁定在可靠的版本上。</p>
-<h4 id="org-mode"><code>org-mode</code></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">transient</span> <span class="nb">:pin</span> <span class="s">&#34;25b994a565ce8035330b0a3071ee430c0282349e&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h4 id="org-mode"><code>org-mode</code></h4>
 <p>最新的 <code>org-mode</code> <em>9.7</em> 开发分支有不少问题，而 <em>Doom Emacs</em> 缺省会跟着 <code>org-mode</code> 的 <em>master</em> 分支，经常会破坏一些本来正常工作的软件包，所以我们目前需要锁在 <em>9.6</em> 最新稳定版本。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">org</span> <span class="nb">:pin</span> <span class="s">&#34;071c6e986c424d2e496be7d0815d6e9cd83ae4e6&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>添加另外一些与 <code>org-mode</code> 相关的软件包。</p>
