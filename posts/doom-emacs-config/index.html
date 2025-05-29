@@ -15,7 +15,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2022-09-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-05-27T12:21:41+08:00">
+    <meta property="article:modified_time" content="2025-05-29T14:51:49+08:00">
     <meta property="article:tag" content="Tools">
 
 
@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Doom Emacs 配置">
   <meta name="twitter:description" content="这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。">
 
-<meta name="generator" content="Hugo 0.147.5">
+<meta name="generator" content="Hugo 0.147.6">
     
 
   <link rel="stylesheet" href="/css/normalize.min.css" />
@@ -93,7 +93,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2025-05-27T12:21:41&#43;08:00">May 27, 2025</time>
+            Modified on <time datetime="2025-05-29T14:51:49&#43;08:00">May 29, 2025</time>
         </li>
         
         
@@ -109,7 +109,7 @@
         </li>
         
 
-        <li>16 minute read</li>
+        <li>17 minute read</li>
     </ul>
 </aside>
 
@@ -194,11 +194,12 @@
 <p>这部分包含了 Doom 的 <code>:completion</code> <code>:ui</code> <code>:editor</code> <code>:emacs</code> <code>:term</code> <code>:checkers</code> <code>:tools</code> <code>:os</code> 几大类别。</p>
 <p>无处不在的自动补全功能，选择最时髦的 <code>vertico</code> 。</p>
 <p><a id="code-snippet--doom-completion"></a></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">company</span> <span class="nv">+childframe</span> <span class="nv">+icons</span><span class="p">)</span><span class="c1">; the ultimate code completion backend</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;(company +icons)          ; the ultimate code completion backend</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">corfu</span> <span class="nv">+orderless</span> <span class="nv">+dabbrev</span><span class="p">)</span> <span class="c1">; complete with cap(f), cape and a flying feather!</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;helm                      ; the *other* search engine for love and life</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;ido                       ; the other *other* search engine...</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;ivy                       ; a search engine for love and life</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">vertico</span> <span class="nv">+childframe</span> <span class="nv">+icons</span><span class="p">)</span><span class="c1">; the search engine of the future</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">vertico</span> <span class="nv">+icons</span><span class="p">)</span>            <span class="c1">; the search engine of the future</span>
 </span></span></code></pre></div><p>这里面有偏视觉和娱乐的（前者如 <code>hl-todo</code> <code>ligatures</code> 后者如 <code>doom-quit</code> ），但大多数是很实用的，比如 <code>window-select</code> 大幅强化了多窗口时切换窗口 <code>C-x o</code> 的体验（实际使用的是 <code>ace-window</code> ）。另外 <code>unicode</code> 这个非常重要，如果不打开会有很多中文显示方面的问题。</p>
 <p><a id="code-snippet--doom-ui"></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="c1">;;deft                      ; notational velocity for Emacs</span>
@@ -402,6 +403,15 @@
 </span></span></code></pre></div><p>如果想显示行号，将这两个变量设为 <code>t</code> ；如果想显示相对行号，将第二个变量值设为 <code>'relative</code> 或 <code>'visual</code> 。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">display-line-numbers</span> <span class="no">nil</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">display-line-numbers-type</span> <span class="no">nil</span><span class="p">)</span>
+</span></span></code></pre></div><p>使用 Emacs 30 开始加入的 <em>completion preview</em> 功能。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">completion-preview</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:ensure</span> <span class="no">nil</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:hook</span> <span class="p">(</span><span class="nv">prog-mode</span> <span class="o">.</span> <span class="nv">completion-preview-mode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:bind</span> <span class="p">(</span><span class="nb">:map</span> <span class="nv">completion-preview-active-mode-map</span>
+</span></span><span class="line"><span class="cl">              <span class="p">(</span><span class="s">&#34;M-n&#34;</span> <span class="o">.</span> <span class="nv">completion-preview-next-candidate</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">              <span class="p">(</span><span class="s">&#34;M-p&#34;</span> <span class="o">.</span> <span class="nv">completion-preview-prev-candidate</span><span class="p">)))</span>
+</span></span></code></pre></div><p>但不需要 <em>auto completion</em> 变成 <em>spammer</em> 。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">corfu-auto-delay</span> <span class="mf">0.5</span><span class="p">)</span>
 </span></span></code></pre></div><p>Org 的根目录需要尽早设置。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">org-directory</span> <span class="s">&#34;~/Code/Org/&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>缺省配置下 <code>treemacs</code> 只会显示文件的 <code>git</code> 状态，改为 <code>'extended</code> 可以显示文件和目录的状态，另一个选项 <code>'deferred</code> 似乎有问题；这个选项要在 <code>treemacs</code> 加载前设置。</p>
