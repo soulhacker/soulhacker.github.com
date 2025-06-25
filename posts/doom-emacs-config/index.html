@@ -15,7 +15,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2022-09-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-06-15T01:22:38+08:00">
+    <meta property="article:modified_time" content="2025-06-25T15:28:35+08:00">
     <meta property="article:tag" content="Tools">
 
 
@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Doom Emacs 配置">
   <meta name="twitter:description" content="这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。">
 
-<meta name="generator" content="Hugo 0.147.8">
+<meta name="generator" content="Hugo 0.147.9">
     
 
   <link rel="stylesheet" href="/css/normalize.min.css" />
@@ -93,7 +93,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2025-06-15T01:22:38&#43;08:00">Jun 15, 2025</time>
+            Modified on <time datetime="2025-06-25T15:28:35&#43;08:00">Jun 25, 2025</time>
         </li>
         
         
@@ -109,7 +109,7 @@
         </li>
         
 
-        <li>16 minute read</li>
+        <li>17 minute read</li>
     </ul>
 </aside>
 
@@ -412,6 +412,8 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">treemacs</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">treemacs-collapse-dirs</span> <span class="mi">200</span><span class="p">))</span>
+</span></span></code></pre></div><p>另外我们习惯自动打开 <code>treemacs</code> 。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;window-setup-hook</span> <span class="nf">#&#39;</span><span class="nv">treemacs</span> <span class="ss">&#39;append</span><span class="p">)</span>
 </span></span></code></pre></div><p>使用 PlantUML 用本地模式比较靠谱。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">plantuml-jar-path</span> <span class="p">(</span><span class="nf">concat</span> <span class="p">(</span><span class="nf">expand-file-name</span> <span class="nv">user-emacs-directory</span><span class="p">)</span> <span class="s">&#34;plantuml/plantuml.jar&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">      <span class="nv">plantuml-default-exec-mode</span> <span class="ss">&#39;jar</span><span class="p">)</span>
@@ -645,6 +647,12 @@
 </span></span></code></pre></div><h2 id="补充软件包">补充软件包</h2>
 <p>Doom 的缺省配置和预制模块能覆盖我绝大部分需求，所以需要我另外添加的软件包很少，这些软件包需要写在 <code>packages.el</code> 里。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">;;; packages.el -*- no-byte-compile: t; -*-</span>
+</span></span></code></pre></div><h3 id="临时补丁">临时补丁</h3>
+<p>目前版本 Doom 里的 <code>magit-forge</code> 需要手工添加下述依赖包。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">glab</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">gtea</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">gogs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">buck</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="窗口移动">窗口移动</h3>
 <p>用快捷键快速在几个窗口间交换 buffer，比如同时打开 <code>.c</code> 和 <code>.h</code> 文件，先在左边窗口编辑 <code>.h</code> 文件，然后把右边窗口的 <code>.c</code> 文件换过来进行编辑，使用这个包用一个组合键就能做到。其实预制模块里的 <code>ace-window</code> 也可以做类似的事情，但 <code>buffer-mover</code> 一个按键搞定更快。这里我用 <code>:recipe</code> 子句来禁用这个包的编译，因为这个包有个 bug，编译后会报错。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">buffer-move</span> <span class="nb">:recipe</span> <span class="p">(</span><span class="nb">:build</span> <span class="p">(</span><span class="nb">:not</span> <span class="nv">compile</span><span class="p">)))</span>
