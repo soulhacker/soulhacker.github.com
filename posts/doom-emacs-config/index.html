@@ -15,7 +15,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2022-09-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-07-01T17:40:29+08:00">
+    <meta property="article:modified_time" content="2025-07-31T14:20:17+08:00">
     <meta property="article:tag" content="Tools">
 
 
@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Doom Emacs 配置">
   <meta name="twitter:description" content="这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。">
 
-<meta name="generator" content="Hugo 0.148.1">
+<meta name="generator" content="Hugo 0.148.2">
     
 
   <link rel="stylesheet" href="/css/normalize.min.css" />
@@ -93,7 +93,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2025-07-01T17:40:29&#43;08:00">Jul 1, 2025</time>
+            Modified on <time datetime="2025-07-31T14:20:17&#43;08:00">Jul 31, 2025</time>
         </li>
         
         
@@ -826,7 +826,7 @@
 </span></span><span class="line"><span class="cl">                                    <span class="nb">:stream</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl">                                    <span class="nb">:protocol</span> <span class="s">&#34;http&#34;</span>
 </span></span><span class="line"><span class="cl">                                    <span class="nb">:host</span> <span class="s">&#34;localhost:5810&#34;</span>
-</span></span><span class="line"><span class="cl">                                    <span class="nb">:models</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">qwen3</span> <span class="nv">qwen3-nothink</span> <span class="nv">gemma-3</span> <span class="nv">devstral</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">                                    <span class="nb">:models</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">qwen3</span> <span class="nv">qwen3-thinking</span> <span class="nv">qwen3-coder</span><span class="p">))))</span>
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">ellama</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:ensure</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:bind</span> <span class="p">(</span><span class="s">&#34;C-c l&#34;</span> <span class="o">.</span> <span class="nv">ellama-transient-main-menu</span><span class="p">)</span>
@@ -849,12 +849,12 @@
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-coding-provider</span>
 </span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-openai-compatible</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:url</span> <span class="s">&#34;http://localhost:5810/v1&#34;</span>
-</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;devstral&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen3-coder&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;snowflake&#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-naming-provider</span>
 </span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-openai-compatible</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:url</span> <span class="s">&#34;http://localhost:5810/v1&#34;</span>
-</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen3-nothink&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen3&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;snowflake&#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-naming-scheme</span> <span class="ss">&#39;ellama-generate-name-by-llm</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-translation-provider</span>
@@ -877,11 +877,11 @@
 </span></span><span class="line"><span class="cl">  <span class="nb">:init</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">gptel-expert-commands</span> <span class="no">t</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span>
-</span></span><span class="line"><span class="cl">   <span class="nv">gptel-model</span>   <span class="ss">&#39;qwen2.5:14b</span>
+</span></span><span class="line"><span class="cl">   <span class="nv">gptel-model</span>   <span class="ss">&#39;qwen3</span>
 </span></span><span class="line"><span class="cl">   <span class="nv">gptel-backend</span> <span class="p">(</span><span class="nv">gptel-make-ollama</span> <span class="s">&#34;ollama&#34;</span>
 </span></span><span class="line"><span class="cl">                   <span class="nb">:host</span> <span class="s">&#34;localhost:11434&#34;</span>
 </span></span><span class="line"><span class="cl">                   <span class="nb">:stream</span> <span class="no">t</span>
-</span></span><span class="line"><span class="cl">                   <span class="nb">:models</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">qwen2.5:14b</span> <span class="nv">qwen2.5-coder:32b</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">                   <span class="nb">:models</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">qwen3</span> <span class="nv">qwen3-coder</span><span class="p">))))</span>
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">use-package</span> <span class="nv">ellama</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:ensure</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:bind</span> <span class="p">(</span><span class="s">&#34;C-c l&#34;</span> <span class="o">.</span> <span class="nv">ellama-transient-main-menu</span><span class="p">)</span>
@@ -893,32 +893,32 @@
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;llm-ollama</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-provider</span>
 </span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-ollama</span>
-</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5:14b&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen3&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;nomic-embed-text&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;num_ctx&#34;</span> <span class="o">.</span> <span class="mi">8192</span><span class="p">))))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-summarization-provider</span>
 </span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-ollama</span>
-</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5:14b&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen3&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;nomic-embed-text&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;num_ctx&#34;</span> <span class="o">.</span> <span class="mi">32768</span><span class="p">))))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-coding-provider</span>
 </span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-ollama</span>
-</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5-coder:32b&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen3-coder&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;nomic-embed-text&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;num_ctx&#34;</span> <span class="o">.</span> <span class="mi">32768</span><span class="p">))))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-naming-provider</span>
 </span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-ollama</span>
-</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5:14b&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen3&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;nomic-embed-text&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;stop&#34;</span> <span class="o">.</span> <span class="p">(</span><span class="s">&#34;\n&#34;</span><span class="p">)))))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-naming-scheme</span> <span class="ss">&#39;ellama-generate-name-by-llm</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-translation-provider</span>
 </span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-ollama</span>
-</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5:14b&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen3&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;nomic-embed-text&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;num_ctx&#34;</span> <span class="o">.</span> <span class="mi">32768</span><span class="p">))))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-extraction-provider</span> <span class="p">(</span><span class="nv">make-llm-ollama</span>
-</span></span><span class="line"><span class="cl">                                      <span class="nb">:chat-model</span> <span class="s">&#34;qwen2.5-coder:14b&#34;</span>
+</span></span><span class="line"><span class="cl">                                      <span class="nb">:chat-model</span> <span class="s">&#34;qwen3-coder&#34;</span>
 </span></span><span class="line"><span class="cl">                                      <span class="nb">:embedding-model</span> <span class="s">&#34;nomic-embed-text&#34;</span>
 </span></span><span class="line"><span class="cl">                                      <span class="nb">:default-chat-non-standard-params</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;num_ctx&#34;</span> <span class="o">.</span> <span class="mi">32768</span><span class="p">))))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-chat-display-action-function</span> <span class="nf">#&#39;</span><span class="nv">display-buffer-full-frame</span><span class="p">)</span>
