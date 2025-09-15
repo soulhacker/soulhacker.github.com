@@ -15,7 +15,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2022-09-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-07-31T14:20:17+08:00">
+    <meta property="article:modified_time" content="2025-09-15T22:18:39+08:00">
     <meta property="article:tag" content="Tools">
 
 
@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Doom Emacs 配置">
   <meta name="twitter:description" content="这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。">
 
-<meta name="generator" content="Hugo 0.148.2">
+<meta name="generator" content="Hugo 0.150.0">
     
 
   <link rel="stylesheet" href="/css/normalize.min.css" />
@@ -93,7 +93,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2025-07-31T14:20:17&#43;08:00">Jul 31, 2025</time>
+            Modified on <time datetime="2025-09-15T22:18:39&#43;08:00">Sep 15, 2025</time>
         </li>
         
         
@@ -312,12 +312,13 @@
 </span></span><span class="line"><span class="cl"><span class="c1">;;gdscript                  ; the language you waited for</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">go</span> <span class="nv">+lsp</span><span class="p">)</span>                   <span class="c1">; the hipster dialect</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;(graphql +lsp)            ; Give queries a REST</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">haskell</span> <span class="nv">+lsp</span> <span class="nv">+tree-sitter</span><span class="p">)</span> <span class="c1">; a language that&#39;s lazier than I am</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">haskell</span> <span class="nv">+lsp</span><span class="p">)</span>              <span class="c1">; a language that&#39;s lazier than I am</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;hy                        ; readability of scheme w/ speed of python</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;idris                     ; a language you can depend on</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">json</span> <span class="nv">+lsp</span> <span class="nv">+tree-sitter</span><span class="p">)</span>    <span class="c1">; At least it ain&#39;t XML</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">java</span> <span class="nv">+lsp</span><span class="p">)</span>                 <span class="c1">; the poster child for carpal tunnel syndrome</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">javascript</span> <span class="nv">+lsp</span><span class="p">)</span>           <span class="c1">; all(hope(abandon(ye(who(enter(here))))))</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">javascript</span> <span class="nv">+lsp</span> <span class="nv">+tree-sitter</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                            <span class="c1">; all(hope(abandon(ye(who(enter(here))))))</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;julia                     ; a better, faster MATLAB</span>
 </span></span><span class="line"><span class="cl"><span class="c1">;;kotlin                    ; a better, slicker Java(Script)</span>
 </span></span><span class="line"><span class="cl"><span class="nv">latex</span>                       <span class="c1">; writing papers in Emacs has never been so fun</span>
@@ -671,9 +672,6 @@
 </span></span></code></pre></div><h3 id="公式预览">公式预览</h3>
 <p><code>xenops</code> 和 <code>org-fragtog</code> 都是用来在 <code>org-mode</code> 里实时渲染显示 \(LaTeX\) 公式的，它们都会实时将公式渲染为图片（前者用 SVG 格式，后者用 PNG 格式）并缓存，然后显示出来，区别在于 <code>org-fragtog</code> 是同步模式，渲染时会卡住 Emacs，等它好了你才能继续操作，而 <code>xenops</code> 使用 <code>emacs-aio</code> 实现异步渲染，它干活的时候你也可以继续干活，它渲染好就会自动显示出来。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">xenops</span><span class="p">)</span>
-</span></span></code></pre></div><h3 id="幻灯片">幻灯片</h3>
-<p><code>dslide</code> 可以直接把 <code>org-mode</code> 变成幻灯片。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">dslide</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="编程语言-clojure">编程语言 - Clojure</h3>
 <p><code>clj-refactor</code> 这个包需要和后端 Clojure 的 <code>refactor-nrepl</code> 包版本同步，且它们更新都挺频繁，所以最好解放版本限制。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">unpin!</span> <span class="nv">clj-refactor</span><span class="p">)</span>
@@ -786,7 +784,6 @@
 </span></span><span class="line"><span class="cl">           <span class="nb">:if-new</span> <span class="p">(</span><span class="nv">file+head</span> <span class="s">&#34;%&lt;%Y%m%d%H%M%S&gt;-${slug}.org&#34;</span>
 </span></span><span class="line"><span class="cl">                              <span class="s">&#34;#+title: ${title}\n#+filetags:\n\n&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:unnarrowed</span> <span class="no">t</span><span class="p">)))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">org-roam-db-autosync-mode</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;org-roam-protocol</span><span class="p">))</span>
 </span></span></code></pre></div><h4 id="org-roam-ui">org-roam-ui</h4>
 <p>这个知识网络的可视化会显示在浏览器中，通过 <em>websocket</em> 与 Emacs 通信。</p>
@@ -828,7 +825,6 @@
 </span></span><span class="line"><span class="cl">                                    <span class="nb">:host</span> <span class="s">&#34;localhost:5810&#34;</span>
 </span></span><span class="line"><span class="cl">                                    <span class="nb">:models</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">qwen3</span> <span class="nv">qwen3-thinking</span> <span class="nv">qwen3-coder</span><span class="p">))))</span>
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">ellama</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">:ensure</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:bind</span> <span class="p">(</span><span class="s">&#34;C-c l&#34;</span> <span class="o">.</span> <span class="nv">ellama-transient-main-menu</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:hook</span> <span class="p">(</span><span class="nv">org-ctrl-c-ctrl-c-final</span> <span class="o">.</span> <span class="nv">ellama-chat-send-last-message</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:init</span>
@@ -925,41 +921,6 @@
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-instant-display-action-function</span> <span class="nf">#&#39;</span><span class="nv">display-buffer-at-bottom</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">ellama-context-header-line-global-mode</span> <span class="mi">+1</span><span class="p">))</span>
-</span></span></code></pre></div><h2 id="幻灯片">幻灯片</h2>
-<p><code>dslide</code> 基本配置。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">dslide</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">:hook</span>
-</span></span><span class="line"><span class="cl">  <span class="p">((</span><span class="nv">dslide-start</span>
-</span></span><span class="line"><span class="cl">    <span class="o">.</span>
-</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">lambda</span> <span class="p">()</span>
-</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">org-fold-hide-block-all</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">setq-default</span> <span class="nv">x-stretch-cursor</span> <span class="mi">-1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nf">redraw-display</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">blink-cursor-mode</span> <span class="mi">-1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">setq</span> <span class="nv">cursor-type</span> <span class="ss">&#39;bar</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      <span class="c1">;;(org-display-inline-images)</span>
-</span></span><span class="line"><span class="cl">      <span class="c1">;;(hl-line-mode -1)</span>
-</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">text-scale-increase</span> <span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">read-only-mode</span> <span class="mi">1</span><span class="p">)))</span>
-</span></span><span class="line"><span class="cl">   <span class="p">(</span><span class="nv">dslide-stop</span>
-</span></span><span class="line"><span class="cl">    <span class="o">.</span>
-</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">lambda</span> <span class="p">()</span>
-</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">blink-cursor-mode</span> <span class="mi">+1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">setq-default</span> <span class="nv">x-stretch-cursor</span> <span class="no">t</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nb">setq</span> <span class="nv">cursor-type</span> <span class="no">t</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">text-scale-increase</span> <span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">      <span class="c1">;;(hl-line-mode 1)</span>
-</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nv">read-only-mode</span> <span class="mi">-1</span><span class="p">))))</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">:config</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">dslide-margin-content</span> <span class="mf">0.5</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">dslide-animation-duration</span> <span class="mf">0.5</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">dslide-margin-title-above</span> <span class="mf">0.3</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">dslide-margin-title-below</span> <span class="mf">0.3</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">dslide-header-email</span> <span class="no">nil</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">dslide-header-date</span> <span class="no">nil</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">define-key</span> <span class="nv">org-mode-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;&lt;f8&gt;&#34;</span><span class="p">)</span> <span class="nf">#&#39;</span><span class="nv">dslide-deck-start</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">define-key</span> <span class="nv">dslide-mode-map</span> <span class="p">(</span><span class="nv">kbd</span> <span class="s">&#34;&lt;f9&gt;&#34;</span><span class="p">)</span> <span class="nf">#&#39;</span><span class="nv">dslide-deck-stop</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">)</span>
 </span></span></code></pre></div><h2 id="其他配置">其他配置</h2>
 <h3 id="popups">Popups</h3>
 <p>设置一些工具窗口的弹出规则。</p>
