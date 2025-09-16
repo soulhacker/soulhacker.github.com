@@ -15,7 +15,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2022-09-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-09-15T22:18:39+08:00">
+    <meta property="article:modified_time" content="2025-09-16T18:44:58+08:00">
     <meta property="article:tag" content="Tools">
 
 
@@ -93,7 +93,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2025-09-15T22:18:39&#43;08:00">Sep 15, 2025</time>
+            Modified on <time datetime="2025-09-16T18:44:58&#43;08:00">Sep 16, 2025</time>
         </li>
         
         
@@ -928,7 +928,7 @@
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">set-popup-rule!</span> <span class="s">&#34;*doom:vterm-popup:main&#34;</span> <span class="nb">:size</span> <span class="mf">0.36</span> <span class="nb">:vslot</span> <span class="mi">-4</span> <span class="nb">:select</span> <span class="no">t</span> <span class="nb">:quit</span> <span class="no">nil</span> <span class="nb">:ttl</span> <span class="mi">0</span> <span class="nb">:side</span> <span class="ss">&#39;right</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">)</span>
 </span></span></code></pre></div><h3 id="smartparens">Smartparens</h3>
-<p>因为我用 <code>lipsy</code> 所以其实 <code>smaertparens</code> 用的不多，不过作为保底，还是配了一下常用按键组合。</p>
+<p>因为我用 <code>lispy</code> 所以其实 <code>smartparens</code> 用的不多，不过作为保底，还是配了一下常用按键组合。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">map!</span>
 </span></span><span class="line"><span class="cl"> <span class="p">(</span><span class="nb">:after</span> <span class="nv">smartparens</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">:map</span> <span class="nv">smartparens-mode-map</span>
@@ -967,7 +967,7 @@
 </span></span><span class="line"><span class="cl">        <span class="s">&#34;C-c x s&#34;</span> <span class="nf">#&#39;</span><span class="nv">+python-make-fstring</span>
 </span></span><span class="line"><span class="cl">        <span class="s">&#34;C-c x f&#34;</span> <span class="nf">#&#39;</span><span class="nv">+python-format-buffer</span><span class="p">))</span>
 </span></span></code></pre></div><h3 id="clojure">Clojure</h3>
-<p>CIDER 是 Clojure 的 <em>REPL</em> ，缺省会作为一个 <em>popup</em> 显示在窗口下方，但一般来说习惯于左右分屏，所以需要修改；后面试 CIDER 的几个设置，一个可以在切换 <em>namespace</em> 的时候自动加载对应代码，另一个指定 <code>=cider-jack-in</code> 时使用 <code>deps.edn</code> 中哪个配置 <em>alias</em> 。</p>
+<p>CIDER 是 Clojure 的 <em>REPL</em> ，缺省会作为一个 <em>popup</em> 显示在窗口下方，但一般来说习惯于左右分屏，所以需要修改；后面是 CIDER 的几个设置，一个可以在切换 <em>namespace</em> 的时候自动加载对应代码，另一个指定 <code>cider-jack-in</code> 时使用 <code>deps.edn</code> 中哪个配置 <em>alias</em> 。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">cider</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">set-popup-rules!</span>
 </span></span><span class="line"><span class="cl">    <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;^\\*cider-repl&#34;</span>
