@@ -15,7 +15,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2022-09-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-09-16T18:44:58+08:00">
+    <meta property="article:modified_time" content="2025-09-18T10:49:03+08:00">
     <meta property="article:tag" content="Tools">
 
 
@@ -93,7 +93,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2025-09-16T18:44:58&#43;08:00">Sep 16, 2025</time>
+            Modified on <time datetime="2025-09-18T10:49:03&#43;08:00">Sep 18, 2025</time>
         </li>
         
         
@@ -109,7 +109,7 @@
         </li>
         
 
-        <li>16 minute read</li>
+        <li>15 minute read</li>
     </ul>
 </aside>
 
@@ -658,20 +658,9 @@
 </span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="nv">C-s-left</span><span class="p">]</span>      <span class="nf">#&#39;</span><span class="nv">buf-move-left</span>
 </span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="nv">C-s-right</span><span class="p">]</span>     <span class="nf">#&#39;</span><span class="nv">buf-move-right</span>
 </span></span><span class="line"><span class="cl"> <span class="p">)</span>
-</span></span></code></pre></div><h3 id="锁定可靠版本">锁定可靠版本</h3>
-<p>缺省的 <em>Doom Emacs</em> 有着过于激进的版本跟进策略，有些包的 <em>master</em> 分支并不可信，一旦出现问题我们需要锁定在可靠的版本上。</p>
-<h4 id="org-mode"><code>org-mode</code></h4>
-<p>最新的 <code>org-mode</code> <em>9.7</em> 开发分支有不少问题，而 <em>Doom Emacs</em> 缺省会跟着 <code>org-mode</code> 的 <em>master</em> 分支，经常会破坏一些本来正常工作的软件包，所以我们目前需要锁在 <em>9.6</em> 最新稳定版本。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">org</span> <span class="nb">:pin</span> <span class="s">&#34;071c6e986c424d2e496be7d0815d6e9cd83ae4e6&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p>添加另外一些与 <code>org-mode</code> 相关的软件包。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">jupyter</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">ox-hugo</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="知识网络">知识网络</h3>
 <p><code>org-roam-ui</code> <a href="https://github.com/org-roam/org-roam-ui">→</a> 提供强大的知识网络笔记系统 <code>org-roam</code> 的网络可视化，并可与 <code>org-roam</code> 紧密整合。注意 <code>org-roam-ui</code> 只支持 <code>org-roam v2</code> ，如果使用 <code>org-roam v1</code> 的话请用 <code>org-roam-server</code> <a href="https://github.com/org-roam/org-roam-server">→</a>。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">org-roam-ui</span><span class="p">)</span>
-</span></span></code></pre></div><h3 id="公式预览">公式预览</h3>
-<p><code>xenops</code> 和 <code>org-fragtog</code> 都是用来在 <code>org-mode</code> 里实时渲染显示 \(LaTeX\) 公式的，它们都会实时将公式渲染为图片（前者用 SVG 格式，后者用 PNG 格式）并缓存，然后显示出来，区别在于 <code>org-fragtog</code> 是同步模式，渲染时会卡住 Emacs，等它好了你才能继续操作，而 <code>xenops</code> 使用 <code>emacs-aio</code> 实现异步渲染，它干活的时候你也可以继续干活，它渲染好就会自动显示出来。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">xenops</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="编程语言-clojure">编程语言 - Clojure</h3>
 <p><code>clj-refactor</code> 这个包需要和后端 Clojure 的 <code>refactor-nrepl</code> 包版本同步，且它们更新都挺频繁，所以最好解放版本限制。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">unpin!</span> <span class="nv">clj-refactor</span><span class="p">)</span>
@@ -691,7 +680,7 @@
 </span></span></code></pre></div><p>这个包允许你在 Emacs 里查询、下载和查看 <a href="https://xkcd.com">xkcd</a> 漫画，嘿嘿嘿！</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">xkcd</span><span class="p">)</span>
 </span></span></code></pre></div><h2 id="org-mode">Org Mode</h2>
-<p><code>org-mode</code> 是 Emacs 的招牌应用，一个全副武装的 <code>org-mode</code> 可以在一致的环境下完成日程计划、笔记、博客、论文等各种写作任务，不仅可以写出文本、结构化列表、表格，还可以插入图片、 \(LaTeX\) 公式、可运行的程序代码、可追踪的任务，还可以借助 <code>org-roam</code> 实现笔记的知识网络化。这些功能是以 <code>org-mode</code> 为中心的一组软件包配合实现的，所以配置也相对多一点。</p>
+<p><code>org-mode</code> 是 Emacs 的招牌应用，一个全副武装的 <code>org-mode</code> 可以在一致的环境下完成日程计划、笔记、博客、论文等各种写作任务，不仅可以写出文本、结构化列表、表格，还可以插入图片、LaTeX 公式、可运行的程序代码、可追踪的任务，还可以借助 <code>org-roam</code> 实现笔记的知识网络化。这些功能是以 <code>org-mode</code> 为中心的一组软件包配合实现的，所以配置也相对多一点。</p>
 <h3 id="基本配置">基本配置</h3>
 <p>设置 <code>org-agenda</code> 使用的 Org 文档的位置，可以指定目录和文件名 <em>pattern</em> 把所有 <code>.org</code> 文件放进去：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">org-agenda-files</span> <span class="p">(</span><span class="nv">directory-files-recursively</span> <span class="nv">org-directory</span> <span class="s">&#34;\\.org$&#34;</span><span class="p">))</span>
@@ -708,7 +697,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org-agenda</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">load!</span> <span class="s">&#34;lisp/vulpea-agenda&#34;</span><span class="p">))</span>
 </span></span></code></pre></div><p>原来的版本有个问题，就是我们上面给变量 <code>org-agenda-files</code> 指定的文件会被移除，所以我做了一点 patch 之后才合用 <a href="https://gist.github.com/neolee/7e0c2abf2254c72baafb4a1000f0fbf0">→</a>。</p>
-<p>Org 文档导出 \(LaTeX\) 文档时需要做一些配置，一是引入 <code>ctex</code> 包，否则中文处理会有问题；二是配置一下带链接文本的格式，不然会是带红色框的文本，非常恐怖；另外是一些 \(LaTeX\) 的常规设置。</p>
+<p>Org 文档导出 LaTeX 文档时需要做一些配置，一是引入 <code>ctex</code> 包，否则中文处理会有问题；二是配置一下带链接文本的格式，不然会是带红色框的文本，非常恐怖；另外是一些 LaTeX 的常规设置。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-latex-default-packages-alist</span>
 </span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="nv">remove</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;AUTO&#34;</span> <span class="s">&#34;inputenc&#34;</span> <span class="no">t</span><span class="p">)</span> <span class="nv">org-latex-default-packages-alist</span><span class="p">))</span>
@@ -719,7 +708,7 @@
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">setq</span> <span class="nv">org-latex-hyperref-template</span>
 </span></span><span class="line"><span class="cl">        <span class="s">&#34;\\hypersetup{linktoc=all,colorlinks=true,urlcolor=blue,linkcolor=blue}&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">)</span>
-</span></span></code></pre></div><p>缺省的 \(LaTeX\) 模板的目录之后直接会接上正文，但一般的排版习惯会希望正文另起一页，这个简单定制一下就可以了：</p>
+</span></span></code></pre></div><p>缺省的 LaTeX 模板的目录之后直接会接上正文，但一般的排版习惯会希望正文另起一页，这个简单定制一下就可以了：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">org-latex-toc-command</span> <span class="s">&#34;\\tableofcontents \\clearpage\n\n&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>在编辑 Org 文档时，经常点击链接跳转到另一篇笔记，这时候快速返回可以设置为快捷键，我用的是 <code>Control-Command-b</code> 。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org</span>
@@ -748,23 +737,7 @@
 </span></span><span class="line"><span class="cl">                                                     <span class="p">(</span><span class="nb">:kernel</span> <span class="o">.</span> <span class="s">&#34;wop&#34;</span><span class="p">)))</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;org-tempo</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">org-babel-do-load-languages</span> <span class="ss">&#39;org-babel-load-languages</span>
-</span></span><span class="line"><span class="cl">                               <span class="o">&#39;</span><span class="p">((</span><span class="nv">emacs-lisp</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                                 <span class="p">(</span><span class="nv">python</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                                 <span class="p">(</span><span class="nv">shell</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                                 <span class="p">(</span><span class="nv">latex</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                                 <span class="p">(</span><span class="nv">sql</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                                 <span class="p">(</span><span class="nv">sqlite</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                                 <span class="p">(</span><span class="nv">calc</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                                 <span class="p">(</span><span class="nv">jupyter</span> <span class="o">.</span> <span class="no">t</span><span class="p">)))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org-src</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">lang</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">python</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">cl-pushnew</span> <span class="p">(</span><span class="nf">cons</span> <span class="p">(</span><span class="nf">format</span> <span class="s">&#34;jupyter-%s&#34;</span> <span class="nv">lang</span><span class="p">)</span> <span class="nv">lang</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                <span class="nv">org-src-lang-modes</span> <span class="nb">:key</span> <span class="nf">#&#39;car</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;org-tempo</span><span class="p">))</span>
 </span></span></code></pre></div><h3 id="知识网络">知识网络</h3>
 <h4 id="org-roam">org-roam</h4>
 <p>其实我刚开始用 <code>org-roam</code> ，所以只有最简单的配置，一些复杂的模板之类的都还没开始用。这里最重要的配置是 Roam 笔记的根目录，另外我稍微修改了下缺省的 <em>capture template</em> ，在元数据里加了 <em>tag</em> 。</p>
@@ -796,22 +769,6 @@
 </span></span><span class="line"><span class="cl">          <span class="nv">org-roam-ui-update-on-save</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl">          <span class="nv">org-roam-ui-open-on-start</span> <span class="no">t</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">)</span>
-</span></span></code></pre></div><h3 id="实时公式预览">实时公式预览</h3>
-<p><code>xenops</code> 基本配置，注意公式显示的大小可用变量 <code>xenops-math-image-scale-factor</code> 微调。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">display-graphic-p</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">use-package!</span> <span class="nv">xenops</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">:hook</span> <span class="p">(</span><span class="nv">latex-mode</span> <span class="o">.</span> <span class="nv">xenops-mode</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">:hook</span> <span class="p">(</span><span class="nv">LaTeX-mode</span> <span class="o">.</span> <span class="nv">xenops-mode</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">:hook</span> <span class="p">(</span><span class="nv">org-mode</span> <span class="o">.</span> <span class="nv">xenops-mode</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">:defer</span> <span class="no">t</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">:config</span>
-</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">map!</span> <span class="nb">:map</span> <span class="nv">xenops-mode-map</span>
-</span></span><span class="line"><span class="cl">          <span class="nb">:n</span> <span class="s">&#34;RET&#34;</span> <span class="nf">#&#39;</span><span class="nv">xenops-dwim</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">setq</span> <span class="nv">xenops-cache-directory</span> <span class="p">(</span><span class="nf">concat</span> <span class="nv">doom-cache-dir</span> <span class="s">&#34;xenops/&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">          <span class="nv">xenops-reveal-on-entry</span> <span class="no">t</span>
-</span></span><span class="line"><span class="cl">          <span class="nv">xenops-math-latex-process</span> <span class="ss">&#39;dvisvgm</span>
-</span></span><span class="line"><span class="cl">          <span class="nv">xenops-math-image-scale-factor</span> <span class="mf">1.5</span>
-</span></span><span class="line"><span class="cl">          <span class="p">)))</span>
 </span></span></code></pre></div><h2 id="大语言模型">大语言模型</h2>
 <p>大语言模型相关工具 <code>gptel</code> 和 <code>ellama</code> 的配置，使用本地运行的 <code>llama.cpp</code> 服务来提供兼容 OpenAI 的 API。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">use-package!</span> <span class="nv">gptel</span>
