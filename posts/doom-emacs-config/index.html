@@ -15,7 +15,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2022-09-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-10-04T18:24:16+08:00">
+    <meta property="article:modified_time" content="2025-10-19T01:29:56+08:00">
     <meta property="article:tag" content="Tools">
 
 
@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Doom Emacs 配置">
   <meta name="twitter:description" content="这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。">
 
-<meta name="generator" content="Hugo 0.151.0">
+<meta name="generator" content="Hugo 0.151.2">
     
 
   <link rel="stylesheet" href="/css/normalize.min.css" />
@@ -93,7 +93,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2025-10-04T18:24:16&#43;08:00">Oct 4, 2025</time>
+            Modified on <time datetime="2025-10-19T01:29:56&#43;08:00">Oct 19, 2025</time>
         </li>
         
         
@@ -121,7 +121,8 @@
     
 
     <blockquote>
-<p>这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 <code>evil</code> 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 <a href="https://tecosaur.github.io/emacs-config/config.html">Tec Osaur</a> 的非常有教益的版本。</p></blockquote>
+<p>这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 <code>evil</code> 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 <a href="https://tecosaur.github.io/emacs-config/config.html">Tec Osaur</a> 的非常有教益的版本。</p>
+</blockquote>
 <h2 id="前言">前言</h2>
 <p>Doom Emacs 的配置都在变量 <code>doom-user-dir</code> 指向的目录下（根据安装时的选择可能是 <code>~/.doom.d/</code> 或 <code>~/.config/doom/</code> ），主要是三个文件：</p>
 <ul>
@@ -218,7 +219,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1">;;neotree                   ; a project drawer, like NERDTree for vim</span>
 </span></span><span class="line"><span class="cl"><span class="nv">ophints</span>                     <span class="c1">; highlight the region an operation acts on</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">popup</span> <span class="nv">+all</span> <span class="nv">+defaults</span><span class="p">)</span>      <span class="c1">; tame sudden yet inevitable temporary windows</span>
-</span></span><span class="line"><span class="cl"><span class="c1">;;tabs                      ; a tab bar for Emacs</span>
+</span></span><span class="line"><span class="cl"><span class="nv">tabs</span>                        <span class="c1">; a tab bar for Emacs</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">treemacs</span> <span class="nv">+lsp</span><span class="p">)</span>             <span class="c1">; a project drawer, like neotree but cooler</span>
 </span></span><span class="line"><span class="cl"><span class="nv">unicode</span>                     <span class="c1">; extended unicode support for various languages</span>
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">vc-gutter</span> <span class="nv">+pretty</span><span class="p">)</span>         <span class="c1">; vcs diff in the fringe</span>
