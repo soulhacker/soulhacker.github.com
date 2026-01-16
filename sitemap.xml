@@ -3,18 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/posts/</loc>
-    <lastmod>2026-01-11T23:16:12+08:00</lastmod>
+    <lastmod>2026-01-16T19:22:57+08:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2026-01-11T23:16:12+08:00</lastmod>
+    <lastmod>2026-01-16T19:22:57+08:00</lastmod>
   </url><url>
     <loc>/about/</loc>
   </url><url>
     <loc>/</loc>
-    <lastmod>2026-01-11T23:16:12+08:00</lastmod>
+    <lastmod>2026-01-16T19:22:57+08:00</lastmod>
   </url><url>
     <loc>/tags/programming/</loc>
-    <lastmod>2026-01-11T23:16:12+08:00</lastmod>
+    <lastmod>2026-01-16T19:22:57+08:00</lastmod>
+  </url><url>
+    <loc>/posts/why-type-system-matters/</loc>
+    <lastmod>2026-01-16T19:22:57+08:00</lastmod>
   </url><url>
     <loc>/posts/good-code/</loc>
     <lastmod>2026-01-11T23:16:12+08:00</lastmod>
