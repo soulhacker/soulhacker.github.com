@@ -19,7 +19,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2026-01-14T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-01-28T19:14:33+08:00">
+    <meta property="article:modified_time" content="2026-02-18T13:39:12+08:00">
     <meta property="article:tag" content="Programming">
 
 
@@ -31,7 +31,7 @@
 通过良好的模块化设计来隔离和控制软件系统的复杂度； 尽可能降低软件测试和验证的代价。 第1点我们可以不断推动 coding agent 进行模块化重构来实现；而第2点就更难一些，因为完备的测试永远是很难或很昂贵的，所以最好是在测试前解决尽可能多的问题，而类型系统就是实现这一点的钥匙。如果你还不理解为什么这么说，当你读完本文时就会理解了。
 所以本文的目的是给不熟悉类型系统的朋友展示一个设计良好的类型系统是多么有用（和优雅），为此，我会用 Haskell 语言来作为示例，并与 Python 语言做一些对比。你可能听说过 Haskell 是一种小众且相当难掌握的编程语言，但在本文中，你不需要会 Haskell 语言也能理解我想说明的问题，至少我期望如此。">
 
-<meta name="generator" content="Hugo 0.154.5">
+<meta name="generator" content="Hugo 0.155.3">
     
 
   <link rel="stylesheet" href="/css/normalize.min.css" />
@@ -101,7 +101,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2026-01-28T19:14:33&#43;08:00">Jan 28, 2026</time>
+            Modified on <time datetime="2026-02-18T13:39:12&#43;08:00">Feb 18, 2026</time>
         </li>
         
         
@@ -162,7 +162,7 @@
 <p>静态类型是有代价的，为了让编译器（或者其他工具）在运行前就能确定每个变量的类型并检查程序逻辑发现可能的类型错误，通常会要求变量在声明时就指明类型，且类型固定不可改变。</p>
 <p>所以，Python 的灵活性带来运行时风险，Haskell 把这类错误提前到编译期，所以问题是：你愿意为“灵活”付出多少调试时间？</p>
 <p>常见编程语言里，Java、C++、C#、Go、Swift、Rust 还有本文主角 Haskell 都是静态类型语言，而 Python、JavaScript、PHP 等都是动态类型语言。</p>
-<p>而 TypeScript 语言比较特殊，它本质上想成为一个静态类型语言，引入了类型声明和静态类型检查，但为了照顾 JavaScript 用户的习惯，允许使用 <code>Any</code> 这样的类型来临时“退出”类型检查，且并未对这样的机制做出足够约束，所以它被称为 <em>Optionally Static Typing Language</em> ，即“可选的静态类型”语言。</p>
+<p>TypeScript 语言则比较特殊，它本质上想成为一个静态类型语言，引入了类型声明和静态类型检查，但为了照顾 JavaScript 用户的习惯，允许使用 <code>Any</code> 这样的类型来临时“退出”类型检查，且并未对这样的机制做出足够约束，所以它被称为 <em>Optionally Static Typing Language</em> ，即“可选的静态类型”语言。</p>
 <p>Python 近年通过增加语言特性 <a href="https://peps.python.org/pep-0484/">PEP 484</a> 类型注释（ <em>Type Hints</em> ），配合新的静态类型检查工具如 <a href="https://github.com/python/mypy">mypy</a>、<a href="https://github.com/DetachHead/basedpyright">pyright</a>、Pylance、<a href="https://github.com/astral-sh/ty">ty</a> 等，实现了一部分静态类型检查的能力，但与 TypeScript 类似，这也只是可选的，如果你选择忽略类型警告或者压根不写类型注释，也不影响你运行 Python 程序。还有不少奇技淫巧被开发出来（并被 AI 熟练掌握）用来“绕过”类型警告，比如 <code>Any</code> 、 <code>cast</code> 、 <code>getattr</code> 等等，如果你和 AI 合作开发 Python 应用，并要求 AI 帮你消除类型检查错误，你就一定见识过这些东西。我之前写的<a href="https://github.com/neolee/reversi/blob/main/HUMAN.md">一篇笔记</a>的最后就记录了这样的一些实例。</p>
 <p>下面是使用了类型注释之后的 Python 代码：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -196,9 +196,9 @@
 <p>在 AI Coding 时代， <em>coding agents</em> 非常擅长（适合）生成快速、一次性的代码，这类场景下使用动态语言非常合适；而一旦项目规模上去，长期维护、团队协作的需求显著增加，严格类型系统的投入产出比会迅速体现出优势。</p>
 <p>从长期趋势来看，严格类型系统会显著降低 AI Coding 时代的全链路成本：</p>
 <ul>
-<li>问题修复：AI 生成代码量激增，运行时 bug 的修复成本（定位、生产事故）会指数级上升，严格类型把这些成本前移到编译期，对设计良好的严格类型系统，大部分数据抽象、接口设计、跨模块协作方面的错误都能在静态检查中发现。</li>
+<li>问题修复：AI 生成代码量激增，运行时 bug 的修复成本（包括问题定位、事故恢复等）会指数级上升，严格类型把这些成本前移到编译期，对设计良好的严格类型系统，大部分数据抽象、接口设计、跨模块协作方面的错误都能在静态检查中发现。</li>
 <li>代码演进：大型项目中，AI 会频繁重构，强类型保证重构安全（编译通过 ≈ 类型安全）。</li>
-<li>AI 进化：未来的 <em>coding agents</em> 将会更依赖类型系统来“推理”程序正确性；Haskell 的类型系统几乎可以表达“程序证明”，AI 能更好地利用它生成可靠代码。</li>
+<li>AI 进化：未来的 <em>coding agents</em> 将会更依赖类型系统来“推理”程序正确性；Haskell 的类型系统几乎可以表达“程序证明”逻辑，AI 能更好地利用它生成可靠代码。</li>
 </ul>
 <p>可以大胆预测：未来 5-10 年，主流语言要么大幅强化类型系统（Python 可能继续往这个方向走，但很难追上 Haskell 的深度），要么新项目会更倾向选择 Rust、TypeScript 等严格类型语言，这也是为什么我建议所有人都去学一门严格类型语言的根本原因。</p>
 <p>那为什么我要用 Haskell 作为例子来介绍类型系统而不是 Java、TypeScript 或者 Rust 语言呢？因为：</p>
