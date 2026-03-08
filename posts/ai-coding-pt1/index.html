@@ -1,0 +1,216 @@
+<!doctype html>
+
+<html lang="en-us">
+
+<head>
+  <title>Paradigm X</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="[Neo Lee]" /><meta property="og:url" content="/posts/ai-coding-pt1/">
+  <meta property="og:site_name" content="Paradigm X">
+  <meta property="og:title" content="Paradigm X">
+  <meta property="og:description" content="title: 我的 AI 编程旅程 Part 1
+从去年12月开始高强度实践 AI coding 到现在三个多月，要歇一下了，这玩意儿快是快，累也是真累，大脑负荷比自己写代码还重。借此告一段落的机会梳理一下成果，记录于此备忘。">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-08T16:57:10+08:00">
+    <meta property="article:tag" content="Programming">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Paradigm X">
+  <meta name="twitter:description" content="title: 我的 AI 编程旅程 Part 1
+从去年12月开始高强度实践 AI coding 到现在三个多月，要歇一下了，这玩意儿快是快，累也是真累，大脑负荷比自己写代码还重。借此告一段落的机会梳理一下成果，记录于此备忘。">
+
+<meta name="generator" content="Hugo 0.157.0">
+    
+
+  <link rel="stylesheet" href="/css/normalize.min.css" />
+  <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/styles.css" /><link rel='stylesheet' href='/css/main.css'><link rel='stylesheet' href='/css/syntax.css'>
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      
+      <h1>
+        <a href="/">Paradigm X</a>
+      </h1>
+
+      <ul id="social-media">
+      </ul>
+      
+      <p><em>Vision quests of a soulhacker</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="active" href="/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>全部文章</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="/tags/">
+                <i class="fa-li fa  fa-lg"></i><span>标签</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="/about/">
+                <i class="fa-li fa  fa-lg"></i><span>关于</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1></h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2026-03-08T00:00:00Z">Mar 8, 2026</time>
+        </li>
+        
+        <li>
+            Modified on <time datetime="2026-03-08T16:57:10&#43;08:00">Mar 8, 2026</time>
+        </li>
+        
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="/tags/programming">#Programming</a>
+                
+            </em>
+        </li>
+        
+
+        <li>One minute read</li>
+    </ul>
+</aside>
+
+    
+
+    
+      
+
+    
+
+    <p>title: 我的 AI 编程旅程 Part 1</p>
+<p>从去年12月开始高强度实践 AI coding 到现在三个多月，要歇一下了，这玩意儿快是快，累也是真累，大脑负荷比自己写代码还重。借此告一段落的机会梳理一下成果，记录于此备忘。</p>
+<ul>
+<li><a href="https://github.com/neolee/reversi">revesi</a>: 用 Python 编写的 Reversi（a.k.a. Othello，中文一般叫夹子棋）游戏，跨平台 GUI 应用，一开始用 <a href="https://flet.dev/">Flet</a> 框架，后来被其混乱的升级策略气晕，又换成了 Qt（<a href="https://pypi.org/project/PySide6/">PySide6</a>）；有完善的 UI ↔︎ Engine 协议体系，支持与各种不同语言编写的 AI 引擎对战以及引擎间大乱斗；可以玩也可以用于教学。
+<ul>
+<li>衍生了一篇自己觉得挺有意思的<a href="https://github.com/neolee/reversi/blob/main/HUMAN.md">文章</a>。</li>
+</ul>
+</li>
+<li><a href="https://github.com/neolee/sbs-ext">sbs-ext</a>: 给我的 Markdown 扩展标准 <a href="https://github.com/neolee/sbs">SBS</a> 编写的几个扩展，可以用 Markdown 格式创作图文并茂的桥牌、国际象棋和围棋内容，使用最适合 AI 编程的 Python 和 TypeScript 语言编写，有个线上 <a href="https://sbs.paradigmx.net/">demo</a>。</li>
+<li><a href="https://github.com/neolee/sct">sct</a>: 多年以前用 Objective-C 为 <a href="https://rime.im/">Rime 中州韵输入法</a> 写过一个图形化配置工具 <a href="https://github.com/neolee/scu">SCU</a>，后来没时间维护，一致觉得心怀愧疚，现在好了，AI 让我可以比较轻松地维护这种级别的工具了，所以用新的 SwiftUI 重写了这个新的版本。</li>
+<li><a href="https://github.com/neolee/qidao">qidao</a>: 我觉得应该是目前 macOS 下最好的围棋工具，支持棋谱分析、棋谱编辑和对弈练习三模式无缝切换，使用了 SwiftUI 和 rust core 混合语言开发。因为受不了大量或烂尾或粗制滥造的围棋工具而写，专业领域的工具真是一言难尽。</li>
+<li><a href="https://github.com/neolee/oasis">oasis</a>: 用 Haskell 编写的大语言模型 client 库及用例，基本上是移植了之前用 Python 写的 <a href="https://github.com/neolee/mal">MAL</a> 和 <a href="https://github.com/neolee/modelbench">modelbench</a> 工具。
+<ul>
+<li>与之联动的是两篇文章：《<a href="https://soulhacker.me/posts/good-code/">什么是好的代码</a>》《<a href="https://soulhacker.me/posts/why-type-system-matters/">为什么你要学习类型系统</a>》。经实践证明，Haskell 强大的类型系统和静态编译，确实可以降低代码中隐形错误的几率，整个开发过程都比较顺，除了被 Haskell 的 TUI 库坑了一阵以外都很顺利，但即使 Haskell 也无法阻止 AI 的一些先天陋习，比如放着代码中已有的共享框架自己另写一个，不断督促 AI 去重构以保持低熵依然是人类逃不掉的职责。</li>
+</ul>
+</li>
+<li><a href="https://github.com/neolee/mercury">mercury</a>: 用 SwiftUI 编写的 AI 赋能的 RSS 阅读器，是这一批里面复杂度最高的软件，包含 300 多个 commits 大约 30000 行 Swift 代码，1.0 之后一共发布了 7 个功能版本，用了整个 2 月份来完成，现在算是功能比较完整的一个现代化 RSS 工具了。
+<ul>
+<li><a href="https://github.com/neolee/swift-readability">swift-readability</a>: 在编写 Mercury 的过程中发现现有 Swift 的 Readability 库都没法用，干脆自己整了一个，完全原生 Swift，不依赖任何 JS 引擎，100% 通过了原版 <a href="https://github.com/mozilla/readability">Mozilla Readability</a> JS 库的测试集，是个相当不错的副产品。这种已有完备测试集的库的开发实在太适合目前的 AI coding agent 了，以后写 test case 比写功能实现可能更需要人类（也更值钱）。</li>
+</ul>
+</li>
+</ul>
+<p>下一步打算好好总结一下经验教训，争取开发一个真正有用、能不断迭代的“AI时代软件工程”课程出来。</p>
+<p>p.s. 发现我还是喜欢写有着简洁优雅设计的 GUI 应用，可能也是目前 AI coding 比较费劲的一个类型，经过这些玩意儿的洗礼，再去写一些命令行或者后台服务简直像度假。</p>
+
+</article>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css"
+    integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js"
+    integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false }
+            ]
+        });
+    });
+</script>
+
+
+<section class="post-nav">
+    <ul>
+        <li>
+        
+            <a href="/posts/why-type-system-matters/"><i class="fa fa-chevron-circle-left"></i> 为什么你要学习类型系统</a>
+        
+        </li>
+        <li>
+        
+        </li>
+    </ul>
+</section>
+  
+    
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <ul>
+            <li>
+                <h6>Copyright © 2024 - Neo Lee | 
+                    Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+                    <a href="/index.xml">Subscribe </a></h6>
+            </li>
+            
+            
+        </ul>
+    </footer>
+</div>
+<script src="/js/scripts.js"></script>
+
+  
+
+
+</body>
+
+</html>
+
