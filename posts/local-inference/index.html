@@ -15,7 +15,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2026-03-15T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-03-15T22:51:43+08:00">
+    <meta property="article:modified_time" content="2026-03-15T23:00:05+08:00">
     <meta property="article:tag" content="AI">
 
 
@@ -93,7 +93,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2026-03-15T22:51:43&#43;08:00">Mar 15, 2026</time>
+            Modified on <time datetime="2026-03-15T23:00:05&#43;08:00">Mar 15, 2026</time>
         </li>
         
         
@@ -190,7 +190,7 @@
 </span></span></span></code></pre></div><p>一开始是一组全局配置，最需要了解的是 <code>startPort</code> 参数，因为 <code>llama-swap</code> 支持同时运行多个模型推理实例，每个实例使用独立的端口与 <code>llama-swap</code> 通信而 <code>llama-swap</code> 将用户的请求分发给正确的实例，这里的 <code>startPort</code> 就是这些独立端口的初始值，然后 <code>llama-swap</code> 可以自动给不同模型分配不同的端口（比如 <code>9001,9002,9003...</code> 等）。</p>
 <p>然后可以配置一些宏 <code>macros</code> ，后面可以复用，比如 <code>llama-server</code> 的命令模板，你存放下载模型的位置，统一指定的参数值等：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">macros</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">&#34;latest-llama&#34;: </span><span class="p">&gt;</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">&#34;latest-llama&#34;: </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">    /opt/homebrew/bin/llama-server
 </span></span></span><span class="line"><span class="cl"><span class="sd">    --port ${PORT}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
