@@ -15,7 +15,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2022-09-18T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-06T14:00:21+08:00">
+    <meta property="article:modified_time" content="2026-04-20T20:48:05+08:00">
     <meta property="article:tag" content="Tools">
 
 
@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Doom Emacs 配置">
   <meta name="twitter:description" content="这份配置基于 Emacs 模式的按键组合，没有启用 Doom Emacs 缺省的 evil 模式，如果希望使用类 Vim 的按键方式，可以参考其他一些大牛，比如的 Tec Osaur 的非常有教益的版本。">
 
-<meta name="generator" content="Hugo 0.160.0">
+<meta name="generator" content="Hugo 0.160.1">
     
 
   <link rel="stylesheet" href="/css/normalize.min.css" />
@@ -93,7 +93,7 @@
         </li>
         
         <li>
-            Modified on <time datetime="2026-04-06T14:00:21&#43;08:00">Apr 6, 2026</time>
+            Modified on <time datetime="2026-04-20T20:48:05&#43;08:00">Apr 20, 2026</time>
         </li>
         
         
@@ -109,7 +109,7 @@
         </li>
         
 
-        <li>14 minute read</li>
+        <li>15 minute read</li>
     </ul>
 </aside>
 
@@ -439,8 +439,15 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-themes-enable-bold</span> <span class="no">t</span>
 </span></span><span class="line"><span class="cl">      <span class="nv">doom-themes-enable-italic</span> <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">modus-themes-mixed-fonts</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">modus-themes-variable-pitch-ui</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">modus-themes-bold-constructs</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">modus-themes-italic-constructs</span> <span class="no">t</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">modus-themes-completions</span> <span class="o">&#39;</span><span class="p">((</span><span class="no">t</span> <span class="o">.</span> <span class="p">(</span><span class="nv">bold</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">modus-themes-prompts</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">bold</span><span class="p">))</span>
 </span></span></code></pre></div><p>随系统切换 light 和 dark mode 主题，利用 macOS 下 <code>emacs-plus</code> 增加的 <code>ns-system-appearance-change-functions</code> 钩子来实现。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+light-theme</span> <span class="ss">&#39;doom-nord-light</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">+light-theme</span> <span class="ss">&#39;folio</span>
 </span></span><span class="line"><span class="cl">      <span class="nv">+dark-theme</span> <span class="ss">&#39;doom-city-lights</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">+apply-theme</span> <span class="p">(</span><span class="nv">appearance</span><span class="p">)</span>
@@ -633,6 +640,10 @@
 </span></span></code></pre></div><h2 id="补充软件包">补充软件包</h2>
 <p>Doom 的缺省配置和预制模块能覆盖我绝大部分需求，所以需要我另外添加的软件包很少，这些软件包需要写在 <code>packages.el</code> 里。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="c1">;;; packages.el -*- no-byte-compile: t; -*-</span>
+</span></span></code></pre></div><h3 id="额外主题">额外主题</h3>
+<p>如果要尝试第三方的配色主题，需要先安装对应的包。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">folio-theme</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">:recipe</span> <span class="p">(</span><span class="nb">:host</span> <span class="nv">github</span> <span class="nb">:repo</span> <span class="s">&#34;kn66/folio-theme.el&#34;</span> <span class="nb">:nonrecursive</span> <span class="no">t</span><span class="p">))</span>
 </span></span></code></pre></div><h3 id="窗口移动">窗口移动</h3>
 <p>用快捷键快速在几个窗口间交换 buffer，比如同时打开 <code>.c</code> 和 <code>.h</code> 文件，先在左边窗口编辑 <code>.h</code> 文件，然后把右边窗口的 <code>.c</code> 文件换过来进行编辑，使用这个包用一个组合键就能做到。其实预制模块里的 <code>ace-window</code> 也可以做类似的事情，但 <code>buffer-mover</code> 一个按键搞定更快。这里我用 <code>:recipe</code> 子句来禁用这个包的编译，因为这个包有个 bug，编译后会报错。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">buffer-move</span> <span class="nb">:recipe</span> <span class="p">(</span><span class="nb">:build</span> <span class="p">(</span><span class="nb">:not</span> <span class="nv">compile</span><span class="p">)))</span>
@@ -773,7 +784,7 @@
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-provider</span>
 </span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-openai-compatible</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:url</span> <span class="s">&#34;http://localhost:5810/v1&#34;</span>
-</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen3.5-nt&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="nb">:chat-model</span> <span class="s">&#34;qwen3.6-nt&#34;</span>
 </span></span><span class="line"><span class="cl">           <span class="nb">:embedding-model</span> <span class="s">&#34;snowflake&#34;</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nv">setopt</span> <span class="nv">ellama-translation-provider</span>
 </span></span><span class="line"><span class="cl">          <span class="p">(</span><span class="nv">make-llm-openai-compatible</span>
